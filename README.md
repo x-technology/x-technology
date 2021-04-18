@@ -8,13 +8,20 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-1. [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.eventbrite.co.uk/e/airbnb-analytics-3-data-cleaning-how-programming-helps-investing-talk-tickets-150721884213)
-2. [Introducing SailMapAI and GetConf - GAN seamap generator and a Mobile App for conferences](https://youtu.be/7jtzvDK2mKk)
-3. [PizzaScript - Parser with RxGo](https://youtu.be/a3RvC2fvr_g)
-4. [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M)
-5. [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls)
-6. [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
-7. [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
+`7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.eventbrite.co.uk/e/airbnb-analytics-3-data-cleaning-how-programming-helps-investing-talk-tickets-150721884213)
+
+`6.` [Introducing SailMapAI and GetConf - GAN seamap generator and a Mobile App for conferences](https://youtu.be/7jtzvDK2mKk) 
+
+`5.` [PizzaScript - Parser with RxGo](https://youtu.be/a3RvC2fvr_g)
+
+`4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M)
+
+`3.` [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls)
+
+`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
+
+`1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
+
 
 ## Contributing
 
