@@ -2,7 +2,7 @@
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
 
-## X-Technology Meetups
+## XTechnology Meetups
 
 We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together.
 
@@ -16,9 +16,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 - [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
 - [Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
 
----
-
-## Contribute!
+## Contributing
 
 We hope you like our content, and welcome any contribution!
 
