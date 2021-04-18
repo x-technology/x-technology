@@ -16,6 +16,10 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 - [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
 - [Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
 
+---
+
+## Contribute!
+
 We hope you like our content, and welcome any contribution!
 
 ### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
