@@ -21,7 +21,7 @@ We hope you like our content, and welcome any contribution!
 
 ### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
 
-### Subscribe and Stay Tuned
+### Subscribe to stay tuned
 
 - [Telegram](https://t.me/xtechn)
 - [Youtube](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ)
