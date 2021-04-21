@@ -36,6 +36,8 @@ We hope you like our content, and welcome any contribution!
 - [Eventbrite](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 - [Twitter](https://twitter.com/XTechnology5)
 
+# XTechnology
+
 ## Technology is beautiful, let's discover it together!
 
 ### Educational Programming DevOps and Data Science Open Source Project
