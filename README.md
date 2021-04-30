@@ -10,9 +10,9 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.eventbrite.co.uk/e/airbnb-analytics-3-data-cleaning-how-programming-helps-investing-talk-tickets-150721884213)
 
-`6.` [Introducing SailMapAI and GetConf - GAN seamap generator and a Mobile App for conferences](https://youtu.be/7jtzvDK2mKk) 
+`6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk) 
 
-`5.` [PizzaScript - Parser with RxGo](https://youtu.be/a3RvC2fvr_g)
+`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g)
 
 `4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M)
 
