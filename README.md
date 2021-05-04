@@ -8,6 +8,8 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.eventbrite.co.uk/e/pizzascript-3-webassembly-as-a-compilation-target-overview-tickets-153222355189?aff=github)
+
 `7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.eventbrite.co.uk/e/airbnb-analytics-3-data-cleaning-how-programming-helps-investing-talk-tickets-150721884213)
 
 `6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk) 
