@@ -1,4 +1,4 @@
-![Frame 3 (1)](https://user-images.githubusercontent.com/1259644/118190766-dbe5a180-b443-11eb-80fd-eec95cff5a91.png)
+![Frame 6](https://user-images.githubusercontent.com/1259644/118191152-70e89a80-b444-11eb-9584-34d2163a68ba.png)
 
 # XTechnology
 
@@ -8,7 +8,16 @@
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
 
-## XTechnology Meetups
+## [XTechnology Projects](https://github.com/x-technology)
+
+- [Airbnb Analytics](https://github.com/x-technology/airbnb-analytics)
+- [PizzaScript](https://github.com/x-technology/PizzaScript)
+- [GooseOps](https://github.com/x-technology/GooseOps)
+- [SailMapAI](https://github.com/x-technology/SailMapAI)
+- [GetConf](https://github.com/x-technology/getconf)
+
+
+## [XTechnology Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
 We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together.
 
