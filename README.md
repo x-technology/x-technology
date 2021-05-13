@@ -1,4 +1,10 @@
-![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
+![Frame 3 (1)](https://user-images.githubusercontent.com/1259644/118190766-dbe5a180-b443-11eb-80fd-eec95cff5a91.png)
+
+# XTechnology
+
+## Technology is beautiful, let's discover it together!
+
+### Educational Programming DevOps and Data Science Open Source Project
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
 
@@ -38,8 +44,4 @@ We hope you like our content, and welcome any contribution!
 - [Eventbrite](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 - [Twitter](https://twitter.com/XTechnology5)
 
-# XTechnology
-
-## Technology is beautiful, let's discover it together!
-
-### Educational Programming DevOps and Data Science Open Source Project
+![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
