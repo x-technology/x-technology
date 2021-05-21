@@ -25,9 +25,9 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `9.` [GetConf #2 - Tailoring Flutter and Backend in Small Steps](https://www.eventbrite.co.uk/e/getconf-2-tailoring-flutter-and-backend-in-small-steps-tickets-155704509379?aff=github)
 
-`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.eventbrite.co.uk/e/pizzascript-3-webassembly-as-a-compilation-target-overview-tickets-153222355189?aff=github)
+`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.youtube.com/watch?v=TKV8eUeOeE8)
 
-`7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.eventbrite.co.uk/e/airbnb-analytics-3-data-cleaning-how-programming-helps-investing-talk-tickets-150721884213)
+`7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.youtube.com/watch?v=6iJ8MMDNQ9c)
 
 `6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk) 
 
