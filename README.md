@@ -23,7 +23,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`10.` [Introducing "Lost in GANs" - an Educational Project about Deep Learning](https://www.eventbrite.co.uk/e/introducing-lost-in-gans-an-educational-project-about-deep-learning-tickets-158315874041?aff=github)
+`10.` [Introducing Lost in GANs - an Educational Project about Deep Learning](https://www.eventbrite.co.uk/e/introducing-lost-in-gans-an-educational-project-about-deep-learning-tickets-158315874041?aff=github)
 
 `9.` [GetConf #2 - Tailoring Flutter and Backend in Small Steps](https://youtu.be/tRqwIrlytt8)
 
