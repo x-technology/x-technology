@@ -23,6 +23,8 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`12.` [XTechnology Personal Growth Framework - How It Works](https://www.eventbrite.co.uk/e/xtechnology-personal-growth-framework-how-it-works-tickets-164896057547?aff=github)
+
 `11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4)
 
 `10.` [Introducing Lost in GANs - an Educational Project about Deep Learning](https://www.youtube.com/watch?v=bRvJ2NlFU3k)
