@@ -47,6 +47,84 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
 
+## Alex
+
+### Background 
+
+- Technical background
+- Different teaching & learning projects
+- Open source & projects expertise
+  - djv
+  - PM
+- Community experience - articles, libraries, meetups & conferences
+
+#### How it helped me so far?
+
+- Less stress while public speaking
+- Easier connecting to people
+- Nice & surprising meetings
+
+### Goals & Act
+
+- From XTechnology original goals
+  - creditability
+  - self promotion
+  - education
+  - **craftmanship**
+  - self interest - data science solutions, full projects
+  - **promote new project**
+  - **growing new community**
+  - connections
+
+- Confidence / Impostor syndrome
+  - To get more confidence in tech skills
+
+- Procrastination
+  - Down and ups
+
+- Tech Goals
+  - learn Go language, including key libraries like RxGo
+  - not an expert in Go and that is fine. non obvious angles of a language can be covered
+  - deeper understanding of WebAssembly
+  - understand how programming languages & interpreters work
+
+### Things Learned
+
+- Craftmanship
+  - Shape is comfort - doing PM work
+  - How to help each other?
+
+- Promoting a project & growing a community
+  - Speakers and peers are underestimated
+  - A bigger audience and more people to collaborate with
+
+- Confidence / Impostor Syndrome
+
+![Growth Mindset](https://lh3.googleusercontent.com/oENIbDLJxG4iCXEQZ1FHd_Yod7SzTynu_8o9sWzheQIoXtZ70rdg4ex5l3EkfnZbfNqVd4Ka48SbQfYgE9_SQ3urEFIwHNVD5zxfcK-BAifjH2hMrs1-V6edHD1oitb4GP9KOKu0)
+
+- Procrastination
+  - Two flows - one swallows you, the other needs continuos 
+
+> What was hard stays hard
+
+![What Is Dead May Never Die](https://media1.giphy.com/media/3o7qDX5LOgRpRS0kKc/200w.gif?cid=82a1493ba9ri8g7okooq85phi79phppwuqwwuq8dcqqc9k59&rid=200w.gif&ct=g)
+
+- Tech Goals
+  - Learning Go language is great
+  - To learn WebAssembly worked to some level
+  - Studying algorithms is a heck of an effort
+
+> Technology is beautiful!
+
+### Next
+
+- Growth Mindset - whatever it takes!
+- How to set goals?
+
+### Conclusion
+
+- To make an open source project is ... fine 😀
+- To build a project together with friends is priceless! 🚀
 
 ## Contributing
 
