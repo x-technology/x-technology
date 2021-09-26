@@ -25,11 +25,11 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `14.` [A guide on how to design your education course for students to have a great knowledge journey](https://www.eventbrite.co.uk/e/a-guide-on-how-to-design-your-education-course-tickets-178316157427?aff=github) by [Alexey Illarionov](https://www.linkedin.com/in/alexey-illarionov/), *2 October 2021*
 
-`13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 Sept 2021*
+`13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 September 2021*
 
-`12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk)
+`12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk) by XTechnology, *31 Jul 2021*
 
-`11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4)
+`11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *3 July 2021*
 
 `10.` [Introducing Lost in GANs - an Educational Project about Deep Learning](https://www.youtube.com/watch?v=bRvJ2NlFU3k)
 
