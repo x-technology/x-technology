@@ -23,7 +23,9 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`13.` [Introducing the most insightful way of knowledge representation](https://www.eventbrite.co.uk/e/introduction-to-knowledge-graphs-tickets-168728279827?aff=github)
+`14.` [A guide on how to design your education course for students to have a great knowledge journey](https://www.eventbrite.co.uk/e/a-guide-on-how-to-design-your-education-course-tickets-178316157427?aff=github) by [Alexey Illarionov](https://www.linkedin.com/in/alexey-illarionov/), *2 October 2021*
+
+`13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 Sept 2021*
 
 `12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk)
 
