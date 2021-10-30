@@ -23,7 +23,9 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`14.` [A guide on how to design your education course for students to have a great knowledge journey](https://www.eventbrite.co.uk/e/a-guide-on-how-to-design-your-education-course-tickets-178316157427?aff=github) by [Alexey Illarionov](https://www.linkedin.com/in/alexey-illarionov/), *2 October 2021*
+`15.` [Data Science Project end-to-end: use-case in banking & collection](https://youtu.be/CyMECKZQnts) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 October 2021*
+
+`14.` [A guide on how to design your education course for students to have a great knowledge journey](https://www.youtube.com/watch?v=rVttDn9vLvU) by [Alexey Illarionov](https://www.linkedin.com/in/alexey-illarionov/), *2 October 2021*
 
 `13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 September 2021*
 
