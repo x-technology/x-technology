@@ -4,7 +4,9 @@
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
 
-## [XTechnology Projects](https://github.com/x-technology)
+## [Projects](https://github.com/x-technology)
+
+We experiment with projects to explore technologies.
 
 - [Airbnb Analytics](https://github.com/x-technology/airbnb-analytics)
 - [PizzaScript](https://github.com/x-technology/PizzaScript)
@@ -12,10 +14,9 @@ Our goal is to learn new technologies, share knowledge in different areas, build
 - [SailMapAI](https://github.com/x-technology/SailMapAI)
 - [GetConf](https://github.com/x-technology/getconf)
 
+## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
-## [XTechnology Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
-
-We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together.
+We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together. Sometimes we invite experts and guests to participate in the events or give a side talk. Check out our [youtube channel](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) for the full list.
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
@@ -54,7 +55,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 We hope you like our content, and welcome any contribution!
 
-### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
+### Do you want to [become an XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
 
 ### Subscribe and stay tuned
 
