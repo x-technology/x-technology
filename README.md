@@ -1,5 +1,7 @@
 ![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)
 
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 ### Educational Programming DevOps and Data Science Open Source Project
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
