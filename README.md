@@ -1,8 +1,4 @@
-![Frame 6](https://user-images.githubusercontent.com/1259644/118191152-70e89a80-b444-11eb-9584-34d2163a68ba.png)
-
-# XTechnology
-
-## Technology is beautiful, let's discover it together!
+![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/118191152-70e89a80-b444-11eb-9584-34d2163a68ba.png)
 
 ### Educational Programming DevOps and Data Science Open Source Project
 
