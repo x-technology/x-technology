@@ -1,14 +1,12 @@
-![Frame 6](https://user-images.githubusercontent.com/1259644/118191152-70e89a80-b444-11eb-9584-34d2163a68ba.png)
-
-# XTechnology
-
-## Technology is beautiful, let's discover it together!
+![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)
 
 ### Educational Programming DevOps and Data Science Open Source Project
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
 
-## [XTechnology Projects](https://github.com/x-technology)
+## [Projects](https://github.com/x-technology)
+
+We experiment with projects to explore technologies.
 
 - [Airbnb Analytics](https://github.com/x-technology/airbnb-analytics)
 - [PizzaScript](https://github.com/x-technology/PizzaScript)
@@ -16,16 +14,23 @@ Our goal is to learn new technologies, share knowledge in different areas, build
 - [SailMapAI](https://github.com/x-technology/SailMapAI)
 - [GetConf](https://github.com/x-technology/getconf)
 
+## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
-## [XTechnology Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
-
-We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together.
+We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together. Sometimes we invite experts and guests to participate in the events or give a side talk. Check out our [youtube channel](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) for the full list.
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`12.` [XTechnology Personal Growth Framework - How It Works](https://www.eventbrite.co.uk/e/xtechnology-personal-growth-framework-how-it-works-tickets-164896057547?aff=github)
+`16.` [The Hitchhiker's Guide to the Technical Interview](https://www.eventbrite.co.uk/e/the-hitchhikers-guide-to-the-technical-interview-tickets-216137000587?aff=github) by XTechnology, *27 November 2021*
 
-`11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4)
+`15.` [Data Science Project end-to-end: use-case in banking & collection](https://youtu.be/CyMECKZQnts) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 October 2021*
+
+`14.` [A guide on how to design your education course for students to have a great knowledge journey](https://www.youtube.com/watch?v=rVttDn9vLvU) by [Alexey Illarionov](https://www.linkedin.com/in/alexey-illarionov/), *2 October 2021*
+
+`13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 September 2021*
+
+`12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk) by XTechnology, *31 Jul 2021*
+
+`11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *3 July 2021*
 
 `10.` [Introducing Lost in GANs - an Educational Project about Deep Learning](https://www.youtube.com/watch?v=bRvJ2NlFU3k)
 
@@ -51,86 +56,84 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 ### Background 
 
-- Technical background
-- Different teaching & learning projects
-- Open source & projects expertise
-  - djv
-  - PM
-- Community experience - articles, libraries, meetups & conferences
+- Technical background - JavaScript, DevOps, Java, Golang
+- Different teaching & learning & open source projects
+- Community - articles, libraries, meetups & conferences
 
-#### How it helped me so far?
+### What is this about?
 
-- Less stress while public speaking
-- Easier connecting to people
-- Nice & surprising meetings
+- Provide hints on JavaScript interviews
+- Reflect on experience
 
-### Goals & Act
+### My Experience
 
-- From XTechnology original goals
-  - creditability
-  - self promotion
-  - education
-  - **craftmanship**
-  - self interest - data science solutions, full projects
-  - **promote new project**
-  - **growing new community**
-  - connections
+> Why am I going to interviews?
 
-- Confidence / Impostor syndrome
-  - To get more confidence in tech skills
+- `~300` being a candidate
+- `~30` successful
+- `~300` being an interviewer
 
-- Procrastination
-  - Down and ups
+### What do you expect from JavaScript interview?
 
-- Tech Goals
-  - learn Go language, including key libraries like RxGo
-  - not an expert in Go and that is fine. non obvious angles of a language can be covered
-  - deeper understanding of WebAssembly
-  - understand how programming languages & interpreters work
+> Let's imagine we are doing all of it
 
-### Things Learned
+- Introduction (5 min)
+- JavaScript (45 min)
+- Social Skills (5 min)
+- Feedback (5 min)
 
-- Craftmanship
-  - Shape is comfort - doing PM work
-  - How to help each other?
+- [A draft agenda](https://docs.google.com/spreadsheets/d/1gYfTkns72DM7YL_KTZOVenm3BNPxECxMSG2LksgwZu4/edit?usp=sharing)
 
-- Promoting a project & growing a community
-  - Speakers and peers are underestimated
-  - A bigger audience and more people to collaborate with
+> Actually, it depends on company a lot...
 
-- Confidence / Impostor Syndrome
+#### Again, what
 
-![Growth Mindset](https://lh3.googleusercontent.com/oENIbDLJxG4iCXEQZ1FHd_Yod7SzTynu_8o9sWzheQIoXtZ70rdg4ex5l3EkfnZbfNqVd4Ka48SbQfYgE9_SQ3urEFIwHNVD5zxfcK-BAifjH2hMrs1-V6edHD1oitb4GP9KOKu0)
+- Algorithms, leetcode, ...
+- Pair Programming, TDD
+- Try project source code and fix a bug / implement a feature
+- Technical design
+- A/B Tests
+- Humiliation
+- Soft talk
 
-- Procrastination
-  - Two flows - one swallows you, the other needs continuos 
+### Technical Questions
 
-> What was hard stays hard
+> How do I know?)
 
-![What Is Dead May Never Die](https://media1.giphy.com/media/3o7qDX5LOgRpRS0kKc/200w.gif?cid=82a1493ba9ri8g7okooq85phi79phppwuqwwuq8dcqqc9k59&rid=200w.gif&ct=g)
+> [What do you think?](https://forms.gle/jpU7q6NKSYQ8K8477), ... and [results](https://docs.google.com/forms/d/1n-JWEcZAu6X1bTCDMQXwFhMPHHQq5pi3n8E8FMHsmtM/edit#responses)
 
-- Tech Goals
-  - Learning Go language is great
-  - To learn WebAssembly worked to some level
-  - Studying algorithms is a heck of an effort
+- HTML & CSS
+- DOM API
+- JS Basics
+- JS Frameworks
+...
+- Architecture
+- DevOps
 
-> Technology is beautiful!
+### Soft Skills
 
-### Next
+- Undestand company's technical and business stack
+- Feedback on questions and tasks
+- Bring own questions
+- Be Positive
+- Activities
+  - Which resources you use to follow new technologies?
 
-- Growth Mindset - whatever it takes!
-- How to set goals?
+### Summary
 
-### Conclusion
+> What a JavaScript Developer Might Know
 
-- To make an open source project is ... fine 😀
-- To build a project together with friends is priceless! 🚀
+- English
+- Basics
+- Project
+- Soft Skills
+- Be Positive
 
 ## Contributing
 
 We hope you like our content, and welcome any contribution!
 
-### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
+### Do you want to [become an XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
 
 ### Subscribe and stay tuned
 
