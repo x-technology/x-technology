@@ -123,8 +123,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 > What a JavaScript Developer Might Know
 
-- English
-- Basics
+- JS Basics
 - Project
 - Soft Skills
 - Be Positive
