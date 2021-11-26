@@ -86,7 +86,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 > Actually, it depends on company a lot...
 
-#### Again, what
+#### Again, what do I expect from JavaScript interview?
 
 - Algorithms, leetcode, ...
 - Pair Programming, TDD
