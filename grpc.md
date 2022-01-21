@@ -71,7 +71,7 @@ Software Engineer, United Kingdom
 
 Passionate software engineer with expertise in software development, microservice architecture, and cloud infrastructure. On daily basis, I use Node.js, TypeScript, Golang, and DevOps best practices to build a better tech world by contributing to open source projects.
 
-- [AlexKorzhikov](https://twitter.com/AndrewRedUK)
+- [AndrewRedUK](https://twitter.com/AndrewRedUK)
 - [mazahaca](https://github.com/mazahaca)
 
 ### What are we going to do today?
@@ -102,7 +102,6 @@ Passionate software engineer with expertise in software development, microservic
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
 - [gRPC - Developers Google](https://www.grpc.io/)
-
 - [Scalable Microservices with gRPC, Kubernetes, and Docker by Sandeep Dinesh, Google](https://www.youtube.com/watch?v=xsIwYL-N4vI)
 - [NestJS Microservices - 4 - Using gRPC](https://www.youtube.com/watch?v=OuyxRE9xLw4)
 - [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw) - overview, handy thoughts & slides
