@@ -13,6 +13,13 @@ We experiment with projects to explore technologies.
 - [GooseOps](https://github.com/x-technology/GooseOps)
 - [SailMapAI](https://github.com/x-technology/SailMapAI)
 - [GetConf](https://github.com/x-technology/getconf)
+- [TimeMate](https://github.com/x-technology/timemate)
+
+## [Workshops](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
+
+We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
+
+- [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md)
 
 ## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
@@ -53,7 +60,6 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 `2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
 
 `1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
-
 
 ## Contributing
 
