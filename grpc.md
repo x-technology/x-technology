@@ -29,3 +29,82 @@ The workshop overviews key architecture principles, design patterns, and technol
 [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
+
+# Workshop Begins!
+
+## Agenda
+
+- Introduction
+  - Who are we?
+  - What are we going to do today?
+  - Which technologies are we going to use?
+  - What is GRPC?
+  - How are we going to use Node.js?
+  - Why have we chosen TypeScript?
+  - Why lerna or yarn workspaces?
+  - Are we going to deploy?
+- Example
+  - Structure
+  - Common
+  - GRPC Web Service Wrapper
+  - Local Setup
+- Practice
+  - Demo
+- Summary
+
+## Introduction
+
+### Who are we?
+
+![alex korzhikov](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
+
+Software Engineer, Netherlands
+
+My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
+
+- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
+- [korzio](https://github.com/korzio)
+
+[![andrew reddikh](https://andrew.red/photo.jpg)](https://andrew.red)
+
+Software Engineer, United Kingdom
+
+Passionate software engineer with expertise in software development, microservice architecture, and cloud infrastructure. On daily basis, I use Node.js, TypeScript, Golang, and DevOps best practices to build a better tech world by contributing to open source projects.
+
+- [AlexKorzhikov](https://twitter.com/AndrewRedUK)
+- [mazahaca](https://github.com/mazahaca)
+
+### What are we going to do today?
+### Which technologies are we going to use?
+### What is GRPC?
+### How are we going to use Node.js?
+### Why have we chosen TypeScript?
+### Why lerna or yarn workspaces?
+### Are we going to deploy?
+
+## Example
+
+- Structure
+- Common
+- GRPC Web Service Wrapper
+- Local Setup
+
+## Practice
+
+- Task
+- Demo
+
+## Summary
+
+---
+
+# Links
+
+- [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
+- [gRPC - Developers Google](https://www.grpc.io/)
+
+- [Scalable Microservices with gRPC, Kubernetes, and Docker by Sandeep Dinesh, Google](https://www.youtube.com/watch?v=xsIwYL-N4vI)
+- [NestJS Microservices - 4 - Using gRPC](https://www.youtube.com/watch?v=OuyxRE9xLw4)
+- [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw) - overview, handy thoughts & slides
+- [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
+- [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
