@@ -94,13 +94,33 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What is GRPC?
 
-<details><summary>gRPC Remote Procedure Calls, of course!</summary>
+- <details><summary>gRPC Remote Procedure Calls, of course!</summary>
 
 ![obvious reaction](https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif)
 
 </details>
 
-- Client ⬅️ ➡️ Server Communication
+> [gRPC](https://grpc.io/) is a modern, open source remote procedure call (RPC) framework that can run anywhere. It enables client and server applications to communicate transparently, and makes it easier to build connected systems
+
+- Client 😀 ⬅️ ➡️ 💻 Server Communication
+
+- <details><summary>Web Protocols</summary>
+  - SOAP
+  - GraphQL
+  - REST
+  - ...
+
+  Or more generic,
+
+  - HTTP/1.1, HTTP/2, TCP, UDP, WebSockets
+  - ...
+</details>
+
+> We always need a **client** library to communicate to a server!
+  
+> v1.42.0
+> microservices design philosophy
+https://grpc.io/blog/principles/
 
 ### How are we going to use Node.js?
 ### Why have we chosen TypeScript?
