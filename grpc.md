@@ -1,10 +1,9 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
-<style
-  type="text/css">
-h1 {color:red;}
-
-p {color:blue;}
+<style type="text/css">
+  img[alt="andrew reddikh"] {
+    filter: grayscale(100%);
+  }
 </style>
 
 # How to convert crypto currencies with GRPC microservices in Node.js
@@ -86,8 +85,23 @@ Passionate software engineer with expertise in software development, microservic
 - [mazahaca](https://github.com/mazahaca)
 
 ### What are we going to do today?
+
+[⬆️ About](#how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs)
+
 ### Which technologies are we going to use?
+
+[⬇️ Tags](#tags)
+
 ### What is GRPC?
+
+<details><summary>gRPC Remote Procedure Calls, of course!</summary>
+
+![obvious reaction](https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif)
+
+</details>
+
+- Client ⬅️ ➡️ Server Communication
+
 ### How are we going to use Node.js?
 ### Why have we chosen TypeScript?
 ### Why lerna or yarn workspaces?
@@ -118,3 +132,20 @@ Passionate software engineer with expertise in software development, microservic
 - [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw) - overview, handy thoughts & slides
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
+
+## Tags
+
+- microservices
+- node.js
+- javascript
+- protobuf
+- grpc
+- typescript
+- lerna
+- npm
+- yarn
+- docker
+- git
+- architecture
+- crypto
+- currency
