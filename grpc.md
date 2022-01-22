@@ -1,5 +1,12 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
+<style
+  type="text/css">
+h1 {color:red;}
+
+p {color:blue;}
+</style>
+
 # How to convert crypto currencies with GRPC microservices in Node.js
 
 The workshop overviews key architecture principles, design patterns, and technologies used to build microservices in the Node.js stack. It covers the theory of the GRPC framework and protocol buffers mechanism, as well as techniques and specifics of building isolated services using the monorepo approach with lerna and yarn workspaces, TypeScript. The workshop includes a live practical assignment to create a currency converter application that follows microservices paradigms. It fits the best developers who want to learn and practice GRPC microservices pattern with the Node.js platform.
@@ -56,6 +63,8 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 ### Who are we?
 
+#### Alex Korzhikov
+
 ![alex korzhikov](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
 
 Software Engineer, Netherlands
@@ -64,6 +73,8 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 - [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
 - [korzio](https://github.com/korzio)
+
+#### Andrew Reddikh
 
 [![andrew reddikh](https://andrew.red/photo.jpg)](https://andrew.red)
 
