@@ -105,15 +105,19 @@ Passionate software engineer with expertise in software development, microservic
 Client 😀 ⬅️ ➡️ 💻 Server Communication
 
 <details><summary>Web Protocols</summary>
-  - SOAP
-  - GraphQL
-  - REST
-  - ...
 
-  Or more generic,
+- SOAP
+- GraphQL
+- REST
 
-  - HTTP/1.1, HTTP/2, TCP, UDP, WebSockets
-  - ...
+Or more generic,
+
+- HTTP/1.1
+- HTTP/2
+- TCP
+- UDP
+- WebSockets
+
 </details>
 
 > We always need a **client** library to communicate to a server!
