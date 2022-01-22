@@ -105,19 +105,17 @@ Passionate software engineer with expertise in software development, microservic
 Client 😀 ⬅️ ➡️ 💻 Server Communication
 
 <details><summary>Web Protocols</summary>
-
-- SOAP
-- GraphQL
-- REST
+- SOAP  
+- GraphQL  
+- REST  
 
 Or more generic,
 
-- HTTP/1.1
-- HTTP/2
-- TCP
-- UDP
-- WebSockets
-
+- HTTP/1.1  
+- HTTP/2  
+- TCP  
+- UDP  
+- WebSockets  
 </details>
 
 > We always need a **client** library to communicate to a server!
@@ -153,7 +151,7 @@ https://grpc.io/blog/principles/
 - [gRPC - Developers Google](https://www.grpc.io/)
 - [Scalable Microservices with gRPC, Kubernetes, and Docker by Sandeep Dinesh, Google](https://www.youtube.com/watch?v=xsIwYL-N4vI)
 - [NestJS Microservices - 4 - Using gRPC](https://www.youtube.com/watch?v=OuyxRE9xLw4)
-- [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw) - overview, handy thoughts & slides
+- [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw)
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
 
