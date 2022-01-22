@@ -96,7 +96,7 @@ Passionate software engineer with expertise in software development, microservic
 
 <details><summary>gRPC Remote Procedure Calls, of course!</summary>
 
-![obvious reaction](https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif)
+<img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 
 </details>
 
