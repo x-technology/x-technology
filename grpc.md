@@ -90,7 +90,7 @@ Passionate software engineer with expertise in software development, microservic
 
 ### Which technologies are we going to use?
 
-[⬇️ Tags](#tags)
+[⬇️ Tags](#technologies)
 
 ### What is GRPC?
 
@@ -98,31 +98,69 @@ Passionate software engineer with expertise in software development, microservic
 
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 
-</details>
+</details><br/>
 
-> [gRPC](https://grpc.io/) is a modern, open source remote procedure call (RPC) framework that can run anywhere. It enables client and server applications to communicate transparently, and makes it easier to build connected systems
+> [gRPC](https://grpc.io/docs/what-is-grpc/faq/) is a *modern, open source* *remote procedure call (RPC)* framework that can run anywhere. It enables *client and server* applications to communicate transparently, and makes it easier to build connected systems
 
-Client 😀 ⬅️ ➡️ 💻 Server Communication
+**History**
+
+- March 2015 🗓
+- Google ➡️ Open Source 
+- Implement Microservices Architecture
+  - Stubby
+  - SPDY
+- [Motivation](https://grpc.io/blog/principles/)
+
+**RPC**
+
+A *distributed computing technique* when
+
+- A client program sends a request to a known remote server to execute a specified procedure
+- The remote server executes local procedure and sends a response back to the client
+- The client continues to run
+
+More steps involved in the process
+- local client stub
+- marshalling parameters into a message
+- remote server call
+- local server stub
+- unpacking or unmarshalling message parameters
+
+**Client 😀 ⬅️ ➡️ 💻 Server Communication**
 
 <details><summary>Web Protocols</summary>
-- SOAP  
-- GraphQL  
-- REST  
-
-Or more generic,
-
-- HTTP/1.1  
-- HTTP/2  
-- TCP  
-- UDP  
-- WebSockets  
-</details>
+<ul>
+<li>SOAP</li>
+<li>REST</li>
+<li>GraphQL</li>
+</ul>
+Or even more generic
+<ul>
+<li>HTTP/1.1</li>
+<li>HTTP/2</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>WebSockets</li>
+</ul>
+</details><br/>
 
 > We always need a **client** library to communicate to a server!
-  
-> v1.42.0
-> microservices design philosophy
-https://grpc.io/blog/principles/
+
+**Features**
+
+![Architecture](https://grpc.io/img/landing-2.svg)
+
+- Client & Server (Stub) code generated
+  - [10+ Languages](https://grpc.io/docs/languages/)
+  - [Platforms](https://grpc.io/docs/platforms/)
+  - [Core version 1.43.0](https://github.com/grpc/grpc)
+- Communication
+  - Sync/Async
+  - HTTP/2
+  - Streams
+- Protocol - Service Definitions
+  - Typed
+  - Protocol Buffers ⏭
 
 ### How are we going to use Node.js?
 ### Why have we chosen TypeScript?
@@ -143,8 +181,6 @@ https://grpc.io/blog/principles/
 
 ## Summary
 
----
-
 # Links
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
@@ -155,7 +191,7 @@ https://grpc.io/blog/principles/
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
 
-## Tags
+### Technologies
 
 - microservices
 - node.js
