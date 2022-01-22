@@ -94,7 +94,7 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What is GRPC?
 
-- <details><summary>gRPC Remote Procedure Calls, of course!</summary>
+<details><summary>gRPC Remote Procedure Calls, of course!</summary>
 
 ![obvious reaction](https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif)
 
@@ -102,9 +102,9 @@ Passionate software engineer with expertise in software development, microservic
 
 > [gRPC](https://grpc.io/) is a modern, open source remote procedure call (RPC) framework that can run anywhere. It enables client and server applications to communicate transparently, and makes it easier to build connected systems
 
-- Client 😀 ⬅️ ➡️ 💻 Server Communication
+Client 😀 ⬅️ ➡️ 💻 Server Communication
 
-- <details><summary>Web Protocols</summary>
+<details><summary>Web Protocols</summary>
   - SOAP
   - GraphQL
   - REST
