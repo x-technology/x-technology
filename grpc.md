@@ -45,6 +45,7 @@ The workshop overviews key architecture principles, design patterns, and technol
   - What are we going to do today?
   - Which technologies are we going to use?
   - What is GRPC?
+  - What are Protocol Buffers?
   - How are we going to use Node.js?
   - Why have we chosen TypeScript?
   - Why lerna or yarn workspaces?
@@ -98,7 +99,7 @@ Passionate software engineer with expertise in software development, microservic
 
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 
-</details><br/>
+</details>
 
 > [gRPC](https://grpc.io/docs/what-is-grpc/faq/) is a *modern, open source* *remote procedure call (RPC)* framework that can run anywhere. It enables *client and server* applications to communicate transparently, and makes it easier to build connected systems
 
@@ -109,6 +110,7 @@ Passionate software engineer with expertise in software development, microservic
 - Implement Microservices Architecture
   - Stubby
   - SPDY
+  - QUIC
 - [Motivation](https://grpc.io/blog/principles/)
 
 **RPC**
@@ -142,17 +144,17 @@ Or even more generic
 <li>UDP</li>
 <li>WebSockets</li>
 </ul>
-</details><br/>
+</details>
 
 > We always need a **client** library to communicate to a server!
 
-**Features**
+#### Features
 
 ![Architecture](https://grpc.io/img/landing-2.svg)
 
 - Client & Server (Stub) code generated
   - [10+ Languages](https://grpc.io/docs/languages/)
-  - [Platforms](https://grpc.io/docs/platforms/)
+  - [Platforms & Environments](https://grpc.io/docs/platforms/) - Android, Web, Flutter
   - [Core version 1.43.0](https://github.com/grpc/grpc)
 - Communication
   - Sync/Async
@@ -161,6 +163,38 @@ Or even more generic
 - Protocol - Service Definitions
   - Typed
   - Protocol Buffers ⏭
+
+### What are Protocol Buffers?
+
+*An efficient technology to serialize structured data*
+
+```proto
+message Person {
+  string name = 1;
+  int32 id = 2;
+  bool has_ponycopter = 3;
+}
+```
+
+> Does anyone know what numbers on the right side mean?
+
+**History**
+
+- [July 2008](https://github.com/protocolbuffers/protobuf/commit/40ee551715c3a784ea6132dbf604b0e665ca2def) 🗓
+- Google ➡️ Open Source
+
+**Features**
+
+- Typed `.proto` format
+- Code Generation
+  - `protoc` - the protocol buffers compiler
+  - [10+ Languages](https://github.com/protocolbuffers/protobuf#protobuf-runtime-installation)
+  - [Third-Party Add-ons for Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/docs/third_party.md)
+- Services Description
+
+**Advanced**
+
+#### Demo
 
 ### How are we going to use Node.js?
 ### Why have we chosen TypeScript?
