@@ -27,8 +27,6 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`18.` [How to convert crypto currencies with GRPC microservices in Node.js](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=github) by Alex Korzhiov & Andrew Reddikh, *29 January 2022*
-
 `17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by Andrew Reddikh, *18 December 2021*
 
 `16.` [The Hitchhiker's Guide to the Technical Interview](https://www.youtube.com/watch?v=whG-zl_bZtc) by XTechnology, *27 November 2021*
