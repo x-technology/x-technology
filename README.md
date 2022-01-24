@@ -27,7 +27,9 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by Andrew Reddikh, *18 December 2021*
+`18.` [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *24 January 2022*
+
+`17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by [Andrew Reddikh](https://twitter.com/AndrewRedUK), *18 December 2021*
 
 `16.` [The Hitchhiker's Guide to the Technical Interview](https://www.eventbrite.co.uk/e/the-hitchhikers-guide-to-the-technical-interview-tickets-216137000587?aff=github) by XTechnology, *27 November 2021*
 
@@ -45,21 +47,21 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `9.` [GetConf #2 - Tailoring Flutter and Backend in Small Steps](https://youtu.be/tRqwIrlytt8)
 
-`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.youtube.com/watch?v=TKV8eUeOeE8)
+`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.youtube.com/watch?v=TKV8eUeOeE8) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *8 May 2021*
 
-`7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.youtube.com/watch?v=6iJ8MMDNQ9c)
+`7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.youtube.com/watch?v=6iJ8MMDNQ9c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
 `6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk) 
 
-`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g)
+`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *27 Mar 2021*
 
-`4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M)
+`4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
-`3.` [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls)
+`3.` [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls) by [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk)
+`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *13 Feb 2021*
 
-`1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc)
+`1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
 ## Contributing
 
