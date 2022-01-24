@@ -32,6 +32,7 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 ### Materials
 
+[Register for Workshop - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=telegram)
 [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
@@ -40,17 +41,15 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 ## Agenda
 
-- Introduction
-  - Who are we?
-  - What are we going to do today?
-  - Which technologies are we going to use?
-  - What is GRPC?
-  - What are Protocol Buffers?
-  - How are we going to use Node.js?
-  - Why have we chosen TypeScript?
-  - Why lerna or yarn workspaces?
-  - Are we going to deploy?
-- Example
+- [Introduction](#introduction)
+  - [Who are we?](#who-are-we)
+  - [What are we going to do today?](#how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs)
+  - [Which technologies are we going to use?](#technologies)
+  - [What is GRPC?](#what-is-grpc)
+  - [What are Protocol Buffers?](#what-are-protocol-buffers)
+  - [Demo](#demo)
+  - [Q&A](#qa)
+- [Example](#example)
   - Structure
   - Common
   - GRPC Web Service Wrapper
@@ -225,6 +224,8 @@ message HelloResponse {
 - Nested Types
 - [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
 - Maps, oneOf, allOf
+
+### Demo
 
 #### Demo 1 - Use protobuf to serialize and store JSON
 
