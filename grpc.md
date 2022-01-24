@@ -194,12 +194,76 @@ message Person {
 
 **Advanced**
 
-#### Demo
+- Types
+  - Message
+  - Scalar
+  - Enums
+  - Required, Optional
+  - Repeated
+  - No empty type
+- Packages
+- Services - not used by `protobuf` directly
 
-### How are we going to use Node.js?
-### Why have we chosen TypeScript?
-### Why lerna or yarn workspaces?
-### Are we going to deploy?
+```proto
+syntax = "proto3";
+
+package hello;
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+```
+
+- Nested Types
+- [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
+- Maps, oneOf, allOf
+
+#### Demo 1 - Use protobuf to serialize and store JSON
+
+- `protoc` - [Protocol Buffer Compiler](https://grpc.io/docs/protoc-installation/)
+
+```bash
+protoc --js_out=import_style=commonjs,binary:. my.proto
+```
+
+- [`google-protobuf`](https://www.npmjs.com/package/google-protobuf) - protobuf runtime library
+- [Bitcoin (historical data)](https://sampleapis.com/api-list/bitcoin)
+
+#### Demo 2 - Hello GRPC Node.js server & client
+
+- How are we going to use Node.js?
+  - [grpc](https://www.npmjs.com/package/grpc) -> [@grpc/grpc-js](https://www.npmjs.com/package/@grpc/grpc-js)
+  - [protobuf.js](https://www.npmjs.com/package/protobufjs) + [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader)
+  - Dynamic VS Static
+
+```js
+// https://www.npmjs.com/package/@grpc/proto-loader#usage
+const protoLoader = require('@grpc/proto-loader');
+const grpcLibrary = require('grpc');
+// OR
+const grpcLibrary = require('@grpc/grpc-js');
+
+protoLoader.load(protoFileName, options).then(packageDefinition => {
+  const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
+});
+// OR
+const packageDefinition = protoLoader.loadSync(protoFileName, options);
+const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
+```
+
+### Q&A
+
+- Why have we chosen TypeScript?
+- Why lerna or yarn workspaces?
+- Are we going to deploy?
 
 ## Example
 
@@ -215,6 +279,28 @@ message Person {
 
 ## Summary
 
+<details><summary>Why?</summary>
+<ul>
+  <li>Another Standard</li>
+  <li>Environment, Language Agnostic</li>
+  <li>Types</li>
+  <li>Efficient, Compact Data Format</li>
+  <li>Efficient Transport Protocol (streams, cancelation)</li>
+  <li>Compiler Support by Community and Key Organisations (single client)</li>
+  <li>Security</li>
+  <li>Readability?</li>
+</ul>
+</details>
+  
+<details><summary>What are the GRPC alternatives?</summary>
+<ul>
+  <li>REST("JSON"-ish over HTTP)</li>
+  <li>GraphQL</li>
+</ul>
+</details>
+
+## Feedback
+
 # Links
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
@@ -224,6 +310,7 @@ message Person {
 - [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw)
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
+- [A basic tutorial introduction to gRPC in Node](https://www.grpc.io/docs/languages/node/basics/)
 
 ### Technologies
 
