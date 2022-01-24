@@ -31,7 +31,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by [Andrew Reddikh](https://twitter.com/AndrewRedUK), *18 December 2021*
 
-`16.` [The Hitchhiker's Guide to the Technical Interview](https://www.eventbrite.co.uk/e/the-hitchhikers-guide-to-the-technical-interview-tickets-216137000587?aff=github) by XTechnology, *27 November 2021*
+`16.` [The Hitchhiker's Guide to the Technical Interview](https://www.youtube.com/watch?v=whG-zl_bZtc) by XTechnology, *27 November 2021*
 
 `15.` [Data Science Project end-to-end: use-case in banking & collection](https://youtu.be/CyMECKZQnts) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 October 2021*
 
