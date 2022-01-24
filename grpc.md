@@ -110,7 +110,7 @@ Passionate software engineer with expertise in software development, microservic
   - Stubby
   - SPDY
   - QUIC
-- [Motivation](https://grpc.io/blog/principles/)
+- [Motivation](https://grpc.io/blog/principles/), FAQ, Tutorials
 
 **RPC**
 
@@ -151,14 +151,16 @@ Or even more generic
 
 ![Architecture](https://grpc.io/img/landing-2.svg)
 
-- Client & Server (Stub) code generated
+- Client & Server
+  - Generated Code (Stubs)
   - [10+ Languages](https://grpc.io/docs/languages/)
   - [Platforms & Environments](https://grpc.io/docs/platforms/) - Android, Web, Flutter
   - [Core version 1.43.0](https://github.com/grpc/grpc)
 - Communication
-  - Sync/Async
   - HTTP/2
   - Streams
+  - Sync/Async
+  - Authentication
 - Protocol - Service Definitions
   - Typed
   - Protocol Buffers ⏭
@@ -286,10 +288,9 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
   <li>Environment, Language Agnostic</li>
   <li>Types</li>
   <li>Efficient, Compact Data Format</li>
-  <li>Efficient Transport Protocol (streams, cancelation)</li>
+  <li>Fast & Efficient Transport Protocol (streams, cancelation)</li>
   <li>Compiler Support by Community and Key Organisations (single client)</li>
   <li>Security</li>
-  <li>Readability?</li>
 </ul>
 </details>
   
@@ -305,7 +306,7 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 # Links
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
-- [gRPC - Developers Google](https://www.grpc.io/)
+- [gRPC](https://www.grpc.io/)
 - [Scalable Microservices with gRPC, Kubernetes, and Docker by Sandeep Dinesh, Google](https://www.youtube.com/watch?v=xsIwYL-N4vI)
 - [NestJS Microservices - 4 - Using gRPC](https://www.youtube.com/watch?v=OuyxRE9xLw4)
 - [Getting Started with gRPC and JavaScript - Colin Ihrig, Joyent](https://www.youtube.com/watch?v=fl9AZieRUaw)
