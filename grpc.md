@@ -158,7 +158,34 @@ Or even more generic
   - [Core version 1.43.0](https://github.com/grpc/grpc)
 - Communication
   - HTTP/2
+  - Message Ordering
   - Streams
+
+```proto
+// http://protobuf-compiler.herokuapp.com/
+syntax = "proto3";
+
+package hello;
+
+service HelloService {
+  rpc JustHello (HelloRequest) returns (HelloResponse);
+
+  rpc ServerStream(HelloRequest) returns (stream HelloResponse);
+
+  rpc ClientStream(stream HelloRequest) returns (HelloResponse);
+
+  rpc BothStreams(stream HelloRequest) returns (stream HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+```
+
   - Sync/Async
   - Authentication
 - Protocol - Service Definitions
@@ -181,6 +208,7 @@ message Person {
 
 **History**
 
+- [Protocol Buffers - Google Developers](https://developers.google.com/protocol-buffers/)
 - [July 2008](https://github.com/protocolbuffers/protobuf/commit/40ee551715c3a784ea6132dbf604b0e665ca2def) 🗓
 - Google ➡️ Open Source
 
@@ -201,7 +229,7 @@ message Person {
   - Enums
   - Required, Optional
   - Repeated
-  - No empty type
+  - No void type, no scalar types in arguments
 - Packages
 - Services - not used by `protobuf` directly
 
@@ -223,6 +251,8 @@ message HelloResponse {
 }
 ```
 
+- Plugins
+- Compiler Options
 - Nested Types
 - [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
 - Maps, oneOf, allOf
@@ -239,6 +269,7 @@ protoc --js_out=import_style=commonjs,binary:. my.proto
 
 - [`google-protobuf`](https://www.npmjs.com/package/google-protobuf) - protobuf runtime library
 - [Bitcoin (historical data)](https://sampleapis.com/api-list/bitcoin)
+- `vscode-proto3` extension
 
 #### Demo 2 - Hello GRPC Node.js server & client
 
