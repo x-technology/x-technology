@@ -282,7 +282,7 @@ protoc --js_out=import_style=commonjs,binary:. my.proto
 #### Demo 2 - Hello GRPC Node.js server & client
 
 - How are we going to use Node.js?
-  - [grpc](https://www.npmjs.com/package/grpc) -> [@grpc/grpc-js](https://www.npmjs.com/package/@grpc/grpc-js)
+  - [grpc](https://www.npmjs.com/package/grpc) ➡️ [@grpc/grpc-js](https://www.npmjs.com/package/@grpc/grpc-js)
   - [protobuf.js](https://www.npmjs.com/package/protobufjs) + [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader)
   - [Dynamic](https://github.com/grpc/grpc/tree/v1.42.0/examples/node/dynamic_codegen/route_guide) VS [Static](https://github.com/grpc/grpc/tree/v1.42.0/examples/node/static_codegen/route_guide)
   - [Streams](https://nodejs.org/dist/latest-v16.x/docs/api/stream.html)
