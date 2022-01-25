@@ -4,6 +4,10 @@
   img[alt="andrew reddikh"] {
     filter: grayscale(100%);
   }
+
+  img[alt="microservices graph"] {
+    width: 500px;
+  }
 </style>
 
 # How to convert crypto currencies with GRPC microservices in Node.js
@@ -104,9 +108,11 @@ Passionate software engineer with expertise in software development, microservic
 
 **History**
 
+![microservices graph](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/assets/graph.png)
+
 - March 2015 🗓
 - Google ➡️ Open Source 
-- Implement Microservices Architecture
+- Standardize Microservices Architecture, Framework & Infrastructure
   - Stubby
   - SPDY
   - QUIC
@@ -276,7 +282,8 @@ protoc --js_out=import_style=commonjs,binary:. my.proto
 - How are we going to use Node.js?
   - [grpc](https://www.npmjs.com/package/grpc) -> [@grpc/grpc-js](https://www.npmjs.com/package/@grpc/grpc-js)
   - [protobuf.js](https://www.npmjs.com/package/protobufjs) + [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader)
-  - Dynamic VS Static
+  - [Dynamic](https://github.com/grpc/grpc/tree/v1.42.0/examples/node/dynamic_codegen/route_guide) VS [Static](https://github.com/grpc/grpc/tree/v1.42.0/examples/node/static_codegen/route_guide)
+  - [Streams](https://nodejs.org/dist/latest-v16.x/docs/api/stream.html)
 
 ```js
 // https://www.npmjs.com/package/@grpc/proto-loader#usage
@@ -315,13 +322,17 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 
 <details><summary>Why?</summary>
 <ul>
-  <li>Another Standard</li>
+  <li>Yet Another Standard</li>
   <li>Environment, Language Agnostic</li>
-  <li>Types</li>
+  <li>Strongly Typed Messaging</li>
   <li>Efficient, Compact Data Format</li>
   <li>Fast & Efficient Transport Protocol (streams, cancelation)</li>
   <li>Compiler Support by Community and Key Organisations (single client)</li>
   <li>Security</li>
+  <li>Scalable</li>
+  <li>Free & Open</li>
+  <li>Pluggable</li>
+  <li>Layered</li>
 </ul>
 </details>
   
@@ -330,6 +341,38 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
   <li>REST("JSON"-ish over HTTP)</li>
   <li>GraphQL</li>
 </ul>
+<table>
+    <tr>
+        <td>Compare</td>
+        <td>REST</td>
+        <td>RPC</td>
+        <td>GraphQL</td>
+    </tr>
+    <tr>
+        <td>Focus</td>
+        <td>Resource</td>
+        <td>Action</td>
+        <td>Resource</td>
+    </tr>
+    <tr>
+        <td>Semantics</td>
+        <td>HTTP</td>
+        <td>Programming</td>
+        <td>Programming</td>
+    </tr>
+    <tr>
+        <td>Coupling</td>
+        <td>Loose</td>
+        <td>Tighter</td>
+        <td>Loose</td>
+    </tr>
+    <tr>
+        <td>Format</td>
+        <td>Text</td>
+        <td>Binary</td>
+        <td>Text</td>
+    </tr>
+</table>
 </details>
 
 ## Feedback
@@ -344,6 +387,7 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
 - [A basic tutorial introduction to gRPC in Node](https://www.grpc.io/docs/languages/node/basics/)
+- [Choosing An API Technology: GRPC, REST, GraphQL - Jura Gorohovsky](https://speedscale.com/2021/07/20/choosing-an-api-technology-grpc-rest-graphql/)
 
 ### Technologies
 
