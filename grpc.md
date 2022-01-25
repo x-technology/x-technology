@@ -198,6 +198,8 @@ message HelloResponse {
   - Typed
   - Protocol Buffers ⏭
 
+![client server communication](https://raw.githubusercontent.com/x-technology/mono-repo-nodejs-svc-sample/main/docs/assets/client-server-grpc.png)
+
 ### What are Protocol Buffers?
 
 *An efficient technology to serialize structured data*
