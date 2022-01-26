@@ -148,6 +148,7 @@ Or even more generic
 <li>TCP</li>
 <li>UDP</li>
 <li>WebSockets</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events">Server-Sent Events</a></li>
 </ul>
 </details>
 
@@ -235,7 +236,6 @@ message Person {
   - Message
   - Scalar
   - Enums
-  - Required, Optional
   - Repeated
   - No void type, no scalar types in arguments
 - Packages
@@ -262,6 +262,7 @@ message HelloResponse {
 - Plugins
 - Compiler Options
 - Nested Types
+- Required, **Optional**
 - [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
 - Maps, oneOf, allOf
 
