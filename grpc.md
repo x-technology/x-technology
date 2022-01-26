@@ -38,6 +38,8 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 [Register for Workshop - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=telegram)
 [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
+[Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
+[Google Meet Live Coding](https://meet.google.com/rbm-ddom-tbh) 
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
@@ -53,14 +55,20 @@ The workshop overviews key architecture principles, design patterns, and technol
   - [What are Protocol Buffers?](#what-are-protocol-buffers)
   - [Demo](#demo)
   - [Q&A](#qa)
-- [Example](#example)
-  - Structure
-  - Common
-  - GRPC Web Service Wrapper
-  - Local Setup
-- Practice
+- [Crypto 🦄 Currency Converter](#crypto-currency-converter)
+  - [Prerequisites](#prerequisites-1)
+  - [Monorepo structure](#monorepo-structure)
+  - [Using Lerna](#using-lerna)
+  - [Common & Services](#common--services)
+  - [What we're building](#what-were-building)
+  - [Deeper look into *.proto files](#deeper-look-into-proto-files)
+  - [How to create new common lib](#how-to-create-new-common-lib)
+  - [How to create new service](#how-to-create-new-service)
+  - [How to test services](#how-to-test-services)
+  - [How to run this magic](#how-to-run-this-magic-)
+- [Practice](#practice)
   - Demo
-- Summary
+- [Summary](#summary)
 
 ## Introduction
 
@@ -309,11 +317,11 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 - Why lerna or yarn workspaces?
 - Are we going to deploy?
 
-# Crypto 🦄 Currency Converter Practice
+## Crypto 🦄 Currency Converter
 
-## Prerequisites
+### Prerequisites
 
-### 1. Checkout demo project
+#### 1. Checkout demo project
 
 Let's get started from cloning demo monorepo
 
@@ -321,7 +329,7 @@ Let's get started from cloning demo monorepo
 git clone git@github.com:x-technology/mono-repo-nodejs-svc-sample.git
 ```
 
-### 2. Install protoc
+#### 2. Install protoc
 
 For efficient work with `.proto` format, and to be able to generate TypeScript-based representation of protocol buffers we need to install `protoc` library.
 
@@ -346,7 +354,7 @@ rm -f $PROTOC_ZIP
 
 Alternately, manually download and install protoc from [here](https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip).
 
-### 3. Prepare environment
+#### 3. Prepare environment
 
 Make sure we have Node.js v14+ installed. If not, [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) is a very good tool to install multiple node versions locally and easily switch between them.
 
@@ -359,12 +367,12 @@ yarn lerna bootstrap
 Yay! 🎉 Now we're ready to go with the project.
 
 
-## Monorepo structure
+### Monorepo structure
 For better monorepo project management we used [Lerna](https://github.com/lerna/lerna) & [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
 
 The project shapes into the following structure:
 
-![](./assets/demo/project-structure.png)
+![project structure](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/demo/project-structure.png)
 
 - `./packages/common` folder contains common libraries used in other project's services.
 - `./packages/services/grpc` folder contains gRPC services we build to share the product.
@@ -381,7 +389,7 @@ The project shapes into the following structure:
 
 Let's move on 🚚
 
-## Using Lerna
+### Using Lerna
 
 Lerna brings to the table few commands which can be easily executed across all/or filtered packages.
 
@@ -392,7 +400,7 @@ Following command executed `build` command against all common packages filtered 
 yarn lerna run build --scope=@common/*
 ```
 
-## Common & Services
+### Common & Services
 
 Let's look into `./packages/common`. It contains common libraries used in other places of the system.
 One of such libraries is `@common/grpc`, it contains proto generated into TypeScript/JavaScript formats as well as common
@@ -410,11 +418,11 @@ yarn lerna run build --scope=@common/*
 
 For this particular task we implement only gRPC services which are stored in the folder `./packages/services/grpc`. But if we decide to add `rest`, `./packages/common/rest` is a good place to add it.
 
-## What we're building
+### What we're building
 
 We're building a currency converter, which can be used over gRPC calls.
 
-![](./assets/demo/currency-convertor-schema.png)
+![currency convertor schema](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/demo/currency-convertor-schema.png)
 
 Our intention is to send a request similar to `convert 0.345 ETH to AUD` and as a result we want to know the final amount in AUD and conversion rate.
 We also assume that, it could be more than one currency provider, e.g.
@@ -426,7 +434,7 @@ Here is how it works:
 - **Currency Converter** fetches each of the provider, accumulates, and uses for conversion rates received from providers.
 - **Currency Provider** is a proxy to gain single source of rates, it also converts rates into the common format defined in proto's.
 
-## Deeper look into *.proto files
+### Deeper look into *.proto files
 
 In the proto folder, according to our schema we created following files:
 - `currency-converter.proto` - converter interface
@@ -455,7 +463,7 @@ Here is the main command we could find there:
 protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="service=grpc-node:`pwd`/src/proto" --proto_path="`pwd`/../../../proto/" `pwd`/../../../proto/*.proto
 ```
 
-## How to create new common lib
+### How to create new common lib
 
 1. For example, we want to create a new `logger` library.
 2. Create a folder under `./packages/common/` path. For simplicity, just copy an existing lib and rename it.
@@ -501,7 +509,7 @@ yarn build
 
 Yay! 🎉 It works!
 
-## How to create new service
+### How to create new service
 
 1. For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
 2. Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
@@ -560,7 +568,7 @@ yarn start
 
 Yay! 🎉 It works!
 
-## How to test services
+### How to test services
 
 We use [jest](https://jestjs.io/docs/getting-started) as a test framework and decided to write integration tests for our services.
 This is the best way to understand different situations, which could happen with services on the particular input/output.
@@ -614,7 +622,7 @@ yarn test
 
 Brilliant! 🎉 It works!
 
-## How to run this magic 🪄?
+### How to run this magic 🪄?
 
 How could we run this magic to convert for us some currency?
 
@@ -644,8 +652,9 @@ It's time to have some practice and evolve our services even more!
 
 Let's grab a task based on the things you'd like to do 👇
 
-https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues
+[Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
 
+We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) - feel free to ask us any questions on enjoy live coding!
 
 ## Summary
 
@@ -708,7 +717,7 @@ https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues
 
 Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our workshop. Thank you and have a great coding!
 
-# Links
+## Links
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
 - [gRPC](https://www.grpc.io/)
