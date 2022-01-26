@@ -474,26 +474,30 @@ mkdir ./packages/common/logger
 ```shell
 cd ./packages/common/logger
 ```
-4. Make sure to define appropriate name in the package.json file:
+4. Install dependencies
+```shell
+yarn install
+```
+5. Make sure to define appropriate name in the package.json file:
 ```json
 "name": "@common/logger",
 ```
 Let's follow a rule all common libraries have a prefix `@common/`
-5. Create our library in a `src/index.js`
+6. Create our library in a `src/index.js`
 ```shell
 export const debug = (message: string) => console.debug(message);
 export const info = (message: string) => console.info(message);
 export const error = (message: string) => console.error(message);
 ```
-6. Make sure it builds successfully withing a command:
+7. Make sure it builds successfully withing a command:
 ```shell
 yarn build
 ```
-7. Let's connect our newly created library somewhere in the existing service:
+8. Let's connect our newly created library somewhere in the existing service:
 ```shell
-yarn lerna add @common/logger --scope=@grpc/currency-converter
+yarn lerna add @common/logger --scope=@grpc/ecb-provider
 ```
-8. The final step, we need to use the library inside currency-converter service.
+9. The final step, we need to use the library inside ecb-provider service.
    Let's amend file `./src/index.ts`:
 
 ```typescript
@@ -520,12 +524,16 @@ mkdir ./packages/services/grpc/crypto-compare-provider
 ```shell
 cd ./packages/services/grpc/crypto-compare-provider
 ```
-4. Make sure to define appropriate name in the package.json file:
+4. Install dependencies
+```shell
+yarn install
+```
+5. Make sure to define appropriate name in the package.json file:
 ```json
 "name": "@grpc/crypto-compare-provider",
 ```
 Let's follow a rule - all grpc services have a prefix `@grpc/`.
-5. Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
+6. Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
 ```shell
 import { currencyProvider } from '@common/go-grpc';
 
@@ -538,7 +546,7 @@ export default async (
   });
 };
 ```
-6. So next we need to use this method inside server.ts
+7. So next we need to use this method inside server.ts
 ```typescript
 import { Server, LoadProtoOptions, currencyProvider } from '@common/go-grpc';
 import getRates from './services/getRates';
@@ -556,12 +564,13 @@ const server = new Server(`0.0.0.0:${PORT}`, protoOptions);
 server
   .addService<currencyProvider.GetRatesRequest,
     Promise<currencyProvider.GetRatesResponse>>('GetRates', getRates);
+export default server;
 ```
-7. Make sure it builds successfully withing a command:
+8. Make sure it builds successfully withing a command:
 ```shell
 yarn build
 ```
-8. Start the service with the command:
+9. Start the service with the command:
 ```shell
 yarn start
 ```
