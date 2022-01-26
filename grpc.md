@@ -309,17 +309,343 @@ const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 - Why lerna or yarn workspaces?
 - Are we going to deploy?
 
-## Example
+# Crypto 🦄 Currency Converter Practice
 
-- Structure
-- Common
-- GRPC Web Service Wrapper
-- Local Setup
+## Prerequisites
+
+### 1. Checkout demo project
+
+Let's get started from cloning demo monorepo
+
+```shell
+git clone git@github.com:x-technology/mono-repo-nodejs-svc-sample.git
+```
+
+### 2. Install protoc
+
+For efficient work with `.proto` format, and to be able to generate TypeScript-based representation of protocol buffers we need to install `protoc` library.
+
+If you're a **MacOS user** and have [brew](https://brew.sh) package manager, the following command is the easiest way for installation:
+```shell
+brew install protobuf
+# Ensure it's installed and the compiler version at least 3+
+protoc --version
+```
+
+**For Linux users**
+
+Run the following commands:
+
+```shell
+PROTOC_ZIP=protoc-3.14.0-linux-x86_64.zip
+curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/$PROTOC_ZIP
+sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc
+sudo unzip -o $PROTOC_ZIP -d /usr/local 'include/*'
+rm -f $PROTOC_ZIP
+```
+
+Alternately, manually download and install protoc from [here](https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip).
+
+### 3. Prepare environment
+
+Make sure we have Node.js v14+ installed. If not, [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) is a very good tool to install multiple node versions locally and easily switch between them.
+
+Then we need to install dependencies and bootstrap lerna within the monorepo.
+```shell
+yarn install
+yarn lerna bootstrap
+```
+
+Yay! 🎉 Now we're ready to go with the project.
+
+
+## Monorepo structure
+For better monorepo project management we used [Lerna](https://github.com/lerna/lerna) & [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
+
+The project shapes into the following structure:
+
+![](./assets/demo/project-structure.png)
+
+- `./packages/common` folder contains common libraries used in other project's services.
+- `./packages/services/grpc` folder contains gRPC services we build to share the product.
+- `./proto` folder contains proto files, which describe protocol of input/output and communication between the services.
+- `./node_modules` - folder with dependencies, shared between all microservices.
+- `./lerna.json` - lerna's configuration file, defining how it should work with monorepo.
+- `./package.json` - description of our package, containing the important part:
+```json
+  "workspaces": [
+    "packages/common/*",
+    "packages/services/grpc/*"
+  ]
+```
+
+Let's move on 🚚
+
+## Using Lerna
+
+Lerna brings to the table few commands which can be easily executed across all/or filtered packages.
+
+We use our common modules compiled to JavaScript, so before using it in services we need to build it first.
+
+Following command executed `build` command against all common packages filtered with flag `--scope=@common/*`
+```shell
+yarn lerna run build --scope=@common/*
+```
+
+## Common & Services
+
+Let's look into `./packages/common`. It contains common libraries used in other places of the system.
+One of such libraries is `@common/grpc`, it contains proto generated into TypeScript/JavaScript formats as well as common
+gRPC server.
+
+Following command is required to be run if we're changing proto's:
+
+```shell
+cd ./packages/common/go-grpc && yarn build
+
+# OR using lerna
+
+yarn lerna run build --scope=@common/*
+```
+
+For this particular task we implement only gRPC services which are stored in the folder `./packages/services/grpc`. But if we decide to add `rest`, `./packages/common/rest` is a good place to add it.
+
+## What we're building
+
+We're building a currency converter, which can be used over gRPC calls.
+
+![](./assets/demo/currency-convertor-schema.png)
+
+Our intention is to send a request similar to `convert 0.345 ETH to AUD` and as a result we want to know the final amount in AUD and conversion rate.
+We also assume that, it could be more than one currency provider, e.g.
+1. Europe Central Bank rates
+2. Bank of England rates
+3. Crypto Rates
+
+Here is how it works:
+- **Currency Converter** fetches each of the provider, accumulates, and uses for conversion rates received from providers.
+- **Currency Provider** is a proxy to gain single source of rates, it also converts rates into the common format defined in proto's.
+
+## Deeper look into *.proto files
+
+In the proto folder, according to our schema we created following files:
+- `currency-converter.proto` - converter interface
+- `currency-provider.proto` - provider interface
+- `ecb-provider.proto` and `crypto-provider.proto` - implementation of two particular providers.
+
+In implementation provider, we could just `import` an existing proto file and use its definitions.
+
+```protobuf
+import "currency-provider.proto";
+
+package ecbProvider;
+
+service EcbProvider {
+  rpc GetRates(currencyProvider.GetRatesRequest) returns (currencyProvider.GetRatesResponse) {}
+}
+```
+
+Let's take a deeper look of how proto's are generated from .proto to JavaScript.
+
+Going back to `@common/go-grpc` module, we can find `./bin/build.mjs`.
+
+Here is the main command we could find there:
+
+```shell
+protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="service=grpc-node:`pwd`/src/proto" --proto_path="`pwd`/../../../proto/" `pwd`/../../../proto/*.proto
+```
+
+## How to create new common lib
+
+1. For example, we want to create a new `logger` library.
+2. Create a folder under `./packages/common/` path. For simplicity, just copy an existing lib and rename it.
+```shell
+mkdir ./packages/common/logger
+```
+3. Go to the folder in the terminal
+```shell
+cd ./packages/common/logger
+```
+4. Make sure to define appropriate name in the package.json file:
+```json
+"name": "@common/logger",
+```
+Let's follow a rule all common libraries have a prefix `@common/`
+5. Create our library in a `src/index.js`
+```shell
+export const debug = (message: string) => console.debug(message);
+export const info = (message: string) => console.info(message);
+export const error = (message: string) => console.error(message);
+```
+6. Make sure it builds successfully withing a command:
+```shell
+yarn build
+```
+7. Let's connect our newly created library somewhere in the existing service:
+```shell
+yarn lerna add @common/logger --scope=@grpc/currency-converter
+```
+8. The final step, we need to use the library inside currency-converter service.
+   Let's amend file `./src/index.ts`:
+
+```typescript
+import logger from '@common/logger';
+
+logger.debug('service has started');
+```
+
+9. Re-build currency-converter to ensure the is not issues
+```shell
+yarn build
+```
+
+Yay! 🎉 It works!
+
+## How to create new service
+
+1. For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
+2. Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
+```shell
+mkdir ./packages/services/grpc/crypto-compare-provider
+```
+3. Go to the folder in the terminal
+```shell
+cd ./packages/services/grpc/crypto-compare-provider
+```
+4. Make sure to define appropriate name in the package.json file:
+```json
+"name": "@grpc/crypto-compare-provider",
+```
+Let's follow a rule - all grpc services have a prefix `@grpc/`.
+5. Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
+```shell
+import { currencyProvider } from '@common/go-grpc';
+
+export default async (
+  _: currencyProvider.GetRatesRequest,
+): Promise<currencyProvider.GetRatesResponse> => {
+  return new currencyProvider.GetRatesResponse({
+    rates: [],
+    baseCurrency: 'USD',
+  });
+};
+```
+6. So next we need to use this method inside server.ts
+```typescript
+import { Server, LoadProtoOptions, currencyProvider } from '@common/go-grpc';
+import getRates from './services/getRates';
+
+const { PORT = 50051 } = process.env;
+const protoOptions: LoadProtoOptions = {
+  path: `${__dirname}/../../../../../proto/crypto-compare-provider.proto`,
+  // this value should be equvalent to the one defined in *.proto file as "package cryptoCompareProvider;"
+  package: 'cryptoCompareProvider',
+  // this value should be equvalent to the one defined in *.proto file as "service CryptoCompareProvider"  
+  service: 'CryptoCompareProvider',
+};
+
+const server = new Server(`0.0.0.0:${PORT}`, protoOptions);
+server
+  .addService<currencyProvider.GetRatesRequest,
+    Promise<currencyProvider.GetRatesResponse>>('GetRates', getRates);
+```
+7. Make sure it builds successfully withing a command:
+```shell
+yarn build
+```
+8. Start the service with the command:
+```shell
+yarn start
+```
+
+Yay! 🎉 It works!
+
+## How to test services
+
+We use [jest](https://jestjs.io/docs/getting-started) as a test framework and decided to write integration tests for our services.
+This is the best way to understand different situations, which could happen with services on the particular input/output.
+
+1. Let's begin from creating a test file `test/serviecs/index.spec.ts`:
+```shell
+mkdir -p test/services
+touch test/serviecs/index.spec.ts
+```
+2. First of all in the test we need to define a server, which is imported from `src` folder and start it in the section `beforeAll`
+```typescript
+import { ecbProvider, currencyProvider, createInsecure } from '@common/go-grpc';
+import server from '../../src/server';
+
+const testServerHost = 'localhost:50061';
+beforeAll(async () => {
+   await server.start(testServerHost);
+});
+afterAll(async () => {
+   await server.stop();
+});
+```
+3. Next let's create a client which will invoke server's methods via gRPC protocol
+```typescript
+import { ecbProvider, createInsecure } from '@common/go-grpc';
+
+const client = new ecbProvider.EcbProviderClient(
+  testServerHost,
+  createInsecure(),
+);
+```
+4. Let's add first test suite in here and expect some particular result from the service's method
+```typescript
+describe('GetRates', () => {
+ it('should return currency rates', async () => {
+   const response = await client.GetRates(new currencyProvider.GetRatesRequest());
+
+   expect(response.toObject()).toEqual({
+     baseCurrency: 'EUR',
+     rates: [
+       { currency: 'USD', rate: 1.1348 },
+     ],
+   });
+ });
+});
+```
+5. Now it's time to try it out with a command:
+```shell
+yarn test
+```
+
+Brilliant! 🎉 It works!
+
+## How to run this magic 🪄?
+
+How could we run this magic to convert for us some currency?
+
+```shell
+export PORT=50052 && cd ./packages/services/grpc/ecb-provider/ && yarn start
+export PORT=50051 && cd ./packages/services/grpc/currency-provider/ && yarn start
+```
+
+Here is a tool [grpcurl](https://github.com/fullstorydev/grpcurl#installation) for sending a test request to gRPC service from the terminal.
+
+```shell
+# list all services
+grpcurl -import-path ./proto -proto ecb-provider.proto list
+
+# list all methods of service
+grpcurl -import-path ./proto -proto ecb-provider.proto list ecbProvider.EcbProvider
+
+# call method GetRates
+echo '{}' | grpcurl -plaintext -import-path ./proto -proto ecb-provider.proto -d @ 127.0.0.1:50052 ecbProvider.EcbProvider.GetRates 
+```
+
+Hurray! 🚀
 
 ## Practice
 
-- Task
-- Demo
+It's time to have some practice and evolve our services even more!
+
+Let's grab a task based on the things you'd like to do 👇
+
+https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues
+
 
 ## Summary
 
