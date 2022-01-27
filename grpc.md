@@ -465,71 +465,99 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 
 ### How to create new common lib
 
-1. For example, we want to create a new `logger` library.
-2. Create a folder under `./packages/common/` path. For simplicity, just copy an existing lib and rename it.
+`1.` For example, we want to create a new `logger` library.
+`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing lib and rename it.
+
 ```shell
 mkdir ./packages/common/logger
 ```
-3. Go to the folder in the terminal
+
+`3.` Go to the folder in the terminal
+
 ```shell
 cd ./packages/common/logger
 ```
-4. Install dependencies
+
+`4.` Install dependencies
+
 ```shell
 yarn install
 ```
-5. Make sure to define appropriate name in the package.json file:
+
+`5.` Make sure to define appropriate name in the package.json file:
+
 ```json
 "name": "@common/logger",
 ```
+
 Let's follow a rule all common libraries have a prefix `@common/`
-6. Create our library in a `src/index.js`
+
+`6.` Create our library in a `src/index.js`
+
 ```shell
 export const debug = (message: string) => console.debug(message);
 export const info = (message: string) => console.info(message);
 export const error = (message: string) => console.error(message);
 ```
-7. Make sure it builds successfully withing a command:
+
+`7.` Make sure it builds successfully withing a command:
+
 ```shell
 yarn build
 ```
-8. Let's connect our newly created library somewhere in the existing service:
+
+`8.` Let's connect our newly created library somewhere in the existing service:
+
 ```shell
 yarn lerna add @common/logger --scope=@grpc/ecb-provider
 ```
-9. The final step, we need to use the library inside ecb-provider service. Let's amend file `./src/index.ts`:
+
+`9.` The final step, we need to use the library inside ecb-provider service. Let's amend file `./src/index.ts`:
+
 ```typescript
 import logger from '@common/logger';
 
 logger.debug('service has started');
 ```
-9. Re-build currency-converter to ensure the is not issues
+
+`10.` Re-build currency-converter to ensure the is not issues
+
 ```shell
 yarn build
 ```
+
 Yay! 🎉 It works!
 
 ### How to create new service
 
-1. For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
-2. Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
+`1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
+`2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
+
 ```shell
 mkdir ./packages/services/grpc/crypto-compare-provider
 ```
-3. Go to the folder in the terminal
+
+`3.` Go to the folder in the terminal
+
 ```shell
 cd ./packages/services/grpc/crypto-compare-provider
 ```
-4. Install dependencies
+
+`4.` Install dependencies
+
 ```shell
 yarn install
 ```
-5. Make sure to define appropriate name in the package.json file:
+
+`5.` Make sure to define appropriate name in the package.json file:
+
 ```json
 "name": "@grpc/crypto-compare-provider",
 ```
+
 Let's follow a rule - all grpc services have a prefix `@grpc/`.
-6. Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
+`6.` Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
+
 ```shell
 import { currencyProvider } from '@common/go-grpc';
 
@@ -542,7 +570,9 @@ export default async (
   });
 };
 ```
-6. So next we need to use this method inside `server.ts`
+
+`7.` So next we need to use this method inside `server.ts`
+
 ```typescript
 import { Server, LoadProtoOptions, currencyProvider } from '@common/go-grpc';
 import getRates from './services/getRates';
@@ -562,11 +592,15 @@ server
     Promise<currencyProvider.GetRatesResponse>>('GetRates', getRates);
 export default server;
 ```
-8. Make sure it builds successfully withing a command:
+
+`8.` Make sure it builds successfully withing a command:
+
 ```shell
 yarn build
 ```
-9. Start the service with the command:
+
+`9.` Start the service with the command:
+
 ```shell
 yarn start
 ```
@@ -578,12 +612,15 @@ Yay! 🎉 It works!
 We use [jest](https://jestjs.io/docs/getting-started) as a test framework and decided to write integration tests for our services.
 This is the best way to understand different situations, which could happen with services on the particular input/output.
 
-1. Let's begin from creating a test file `test/serviecs/index.spec.ts`
+`1.` Let's begin from creating a test file `test/serviecs/index.spec.ts`
+
 ```shell
 mkdir -p test/services
 touch test/serviecs/index.spec.ts
 ```
-2. First of all in the test we need to define a server, which is imported from `src` folder and start it in the section `beforeAll`
+
+`2.` First of all in the test we need to define a server, which is imported from `src` folder and start it in the section `beforeAll`
+
 ```typescript
 import { ecbProvider, currencyProvider, createInsecure } from '@common/go-grpc';
 import server from '../../src/server';
@@ -596,7 +633,9 @@ afterAll(async () => {
    await server.stop();
 });
 ```
-3. Next let's create a client which will invoke server's methods via gRPC protocol
+
+`3.` Next let's create a client which will invoke server's methods via gRPC protocol
+
 ```typescript
 import { ecbProvider, createInsecure } from '@common/go-grpc';
 
@@ -605,7 +644,9 @@ const client = new ecbProvider.EcbProviderClient(
   createInsecure(),
 );
 ```
-4. Let's add first test suite in here and expect some particular result from the service's method
+
+`4.` Let's add first test suite in here and expect some particular result from the service's method
+
 ```typescript
 describe('GetRates', () => {
  it('should return currency rates', async () => {
@@ -620,7 +661,9 @@ describe('GetRates', () => {
   });
 });
 ```
-5. Now it's time to try it out with a command:
+
+`5.` Now it's time to try it out with a command:
+
 ```shell
 yarn test
 ```
