@@ -36,10 +36,10 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 ### Materials
 
-[Register for Workshop - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=telegram)
-[Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
-[Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
-[Google Meet Live Coding](https://meet.google.com/rbm-ddom-tbh) 
+- [Register for Workshop - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=private)
+- [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
+- [Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
+- [Google Meet Live Coding](https://meet.google.com/rbm-ddom-tbh) 
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
@@ -475,26 +475,34 @@ mkdir ./packages/common/logger
 cd ./packages/common/logger
 ```
 4. Make sure to define appropriate name in the package.json file:
+
 ```json
 "name": "@common/logger",
 ```
+
 Let's follow a rule all common libraries have a prefix `@common/`
+
 5. Create our library in a `src/index.js`
+
 ```shell
 export const debug = (message: string) => console.debug(message);
 export const info = (message: string) => console.info(message);
 export const error = (message: string) => console.error(message);
 ```
+
 6. Make sure it builds successfully withing a command:
+
 ```shell
 yarn build
 ```
+
 7. Let's connect our newly created library somewhere in the existing service:
+
 ```shell
 yarn lerna add @common/logger --scope=@grpc/currency-converter
 ```
-8. The final step, we need to use the library inside currency-converter service.
-   Let's amend file `./src/index.ts`:
+
+8. The final step, we need to use the library inside currency-converter service. Let's amend file `./src/index.ts`:
 
 ```typescript
 import logger from '@common/logger';
@@ -503,6 +511,7 @@ logger.debug('service has started');
 ```
 
 9. Re-build currency-converter to ensure the is not issues
+
 ```shell
 yarn build
 ```
@@ -513,20 +522,28 @@ Yay! 🎉 It works!
 
 1. For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
 2. Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
+
 ```shell
 mkdir ./packages/services/grpc/crypto-compare-provider
 ```
+
 3. Go to the folder in the terminal
+
 ```shell
 cd ./packages/services/grpc/crypto-compare-provider
 ```
+
 4. Make sure to define appropriate name in the package.json file:
+
 ```json
 "name": "@grpc/crypto-compare-provider",
 ```
+
 Let's follow a rule - all grpc services have a prefix `@grpc/`.
+
 5. Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
-```shell
+
+```ts
 import { currencyProvider } from '@common/go-grpc';
 
 export default async (
@@ -538,7 +555,9 @@ export default async (
   });
 };
 ```
-6. So next we need to use this method inside server.ts
+
+6. So next we need to use this method inside `server.ts`
+
 ```typescript
 import { Server, LoadProtoOptions, currencyProvider } from '@common/go-grpc';
 import getRates from './services/getRates';
@@ -557,11 +576,14 @@ server
   .addService<currencyProvider.GetRatesRequest,
     Promise<currencyProvider.GetRatesResponse>>('GetRates', getRates);
 ```
+
 7. Make sure it builds successfully withing a command:
+
 ```shell
 yarn build
 ```
 8. Start the service with the command:
+
 ```shell
 yarn start
 ```
@@ -573,12 +595,15 @@ Yay! 🎉 It works!
 We use [jest](https://jestjs.io/docs/getting-started) as a test framework and decided to write integration tests for our services.
 This is the best way to understand different situations, which could happen with services on the particular input/output.
 
-1. Let's begin from creating a test file `test/serviecs/index.spec.ts`:
+1. Let's begin from creating a test file `test/serviecs/index.spec.ts`
+
 ```shell
 mkdir -p test/services
 touch test/serviecs/index.spec.ts
 ```
+
 2. First of all in the test we need to define a server, which is imported from `src` folder and start it in the section `beforeAll`
+
 ```typescript
 import { ecbProvider, currencyProvider, createInsecure } from '@common/go-grpc';
 import server from '../../src/server';
@@ -591,7 +616,9 @@ afterAll(async () => {
    await server.stop();
 });
 ```
+
 3. Next let's create a client which will invoke server's methods via gRPC protocol
+
 ```typescript
 import { ecbProvider, createInsecure } from '@common/go-grpc';
 
@@ -600,22 +627,26 @@ const client = new ecbProvider.EcbProviderClient(
   createInsecure(),
 );
 ```
+
 4. Let's add first test suite in here and expect some particular result from the service's method
+
 ```typescript
 describe('GetRates', () => {
  it('should return currency rates', async () => {
-   const response = await client.GetRates(new currencyProvider.GetRatesRequest());
+    const response = await client.GetRates(new currencyProvider.GetRatesRequest());
 
-   expect(response.toObject()).toEqual({
-     baseCurrency: 'EUR',
-     rates: [
-       { currency: 'USD', rate: 1.1348 },
-     ],
-   });
- });
+    expect(response.toObject()).toEqual({
+      baseCurrency: 'EUR',
+      rates: [
+        { currency: 'USD', rate: 1.1348 },
+      ],
+    });
+  });
 });
 ```
+
 5. Now it's time to try it out with a command:
+
 ```shell
 yarn test
 ```
@@ -652,9 +683,9 @@ It's time to have some practice and evolve our services even more!
 
 Let's grab a task based on the things you'd like to do 👇
 
-[Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
+- [Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
 
-We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) - feel free to ask us any questions on enjoy live coding!
+We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) - feel free to ask us any questions or enjoy live coding!
 
 ## Summary
 
@@ -673,7 +704,7 @@ We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) 
   <li>Layered</li>
 </ul>
 </details>
-  
+
 <details><summary>What are the GRPC alternatives?</summary>
 <ul>
   <li>REST("JSON"-ish over HTTP)</li>
@@ -731,17 +762,17 @@ Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our worksho
 
 ### Technologies
 
-- microservices
-- node.js
-- javascript
-- protobuf
-- grpc
-- typescript
-- lerna
-- npm
-- yarn
-- docker
-- git
-- architecture
-- crypto
-- currency
+microservices
+node.js
+javascript
+protobuf
+grpc
+typescript
+lerna
+npm
+yarn
+docker
+git
+architecture
+crypto
+currency
