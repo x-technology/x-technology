@@ -764,6 +764,8 @@ We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) 
 
 Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our workshop. Thank you and have a great coding!
 
+If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
+
 ## Links
 
 - [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
