@@ -67,7 +67,6 @@ The workshop overviews key architecture principles, design patterns, and technol
   - [How to test services](#how-to-test-services)
   - [How to run this magic](#how-to-run-this-magic-)
 - [Practice](#practice)
-  - Demo
 - [Summary](#summary)
 
 ## Introduction
@@ -776,6 +775,7 @@ Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our worksho
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
 - [A basic tutorial introduction to gRPC in Node](https://www.grpc.io/docs/languages/node/basics/)
 - [Choosing An API Technology: GRPC, REST, GraphQL - Jura Gorohovsky](https://speedscale.com/2021/07/20/choosing-an-api-technology-grpc-rest-graphql/)
+- [GraphQL, gRPC or REST? Resolving the API Developer's Dilemma - Rob Crowley](https://www.youtube.com/watch?v=l_P6m3JTyp0)
 
 ### Technologies
 
