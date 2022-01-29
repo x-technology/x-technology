@@ -423,7 +423,7 @@ We're building a currency converter, which can be used over gRPC calls.
 
 ![currency convertor schema](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/demo/currency-convertor-schema.png)
 
-Our intention is to send a request similar to `convert 0.345 ETH to AUD` and as a result we want to know the final amount in AUD and conversion rate.
+Our intention is to send a request similar to `convert 0.345 ETH to CAD` and as a result we want to know the final amount in CAD and conversion rate.
 We also assume that, it could be more than one currency provider, e.g.
 1. Europe Central Bank rates
 2. Bank of England rates
@@ -465,12 +465,7 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 ### How to create new common lib
 
 `1.` For example, we want to create a new `logger` library.
-`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing lib and rename it.
-
-```shell
-mkdir ./packages/common/logger
-```
-
+`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing `common/boilerplate`.
 `3.` Go to the folder in the terminal
 
 ```shell
@@ -497,6 +492,7 @@ Let's follow a rule all common libraries have a prefix `@common/`
 export const debug = (message: string) => console.debug(message);
 export const info = (message: string) => console.info(message);
 export const error = (message: string) => console.error(message);
+export default { debug, info, error };
 ```
 
 `7.` Make sure it builds successfully withing a command:
@@ -519,7 +515,7 @@ import logger from '@common/logger';
 logger.debug('service has started');
 ```
 
-`10.` Re-build currency-converter to ensure the is not issues
+`10.` Re-build ecb-provider to ensure there is no issues
 
 ```shell
 yarn build
@@ -531,11 +527,6 @@ Yay! 🎉 It works!
 
 `1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
 `2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
-
-```shell
-mkdir ./packages/services/grpc/crypto-compare-provider
-```
-
 `3.` Go to the folder in the terminal
 
 ```shell
