@@ -69,7 +69,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 We hope you like our content, and welcome any contribution!
 
-### Do you want to [become an XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
+### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
 
 ### Or become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
