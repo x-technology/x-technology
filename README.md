@@ -27,6 +27,8 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`18.` [Bringing New Talents to Girls Tech](https://www.eventbrite.co.uk/e/bringing-new-talents-to-girls-tech-tickets-269308447817?aff=github) by [Veronika Mutsei](https://www.linkedin.com/in/veronika-mutsei-78b46164/), *19 February 2022*
+
 `18.` [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 January 2022*
 
 `17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by [Andrew Reddikh](https://twitter.com/AndrewRedUK), *18 December 2021*
