@@ -36,10 +36,10 @@ The workshop overviews key architecture principles, design patterns, and technol
 
 ### Materials
 
-- [Register for Workshop - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=private)
+- [Workshop Event - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=private)
 - [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
-- [Google Meet Live Coding](https://meet.google.com/rbm-ddom-tbh) 
+- [Recording](https://www.youtube.com/watch?v=a7pvgt18VNI)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
@@ -239,7 +239,12 @@ message Person {
 
 **Advanced**
 
-- Types
+```proto
+// rule type name tag
+repeated uint64 vals = 1;
+```
+
+- Fields & Types
   - Message
   - Scalar
   - Enums
@@ -271,9 +276,21 @@ message HelloResponse {
 - Nested Types
 - Required, **Optional**
 - [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
+  - Don't change tags for existing fields
 - Maps, oneOf, allOf
 
-### Demo
+### [Demo](https://github.com/x-technology/mono-repo-nodejs-svc-sample/blob/main/docs/demo-protobuf/package.json#L5)
+
+```json
+// package.json
+"scripts": {
+  "1. download prices": "node index.js",
+  "2. generate protobuf runtime": "protoc --js_out=import_style=commonjs,binary:. prices.proto",
+  "3. run protobuf transformation": "node index.js",
+  "4. start grpc server": "node grpc-server.js",
+  "5. start grpc client": "node grpc-client.js"
+}
+```
 
 #### Demo 1 - Use protobuf to serialize and store JSON
 
@@ -281,6 +298,7 @@ message HelloResponse {
 
 ```bash
 protoc --js_out=import_style=commonjs,binary:. my.proto
+# es6 not supported yet
 ```
 
 - [`google-protobuf`](https://www.npmjs.com/package/google-protobuf) - protobuf runtime library
@@ -700,8 +718,6 @@ It's time to have some practice and evolve our services even more!
 Let's grab a task based on the things you'd like to do 👇
 
 - [Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
-
-We are going to join [a Google Meet call](https://meet.google.com/rbm-ddom-tbh) - feel free to ask us any questions or enjoy live coding!
 
 ## Summary
 
