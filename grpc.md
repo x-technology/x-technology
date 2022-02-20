@@ -497,9 +497,9 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 
 ### How to create new common lib
 
-`1.` For example, we want to create a new `logger` library.
-`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing `common/boilerplate`.
-`3.` Go to the folder in the terminal
+`1.` For example, we want to create a new `logger` library.  
+`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing `common/boilerplate`.  
+`3.` Go to the folder in the terminal  
 
 ```shell
 cd ./packages/common/logger
@@ -558,9 +558,9 @@ Yay! 🎉 It works!
 
 ### How to create new service
 
-`1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
-`2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
-`3.` Go to the folder in the terminal
+`1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.  
+`2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.  
+`3.` Go to the folder in the terminal  
 
 ```shell
 cd ./packages/services/grpc/crypto-compare-provider
@@ -572,13 +572,13 @@ cd ./packages/services/grpc/crypto-compare-provider
 yarn install
 ```
 
-`5.` Make sure to define appropriate name in the package.json file:
+`5.` Make sure to define appropriate name in the `package.json` file:
 
 ```json
 "name": "@grpc/crypto-compare-provider",
 ```
 
-Let's follow a rule - all grpc services have a prefix `@grpc/`.
+Let's follow a rule - all grpc services have a prefix `@grpc/`.  
 `6.` Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
 
 ```shell
@@ -635,11 +635,11 @@ Yay! 🎉 It works!
 We use [jest](https://jestjs.io/docs/getting-started) as a test framework and decided to write integration tests for our services.
 This is the best way to understand different situations, which could happen with services on the particular input/output.
 
-`1.` Let's begin from creating a test file `test/serviecs/index.spec.ts`
+`1.` Let's begin from creating a test file `test/services/index.spec.ts`
 
 ```shell
 mkdir -p test/services
-touch test/serviecs/index.spec.ts
+touch test/services/index.spec.ts
 ```
 
 `2.` First of all in the test we need to define a server, which is imported from `src` folder and start it in the section `beforeAll`
