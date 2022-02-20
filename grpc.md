@@ -105,6 +105,8 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What is GRPC?
 
+<a href="https://grpc.io/"><img src="https://github.com/grpc/grpc-community/blob/main/PanCakes/Pancakes_Bandana.png?raw=true" width="500px" alt="grpc logo aka pancakes"/></a>
+
 <details><summary>gRPC Remote Procedure Calls, of course!</summary>
 
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
@@ -118,11 +120,12 @@ Passionate software engineer with expertise in software development, microservic
 ![microservices graph](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/assets/graph.png)
 
 - March 2015 🗓
-- Google ➡️ Open Source 
+- Google ➡️ Open Source
+<!-- > Why? If noone knows about it, it slows you down! -->
 - Standardize Microservices Architecture, Framework & Infrastructure
-  - Stubby
-  - SPDY
-  - QUIC
+  - `SPDY (HTTP/2)`
+  - `QUIC (HTTP/3)`
+  - `Stubby`
 - [Motivation](https://grpc.io/blog/principles/), FAQ, Tutorials
 
 **RPC**
@@ -139,6 +142,13 @@ More steps involved in the process
 - remote server call
 - local server stub
 - unpacking or unmarshalling message parameters
+
+Questions
+- How does a client service calls a remote service?
+- How to expose a remote service?
+- How data is serialized for network?
+- How communication happens?
+- Authentication?
 
 **Client 😀 ⬅️ ➡️ 💻 Server Communication**
 
@@ -165,6 +175,9 @@ Or even more generic
 
 ![Architecture](https://grpc.io/img/landing-2.svg)
 
+- Service Definitions (Protocol)
+  - Strong Typed
+  - Protocol Buffers ⏭
 - Client & Server
   - Generated Code (Stubs)
   - [10+ Languages](https://grpc.io/docs/languages/)
@@ -172,8 +185,10 @@ Or even more generic
   - [Core version 1.43.0](https://github.com/grpc/grpc)
 - Communication
   - HTTP/2
+  - Serialization
   - Message Ordering
   - Streams
+- Authentication
 
 ```proto
 // http://protobuf-compiler.herokuapp.com/
@@ -202,9 +217,6 @@ message HelloResponse {
 
   - Sync/Async
   - Authentication
-- Protocol - Service Definitions
-  - Typed
-  - Protocol Buffers ⏭
 
 ![client server communication](https://raw.githubusercontent.com/x-technology/mono-repo-nodejs-svc-sample/main/docs/assets/client-server-grpc.png)
 
@@ -277,6 +289,7 @@ message HelloResponse {
 - Required, **Optional**
 - [No versioning](https://developers.google.com/protocol-buffers/docs/overview#updating)
   - Don't change tags for existing fields
+  - `package mypackage.v1`, `package mypackage.v2beta1`
 - Maps, oneOf, allOf
 
 ### [Demo](https://github.com/x-technology/mono-repo-nodejs-svc-sample/blob/main/docs/demo-protobuf/package.json#L5)
@@ -327,6 +340,8 @@ protoLoader.load(protoFileName, options).then(packageDefinition => {
 const packageDefinition = protoLoader.loadSync(protoFileName, options);
 const packageObject = grpcLibrary.loadPackageDefinition(packageDefinition);
 ```
+
+- `java` client
 
 ### Q&A
 
@@ -785,6 +800,8 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [A basic tutorial introduction to gRPC in Node](https://www.grpc.io/docs/languages/node/basics/)
 - [Choosing An API Technology: GRPC, REST, GraphQL - Jura Gorohovsky](https://speedscale.com/2021/07/20/choosing-an-api-technology-grpc-rest-graphql/)
 - [GraphQL, gRPC or REST? Resolving the API Developer's Dilemma - Rob Crowley](https://www.youtube.com/watch?v=l_P6m3JTyp0)
+- [The Story of Why We Migrate to gRPC and How We Go About It - Matthias Grüter, Spotify](https://www.youtube.com/watch?v=fMq3IpPE3TU)
+- [Introduction to gRPC: A general RPC framework that puts mobile and HTTP/2 first by Mete Atamel](https://www.youtube.com/watch?v=kUz2zjkKxFg)
 
 ### Technologies
 
