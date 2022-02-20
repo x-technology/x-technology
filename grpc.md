@@ -497,9 +497,11 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 
 ### How to create new common lib
 
+We use [hygen](https://www.hygen.io) for templating our new services and common libraries.
+
 `1.` For example, we want to create a new `logger` library.
-`2.` Create a folder under `./packages/common/` path. For simplicity, just copy an existing `common/boilerplate`.
-`3.` Go to the folder in the terminal
+`2.` In the root directory run command `yarn bootstrap:common` and follow starter.
+`3.` Go to the new folder in the terminal
 
 ```shell
 cd ./packages/common/logger
