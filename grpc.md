@@ -126,6 +126,7 @@ Passionate software engineer with expertise in software development, microservic
   - `SPDY (HTTP/2)`
   - `QUIC (HTTP/3)`
   - `Stubby`
+- Part of [Cloud Native Computing Foundation](https://www.cncf.io/projects/grpc/)
 - [Motivation](https://grpc.io/blog/principles/), FAQ, Tutorials
 
 **RPC**
@@ -183,11 +184,13 @@ Or even more generic
   - [10+ Languages](https://grpc.io/docs/languages/)
   - [Platforms & Environments](https://grpc.io/docs/platforms/) - Android, Web, Flutter
   - [Core version 1.43.0](https://github.com/grpc/grpc)
+  - Extension Points
 - Communication
   - HTTP/2
   - Serialization
   - Message Ordering
   - Streams
+  - Sync/Async
 - Authentication
 
 ```proto
@@ -214,9 +217,6 @@ message HelloResponse {
   string reply = 1;
 }
 ```
-
-  - Sync/Async
-  - Authentication
 
 ![client server communication](https://raw.githubusercontent.com/x-technology/mono-repo-nodejs-svc-sample/main/docs/assets/client-server-grpc.png)
 
@@ -499,7 +499,7 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 
 We use [hygen](https://www.hygen.io) for templating our new services and common libraries.
 
-`1.` For example, we want to create a new `logger` library.
+`1.` For example, we want to create a new `logger` library.  
 `2.` In the root directory run command `yarn bootstrap:common` and follow starter.  
 `3.` Go to the new folder in the terminal  
 
