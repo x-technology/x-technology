@@ -1,4 +1,10 @@
-![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)
+[![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
+
+<style type="text/css">
+  h1:first-child {
+    display: none;
+  }
+</style>
 
 ### Educational Programming DevOps and Data Science Open Source Project
 
@@ -75,6 +81,7 @@ We hope you like our content, and welcome any contribution!
 
 ### Subscribe and stay tuned
 
+- [Github](https://github.com/x-technology)
 - [Telegram](https://t.me/xtechn)
 - [Youtube](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ)
 - [Eventbrite](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
