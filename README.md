@@ -33,7 +33,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`15.` [Python LeetCode and Coffee ️ - XTechnology Saturday Morning Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
+`20.` [Python LeetCode and Coffee ️ - XTechnology Saturday Morning Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
 
 `19.` [Bringing New Talents to Girls Tech](https://www.youtube.com/watch?v=erzYHI4aNqc) by [Veronika Mutsei](https://www.linkedin.com/in/veronika-mutsei-78b46164/), *19 February 2022*
 
