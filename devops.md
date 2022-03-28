@@ -69,6 +69,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [Dockerfile](TODO)
   - [docker-compose](TODO)
 - [Infrastructure - Azure](TODO)
+  - [Introduction to Azure](TODO)
   - [Pulumi](TODO)
   - [Make Kubernetes Cluster](TODO)
   - [Azure Deploy](TODO)
@@ -361,6 +362,15 @@ message HelloResponse {
 - What are the advantages of Infrastructure as a Code?
 
 ## Infrastructure - Azure
+
+### Introduction to Azure
+
+  - Intro to CI/CD
+  - Into to Azure
+  - Azure DevOps
+  - Azure Pipelines
+  - Demo
+
 ### Pulumi
 ### Make Kubernetes Cluster
 ### Azure Deploy
