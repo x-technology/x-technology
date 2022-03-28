@@ -365,11 +365,11 @@ message HelloResponse {
 
 ### Introduction to Azure
 
-  - Intro to CI/CD
-  - Into to Azure
-  - Azure DevOps
-  - Azure Pipelines
-  - Demo
+- Intro to CI/CD
+- Into to Azure
+- Azure DevOps
+- Azure Pipelines
+- Demo
 
 ### Pulumi
 ### Make Kubernetes Cluster
