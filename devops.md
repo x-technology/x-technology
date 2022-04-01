@@ -418,20 +418,22 @@ docker run hello-world
 **Lifecycle**
 
 ```bash
-docker run hello-world
+docker build -t tmp-base1 . # build image from Dockerfile
+docker run hello-world # create a container from image
 # docker run = docker create + docker start
 # docker run -it tmp-base2:latest bash
-docker ps # --all
+docker ps # --all - list of running containers
 docker kill # also stop
 docker system prune
 docker logs
 # step into running container
 docker exec -it $DOCKER_CONTAINER_HASH /bin/sh
+# also ports, mount -v
 ```
 
 ### [docker-compose](https://github.com/docker/awesome-compose/tree/master/nginx-nodejs-redis)
 
-*To start all components at once*
+*To start all components at once in configured network*
 
 - `docker-compose` up
 
@@ -534,8 +536,8 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 ## Links
 
-- [Protocol Buffers - Developers Google](https://developers.google.com/protocol-buffers)
-- [gRPC](https://www.grpc.io/)
+- [Docker Docs](https://docs.docker.com/)
+- [Awesome Docker Compose](https://github.com/docker/awesome-compose)
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
 
