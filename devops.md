@@ -16,7 +16,7 @@
 
 # How to develop, build, and deploy Node.js microservices with Pulumi and Azure DevOps
 
-The workshop gives a practical perspective of key principles needed to develop, build, and maintain a set of microservices in the Node.js stack. It covers specifics of creating isolated `TypeScript` services using the monorepo approach with **lerna and yarn** workspaces. The workshop includes an overview and a live exercise to create cloud environment with **Pulumi** framework and **Azure** services. The sessions fits the best developers who want to learn and practice build and deploy techniques using Azure stack and Pulumi for Node.js.
+The workshop gives a practical perspective of key principles needed to develop, build, and maintain a set of microservices in the Node.js stack. It covers specifics of creating isolated `TypeScript` dockerized services using the monorepo approach with **lerna and yarn** workspaces. The workshop includes an overview and a live exercise to create cloud environment with **Pulumi** framework and **Azure** services. The sessions fits the best developers who want to learn and practice build and deploy techniques using Azure stack and Pulumi, Docker for Node.js.
 
 ## General
 
