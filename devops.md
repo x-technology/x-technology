@@ -525,8 +525,10 @@ Let's grab a task based on the things you'd like to do 👇
 
 ## Summary
 
+
 - Azure
 - Pulumi
+  - Compare to Terraform
 
 ## Feedback
 
