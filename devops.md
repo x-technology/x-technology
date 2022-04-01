@@ -193,7 +193,8 @@ The project shapes into the following structure:
 - `./proto` folder contains proto files, which describe protocol of input/output and communication between the services.
 - `./node_modules` - folder with dependencies, shared between all microservices.
 - `./lerna.json` - lerna's configuration file, defining how it should work with monorepo.
-- `./package.json` - description of our package, containing the important part:
+- `./package.json` - description of our package, containing the important part
+
 ```json
   "workspaces": [
     "packages/common/*",
@@ -226,39 +227,21 @@ yarn lerna run build --scope=@common/*
 
 > [gRPC](https://grpc.io/docs/what-is-grpc/faq/) is a *modern, open source* *remote procedure call (RPC)* framework that can run anywhere. It enables *client and server* applications to communicate transparently, and makes it easier to build connected systems
 
-**History**
-
 ![microservices graph](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/assets/graph.png)
 
 - March 2015 🗓
 - Google ➡️ Open Source
-<!-- > Why? If noone knows about it, it slows you down! -->
 - Standardize Microservices Architecture, Framework & Infrastructure
-  - `SPDY (HTTP/2)`
-  - `QUIC (HTTP/3)`
-  - `Stubby`
-- Part of [Cloud Native Computing Foundation](https://www.cncf.io/projects/grpc/)
-- [Motivation](https://grpc.io/blog/principles/), FAQ, Tutorials
-
-#### Features
 
 ![Architecture](https://grpc.io/img/landing-2.svg)
 
 - Service Definitions (Protocol)
-  - Strong Typed
   - Protocol Buffers ⏭
 - Client & Server
   - Generated Code (Stubs)
   - [10+ Languages](https://grpc.io/docs/languages/)
   - [Platforms & Environments](https://grpc.io/docs/platforms/) - Android, Web, Flutter
-  - [Core version 1.43.0](https://github.com/grpc/grpc)
-  - Extension Points
 - Communication
-  - HTTP/2
-  - Serialization
-  - Message Ordering
-  - Streams
-  - Sync/Async
 - Authentication
 
 ```proto
@@ -302,34 +285,15 @@ message Person {
 
 > Does anyone know what numbers on the right side mean?
 
-**History**
-
 - [Protocol Buffers - Google Developers](https://developers.google.com/protocol-buffers/)
 - [July 2008](https://github.com/protocolbuffers/protobuf/commit/40ee551715c3a784ea6132dbf604b0e665ca2def) 🗓
 - Google ➡️ Open Source
-
-**Features**
-
 - Typed `.proto` format
 - Code Generation
   - `protoc` - the protocol buffers compiler
   - [10+ Languages](https://github.com/protocolbuffers/protobuf#protobuf-runtime-installation)
   - [Third-Party Add-ons for Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/docs/third_party.md)
 - Services Description
-
-**Advanced**
-
-```proto
-// rule type name tag
-repeated uint64 vals = 1;
-```
-
-- Message
-  - Fields
-  - Repeated
-  - Scalar Types
-- Packages
-- Services - not used by `protobuf` directly
 
 ```proto
 syntax = "proto3";
