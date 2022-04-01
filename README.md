@@ -33,6 +33,10 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
+
+`21.` [Devops Code Hour - Pulumi, Azure, Docker  - XTechnology Saturday Morning Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
+
 `20.` [Python LeetCode and Coffee ️ - XTechnology Saturday Morning Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
 
 `19.` [Bringing New Talents to Girls Tech](https://www.youtube.com/watch?v=erzYHI4aNqc) by [Veronika Mutsei](https://www.linkedin.com/in/veronika-mutsei-78b46164/), *19 February 2022*

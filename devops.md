@@ -31,9 +31,11 @@ The workshop gives a practical perspective of key principles needed to develop, 
 - Good understanding of JavaScript or TypeScript
 - Experience with Node.js and writing Backend applications
 - [Preinstall Node.js, npm](https://nodejs.org/en/download/)
+- [Preinstall Docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/install/)
 - [Preinstall Protocol Buffer Compiler](https://grpc.io/docs/protoc-installation/)
 - We prefer to use VSCode for a better experience with JavaScript and TypeScript (other IDEs are also ok)
 - [Register in Microsoft](https://azure.microsoft.com/en-us/pricing/purchase-options/pay-as-you-go/) to repeat all the Azure steps
+- [Preinsall Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to manage Azure resources
 
 ### Instructors
 
@@ -41,10 +43,10 @@ The workshop gives a practical perspective of key principles needed to develop, 
 
 ### Materials
 
-- [Workshop Event - March 26, 2022 10:00 AM CET](TODO)
+- [Workshop Event - April 2, 2022 10:00 AM CET](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897)
 - [Repository](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
-- [Recording](TODO)
+- [Recording](https://www.youtube.com/watch?v=exuHhQiAqrs&t=3185s)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
@@ -54,7 +56,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 
 - [Introduction](#introduction)
   - [Who are we?](#who-are-we)
-  - [What are we going to do today?](#how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs)
+  - [What are we going to do today?](#how-to-develop-build-and-deploy-nodejs-microservices-with-pulumi-and-azure-devops)
   - [Which technologies are we going to use?](#technologies)
 - [Crypto 🦄 Currency Converter - Node.js](#crypto-currency-converter)
   - [What we're building](#what-were-building)
@@ -63,13 +65,11 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [Using Lerna](#using-lerna)
   - [What is GRPC?](#what-is-grpc)
   - [What are Protocol Buffers?](#what-are-protocol-buffers)
-- [Build Microservices - Docker](TODO)?
-  - [Docker](TODO)
-  - [Concepts](TODO)
-  - [Dockerfile](TODO)
-  - [docker-compose](TODO)
-- [Infrastructure - Azure](TODO)
-  - [Introduction to Azure](TODO)
+  - [Demo - Run Microservices Locally](#demo---run-microservices-locally)
+- [Build Microservices - Docker](#build-microservices---docker)
+  - [Docker](#docker) - [Dockerfile](#dockerfile), [docker-compose](#docker---compose)
+- [Infrastructure - Azure](#infrastructure---azure)
+  - [Introduction to Azure](#introduction-to-azure)
   - [Pulumi](TODO)
   - [Make Kubernetes Cluster](TODO)
   - [Azure Deploy](TODO)
@@ -107,7 +107,7 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What are we going to do today?
 
-[⬆️ About](TODO)
+[⬆️ About](#how-to-develop-build-and-deploy-nodejs-microservices-with-pulumi-and-azure-devops)
 
 ### Which technologies are we going to use?
 
@@ -138,7 +138,7 @@ Here is how it works:
 Let's get started from cloning demo monorepo
 
 ```shell
-git clone git@github.com:x-technology/mono-repo-nodejs-svc-sample.git
+git clone git@github.com:x-technology/micro-services-infrastructure-pulumi-azure-devops.git
 ```
 
 #### 2. Install protoc
@@ -171,6 +171,7 @@ Alternately, manually download and install protoc from [here](https://github.com
 Make sure we have Node.js v14+ installed. If not, [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) is a very good tool to install multiple node versions locally and easily switch between them.
 
 Then we need to install dependencies and bootstrap lerna within the monorepo.
+
 ```shell
 yarn install
 yarn lerna bootstrap
@@ -180,6 +181,7 @@ Yay! 🎉 Now we're ready to go with the project.
 
 
 ### Monorepo structure
+
 For better monorepo project management we used [Lerna](https://github.com/lerna/lerna) & [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
 
 The project shapes into the following structure:
@@ -211,9 +213,6 @@ Following command executed `build` command against all common packages filtered 
 ```shell
 yarn lerna run build --scope=@common/*
 ```
-
-
-
 
 ### What is GRPC?
 
@@ -350,26 +349,161 @@ message HelloResponse {
 }
 ```
 
+### Demo - [Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
+
+```bash
+npm start
+```
+
+```js
+const all = require('@common/go-grpc')
+const client = new all.ecbProvider.EcbProviderClient('0.0.0.0:50051', all.createInsecure());
+const response = await client.GetRates(new all.currencyProvider.GetRatesRequest())
+response.toObject()
+```
+
+```js
+// inside converter container
+const all = require('@common/go-grpc')
+const client = new all.currencyConverter.CurrencyConverterClient('0.0.0.0:50052', all.createInsecure());
+const response = await client.Convert(new all.currencyConverter.ConvertRequest({ sellAmount: 100, sellCurrency: 'USD', buyCurrency: 'GBP' }));
+response.toObject()
+```
+
 ## Build Microservices - Docker
 
+![Docker Logo](https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png)
+
 ### Docker
-### Concepts
-### Dockerfile
-### docker-compose
+
+*Toolset to develop, declare, deliver and run applications*
+
+```bash
+docker version
+docker run hello-world
+```
+
+- Image - a declared application and dependencies snapshot
+- Container - created from an image, runs the application
+
+![Linux Containers (LXC)](https://en.wikipedia.org/wiki/LXC#/media/File:Linux_Containers_logo.png)
+
+*Powered by [Linux Containers](https://en.wikipedia.org/wiki/LXC)* - virtualization method to run multiple isolated Linux systems (containers) on a control host
+
+- `cgroups` - limitation and prioritization of CPU, memory, block I/O, network resources
+- `namespace` - isolated process trees, networking, users and file systems
+
+**Features**
+
+![Docker Running Services Diagram](https://docs.docker.com/engine/images/architecture.svg)
+
+- Daemon - background service creating, running and destroying containers
+- Client - CLI program to request and command resources
+- Registry - database of published images
+- Desktop - UI resources dashboard
+- Kubernetes, `docker-compose`...
+
+**Dockerfile**
+
+*Instructions to declare an application*
+
+- Cache Layers
+- Build to Image
+
+- `FROM` base image
+- `RUN` install assets and dependencies
+- `CMD` to start
+- `COPY` to copy
+
+**Lifecycle**
+
+```bash
+docker run hello-world
+# docker run = docker create + docker start
+# docker run -it tmp-base2:latest bash
+docker ps # --all
+docker kill # also stop
+docker system prune
+docker logs
+# step into running container
+docker exec -it $DOCKER_CONTAINER_HASH /bin/sh
+```
+
+### [docker-compose](https://github.com/docker/awesome-compose/tree/master/nginx-nodejs-redis)
+
+*To start all components at once*
+
+- `docker-compose` up
+
+```yaml
+# docker-compose.yaml
+redis:
+  image: 'redislabs/redismod'
+  ports:
+    - '6379:6379'
+web1:
+  restart: on-failure
+  build: ./web
+  hostname: web1
+  ports:
+    - '81:5000'
+web2:
+  restart: on-failure
+  build: ./web
+  hostname: web2
+  ports:
+    - '82:5000'
+nginx:
+  build: ./nginx
+  ports:
+  - '80:80'
+  depends_on:
+  - web1
+  - web2
+```
 
 ### Q&A
 
+- What would happen when run `docker run ... echo hello` command?
+- What's wrong with my `Dockerfile`?
+
+```Dockerfile
+COPY package.json yarn.lock /usr/src/main
+
+# Install runtime dependencies
+RUN yarn install
+
+COPY . /usr/src/main
+```
+
+- Does anyone know why yarn is preinstalled in `node:lts-alpine`?
 - What are the advantages of Infrastructure as a Code?
 
 ## Infrastructure - Azure
 
 ### Introduction to Azure
 
-- Intro to CI/CD
-- Into to Azure
+*`Microsoft Azure` is a enourmous cloud ecosystem that enables to organize, develop, publish applications worldwide*
+
+- Organization Resources - Users, Tasks
+- CI/CD - Repositories, Pipelines, Artifacts
+- Integrations
+
+### Demo - [Migrate to Azure](https://dev.azure.com/xtechnology5/_git/XTechnology)
+
 - Azure DevOps
-- Azure Pipelines
-- Demo
+  - Repository
+- [Azure Container Registry](https://portal.azure.com/#@hellole.onmicrosoft.com/resource/subscriptions/8706d28d-203d-4127-ac6e-2ab12c9caf33/resourcegroups/xtechnology-microservices/providers/Microsoft.ContainerRegistry/registries/xtechnology/quickStart)
+
+```bash
+docker login xtechnology.azurecr.io
+docker image tag tmp-base2:latest xtechnology.azurecr.io/microservices-united:latest
+docker push xtechnology.azurecr.io/microservices-united:latest
+```
+
+- [Azure Pipelines](https://dev.azure.com/xtechnology5/XTechnology/_apps/hub/ms.vss-build-web.ci-designer-hub)
+  - [Service Connections](https://dev.azure.com/xtechnology5/XTechnology/_settings/adminservices)
+  - [Build and Push](https://dev.azure.com/xtechnology5/XTechnology/_build?definitionId=1&_a=summary)
 
 ### Pulumi
 ### Make Kubernetes Cluster
@@ -389,9 +523,12 @@ Let's grab a task based on the things you'd like to do 👇
 
 ## Summary
 
+- Azure
+- Pulumi
+
 ## Feedback
 
-Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our workshop. Thank you and have a great coding!
+Please [share your feedback](https://forms.gle/8UcN6H1VaWtekCaPA) on our workshop. Thank you and have a great coding!
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
