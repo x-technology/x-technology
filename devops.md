@@ -626,11 +626,17 @@ Once again `pulumi up` to see the changes applied.
 import * as apps from "./k8s/apps";
 
 export let currencyConverter = apps.currencyConverter.urn;
+export let appNamespace = apps.appNamespace.metadata.name;
 ```
 
 Get credentials for using `kubectl`
 ```shell
 az aks get-credentials --admin --name workshop-cluster1437dadd -g workshop-group5e64df12
+```
+
+Let's create a proxy forwarding to our service inside the kubernetes cluster
+```shell
+kubectl port-forward -n apps-q0fg8ahd svc/currency-converter-grpc 50051:50051
 ```
 
 ### Helm
