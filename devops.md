@@ -476,13 +476,13 @@ docker push xtechnology.azurecr.io/microservices-united:latest
 Pulumi - Developer-First Infrastructure as Code
 
 - Flexible and expressive
-Loops, conditionals, functions, classes, and more.
+> Loops, conditionals, functions, classes, and more.
 
 - Be productive
-Gets things done in seconds rather than hours.
+> Gets things done in seconds rather than hours.
 
 - Share and reuse
-Define and consume patterns and practices to reduce boilerplate.
+> Define and consume patterns and practices to reduce boilerplate.
 
 <img src="https://www.pulumi.com/images/home/typescript.svg" width="564px" alt=""/>
 - Language: Python, TypeScript, JavaScript, Go, C#, F#
