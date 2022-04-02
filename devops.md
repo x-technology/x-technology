@@ -472,11 +472,160 @@ docker push xtechnology.azurecr.io/microservices-united:latest
   - [Build and Push](https://dev.azure.com/xtechnology5/XTechnology/_build?definitionId=1&_a=summary)
 
 ### Pulumi
-### Make Kubernetes Cluster
-### Azure Deploy
+#### Intro 
+Pulumi - Developer-First Infrastructure as Code
+
+- Flexible and expressive
+Loops, conditionals, functions, classes, and more.
+
+- Be productive
+Gets things done in seconds rather than hours.
+
+- Share and reuse
+Define and consume patterns and practices to reduce boilerplate.
+
+<img src="https://www.pulumi.com/images/home/typescript.svg" width="564px" alt=""/>
+- Language: Python, TypeScript, JavaScript, Go, C#, F#
+- Infrastructure Reuse and Modularity: Flexible. Reuse functions, classes, packages, and Pulumi components.
+- Secrets are encrypted in transit and in the state file.
+
+
+#### Compared to Terraform?
+Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services.
+
+<img src="https://pbs.twimg.com/media/DgOw1mPWkAEChUn?format=png&name=medium" width="359px" alt="Terraform resources"/>
+- Language (HCL)
+- Infrastructure Reuse and Modularity: Constrained. Can only reuse Terraform modules.
+- Secrets are stored in a separate product (Vault). There is no way to encrypt them in the state file.
+
+#### Pulumi and Azure setup
+Let's get started from pulumi installation and initial infrastructure repo setup.
+
+1. Let's first install `azure-cli` with a command. If you're a MacOS user follow the [brew](https://brew.sh/) command.
+```shell
+brew install azure-cli
+```
+
+2. Next, we need to get `pulumi` cli installed.
+```shell
+brew install pulumi
+```
+
+3. Now it's time to create infrastructure project in `infra` folder with the following command.
+```shell
+pulumi new azure-typescript
+```
+
+4. Let's get authorized registered at Azure and Pulumi
+- https://portal.azure.com
+- https://app.pulumi.com
+
+5. Get authorized in cli commands:
+```shell
+az login
+pulumi login
+```
+
+6. Get dependencies installed in infrastructure folder
+```shell
+yarn install
+```
+
+7. Yay! Now we're ready to start coding our infrastructure straight away.
+
+#### Kubernetes Cluster
+Let's get started with Kubernetes Cluster in Azure, and for this purpose we're going to use Pulumi to start.
+
+We need to import a file, containing description of our cluster.
+```typescript
+import * as cluster from "./cluster";
+
+export let clusterName = cluster.k8sCluster.name;
+```
+
+Now, let's try to do a simple command to build our infrastructure in the cloud:
+```shell
+pulumi up
+```
+
+Let's check our cluster at the Azure website.
+Great! It's there, just in few lines of TypeScript code.
+
+#### Registry
+
+Now we're good to add docker registry, where we're going to put our application code as a Docker image.
+
+Let's add the following lines into our `index.ts`:
+```typescript
+import { registry } from "./registry";
+
+export let registryName = registry.loginServer;
+```
+
+Once again `pulumi up` to see it's deployed.
+
+Now we can see our new registry created and here is the name of the registry in the output of pulumi command.
+So, let's build our application code into a docker image and push it to newly created registry by the following commands:
+
+Replace `registry-name` with real registry name from pulumi output.
+
+```shell
+az acr login --name registry-name
+docker build -t registry-name.azurecr.io/grpc:latest .
+docker push registry-name.azurecr.io/grpc:latest 
+```
+
+Great the image is there in the cloud! It's ready to be installed from the cluster, or not yet?
+
+We need to give reading permissions to our cluster, so it's allowed to pull images from registry.
+
+```typescript
+import * as azure from "@pulumi/azure";
+
+const principalId = cluster.k8sCluster.identityProfile.apply(p => p!["kubeletidentity"].objectId!);
+const assignment = new azure.authorization.Assignment("workshop-assignment", {
+  principalId: principalId,
+  roleDefinitionName: "AcrPull",
+  scope: registry.id,
+  skipServicePrincipalAadCheck: true,
+});
+```
+
+#### Install ingress into kubernetes cluster
+**What is Ingress?**
+Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
+
+<img src="https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/raw/main/docs/assets/ingress-chart.png?raw=true" width="359px" alt="Ingress chart"/>
+
+Let's add it with the following code:
+```typescript
+import * as k8s_system from "./k8s/system";
+
+export let ingressServiceIP = k8s_system.ingressServiceIP;
+```
+
+Right after applying this code, we can see `ingressServiceIP` it's our public IP of the cluster.
+Now let's attach DNS to this IP.
+
+#### DNS
+We're going to use CloudFlare for DNS as it provides very rich api and also an extra features like Anti-Ddos and more.
+
+```typescript
+import * as dns from "./dns";
+
+export let dnsRecord = dns.mainRecord.hostname;
+```
+
+Once again `pulumi up` to see the changes applied.
 
 ## Deploy Microservices - Pulumi
-### Pulumi Docker Images
+
+```typescript
+import * as apps from "./k8s/apps";
+
+export let currencyConverter = apps.currencyConverter.urn;
+```
+
 ### Helm
 
 ## Practice
