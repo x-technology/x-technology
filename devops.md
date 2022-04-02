@@ -539,8 +539,10 @@ Let's get started with Kubernetes Cluster in Azure, and for this purpose we're g
 We need to import a file, containing description of our cluster.
 ```typescript
 import * as cluster from "./cluster";
+import * as resourceGroup from "./resourceGroup";
 
 export let clusterName = cluster.k8sCluster.name;
+export let resourceGroup = resourceGroup.resourceGroup.name;
 ```
 
 Now, let's try to do a simple command to build our infrastructure in the cloud:
