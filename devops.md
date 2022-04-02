@@ -626,6 +626,11 @@ import * as apps from "./k8s/apps";
 export let currencyConverter = apps.currencyConverter.urn;
 ```
 
+Get credentials for using `kubectl`
+```shell
+az aks get-credentials --admin --name workshop-cluster1437dadd -g workshop-group5e64df12
+```
+
 ### Helm
 
 ## Practice
