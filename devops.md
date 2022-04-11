@@ -70,12 +70,15 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [Docker](#docker) - [Dockerfile](#dockerfile), [docker-compose](#docker---compose)
 - [Infrastructure - Azure](#infrastructure---azure)
   - [Introduction to Azure](#introduction-to-azure)
-  - [Pulumi](TODO)
-  - [Make Kubernetes Cluster](TODO)
-  - [Azure Deploy](TODO)
-- [Deploy Microservices - Pulumi](TODO)
-  - [Pulumi Docker Images](TODO)
-  - [Helm](TODO)
+- [Pulumi](#pulumi)
+  - [Intro](#intro)
+  - [Compared to Terraform?](#compared-to-terraform)
+  - [Pulumi and Azure setup](#pulumi-and-azure-setup)
+  - [Kubernetes Cluster](#kubernetes-cluster)
+  - [Install ingress into kubernetes cluster](#install-ingress-into-kubernetes-cluster)
+  - [DNS](#dns)
+  - [Deploy Microservices](#deploy-microservices)
+  - [Helm](#helm)
 - [Practice](#practice)
 - [Summary](#summary)
 
@@ -542,7 +545,7 @@ import * as cluster from "./cluster";
 import * as resourceGroup from "./resourceGroup";
 
 export let clusterName = cluster.k8sCluster.name;
-export let resourceGroup = resourceGroup.resourceGroup.name;
+export let groupName = resourceGroup.resourceGroup.name;
 ```
 
 Now, let's try to do a simple command to build our infrastructure in the cloud:
