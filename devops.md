@@ -642,7 +642,32 @@ Let's create a proxy forwarding to our service inside the kubernetes cluster
 kubectl port-forward -n apps-q0fg8ahd svc/currency-converter-grpc 50051:50051
 ```
 
+Now it's the moment to call our currency-converter:
+```shell
+echo '{"sellCurrency": "GBP", "buyCurrency": "USD", "sellAmount": 150}' | grpcurl -plaintext -import-path ./proto -proto currency-converter.proto -d @ 127.0.0.1:50051 currencyConverter.CurrencyConverter.Convert
+```
+
+Great 🎉!
+
+We've just created the full infrastructure and deployed our microservices into the Kubernetes cluster using Helm charts and pulumi.
+
 ### Helm
+
+Helm is a package manager for Kubernetes. Helm is the K8s equivalent of yum or apt. Helm deploys charts, which you can think of as a packaged application.
+
+We store our helm charts inside the `./infrastructure/charts` folder. 
+
+By running a command we can create a new helm chart:
+```shell
+helm create grpc
+```
+
+Helm also provides an ability to easily template our package, so we can provide multiple values into the chart, when we deploy it.
+
+Following command will show us rendered a `yaml` definition of the helm chart
+```shell
+helm template grpc
+```
 
 ## Practice
 
