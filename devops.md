@@ -22,7 +22,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 
 - 3-4 hours
 - Advanced level
-- Technologies overview - Pulumi, Azure DevOps, Docker, Node.js, TypeScript, lerna & yarn workspaces
+- Technologies overview - Pulumi, Azure DevOps, Docker, Kubernetes, Node.js, TypeScript, lerna & yarn workspaces
 - Example structure - lerna configuration, common utilities, demo services
 - Practical exercise - create cloud environment and deploy microservices to cluster
 

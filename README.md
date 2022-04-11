@@ -33,9 +33,13 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
+`24.` [Deploy a full stack application to Azure using Bicep templates](https://www.eventbrite.co.uk/e/deploy-a-full-stack-application-to-azure-using-bicep-templates-tickets-319016485897?aff=github) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *16 April 2022*
 
-`21.` [Devops Code Hour - Pulumi, Azure, Docker  - XTechnology Saturday Morning Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
+`23.` [AI and Coffee - XTechnology Saturday Morning Code Hour](https://www.youtube.com/watch?v=hViPSVy_q1g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *9 April 2022*
+
+`22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
+
+`21.` [Devops Code Hour - Pulumi, Azure, Docker  - XTechnology Saturday Morning Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
 
 `20.` [Python LeetCode and Coffee ️ - XTechnology Saturday Morning Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
 
@@ -83,7 +87,7 @@ We hope you like our content, and welcome any contribution!
 
 ### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?
 
-### Or become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
+### Become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
 ### Subscribe and stay tuned
 
