@@ -53,7 +53,7 @@
 </style>
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
+  <a href="https://twitter.com/XTechnology5/status/1409618754288459779"><i></i>
   <span>Tweet about DevOps</span></a>
 </div>
 
