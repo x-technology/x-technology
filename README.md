@@ -27,6 +27,8 @@ We conduct workshops that are available for everyone live. We keep recordings an
 
 - [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md)
 
+- [Deploy Node.js microservices with Pulumi and Azure DevOps](./devops.md)
+
 ## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
 We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together. Sometimes we invite experts and guests to participate in the events or give a side talk. Check out our [youtube channel](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) for the full list.
