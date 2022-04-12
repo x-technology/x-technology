@@ -50,6 +50,6 @@
 </style>
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/intent/tweet?text=A%20down%20to%201k%20replacement%20of%20jQuery&amp;url=http%3A%2F%2Fpicoquery.com"><i></i>
-  <span>Tweet</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
+  <span>Tweet about DevOps</span></a>
 </div>
