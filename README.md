@@ -20,6 +20,7 @@ We experiment with projects to explore technologies.
 - [SailMapAI](https://github.com/x-technology/SailMapAI)
 - [GetConf](https://github.com/x-technology/getconf)
 - [TimeMate](https://github.com/x-technology/timemate)
+- [OhMyGRPC](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
 
 ## [Workshops](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
