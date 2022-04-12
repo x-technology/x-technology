@@ -14,7 +14,7 @@
   }
   /* twitter button */
   .twitter-btn {
-    width: 76px;
+    width: 200px;
     display: inline-block;
     overflow: hidden;
     text-align: left;
@@ -62,7 +62,7 @@
 
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about GRPC</span></a>
+  <span>Tweet</span></a>
 </div>
 
 # How to develop, build, and deploy Node.js microservices with Pulumi and Azure DevOps

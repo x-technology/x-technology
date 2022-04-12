@@ -6,7 +6,7 @@
   }
   /* twitter button */
   .twitter-btn {
-    width: 76px;
+    width: 200px;
     display: inline-block;
     overflow: hidden;
     text-align: left;
