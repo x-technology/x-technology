@@ -54,7 +54,7 @@
 
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1409618754288459779"><i></i>
-  <span>Tweet about DevOps</span></a>
+  <span>Tweet about us</span></a>
 </div>
 
 ### Educational Programming DevOps and Data Science Open Source Project

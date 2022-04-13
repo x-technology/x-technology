@@ -62,7 +62,7 @@
 
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet</span></a>
+  <span>Tweet about DevOps</span></a>
 </div>
 
 # How to develop, build, and deploy Node.js microservices with Pulumi and Azure DevOps
