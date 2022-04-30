@@ -87,7 +87,11 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
-`24.` [Deploy a full stack application to Azure using Bicep templates](https://www.eventbrite.co.uk/e/deploy-a-full-stack-application-to-azure-using-bicep-templates-tickets-319016485897?aff=github) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *16 April 2022*
+`26.` [Deploy a full stack application to Azure using Bicep templates - Part II - Real Use Case](https://www.youtube.com/watch?v=uOLm15RP5P8) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *30 April 2022*
+
+`25.` [ML System Design Interview (churning model for Tinder) - XTechnology Saturday Morning Code Hour](https://www.youtube.com/watch?v=kOgPc_eDyEM) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) and [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *23 April 2022*
+
+`24.` [Deploy a full stack application to Azure using Bicep templates](https://www.youtube.com/watch?v=KgUT1LoFZfk) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *16 April 2022*
 
 `23.` [AI and Coffee - XTechnology Saturday Morning Code Hour](https://www.youtube.com/watch?v=hViPSVy_q1g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *9 April 2022*
 
