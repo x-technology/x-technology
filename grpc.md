@@ -94,7 +94,6 @@ The workshop overviews key architecture principles, design patterns, and technol
 - [Workshop Event - January 29, 2022 10:00 AM CET](https://www.eventbrite.co.uk/e/how-to-convert-crypto-currencies-with-grpc-microservices-in-nodejs-tickets-254034322497?aff=private)
 - [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
-- [Recording](https://www.youtube.com/watch?v=a7pvgt18VNI)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 

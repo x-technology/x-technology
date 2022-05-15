@@ -97,7 +97,6 @@ The workshop gives a practical perspective of key principles needed to develop, 
 - [Workshop Event - April 2, 2022 10:00 AM CET](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897)
 - [Repository](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
-- [Recording](https://www.youtube.com/watch?v=exuHhQiAqrs&t=3185s)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
