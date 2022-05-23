@@ -77,9 +77,11 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
-- [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md)
+- [How to Decompose Monolith API into GRPC Microservices](./decompose.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-- [Deploy Node.js microservices with Pulumi and Azure DevOps](./devops.md)
+- [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+
+- [Deploy Node.js microservices with Pulumi and Azure DevOps](./devops.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
 ## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
@@ -87,15 +89,25 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`27.` [Banking Monolith and NestJS - First MicroService, Part III - XT Code Hour](https://www.youtube.com/watch?v=350Hd4WqGm4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *21 May 2022*
+
+`27.` [Banking Monolith and NestJS - Start Application, Part II - XT Code Hour](https://www.youtube.com/watch?v=HMjnJJZuuLM) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *14 May 2022*
+
+`27.` [Banking Monolith and NestJS - Introduction, Part I - XT Code Hour](https://www.youtube.com/watch?v=yY9sLpwFKxM) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *7 May 2022*
+
+`26.` [Deploy a full stack application to Azure using Bicep templates - Part II - Real Use Case](https://www.youtube.com/watch?v=uOLm15RP5P8) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *30 April 2022*
+
+`25.` [ML System Design Interview (churning model for Tinder) - XT Code Hour](https://www.youtube.com/watch?v=kOgPc_eDyEM) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *23 April 2022*
+
 `24.` [Deploy a full stack application to Azure using Bicep templates](https://www.eventbrite.co.uk/e/deploy-a-full-stack-application-to-azure-using-bicep-templates-tickets-319016485897?aff=github) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *16 April 2022*
 
-`23.` [AI and Coffee - XTechnology Saturday Morning Code Hour](https://www.youtube.com/watch?v=hViPSVy_q1g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *9 April 2022*
+`23.` [AI and Coffee - XT Code Hour](https://www.youtube.com/watch?v=hViPSVy_q1g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *9 April 2022*
 
 `22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
 
-`21.` [Devops Code Hour - Pulumi, Azure, Docker  - XTechnology Saturday Morning Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
+`21.` [Devops Code Hour - Pulumi, Azure, Docker - XT Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
 
-`20.` [Python LeetCode and Coffee ️ - XTechnology Saturday Morning Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
+`20.` [Python LeetCode and Coffee ️ - XT Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
 
 `19.` [Bringing New Talents to Girls Tech](https://www.youtube.com/watch?v=erzYHI4aNqc) by [Veronika Mutsei](https://www.linkedin.com/in/veronika-mutsei-78b46164/), *19 February 2022*
 
