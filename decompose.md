@@ -110,7 +110,7 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 - [A way to decompose](#TODO)
   - Monolith
   - Microservice
-  - Prereqiuisites and Principles
+  - Principles
   - Architecture Patterns
     - Strangler Application
     - DDD
@@ -294,15 +294,21 @@ message HelloResponse {
 
 ## A way to decompose
 
-### Monolith
+[Melvin E. Conway's law, 1967](https://en.wikipedia.org/wiki/Conway%27s_law)
 
-Application as a single unit, which
+> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
+
+Application
   - handles HTTP requests,
   - executes business logic,
   - retrieves and updates database,
   - returns a JSON response
 
-> Easy to test, deploy, and scale linearly all together!
+### Monolith
+
+Application developed and deployed as a single unit which can sustain consistent state
+
+> Simple to develop, test, deploy, and scale linearly all together!
 
 Slow & difficult to
   - introduce changes, 
@@ -311,7 +317,59 @@ Slow & difficult to
   - maintain *Long Term Support* for technology stack
 
 ### Microservice
-### Prereqiuisites and Principles
+
+> An architectural pattern, affects an organization, process, and result!
+
+![Microservice org benefits](https://microservices.io/i/successtriangle.png)
+
+Application as a set of services that are
+  - deliver business feature,
+  - independently deployable,
+  - owned by a small team,
+  - follow single responsibility principle & granularity,
+  - loosely coupled,
+  - maintainable and testable,
+  - exposes an API,
+  - even used on FrontEnd!
+
+Fast & easy to
+  - deploy,
+  - iterate & evolve,
+  - onboard developers,
+  - choose technology,
+  - scale
+
+### Requirements, Principles, Prerequisites
+
+- Grow number of teams
+- Deliver value in parallel and independently
+- Experiment with business capabilities
+
+<div style="display: none">
+- Single Responsibility Principle from object-oriented design (OOD) perspective
+> That is because changes that affect multiple services requires coordination across multiple teams, which slows down development
+- Common Closure Principle (CCP)
+> states that classes that change for the same reason should be in the same package
+> The goal is that when that business rule changes developers, only need to change code in a small number - ideally only one - of packages
+- Rapid provisioning
+- Basic Monitoring
+- Rapid application deployment
+- Microservices should not have dependencies on monolith (cost of change and delivery)
+- self contained services (no need for other calls)
+https://microservices.io/patterns/decomposition/self-contained-service.html
+-> CQRS pattern
+> This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem
+> The architecture must be stable
+> Services must be cohesive. A service should implement a small set of strongly related functions.
+> Services must conform to the Common Closure Principle - things that change together should be packaged > together - to ensure that each change affect only one service
+> Services must be loosely coupled - each service as an API that encapsulates its implementation. The > implementation can be changed without affecting clients
+> A service should be testable
+> Each service be small enough to be developed by a “two pizza” team, i.e. a team of 6-10 people
+> Each team that owns one or more services must be autonomous. A team must be able to develop and deploy their services with minimal collaboration with other teams.
+https://microservices.io/patterns/decomposition/decompose-by-subdomain.html
+- Service per team
+</div>
+
 ### Architecture Patterns
 #### Strangler Application
 #### DDD
@@ -330,6 +388,11 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 ## Links
 
 - [Bank Application](https://github.com/pietrzakadrian/bank-server) by [Adrian Pietrzak](https://twitter.com/PietrzakAdrian)
+- [Melvin E. Conway's law, 1967](https://en.wikipedia.org/wiki/Conway%27s_law)
+- [Monolith](https://microservices.io/patterns/monolithic.html)
+- [Prereqiuisites and principles](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+- [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
+
 
 ### Technologies
 
