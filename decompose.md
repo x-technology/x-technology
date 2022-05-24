@@ -9,9 +9,10 @@
     filter: grayscale(100%);
   }
 
-  img[alt="microservices graph"] {
+  img[alt="microservices graph"], img[alt="Nest Icon"] {
     width: 500px;
   }
+
   /* twitter button */
   .twitter-btn {
     width: 200px;
@@ -62,7 +63,7 @@
 
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about DevOps</span></a>
+  <span>Tweet about Decompose</span></a>
 </div>
 
 # How to Decompose Monolith API into GRPC Microservices
