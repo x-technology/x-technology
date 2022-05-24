@@ -77,7 +77,7 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
-- [How to Decompose Monolith API into GRPC Microservices](./decompose.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+- [How to Decompose Monolith API into GRPC Microservices](./monolith-to-microservices.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
 - [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
