@@ -75,7 +75,7 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 - 3-4 hours
 - Advanced level
 - Patterns - DDD, Microservices
-- Technologies - GRPC, protocol buffers, Node.js, TypeScript, Express.js, MongoDB, NestJS
+- Technologies - GRPC, protocol buffers, Node.js, TypeScript, MongoDB, NestJS, Express.js
 - Example structure - lerna configuration, packages configuration, common utilities, demo service
 - Practical exercise - build a currency converter service
 
@@ -340,23 +340,25 @@ Fast & easy to
   - choose technology,
   - scale
 
-### Requirements, Principles, Prerequisites
+### Goals, Principles, Requirements
 
-- Grow number of teams
 - Deliver value in parallel and independently
 - Experiment with business capabilities
+- Grow number of teams
+
+- Common Closure Principle
+  - Self contained services
+- Rapid provisioning
+- Basic monitoring
+- Rapid application deployment
+- Testable
+- Granular
+
+- Should not have dependencies on monolith
 
 <div style="display: none">
-- Single Responsibility Principle from object-oriented design (OOD) perspective
-> That is because changes that affect multiple services requires coordination across multiple teams, which slows down development
-- Common Closure Principle (CCP)
 > states that classes that change for the same reason should be in the same package
 > The goal is that when that business rule changes developers, only need to change code in a small number - ideally only one - of packages
-- Rapid provisioning
-- Basic Monitoring
-- Rapid application deployment
-- Microservices should not have dependencies on monolith (cost of change and delivery)
-- self contained services (no need for other calls)
 https://microservices.io/patterns/decomposition/self-contained-service.html
 -> CQRS pattern
 > This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem
@@ -372,10 +374,16 @@ https://microservices.io/patterns/decomposition/decompose-by-subdomain.html
 </div>
 
 ### Architecture Patterns
+#### Overview
+
+- Single Responsibility Principle
+- 
+
 #### Strangler Application
 #### DDD
 #### Clean Architecture
 #### Other
+
 ### Algorithms
 
 ## Summary
