@@ -9,8 +9,8 @@
     filter: grayscale(100%);
   }
 
-  img[alt="microservices graph"], img[alt="Nest Icon"] {
-    width: 500px;
+  img {
+    max-width: 500px;
   }
 
   /* twitter button */
