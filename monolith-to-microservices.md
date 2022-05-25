@@ -348,43 +348,86 @@ Fast & easy to
 
 - Common Closure Principle
   - Self contained services
-- Rapid provisioning
-- Basic monitoring
-- Rapid application deployment
+- Monitoring & Debugging
+- Fast deployment
 - Testable
 - Granular
 
-- Should not have dependencies on monolith
-
-<div style="display: none">
-> states that classes that change for the same reason should be in the same package
-> The goal is that when that business rule changes developers, only need to change code in a small number - ideally only one - of packages
-https://microservices.io/patterns/decomposition/self-contained-service.html
--> CQRS pattern
-> This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem
-> The architecture must be stable
-> Services must be cohesive. A service should implement a small set of strongly related functions.
-> Services must conform to the Common Closure Principle - things that change together should be packaged > together - to ensure that each change affect only one service
-> Services must be loosely coupled - each service as an API that encapsulates its implementation. The > implementation can be changed without affecting clients
-> A service should be testable
-> Each service be small enough to be developed by a “two pizza” team, i.e. a team of 6-10 people
-> Each team that owns one or more services must be autonomous. A team must be able to develop and deploy their services with minimal collaboration with other teams.
-https://microservices.io/patterns/decomposition/decompose-by-subdomain.html
-- Service per team
-</div>
+- No dependencies on monolith
+- Cohesive and loosely coupled
 
 ### Architecture Patterns
-#### Overview
 
-- Single Responsibility Principle
-- 
+- Solid Principles
+  - Single Responsibility Principle
+- Clean Architecture
+- Command Query Responsibility Segregation
+  - Event Sourcing
 
 #### Strangler Application
-#### DDD
-#### Clean Architecture
-#### Other
 
-### Algorithms
+![fig strangler concept](https://martinfowler.com/bliki/images/stranglerApplication/11090068.jpg)
+
+![how microservices ecosystem growths with strangler application](https://microservices.io/i/decompose-your-monolith-devnexus-feb-2020.001.jpeg)
+
+> Thanks to **[Chris Richardson](https://microservices.io/)** and **[Martin Fowler](https://martinfowler.com/)** again!
+
+#### DDD
+
+> A domain-way application's decomposition by clean architecture
+
+![clean architecture](https://cdn-media-1.freecodecamp.org/images/1*nEATDe5dRLIWN3MSxSjG0A.png)
+
+- Domain is a core!
+- Ubiquitos Language
+  - Terms
+  - Places
+    - User Stories
+    - Code
+- Sub-Domains & Bounded Context
+- Value Objects
+  - Immutable
+  - Scalar & Lightweight
+- Entity
+  - Identity
+  - Rich Domain Models
+- Aggregate
+  - Transactions
+- Repositories
+  - One Per Aggregate
+  - DB, ORM
+- Domain Events
+  - Or not? Maybe GRPC
+
+#### Anti Patterns
+
+- Anemic Domain Models
+  - Domain objects without behavior
+
+- Fat Entities
+
+- ~~Measure number of services~~
+
+### Algorithm
+
+> Make the most of the monolith
+
+> Mind new features as separate services
+
+> Success is improved velocity and reliability
+
+> Begin with the end in mind
+
+- Understand Domain
+  - Technical Application Overview
+  - Model & Draw
+- DevOps
+  - Tests
+- Choose a Service to Refactor
+  - Edge case to proof CI/CD
+  - High value services
+- Refactor
+  - Split code & database
 
 ## Summary
 
@@ -401,7 +444,6 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [Monolith](https://microservices.io/patterns/monolithic.html)
 - [Prereqiuisites and principles](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
 - [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
-
 
 ### Technologies
 
