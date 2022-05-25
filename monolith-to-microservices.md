@@ -72,11 +72,11 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 
 ## General
 
-- 3-4 hours
+- 2 hours
 - Advanced level
 - Patterns - DDD, Microservices
-- Technologies - GRPC, protocol buffers, Node.js, TypeScript, MongoDB, NestJS, Express.js
-- Example structure - lerna configuration, packages configuration, common utilities, demo service
+- Technologies - GRPC, Protocol Buffers, Node.js, TypeScript, NestJS, Express.js, PostgreSQL
+- Example structure - monorepo configuration, packages configuration, common utilities, demo service
 - Practical exercise - build a currency converter service
 
 ### Prerequisites
