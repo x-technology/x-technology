@@ -89,6 +89,8 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`29.` [How to Decompose Monolith API into GRPC Microservices](https://www.eventbrite.co.uk/e/breaking-a-monolith-api-into-grpc-microservices-tickets-347221427637?aff=github) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *28 May 2022*
+
 `28.` [Banking Monolith and NestJS - First MicroService, Part III - XT Code Hour](https://www.youtube.com/watch?v=350Hd4WqGm4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *21 May 2022*
 
 `27.` [Banking Monolith and NestJS - Start Application, Part II - XT Code Hour](https://www.youtube.com/watch?v=HMjnJJZuuLM) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *14 May 2022*
@@ -123,7 +125,7 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `13.` [Introducing the most insightful way of knowledge representation](https://www.youtube.com/watch?v=jk2HOHwZBVc) by [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *4 September 2021*
 
-`12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk) by XTechnology, *31 Jul 2021*
+`12.` [XTechnology Personal Growth Framework - How It Works](https://www.youtube.com/watch?v=DQDZL8uVJuk) by XTechnology, *31 July 2021*
 
 `11.` [JSCodeShift to keep your source evergreen with Web Components](https://www.youtube.com/watch?v=UF4LFNN2Ut4) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *3 July 2021*
 
@@ -135,17 +137,17 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.youtube.com/watch?v=6iJ8MMDNQ9c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
-`6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk) 
+`6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk)
 
-`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *27 Mar 2021*
+`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *27 March 2021*
 
 `4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
 `3.` [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls) by [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *13 Feb 2021*
+`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *13 February 2021*
 
-`1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
+`1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 January 2021*
 
 ## Contributing
 
