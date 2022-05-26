@@ -363,6 +363,9 @@ Fast & easy to
 - Clean Architecture
 - Command Query Responsibility Segregation
   - Event Sourcing
+  - Sagas 😇
+
+![event sourcing](https://codeopinion.com/wp-content/uploads/2021/12/1-3-2048x642.png)
 
 #### Strangler Application
 
@@ -378,7 +381,10 @@ Fast & easy to
 
 ![clean architecture](https://cdn-media-1.freecodecamp.org/images/1*nEATDe5dRLIWN3MSxSjG0A.png)
 
-- Domain is a core!
+> Domain is a core!
+
+> Good for mid-size or big systems with complex business logic
+
 - Ubiquitos Language
   - Terms
   - Places
@@ -388,9 +394,11 @@ Fast & easy to
 - Value Objects
   - Immutable
   - Scalar & Lightweight
+  - Reference or Structural Equality
 - Entity
   - Identity
   - Rich Domain Models
+  - Reference or Identity Equality
 - Aggregate
   - Transactions
 - Repositories
@@ -415,6 +423,8 @@ Fast & easy to
 > Mind new features as separate services
 
 > Success is improved velocity and reliability
+
+> Return on Investment (ROI)
 
 > Begin with the end in mind
 
