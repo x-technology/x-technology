@@ -283,10 +283,12 @@ message Person {
   string name = 1;
   int32 id = 2;
   bool has_ponycopter = 3;
+  // rule type name tag
+  repeated uint64 vals = 4;
 }
 ```
 
-> Does anyone know what numbers on the right side mean?
+> Do you know what numbers on the right side mean?
 
 **History**
 
