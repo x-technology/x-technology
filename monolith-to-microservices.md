@@ -10,7 +10,7 @@
   }
 
   img {
-    max-width: 500px;
+    max-width: 400px;
   }
 
   /* twitter button */
@@ -94,7 +94,7 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 
 ### Materials
 
-- [Workshop Event - May 28, 2022 10:00 AM CET](#TODO)
+- [Workshop - TechLead Conf 2022 - June 13, 2022](https://devopsconf.io/moscow/2022/abstracts/8930)
 - [Repository](https://github.com/x-technology/monolith-banking-app-splitting-to-micro-services)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
 
@@ -106,18 +106,16 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 
 - [Introduction](#introduction)
   - [Who are we?](#who-are-we)
-  - [What are we going to do today?](#TODO)
+  - [What are we going to do today?](#)
   - [Project Ecosystem](#project-ecosystem)
-- [A way to decompose](#TODO)
-  - Monolith
-  - Microservice
-  - Principles
-  - Architecture Patterns
-    - Strangler Application
-    - DDD
-    - Clean Architecture
-  - Algorithm
-- [Practice](#TODO)
+- [A way to decompose](#a-way-to-decompose)
+  - [Monolith](#monolith)
+  - [Microservice](#microservice)
+  - [Principles](#goals-principles-requirements)
+  - [Architecture Patterns](#architecture-patterns)
+    - [Strangler Application](#strangler-application)
+    - [DDD](#ddd)
+  - [Algorithm](#algorithm)
 - [Summary](#summary)
 
 ## Introduction
@@ -148,7 +146,7 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What are we going to do today?
 
-[⬆️ About](#TODO)
+[⬆️ About](#)
 
 ### Project Ecosystem
 
@@ -194,7 +192,7 @@ export class CatsController {
 
 #### [GRPC](./grpc.md)
 
-<a href="https://grpc.io/"><img src="https://github.com/grpc/grpc-community/blob/main/PanCakes/Pancakes_Bandana.png?raw=true" width="500px" alt="grpc logo aka pancakes"/></a>
+<a href="https://grpc.io/"><img src="https://github.com/grpc/grpc-community/blob/main/PanCakes/Pancakes_Bandana.png?raw=true" width="400px" alt="grpc logo aka pancakes"/></a>
 
 > gRPC Remote Procedure Calls, of course!
 
@@ -443,7 +441,9 @@ Fast & easy to
 
 ## Feedback
 
-Please [share your feedback](https://forms.gle/8UcN6H1VaWtekCaPA) on our workshop. Thank you and have a great coding!
+Please share your feedback on our workshop. Thank you and have a great coding!
+
+![share feedback](./assets/msg-1742589788-70.jpg)
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
