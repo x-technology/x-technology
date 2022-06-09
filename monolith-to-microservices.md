@@ -96,7 +96,7 @@ The workshop focuses on concepts, algorithms, and practices to decompose a monol
 
 - [Workshop - TechLead Conf 2022 - June 13, 2022](https://devopsconf.io/moscow/2022/abstracts/8930)
 - [Repository](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
-- [Practical Exercises as Github Issues](https://github.com/x-technology/mono-repo-nodejs-svc-sample/issues)
+- [Practical Exercises as Github Issues](https://github.com/x-technology/monolith-banking-app-splitting-to-micro-services/issues)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
