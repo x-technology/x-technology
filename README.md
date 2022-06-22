@@ -89,6 +89,12 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`33.` [Node.js Debugging Tools - XT Code Hour](https://www.youtube.com/watch?v=5yB3X-v2V5A) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Andrew Balakirev](https://www.linkedin.com/in/jifeon/), *19 Jun 2022*
+
+`32.` [Statistics in Data Science Interviews - XT Code Hour](https://www.youtube.com/watch?v=jt93wcUATDc) by [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/) & [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *11 Jun 2022*
+
+`31.` [Develop, build, and deploy Node.js monorepo application into k8s cluster - XT Code Hour](https://www.youtube.com/watch?v=AH430i-ybc4) by [Andrew Balakirev](https://www.linkedin.com/in/jifeon/), *5 Jun 2022*
+
 `30.` [How to Decompose Monolith API into GRPC Microservices](https://www.eventbrite.co.uk/e/breaking-a-monolith-api-into-grpc-microservices-tickets-347221427637?aff=github) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *28 May 2022*
 
 `29.` [Banking Monolith and NestJS - First MicroService, Part III - XT Code Hour](https://www.youtube.com/watch?v=350Hd4WqGm4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *21 May 2022*
