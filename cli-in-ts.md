@@ -31,7 +31,7 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 - You’ll need to have a laptop with you. Windows, Linux or Mac doesn’t matter. Ideally, you should feel comfortable using this computer for daily tasks. Don't forget to take a charger.
 - [Preinstall Node.js, npm](https://nodejs.org/en/download/)
-- Git, account on [Github](https://github.com/
+- Git, account on [Github](https://github.com/)
 - [Preinstall Protocol Buffer Compiler](https://grpc.io/docs/protoc-installation/)
 - We prefer to use VSCode for a better experience with JavaScript and TypeScript (other IDEs are also ok)
 
