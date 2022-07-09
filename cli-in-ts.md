@@ -46,13 +46,12 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
-# Workshop Begins!
 
 # Mastering CLI with TypeScript
 
-# Introduction
+## Workshop Begins!
 
----
+# Introduction
 
 ## Agenda
 
@@ -84,8 +83,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 - Final
 
----
-
 ## Goals
 
 ![Node](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/node.png?raw=true)
@@ -100,8 +97,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 ![github](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/github.png?raw=true)
 
----
-
 ## Who are we?
 
 ![Alex](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/alex.jpg?raw=true)
@@ -114,8 +109,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 - Medium: **[korzio](https://medium.com/@korzio)**  
 - Github: **[korzio](https://github.com/korzio)**  
 
----
-
 ## Who are we?
 
 ![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
@@ -127,8 +120,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 - **[LinkedIn](
 https://www.linkedin.com/in/pavlik-kiselev-06993347/)**  
 - Github: **[paulcodiny](https://github.com/paulcodiny)**  
-
----
 
 # CLI in Node.js
 
@@ -145,8 +136,6 @@ cat /etc/passwd   # Default shell
 
 © Wiki
 
----
-
 ## ¿Por qué?
 
 ### Which CLI program
@@ -160,8 +149,6 @@ cat /etc/passwd   # Default shell
 - Why `Node`?
 - Why `TypeScript`?
 
----
-
 ## Why CLI?
 
 - **Tools** for
@@ -170,8 +157,6 @@ cat /etc/passwd   # Default shell
   - task automation
 - *which allow to gain even more by combining them!*
 - *It's fun!*
-
----
 
 ## Why Node?
 
@@ -188,8 +173,6 @@ cat /etc/passwd   # Default shell
 ### ➖?
 - `Node` need to be installed?!
 
----
-
 ## [Why TypeScript?](https://itnext.io/why-use-typescript-good-and-bad-reasons-ccd807b292fb)
 
 ### ➕
@@ -205,8 +188,6 @@ cat /etc/passwd   # Default shell
 ### ➖
 
 - Takes more time to develop and maintain projects
-
----
 
 ## Principles Question
 
@@ -225,8 +206,6 @@ npx cowsay hello cow
                 ||----w |
                 ||     ||
 ```
-
----
 
 ## Examples
 
@@ -256,8 +235,6 @@ npx cowsay hello cow
 - create-react-app
 - angular-cli
 
----
-
 ## Workshop CLI
 
 ![workshop cli](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/cli-in-ts-10-14.gif?raw=true)
@@ -271,11 +248,7 @@ workshop hello
 workshop go
 ```
 
----
-
 # Hello World CLI in Node
-
----
 
 ## package.json
 
@@ -323,8 +296,6 @@ console.log(process.argv)
 node server.js hello world
 ```
 
----
-
 ## Windows Specifics
 
 - `Windows Console` - a program to run applications with text-based interface
@@ -371,8 +342,6 @@ node "%~dp0\run" %*
 - [Batch files - Command line parameters](https://www.robvanderwoude.com/parameters.php)
 - [Spawning .bat and .cmd files on Windows - Official Node Documentation on Child Processes](https://nodejs.org/api/child_process.html#child_process_spawning_bat_and_cmd_files_on_windows)
 
----
-
 ## Practice - Hello World
 
 ### Make the Hello World CLI in Node
@@ -396,8 +365,6 @@ my-hello-world-cli
 # the result should be in the console
 # Hello CLI
 ```
-
----
 
 ## Practice - Parse arguments
 
@@ -434,8 +401,6 @@ my-hello-world-cli 1.0.0
 
 ### [Hello World CLI in Node](https://github.com/korzio/note/blob/master/experiments/my-cli/index.js)
 
----
-
 ## TypeScript
 
 *JavaScript that scales.  
@@ -451,8 +416,6 @@ Anders Hejlsberg, 2012 @ Microsoft
 - `typescript, tsc` - compile to `JavaScript`
 - `@types` - types definitions, [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node)
 - `ts-node` - *on-the-fly* `TypeScript` execution for `Node`
-
----
 
 ## Practice - Hello World with TypeScript
 
@@ -506,11 +469,7 @@ To import from `json` module add the `resolveJsonModule` *TypeScript* compiler o
 
 ### [Hello World CLI in TypeScript](https://github.com/korzio/note/blob/master/experiments/my-cli/server.ts)
 
----
-
 # Make it Work with oclif
-
----
 
 ## [oclif](https://oclif.io/)
 
@@ -580,8 +539,6 @@ export default class MyCommand extends Command {
 }
 ```
 
----
-
 ## Practice - Configure oclif project
 
 Create a new CLI project with `oclif` generator
@@ -596,8 +553,6 @@ my-oclif-cli hello
 [Note - Project Management as CLI](https://github.com/korzio/note)
 
 > Educational Open Source Project to practice with JavaScript, TypeScript, Node, oclif, Git, Web Components, and Project Management
-
----
 
 ## Practice - Make it Work
 
@@ -711,11 +666,7 @@ await webhook.send({ text: args.text })
 my-oclif-cli slack "Hello World!"
 ```
 
----
-
 # Make it Shine
-
----
 
 ## Effects
 
@@ -751,8 +702,6 @@ cli.prompt('What is your password?', {type: 'mask'})
 - `url(), open()` for urls
 - `action()` immersive logs
 - `table(), tree()` to print lists and structures
-
----
 
 ## Practice - List Github Issues
 
@@ -919,9 +868,7 @@ cli.table(issues, {
 
 ### [Get a list of issues code](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/src/commands/gh/issues.ts)
    
----
-
-## Practice - Assign Yourself on an Issue
+   ## Practice - Assign Yourself on an Issue
 
 #### Develop a command [to change an assignee](https://octokit.github.io/rest.js/#octokit-routes-issues-update)
 
@@ -975,11 +922,7 @@ this.log(`Assignee of the issue #${issueNumber} has been successfully changed to
 
 ### [Change an assignee code](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/src/commands/gh/assignee.ts)
    
----
-
-# `oclif` in Depth
-
----
+   # `oclif` in Depth
 
 ## `oclif` Abstractions
 
@@ -1018,8 +961,6 @@ this.log(`Assignee of the issue #${issueNumber} has been successfully changed to
 ```ts
 await this.config.runHook('custom', { arguments })
 ```
-
----
 
 ## Practice - Notify Slack on Issues Update
 
@@ -1074,8 +1015,6 @@ Now oclif should be able to find existing `notify` functionality
 ![spoiler alert](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/spoiler-alert.jpg?raw=true)
 
 ### [Notify slack on assignee change code](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/src/commands/gh/assignee.ts)
-
----
 
 ## Practice - Add Tests to `github:issues` Command
 
@@ -1198,8 +1137,6 @@ test
 
 ### [github:issues test](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/test/commands/gh/issues.test.ts)
 
----
-
 ## Practice - Commands VS Plugins
 
 - `Command` is a granular functionality
@@ -1253,11 +1190,7 @@ my-oclif-cli github:assignee
 
 ### [Split project code into plugins](https://github.com/korzio/note/tree/architecture-32/cli)
 
----
-
 # Final
-
----
 
 ## Summary
 
@@ -1273,8 +1206,6 @@ my-oclif-cli github:assignee
 
 ![github](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/github.png?raw=true)
 
----
-
 ## Feedback
 
 ### Please [share your feedback](https://forms.gle/HcTFj5dpHnxNS8PK8) on Mastering CLI in TypeScript workshop
@@ -1282,8 +1213,6 @@ my-oclif-cli github:assignee
 ```
 workshop feedback
 ```
-
----
 
 ## Docs
 
@@ -1300,8 +1229,6 @@ workshop feedback
 - [TypeScript Essentials 💡 Charly Poly](https://medium.com/@wittydeveloper/typescript-essentials-b7ae85b0f561)
 
 - [Typescript: The Complete Developer's Guide — Stephen Grider](https://www.udemy.com/course/typescript-the-complete-developers-guide/)
-
----
 
 ## Thank you!
 
