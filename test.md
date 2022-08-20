@@ -1,5 +1,10 @@
 # File to Test things on Production
 
+<div class="twitter-btn">
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
+  <span>Tweet about DevOps</span></a>
+</div>
+
 <style type="text/css">
   /* twitter button */
   .twitter-btn {
@@ -48,8 +53,3 @@
     zoom: 1;
   }
 </style>
-
-<div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about DevOps</span></a>
-</div>
