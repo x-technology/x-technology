@@ -103,4 +103,8 @@ I have 14 awesome years of professional experience with Web technologies! During
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
   }
+
+  h1:first-child {
+    display: none;
+  }
 </style>
