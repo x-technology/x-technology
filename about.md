@@ -2,7 +2,9 @@
 
 # About Us
 
-Here to learn new technologies, share knowledge in different areas, build online projects, and have fun!
+Here to learn new technologies, share knowledge in different areas, build online projects, and have fun.
+
+Feel free to connect and drop a message!
 
 #### Alex Korzhikov
 
