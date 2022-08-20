@@ -98,7 +98,9 @@ I have 14 awesome years of professional experience with Web technologies! During
     zoom: 1;
   }
 
-  img {
-    max-width: 250px;
+  img[alt*="photo"] {
+    max-width: 250px !important;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
   }
 </style>
