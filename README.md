@@ -122,6 +122,8 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 January 2021*
 
+## [About Us](./about.md)
+
 ## Contributing
 
 We hope you like our content, and welcome any contribution!
