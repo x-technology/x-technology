@@ -1,57 +1,5 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
-<style type="text/css">
-  h1:first-child {
-    display: none;
-  }
-  /* twitter button */
-  .twitter-btn {
-    width: 200px;
-    display: inline-block;
-    overflow: hidden;
-    text-align: left;
-    white-space: nowrap;
-    vertical-align: top:
-    zoom: 1;
-    font-size: 13px;
-    line-height: 26px;
-    font-family: "Helvetica Neue",Arial,sans-serif;
-  }
-  .twitter-btn a {
-    height: 28px;
-    padding: 1px 10px 1px 9px;
-    border-radius: 4px;
-    position: relative;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
-    background-color: #1b95e0;
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: inline-block;
-    text-decoration: none;
-  }
-  .twitter-btn a:hover {
-    background-color: #0c7abf;
-  }
-  .twitter-btn a i {
-    width: 18px;
-    height: 18px;
-    top: 4px;
-    position: relative;
-    display: inline-block;
-    background: transparent 0 0 no-repeat;
-    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
-  }
-  .twitter-btn a span {
-    margin-left: 4px;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: top;
-    zoom: 1;
-  }
-</style>
-
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1409618754288459779"><i></i>
   <span>Tweet about us</span></a>
@@ -72,6 +20,7 @@ We experiment with projects to explore technologies.
 - [GetConf](https://github.com/x-technology/getconf)
 - [TimeMate](https://github.com/x-technology/timemate)
 - [OhMyGRPC](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
+- [NestJS REST API Boilerplate](https://github.com/x-technology/nest-typeorm-boilerplate)
 
 ## [Workshops](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
@@ -90,6 +39,22 @@ We conduct workshops that are available for everyone live. We keep recordings an
 We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together. Sometimes we invite experts and guests to participate in the events or give a side talk. Check out our [youtube channel](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) for the full list.
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
+
+`41.` [Building open source project - Part IV - Seeding a DB, NestJS & TypeORM](https://youtu.be/Yhu6jwhJQjk) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), [Denis Volper](https://t.me/denisvolper) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *20 Aug 2022*
+
+`40.` [ML System Design interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *13 Aug 2022*
+
+`39.` [LeetCode with JavaScript - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *6 Aug 2022*
+
+`38.` [Building open source project - Part III - NestJS, Docs and seeders for DB](https://www.youtube.com/watch?v=5o0RRcmP9M0) by [Denis Volper](https://t.me/denisvolper), [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *30 Jul 2022*
+
+`37.` [LeetCode with Python - XTechnology Code Hour](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *23 Jul 2022*
+
+`36.` [Building open source project - Part II - NestJS and TypeORM](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *16 Jul 2022*
+
+`35.` [Building open source project - Part I - NestJS REST API Boilerplate](https://www.youtube.com/watch?v=JhkwPVQ65p8) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *9 Jul 2022*
+
+`34.` [Data Science vs Web Development](https://www.youtube.com/watch?v=Caua6ijeMis) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Mila Glavaški](https://www.linkedin.com/in/milaglavaski), *25 Jun 2022*
 
 `33.` [Node.js Debugging Tools - XT Code Hour](https://www.youtube.com/watch?v=5yB3X-v2V5A) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Andrew Balakirev](https://www.linkedin.com/in/jifeon/), *19 Jun 2022*
 
@@ -180,3 +145,55 @@ We hope you like our content, and welcome any contribution!
 - [GetConf Events Channel](https://t.me/getconf)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
+
+<style type="text/css">
+  h1:first-child {
+    display: none;
+  }
+  /* twitter button */
+  .twitter-btn {
+    width: 200px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: top:
+    zoom: 1;
+    font-size: 13px;
+    line-height: 26px;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+  }
+  .twitter-btn a {
+    height: 28px;
+    padding: 1px 10px 1px 9px;
+    border-radius: 4px;
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    background-color: #1b95e0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .twitter-btn a:hover {
+    background-color: #0c7abf;
+  }
+  .twitter-btn a i {
+    width: 18px;
+    height: 18px;
+    top: 4px;
+    position: relative;
+    display: inline-block;
+    background: transparent 0 0 no-repeat;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
+  }
+  .twitter-btn a span {
+    margin-left: 4px;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+  }
+</style>
