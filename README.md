@@ -1,13 +1,23 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1409618754288459779"><i></i>
-  <span>Tweet about us</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1409618754288459779"><i></i></a>
 </div>
 
 ### Educational Programming DevOps and Data Science Open Source Project
 
 Our goal is to learn new technologies, share knowledge in different areas, build online projects, and have fun! We challenge ourselves to make interesting services and products using different programming languages and technology stacks. While we are working on projects, we also write articles and perform online webinars to meet experts, students and users feedback on our projects. Please welcome XTechnology initiative and join us for latest meetups, videos, articles, materials and project updates.
+
+- [Mentorship](#mentorship)
+- [Projects](#projects)
+- [Workshops](#workshops)
+- [Meetups](#meetups)
+- [About](./about.md)
+- [Help](#contribute)
+
+## Mentorship
+
+We help and teach people technology. If you need an advice, our expertise is there to assist. Don't hesitate [to contact us]((#about-us)) personally or let us know via a form!
 
 ## [Projects](https://github.com/x-technology)
 
@@ -124,13 +134,12 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 ## [About Us](./about.md)
 
-## Contributing
+## Contribute
 
 We hope you like our content, and welcome any contribution!
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about us!</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
 ### Do you want to [become XTechnology expert](https://forms.gle/8xc1j7cf8h3sEZ6W8)?

@@ -4,7 +4,7 @@
   h1:first-child {
     display: none;
   }
-  
+
   img[alt="andrew reddikh"] {
     filter: grayscale(100%);
   }
@@ -63,8 +63,7 @@
 # How to convert crypto currencies with GRPC microservices in Node.js
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about GRPC</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
 The workshop overviews key architecture principles, design patterns, and technologies used to build microservices in the Node.js stack. It covers the theory of the GRPC framework and protocol buffers mechanism, as well as techniques and specifics of building isolated services using the monorepo approach with lerna and yarn workspaces, TypeScript. The workshop includes a live practical assignment to create a currency converter application that follows microservices paradigms. It fits the best developers who want to learn and practice GRPC microservices pattern with the Node.js platform.
@@ -555,9 +554,9 @@ protoc --plugin="protoc-gen-ts=`pwd`/node_modules/.bin/protoc-gen-ts" --ts_out="
 
 We use [hygen](https://www.hygen.io) for templating our new services and common libraries.
 
-`1.` For example, we want to create a new `logger` library.  
-`2.` In the root directory run command `yarn bootstrap:common` and follow starter.  
-`3.` Go to the new folder in the terminal  
+`1.` For example, we want to create a new `logger` library.
+`2.` In the root directory run command `yarn bootstrap:common` and follow starter.
+`3.` Go to the new folder in the terminal
 
 ```shell
 cd ./packages/common/logger
@@ -616,9 +615,9 @@ Yay! 🎉 It works!
 
 ### How to create new service
 
-`1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.  
-`2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.  
-`3.` Go to the folder in the terminal  
+`1.` For example, we want to create a new `crypto-compare-provider` service, which is another currency rate provider returning cryptocurrencies.
+`2.` Create a folder under `./packages/services/grpc/crypto-compare-provider` path. For simplicity, just copy an existing `ecb-provider` and rename it.
+`3.` Go to the folder in the terminal
 
 ```shell
 cd ./packages/services/grpc/crypto-compare-provider
@@ -636,7 +635,7 @@ yarn install
 "name": "@grpc/crypto-compare-provider",
 ```
 
-Let's follow a rule - all grpc services have a prefix `@grpc/`.  
+Let's follow a rule - all grpc services have a prefix `@grpc/`.
 `6.` Create a service method file `packages/services/grpc/crypto-provider/src/services/getRates.ts`
 
 ```shell
@@ -663,7 +662,7 @@ const protoOptions: LoadProtoOptions = {
   path: `${__dirname}/../../../../../proto/crypto-compare-provider.proto`,
   // this value should be equvalent to the one defined in *.proto file as "package cryptoCompareProvider;"
   package: 'cryptoCompareProvider',
-  // this value should be equvalent to the one defined in *.proto file as "service CryptoCompareProvider"  
+  // this value should be equvalent to the one defined in *.proto file as "service CryptoCompareProvider"
   service: 'CryptoCompareProvider',
 };
 
@@ -770,7 +769,7 @@ grpcurl -import-path ./proto -proto ecb-provider.proto list
 grpcurl -import-path ./proto -proto ecb-provider.proto list ecbProvider.EcbProvider
 
 # call method GetRates
-echo '{}' | grpcurl -plaintext -import-path ./proto -proto ecb-provider.proto -d @ 127.0.0.1:50052 ecbProvider.EcbProvider.GetRates 
+echo '{}' | grpcurl -plaintext -import-path ./proto -proto ecb-provider.proto -d @ 127.0.0.1:50052 ecbProvider.EcbProvider.GetRates
 ```
 
 Hurray! 🚀

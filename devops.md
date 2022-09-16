@@ -4,7 +4,7 @@
   h1:first-child {
     display: none;
   }
-  
+
   img[alt="andrew reddikh"] {
     filter: grayscale(100%);
   }
@@ -61,8 +61,7 @@
 </style>
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about DevOps</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
 # How to develop, build, and deploy Node.js microservices with Pulumi and Azure DevOps
@@ -525,7 +524,7 @@ docker push xtechnology.azurecr.io/microservices-united:latest
   - [Build and Push](https://dev.azure.com/xtechnology5/XTechnology/_build?definitionId=1&_a=summary)
 
 ## Pulumi
-### Intro 
+### Intro
 Pulumi - Developer-First Infrastructure as Code
 
 - Flexible and expressive
@@ -627,7 +626,7 @@ Replace `registry-name` with real registry name from pulumi output.
 ```shell
 az acr login --name registry-name
 docker build -t registry-name.azurecr.io/grpc:latest .
-docker push registry-name.azurecr.io/grpc:latest 
+docker push registry-name.azurecr.io/grpc:latest
 ```
 
 Great the image is there in the cloud! It's ready to be installed from the cluster, or not yet?
@@ -705,7 +704,7 @@ We've just created the full infrastructure and deployed our microservices into t
 
 Helm is a package manager for Kubernetes. Helm is the K8s equivalent of yum or apt. Helm deploys charts, which you can think of as a packaged application.
 
-We store our helm charts inside the `./infrastructure/charts` folder. 
+We store our helm charts inside the `./infrastructure/charts` folder.
 
 By running a command we can create a new helm chart:
 ```shell

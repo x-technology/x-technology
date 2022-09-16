@@ -1,8 +1,7 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about Decompose</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
 # How to Decompose Monolith API into GRPC Microservices
@@ -249,9 +248,9 @@ Application developed and deployed as a single unit which can sustain consistent
 > Simple to develop, test, deploy, and scale linearly all together!
 
 Slow & difficult to
-  - introduce changes, 
-  - onboard developers, 
-  - deploy, debug, and scale, 
+  - introduce changes,
+  - onboard developers,
+  - deploy, debug, and scale,
   - maintain *Long Term Support* for technology stack
 
 ### Microservice
@@ -415,7 +414,7 @@ banking
   h1:first-child {
     display: none;
   }
-  
+
   img[alt="andrew reddikh"] {
     filter: grayscale(100%);
   }

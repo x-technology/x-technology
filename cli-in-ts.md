@@ -1,8 +1,7 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
 <div class="twitter-btn">
-  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i>
-  <span>Tweet about us!</span></a>
+  <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
 # Mastering CLI with TypeScript
@@ -66,13 +65,13 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 - Hello World CLI in Node
   - `package.json`
   - `TypeScript`
-  
+
 - Make it Work with `oclif`
   - Configure `oclif` project
   - Arguments & Flags
   - Develop a command to `slack` hello world
 
-- Make it Shine 
+- Make it Shine
   - Input & Output
   - Effects
 
@@ -89,7 +88,7 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 - Understand Basic CLI Concepts
 
-- Practice coding `JavaScript` & `TypeScript` CLI programs in `Node` 
+- Practice coding `JavaScript` & `TypeScript` CLI programs in `Node`
 
 - Overview popular `npm` tools, libraries & frameworks for constructing CLIs
 
@@ -102,24 +101,24 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 ![Alex](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/alex.jpg?raw=true)
 
 ### Alex Korzhikov
-#### `JavaScript, Node, Web Components, TypeScript` 
+#### `JavaScript, Node, Web Components, TypeScript`
 ### @ING @Otus
 
-- Twitter: **[AlexKorzhikov](https://twitter.com/AlexKorzhikov)**  
-- Medium: **[korzio](https://medium.com/@korzio)**  
-- Github: **[korzio](https://github.com/korzio)**  
+- Twitter: **[AlexKorzhikov](https://twitter.com/AlexKorzhikov)**
+- Medium: **[korzio](https://medium.com/@korzio)**
+- Github: **[korzio](https://github.com/korzio)**
 
 ## Who are we?
 
 ![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
 
 ### Pavlik Kiselev
-#### `JavaScript, Serverless, React, GraphQL` 
+#### `JavaScript, Serverless, React, GraphQL`
 ### @Frontmen
 
 - **[LinkedIn](
-https://www.linkedin.com/in/pavlik-kiselev-06993347/)**  
-- Github: **[paulcodiny](https://github.com/paulcodiny)**  
+https://www.linkedin.com/in/pavlik-kiselev-06993347/)**
+- Github: **[paulcodiny](https://github.com/paulcodiny)**
 
 # CLI in Node.js
 
@@ -143,7 +142,7 @@ cat /etc/passwd   # Default shell
 - Do you use the most?
 
 ![question](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/question.png?raw=true)
-  
+
 - Why `CLI`?
 - Why `JavaScript`?
 - Why `Node`?
@@ -167,7 +166,7 @@ cat /etc/passwd   # Default shell
 - [Atwood's Law](https://blog.codinghorror.com/the-principle-of-least-power/) - *any application that can be written in JavaScript, will eventually be written in JavaScript*
 - Fast and easy to develop
 - Cross Platform
-- A rich infrastructure with all kinds of packages and libraries with `npm` 
+- A rich infrastructure with all kinds of packages and libraries with `npm`
 - Modules & plug'n'play
 
 ### ➖?
@@ -181,7 +180,7 @@ cat /etc/passwd   # Default shell
   - According to [To Type or Not to Type: Quantifying Detectable Bugs in JavaScript
   by Zheng Gao, Christian Bird, Christian Bird](http://ttendency.cs.ucl.ac.uk/projects/type_study/documents/type_study.pdf) study, using TypeScript results in 15% decrease of bugs
   - Focus on API, not on implementation details
-  
+
 - OOP patterns and abstractions
 - IDE help & support for writing code saves developers time
 
@@ -217,9 +216,9 @@ npx cowsay hello cow
 - Understand what's happening
   - `help`
   - `version`
-- Output to the right channel 
+- Output to the right channel
   - Logs and data for `stdout`, errors for `stderr`
-- Exit with `process.exit(code)` 
+- Exit with `process.exit(code)`
   - Retrieve with `$?` in `shell`
 - *Do One Thing and Do It Well*
 - *No breaking changes*
@@ -355,7 +354,7 @@ echo "console.log('Hello CLI')" > server.js
 # check if environment works
 npm start
 # use bin package.json property to point to server.js
-# don't forget to add the shebang 
+# don't forget to add the shebang
 # #!/usr/bin/env node
 # in the top of the server.js file
 # install cli globally
@@ -384,7 +383,7 @@ my-hello-world-cli
 Package description
 Package version
 
-Usage: 
+Usage:
 --help    Help documentation
 --version Installed package version
 ```
@@ -403,8 +402,8 @@ my-hello-world-cli 1.0.0
 
 ## TypeScript
 
-*JavaScript that scales.  
-TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.  
+*JavaScript that scales.
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 Any browser. Any host. Any OS. Open source.*
 
 ![ts](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/ts.png?raw=true)
@@ -429,7 +428,7 @@ npm install --global typescript
 tsc --init
 # rename js file to ts
 mv server.js server.ts
-# @types/node 
+# @types/node
 npm install --save-dev @types/node
 # compile project to typescript
 tsc
@@ -533,7 +532,7 @@ export default class MyCommand extends Command {
 
   async run() {
     const { flags: { logLevel } } = this.parse(MyCommand)
-    
+
     console.log(`running my command with logLevel ${logLevel}`)
   }
 }
@@ -556,7 +555,7 @@ my-oclif-cli hello
 
 ## Practice - Make it Work
 
-### Make a command [to send](https://www.npmjs.com/package/@slack/webhook) Hello World notification to `slack` 
+### Make a command [to send](https://www.npmjs.com/package/@slack/webhook) Hello World notification to `slack`
 
 ```bash
 npm install @slack/webhook
@@ -584,12 +583,12 @@ my-oclif-cli slack "Hello from @username"
 export SLACK_WEBHOOK_URL=___WEBHOOK_GOES_HERE___
 # or
 export SLACK_WEBHOOK_URL=$(echo "aHR0cHM6Ly9ob29rcy5zbGFjay5jb20vc2VydmljZXMvVEwwMzg2V1BOL0JRMzRWREhQVy9DTjg3d2NVYlE4YTkyMmhaZjBaeEgwMVM=" | base64 --decode)
-# or 
+# or
 export SLACK_WEBHOOK_URL=$(workshop slack)
 ```
-    
+
 `3.`  Import `.slackrc` to your shell with `source`
-    
+
 ```bash
 source config/.slackrc
 ```
@@ -604,7 +603,7 @@ npm i @slack/webhook
 ### Write the command
 
 `1.` Require an IncomingWebhook class from the `@slack/webhook`
-  
+
 ```js
 import { IncomingWebhook } from '@slack/webhook'
 ```
@@ -626,8 +625,8 @@ static args = [
 ]
 ```
 
-`4.` Add a definition of the flag to `flags` section. You may still keep "help" flag since it's quite useful usually 
-    
+`4.` Add a definition of the flag to `flags` section. You may still keep "help" flag since it's quite useful usually
+
 ```js
 static flags = {
   help: flags.help({
@@ -645,14 +644,14 @@ static flags = {
 ```js
 const { flags, args } = this.parse(Slack)
 ```
- 
-    
+
+
 `6.` Next lets create a new instance of IncomingWebhook with a `slackWebhookUrl` flag
-  
+
 ```js
 const webhook = new IncomingWebhook(flags.slackWebhookUrl)
 ```
-    
+
 `7.`  Call the "send" method with an object containing "text" property with your text. Please bear in mind that this is an async function
 ```js
 await webhook.send({ text: args.text })
@@ -705,7 +704,7 @@ cli.prompt('What is your password?', {type: 'mask'})
 
 ## Practice - List Github Issues
 
-#### Make a command to list Github tasks 
+#### Make a command to list Github tasks
 
 ![github](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/github.png?raw=true)
 
@@ -722,10 +721,10 @@ npx oclif command github:issues
 ```bash
 my-oclif-cli github:issues
 Getting a list of issues... done
-Number Title                                      Assignee      State Link                                     
-66     workshop CLI                               korzio        open  https://github.com/korzio/note/issues/66 
-65     fix: Changed the formatting of exercises   null          open  https://github.com/korzio/note/pull/65   
-64     Workshop CLI in TS on Saturday 9am 3 hours korzio        open  https://github.com/korzio/note/issues/64 
+Number Title                                      Assignee      State Link
+66     workshop CLI                               korzio        open  https://github.com/korzio/note/issues/66
+65     fix: Changed the formatting of exercises   null          open  https://github.com/korzio/note/pull/65
+64     Workshop CLI in TS on Saturday 9am 3 hours korzio        open  https://github.com/korzio/note/issues/64
 63     Add test section and example to workshop   paulcodiny    open  https://github.com/korzio/note/issues/63
 ...
 ```
@@ -745,7 +744,7 @@ export GITHUB_PERSONAL_TOKEN=___TOKEN_GOES_HERE___
 ```bash
 source config/.githubrc
 ```
-    
+
 `4.`  Use the auth key with [@octokit/rest](https://octokit.github.io/rest.js/)
 
 `5.`  Get the list of [Github issues](https://octokit.github.io/rest.js/#octokit-routes-issues-list-for-repo)
@@ -815,37 +814,37 @@ static flags = {
   })
 }
 ```
-  
+
 `7.` Use `cli.action.start` to show the loader with some useful information what is happening
-    
+
 ```js
 cli.action.start('Getting the list of the issues')
 ```
-    
+
 `8.` Create a new instance of Octokit with an object argument containing the "auth" property with the auth key created in the previous section
-    
+
 ```js
 const octokit = new Octokit({
   auth: flags.githubPersonalToken
 })
 ```
-   
+
 `9.` Call the "issues.listForRepo" method with an object argument containing "owner" and "repo" keys. You can pass "korzio" as an owner and "note" as a repository. Documentation of the method https://octokit.github.io/rest.js/#octokit-routes-issues-list-for-repo.
 The result of this method is an object containing "data" property
-    
+
 ```js
 const { data: issues } = await octokit.issues.listForRepo({
   owner: 'korzio',
   repo: 'note',
 })
 ```
-    
+
 `10.` Stop the loader with `cli.action.stop`
-    
+
 ```js
 cli.action.stop()
 ```
-    
+
 `11.` Show tha table with the "data" as the first argument and the object with table description as the second. You can use columns "number", "title", "assignee" with a getter to get deep property, "state" with a getter to color the resulting state, "html_url" with a different header
 
 ```js
@@ -867,7 +866,7 @@ cli.table(issues, {
 ![spoiler alert](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/spoiler-alert.jpg?raw=true)
 
 ### [Get a list of issues code](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/src/commands/gh/issues.ts)
-   
+
    ## Practice - Assign Yourself on an Issue
 
 #### Develop a command [to change an assignee](https://octokit.github.io/rest.js/#octokit-routes-issues-update)
@@ -889,14 +888,14 @@ const startWorking = await cli.prompt('Do you want to start working on an issue?
   default: 'y'
 })
 ```
- 
+
 `2.` If the choice is "y" then show additional promts
 
 ```js
 if (['y', 'yes'].includes(startWorking.toLowerCase())) {
   const issueNumber = await cli.prompt('Which issue you want to pick up? Please provide the Number')
   const assignee = await cli.prompt('What is your GitHub login?')
-  
+
   // ...
 }
 ```
@@ -921,7 +920,7 @@ this.log(`Assignee of the issue #${issueNumber} has been successfully changed to
 ![spoiler alert](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/spoiler-alert.jpg?raw=true)
 
 ### [Change an assignee code](https://github.com/korzio/note/blob/master/experiments/my-oclif-cli/src/commands/gh/assignee.ts)
-   
+
    # `oclif` in Depth
 
 ## `oclif` Abstractions
@@ -1019,7 +1018,7 @@ Now oclif should be able to find existing `notify` functionality
 ## Practice - Add Tests to `github:issues` Command
 
 
-### Add a test to check the output of the `github:issues` 
+### Add a test to check the output of the `github:issues`
 
 ```bash
 npm test
@@ -1033,8 +1032,8 @@ npm test
 ...
 
 Getting a list of issues... done
-Number Title                              Assignee State Link                                                 
-33272  Google feedback on TypeScript 3.5  evmar    open  /microsoft/TypeScript/issues/33272 
+Number Title                              Assignee State Link
+33272  Google feedback on TypeScript 3.5  evmar    open  /microsoft/TypeScript/issues/33272
     ✓ should format the table (3305ms)
 
 
@@ -1059,7 +1058,7 @@ Basically, for now we can focus only on one test and for it let's update a bit t
 ### Write the test
 
 `1.` Import required dependencies
-  
+
 ```js
 import {expect, test} from '@oclif/test'
 ```
@@ -1072,15 +1071,15 @@ describe('github:issues', () => {
 })
 ```
 
-`3.` Create a test for the `issues` command 
+`3.` Create a test for the `issues` command
 
 ```js
 test
-  // ... 
+  // ...
 ```
 
 `4.` Mock the response from github with the help of `nock` package. Please note, we don't have `data` property in the response. If's automatically created for us by `nock`
-    
+
 ```js
 test
   .nock('https://api.github.com', api => api
@@ -1099,25 +1098,25 @@ test
   )
 ```
 
-`5.` Capture the `stdout` to the variable. Pass `{ print: true }` to simplify debugging. It's not required for your build pipelines (CI/CD) and can be even harmful for your logs 
+`5.` Capture the `stdout` to the variable. Pass `{ print: true }` to simplify debugging. It's not required for your build pipelines (CI/CD) and can be even harmful for your logs
 
 ```js
 test
   // nock...
   .stdout({ print: true })
 ```
- 
-    
-`6.` Next let's run the command. We don't need to provide arguments - for now it will be `korzio/note` 
-  
+
+
+`6.` Next let's run the command. We don't need to provide arguments - for now it will be `korzio/note`
+
 ```js
 test
   // nock...
   // stdout...
   .command(['github:issues'])
 ```
-    
-`7.` After all it's time for the expectations - `oclif` uses `chai` as the expectation library underneath 
+
+`7.` After all it's time for the expectations - `oclif` uses `chai` as the expectation library underneath
 ```js
 test
   // .nock...
@@ -1202,7 +1201,7 @@ my-oclif-cli github:assignee
 
 - Practice with CLI in `Node` with `TypeScript` and popular frameworks & libraries
 
-- Make an `oclif` CLI application to manipulate `Github` repository and send *Hello World* notifications to `slack` 
+- Make an `oclif` CLI application to manipulate `Github` repository and send *Hello World* notifications to `slack`
 
 ![github](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/github.png?raw=true)
 
@@ -1234,21 +1233,21 @@ workshop feedback
 
 ### Alex Korzhikov
 
-- Twitter: **[AlexKorzhikov](https://twitter.com/AlexKorzhikov)**  
-- Medium: **[korzio](https://medium.com/@korzio)**  
-- Github: **[korzio](https://github.com/korzio)**  
+- Twitter: **[AlexKorzhikov](https://twitter.com/AlexKorzhikov)**
+- Medium: **[korzio](https://medium.com/@korzio)**
+- Github: **[korzio](https://github.com/korzio)**
 
 ### Pavlik Kiselev
 
 - **[LinkedIn](
-https://www.linkedin.com/in/pavlik-kiselev-06993347/)**  
-- Github: **[paulcodiny](https://github.com/paulcodiny)**  
+https://www.linkedin.com/in/pavlik-kiselev-06993347/)**
+- Github: **[paulcodiny](https://github.com/paulcodiny)**
 
 <style type="text/css">
   h1:first-child {
     display: none;
   }
-  
+
   img[alt="andrew reddikh"] {
     filter: grayscale(100%);
   }
