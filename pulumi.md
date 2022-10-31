@@ -1,82 +1,8 @@
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
-<style type="text/css">
-  h1:first-child {
-    display: none;
-  }
-
-  img[alt="andrew reddikh"] {
-    filter: grayscale(100%);
-  }
-
-  img[alt="microservices graph"] {
-    width: 500px;
-  }
-  /* twitter button */
-  .twitter-btn {
-    width: 200px;
-    display: inline-block;
-    overflow: hidden;
-    text-align: left;
-    white-space: nowrap;
-    vertical-align: top:
-    zoom: 1;
-    font-size: 13px;
-    line-height: 26px;
-    font-family: "Helvetica Neue",Arial,sans-serif;
-  }
-  .twitter-btn a {
-    height: 28px;
-    padding: 1px 10px 1px 9px;
-    border-radius: 4px;
-    position: relative;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
-    background-color: #1b95e0;
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: inline-block;
-    text-decoration: none;
-  }
-  .twitter-btn a:hover {
-    background-color: #0c7abf;
-  }
-  .twitter-btn a i {
-    width: 18px;
-    height: 18px;
-    top: 4px;
-    position: relative;
-    display: inline-block;
-    background: transparent 0 0 no-repeat;
-    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
-  }
-  .twitter-btn a span {
-    margin-left: 4px;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: top;
-    zoom: 1;
-  }
-
-  img:not([alt*=XTechnology]) {
-    max-width: 300px !important;
-  }
-
-  img[alt*="photo"] {
-    max-width: 250px !important;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
-  }
-</style>
-
 <div class="twitter-btn">
   <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
-
-# TODO
-
-https://www.postman.com/state-of-api/api-technologies/#api-technologies
 
 # How to develop, build, and deploy Node.js GRPC microservices with Pulumi and Google Cloud Platform DevOps
 
@@ -288,8 +214,9 @@ npx turbo run build # todo @alex
 <details><summary>gRPC Remote Procedure Calls, of course!</summary>
 
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
-
 </details>
+
+todo @alex https://www.postman.com/state-of-api/api-technologies/#api-technologies
 
 > [gRPC](https://grpc.io/docs/what-is-grpc/faq/) is a *modern, open source* *remote procedure call (RPC)* framework that can run anywhere. It enables *client and server* applications to communicate transparently, and makes it easier to build connected systems
 
@@ -777,3 +704,73 @@ git
 architecture
 crypto
 currency
+
+<style type="text/css">
+  h1:first-child {
+    display: none;
+  }
+
+  img[alt="andrew reddikh"] {
+    filter: grayscale(100%);
+  }
+
+  img[alt="microservices graph"] {
+    width: 500px;
+  }
+  /* twitter button */
+  .twitter-btn {
+    width: 200px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: top:
+    zoom: 1;
+    font-size: 13px;
+    line-height: 26px;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+  }
+  .twitter-btn a {
+    height: 28px;
+    padding: 1px 10px 1px 9px;
+    border-radius: 4px;
+    position: relative;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    background-color: #1b95e0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .twitter-btn a:hover {
+    background-color: #0c7abf;
+  }
+  .twitter-btn a i {
+    width: 18px;
+    height: 18px;
+    top: 4px;
+    position: relative;
+    display: inline-block;
+    background: transparent 0 0 no-repeat;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E);
+  }
+  .twitter-btn a span {
+    margin-left: 4px;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+  }
+
+  img:not([alt*=XTechnology]) {
+    max-width: 300px !important;
+  }
+
+  img[alt*="photo"] {
+    max-width: 250px !important;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+</style>
