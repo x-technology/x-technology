@@ -765,7 +765,7 @@ currency
   }
 
   img:not([alt*=XTechnology]) {
-    max-width: 300px !important;
+    max-width: 450px !important;
   }
 
   img[alt*="photo"] {
