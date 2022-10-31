@@ -58,6 +58,16 @@
     vertical-align: top;
     zoom: 1;
   }
+
+  img:not([alt*=XTechnology]) {
+    max-width: 300px !important;
+  }
+
+  img[alt*="photo"] {
+    max-width: 250px !important;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
 </style>
 
 <div class="twitter-btn">
@@ -140,7 +150,7 @@ todo @reddikh
 
 #### Alex Korzhikov
 
-![alex korzhikov](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
+![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
 
 Software Engineer, Netherlands
 
@@ -151,7 +161,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 #### Andrew Reddikh
 
-[![andrew reddikh](https://andrew.red/photo.jpg)](https://andrew.red)
+[![andrew reddikh photo](https://andrew.red/photo.jpg)](https://andrew.red)
 
 Software Engineer, United Kingdom
 
@@ -234,9 +244,9 @@ yarn lerna bootstrap
 
 Yay! 🎉 Now we're ready to go with the project.
 
-
 ### Monorepo structure
 
+todo @alex
 For better monorepo project management we used [Lerna](https://github.com/lerna/lerna) & [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
 
 The project shapes into the following structure:
@@ -259,15 +269,16 @@ The project shapes into the following structure:
 
 Let's move on 🚚
 
-### Using Lerna
+### Using Turborepo
 
 Lerna brings to the table few commands which can be easily executed across all/or filtered packages.
 
 We use our common modules compiled to JavaScript, so before using it in services we need to build it first.
 
 Following command executed `build` command against all common packages filtered with flag `--scope=@common/*`
+
 ```shell
-yarn lerna run build --scope=@common/*
+npx turbo run build # todo @alex
 ```
 
 ### What is GRPC?
@@ -389,7 +400,9 @@ const response = await client.Convert(new all.currencyConverter.ConvertRequest({
 response.toObject()
 ```
 
-# NestJS
+### [Nest Framework](https://nestjs.com/)
+
+![Nest Icon](https://camo.githubusercontent.com/5f54c0817521724a2deae8dedf0c280a589fd0aa9bffd7f19fa6254bb52e996a/68747470733a2f2f6e6573746a732e636f6d2f696d672f6c6f676f2d736d616c6c2e737667)
 
 > A progressive Node.js framework for building efficient, reliable and scalable server-side applications
 
@@ -416,96 +429,36 @@ export class CatsController {
 }
 ```
 
----
-
-# Features
-
-.right-image[
-  ![Nest Icon](https://camo.githubusercontent.com/5f54c0817521724a2deae8dedf0c280a589fd0aa9bffd7f19fa6254bb52e996a/68747470733a2f2f6e6573746a732e636f6d2f696d672f6c6f676f2d736d616c6c2e737667)
-]
-
 - [Nest Documentation](https://docs.nestjs.com/)
 - `TypeScript` with Web Servers
   - `Angular` for Backend
   - Decorators, special types to control application flow
   - `Express` or `Fastify`
-  - Middlewares
   - Dependency Injection, DDD, CQRS, AOP
   - Modular & Testable
   - CLI
   - REST APIs, GRPC, GraphQL
 
----
+#### Patterns
 
-# Demo
-
-```bash
-# npm i -g @nestjs/cli
-# nest new project-name
-npx @nestjs/cli new movies
-cd movies
-npm run start
-npm run start:dev
-```
-
-- `package.json`
-
----
-
-# Patterns
-
-.full-image[
 ![](assets/nest-why.png)
-]
 
 - Decorators
 - Dependency Injection
 - Observables / RxJS
 - SOLID / DDD / AOP
 
----
+> A domain-way application's decomposition by clean architecture
 
-class: qa
-## NestJS
-### Break Till 18:53 ⏰
-### 👉 DDD, GRPC, AOP, SOLID
+![clean architecture](https://cdn-media-1.freecodecamp.org/images/1*nEATDe5dRLIWN3MSxSjG0A.png)
 
----
+> Domain is a core!
 
-# DDD
+> Good for mid-size or big systems with complex business logic
 
-.right-code[
-- Entity
-  - Identity
-  - Rich Domain Models
-  - Reference or Identity Equality
-- Aggregate
-  - Transactions
-- Repositories
-  - One Per Aggregate
-  - DB, ORM
-- Domain Events
-]
+#### Internals
 
-- Ubiquitos Language
-  - Terms
-  - Places
-    - User Stories
-    - Code
-- Sub-Domains & Bounded Context
-- Value Objects
-  - Immutable
-  - Scalar & Lightweight
-  - Reference or Structural Equality
-
-
----
-
-# Internals
-
-.full-image[
 ![](assets/nest-modules.png)
-]
 
 .right-code[
 - Providers
@@ -517,13 +470,7 @@ class: qa
 - Pipes
 - Interceptors
 
----
-
-# Controllers
-
-.right-image[
-![](assets/nest-input-args.png)
-]
+#### Controllers
 
 - Handling incoming requests and returning responses to the client
 
@@ -536,111 +483,23 @@ findAll(@Req() request: Request): string {
 
 > @Body(), @Get(), @Post(), @Put(), @Delete(), @Patch(), @Options(), @Head(), @All()
 
----
+#### Demo - All together
 
-class: qa
-## Microservices
+```bash
+# npm i -g @nestjs/cli
+# nest new project-name
+npx @nestjs/cli new movies
+cd movies
+npm run start
+npm run start:dev
+```
 
-.center[
-  ![Microservice org benefits](https://microservices.io/i/successtriangle.png)
-]
-
-
----
-
-# Monolith
-
-### Application developed and deployed as a single unit which can sustain consistent state
-
-> Simple to develop, test, deploy, and scale linearly all together!
-
-### Slow & difficult to
-  - introduce changes,
-  - onboard developers,
-  - deploy, debug, and scale,
-  - maintain *Long Term Support* for technology stack
-
----
-
-# Microservice
-
-> An architectural pattern, affects an organization, process, and result!
-
-.right[
-<br>
-## Fast & easy to
-  - deploy,
-  - iterate & evolve,
-  - onboard developers,
-  - choose technology,
-  - scale
-]
-
-### Application as a set of services that are
-  - deliver business feature,
-  - independently deployable,
-  - owned by a small team,
-  - follow single responsibility principle & granularity,
-  - loosely coupled,
-  - maintainable and testable,
-  - exposes an API,
-  - even used on FrontEnd!
-
----
-
-# Goals, Principles, Requirements
-
-- Deliver value in parallel and independently
-- Experiment with business capabilities
-- Grow number of teams
-
-- Common Closure Principle
-  - Self contained services
-- Monitoring & Debugging
-- Fast deployment
-- Testable
-- Granular
-
-- No dependencies on monolith
-- Cohesive and loosely coupled
-
----
-
-# .full-image[![how microservices ecosystem growths with strangler application](https://microservices.io/i/decompose-your-monolith-devnexus-feb-2020.001.jpeg)
-]
-
----
-
-# Practice
-
-.right-image[
-  ![Nest Icon](https://camo.githubusercontent.com/5f54c0817521724a2deae8dedf0c280a589fd0aa9bffd7f19fa6254bb52e996a/68747470733a2f2f6e6573746a732e636f6d2f696d672f6c6f676f2d736d616c6c2e737667)
-]
-
-- Start [with NestJS](https://docs.nestjs.com/)
+- `package.json`
 - Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
 
 ```bash
 npm install --save @nestjs/swagger swagger-ui-express
 ```
-
----
-
-# Docs
-
-.right-image[![node](assets/node.png)]
-
-- [NestJS](https://docs.nestjs.com/)
-- [Dependency Injection](https://docs.nestjs.com/fundamentals/dependency-injection)
-- [Monolith](https://microservices.io/patterns/monolithic.html)
-- [Prereqiuisites and principles](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
-
-### Summary
-
-- Overview
-  - NestJS framework
-  - Microservices Principles
-  - GRPC
 
 ---
 
@@ -876,8 +735,9 @@ Let's grab a task based on the things you'd like to do 👇
 
 ## Summary
 
-
-- Azure
+- GRPC
+- NestJS framework
+  - Microservices Principles
 - Pulumi
   - Compare to Terraform
 
@@ -889,10 +749,14 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 ## Links
 
-- [Docker Docs](https://docs.docker.com/)
-- [Awesome Docker Compose](https://github.com/docker/awesome-compose)
 - [Protocol Buffers Crash Course](https://youtu.be/46O73On0gyI)
 - [gRPC Crash Course - Modes, Examples, Pros & Cons and more](https://www.youtube.com/watch?v=Yw4rkaTc0f8)
+- [NestJS Microservices - 4 - Using gRPC](https://www.youtube.com/watch?v=OuyxRE9xLw4)
+- [NestJS](https://docs.nestjs.com/)
+- [Dependency Injection](https://docs.nestjs.com/fundamentals/dependency-injection)
+- [Monolith](https://microservices.io/patterns/monolithic.html)
+- [Prereqiuisites and principles](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+
 
 ### Technologies
 
