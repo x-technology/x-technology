@@ -150,7 +150,7 @@ We hope you like our content, and welcome any contribution!
 
 - [Github](https://github.com/x-technology)
 - [Telegram](https://t.me/xtechn)
-- [Youtube](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ)
+- [Youtube](https://www.youtube.com/@x-technology)
 - [Eventbrite](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 - [Twitter](https://twitter.com/XTechnology5)
 - [Discord](https://discord.gg/ZTnWdVpUPV)
