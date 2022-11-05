@@ -458,10 +458,11 @@ npm start
 curl http://localhost:3000/
 curl http://localhost:3001/
 
-# see monolith project
+# see currency converter monolith project
+curl http://localhost:3001/currency-converter/convert
 ```
 
-#### Self Assignments
+#### [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues) - Self Assignments
 
 1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
 
@@ -472,6 +473,26 @@ npm install --save @nestjs/swagger swagger-ui-express
 2. Split `packages/monolith` into separate microservices.
 
 Make sure `turborepo` configuration is updated, build and start all services
+
+3. Fix type definitions inside controllers, why observable types are generated instead of Promises?
+
+```ts
+// packages/monolith/src/currency-converter/currency-converter.controller.ts
+@Get('convert')
+  async convert(): Promise<ConvertResponse> {
+    // TODO fix type definitions
+    const $rates = this.currencyConvertClient.Convert(ConvertRequest.fromJSON({
+      sellAmount: 100,
+      sellCurrency: 'USD',
+      buyCurrency: 'GBP',
+    }));
+
+    const firstNumber = await firstValueFrom($rates as unknown as Observable<ConvertResponse>);
+    const rates = firstNumber as unknown as ConvertResponse
+
+    return rates
+  }
+```
 
 ---
 
