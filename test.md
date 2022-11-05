@@ -1,6 +1,5 @@
 ---
 title: Test
-favicon: favicon.ico
 ---
 
 # File to Test things on Production
