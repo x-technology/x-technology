@@ -1,7 +1,3 @@
----
-title: XTechnology - Technology is Beautiful!
----
-
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
 <div class="twitter-btn">
