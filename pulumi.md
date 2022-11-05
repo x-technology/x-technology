@@ -49,10 +49,13 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [What we're building](#what-were-building)
   - [Prerequisites](#prerequisites)
   - [Monorepo structure](#monorepo-structure)
-  - [Using Lerna](#using-lerna)
+  - [Using Turborepo](#using-lerna)
   - [What is GRPC?](#what-is-grpc)
   - [What are Protocol Buffers?](#what-are-protocol-buffers)
-  - [Demo - Run Microservices Locally](#demo---run-microservices-locally)
+  - [Demo - Hello Node.js GRPC](#demo---hello-nodejs-grpc)
+  - [Demo - Run Microservices Locally](#demo---all-microservices-locally)
+  - [Nest Framework](#nest)
+  - [Demo - All Together](#demo---all-together)
 
 todo @reddikh
 - [Infrastructure - Azure](#infrastructure---azure)
