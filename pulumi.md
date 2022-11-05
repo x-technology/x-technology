@@ -1,3 +1,7 @@
+---
+title: XTechnology Workshop - How to develop, build, and deploy Node.js NestJS GRPC microservices with Pulumi and Google Cloud Platform
+---
+
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
 
 <div class="twitter-btn">
