@@ -431,20 +431,47 @@ findAll(@Req() request: Request): string {
 ### Demo - All Together
 
 ```bash
-# npm i -g @nestjs/cli
-# nest new project-name
-npx @nestjs/cli new movies
+# speed run
+npx @nestjs/cli new movies            # create new nestjs microservice
 cd movies
 npm run start
-npm run start:dev
+
+# or full log
+rm -rf packages
+rm -rf tmp
+mv packages tmp
+mv tmp packages
+cd packages
+mv packages monolith
+npx @nestjs/cli new movies
+cd movies
+npm start
+
+# root
+cd ../../
+git checkout demo-new-nestjs-module   # monorepo full example
+npm install                           # run turborepo tasks
+npm run build
+npm start
+
+# test
+curl http://localhost:3000/
+curl http://localhost:3001/
+
+# see monolith project
 ```
 
-- `package.json`
-- Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
+#### Self Assignments
+
+1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
 
 ```bash
 npm install --save @nestjs/swagger swagger-ui-express
 ```
+
+2. Split `packages/monolith` into separate microservices.
+
+Make sure `turborepo` configuration is updated, build and start all services
 
 ---
 
