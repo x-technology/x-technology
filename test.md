@@ -1,3 +1,8 @@
+---
+title: Test
+favicon: assets/favicon.ico
+---
+
 # File to Test things on Production
 
 <div class="twitter-btn">
