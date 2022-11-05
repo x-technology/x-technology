@@ -33,7 +33,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 ### Materials
 
 - [Repository](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp)
-- [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
+- [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
@@ -465,7 +465,7 @@ curl http://localhost:3001/
 curl http://localhost:3001/currency-converter/convert
 ```
 
-#### [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues) - Self Assignments
+#### [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues) - Practical Exercises
 
 1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
 
