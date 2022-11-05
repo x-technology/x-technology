@@ -177,7 +177,6 @@ Yay! 🎉 Now we're ready to go with the project.
 
 ### Monorepo structure
 
-todo @alex
 For better monorepo project management we used [Turborepo](https://turbo.build/repo/docs)
 
 The project shapes into the following structure:
@@ -234,8 +233,6 @@ curl http://localhost:3001/currency-converter/convert
 
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 </details>
-
-todo @alex
 
 [![](https://raw.githubusercontent.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/main/docs/assets/popular-api.png)](https://www.postman.com/state-of-api/api-technologies/#api-technologies)
 
@@ -731,13 +728,14 @@ It's time to have some practice and evolve our services even more!
 
 Let's grab a task based on the things you'd like to do 👇
 
-- [Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
+- [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues)
 
 ## Summary
 
 - GRPC
-- NestJS framework
-  - Microservices Principles
+  - Node.js
+- NestJS
+  - Microservices
 - Pulumi
   - Compare to Terraform
 
