@@ -1,8 +1,6 @@
 ---
 title: Test
-favicon: assets/favicon.ico
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<meta-test>abc</meta-test>
+favicon: favicon.ico
 ---
 
 # File to Test things on Production
