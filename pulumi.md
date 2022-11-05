@@ -4,7 +4,7 @@
   <a href="https://twitter.com/XTechnology5/status/1513973177768157200"><i></i></a>
 </div>
 
-# How to develop, build, and deploy Node.js GRPC microservices with Pulumi and Google Cloud Platform DevOps
+# How to develop, build, and deploy Node.js NestJS GRPC microservices with Pulumi and Google Cloud Platform
 
 The workshop gives a practical perspective of key principles needed to develop, build, and maintain a set of microservices in the Node.js stack. It covers specifics of creating isolated `TypeScript` dockerized services using NestJS framework and a monorepo approach with **turborepo**. The workshop includes an overview and a live exercise to create cloud environment with **Pulumi** framework and **Google Cloud Platform** services. The sessions fits the best developers who want to learn and practice build and deploy techniques using Google Cloud Platform stack and Pulumi, Node.js, and NestJS.
 
@@ -32,7 +32,6 @@ The workshop gives a practical perspective of key principles needed to develop, 
 
 ### Materials
 
-- [Workshop Event - November 5, 2022 10:00 AM CET](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897)
 - [Repository](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp)
 - [Practical Exercises as Github Issues](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops/issues)
 
@@ -98,7 +97,7 @@ Passionate software engineer with expertise in software development, microservic
 
 ### What are we going to do today?
 
-[⬆️ About](#how-to-develop-build-and-deploy-nodejs-microservices-with-pulumi-and-azure-devops)
+[⬆️ About](#agenda)
 
 ### Which technologies are we going to use?
 
@@ -129,7 +128,7 @@ Here is how it works:
 Let's get started from cloning demo monorepo
 
 ```shell
-git clone git@github.com:x-technology/micro-services-infrastructure-pulumi-azure-devops.git
+git clone git@github.com:x-technology/micro-services-nestjs-infrastructure-pulumi-gcp.git
 ```
 
 #### 2. Install protoc
@@ -161,11 +160,10 @@ Alternately, manually download and install protoc from [here](https://github.com
 
 Make sure we have Node.js v14+ installed. If not, [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) is a very good tool to install multiple node versions locally and easily switch between them.
 
-Then we need to install dependencies and bootstrap lerna within the monorepo.
+Then we need to install dependencies within the monorepo.
 
-```shell
-yarn install
-yarn lerna bootstrap
+```sh
+npm install                 # turborepo and dependencies
 ```
 
 Yay! 🎉 Now we're ready to go with the project.
@@ -173,38 +171,52 @@ Yay! 🎉 Now we're ready to go with the project.
 ### Monorepo structure
 
 todo @alex
-For better monorepo project management we used [Lerna](https://github.com/lerna/lerna) & [Yarn Workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/)
+For better monorepo project management we used [Turborepo](https://turbo.build/repo/docs)
 
 The project shapes into the following structure:
 
-![project structure](https://github.com/x-technology/mono-repo-nodejs-svc-sample/raw/main/docs/demo/project-structure.png)
-
-- `./packages/common` folder contains common libraries used in other project's services.
-- `./packages/services/grpc` folder contains gRPC services we build to share the product.
-- `./proto` folder contains proto files, which describe protocol of input/output and communication between the services.
-- `./node_modules` - folder with dependencies, shared between all microservices.
-- `./lerna.json` - lerna's configuration file, defining how it should work with monorepo.
-- `./package.json` - description of our package, containing the important part
-
-```json
-  "workspaces": [
-    "packages/common/*",
-    "packages/services/grpc/*"
-  ]
+```sh
+.
+├── Dockerfile              # docker mono image
+├── docker-compose.yaml     # docker-compose to start everything at once
+├── docs                    # code examples
+├── infrastructure          # pulumi and google cloud platform
+├── node_modules            # common node modules
+├── package.json            # project meta information & dependencies
+├── packages                # microservices source code
+└── turbo.json              # monorepo configuration
 ```
 
 Let's move on 🚚
 
 ### Using Turborepo
 
-Lerna brings to the table few commands which can be easily executed across all/or filtered packages.
+Turborepo brings to the table generic configuration which can be easily applied across all/or filtered packages.
 
-We use our common modules compiled to JavaScript, so before using it in services we need to build it first.
+We use our common modules compiled to JavaScript, so before using it in services we need to build it first. The following commands executed `build` command against all common packages:
 
-Following command executed `build` command against all common packages filtered with flag `--scope=@common/*`
+```json
+// ./package.json
+"scripts": {
+  "build": "turbo run build",
+  "start": "turbo run start:prod"
+},
+// ./turbo.json
+"pipeline": {
+  "build": {
+    "dependsOn": ["^build"],
+    "outputs": ["dist/**"]
+  },
+  "start:prod": {
+    "cache": false
+  }
+}
+```
 
-```shell
-npx turbo run build # todo @alex
+```sh
+npm run build
+npm run start
+curl http://localhost:3001/currency-converter/convert
 ```
 
 ### What is GRPC?
@@ -216,7 +228,9 @@ npx turbo run build # todo @alex
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 </details>
 
-todo @alex https://www.postman.com/state-of-api/api-technologies/#api-technologies
+todo @alex
+
+[![](https://raw.githubusercontent.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/main/docs/assets/popular-api.png)](https://www.postman.com/state-of-api/api-technologies/#api-technologies)
 
 > [gRPC](https://grpc.io/docs/what-is-grpc/faq/) is a *modern, open source* *remote procedure call (RPC)* framework that can run anywhere. It enables *client and server* applications to communicate transparently, and makes it easier to build connected systems
 
@@ -306,10 +320,32 @@ message HelloResponse {
 }
 ```
 
-### Demo - [Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
+### [Demo - Hello Node.js GRPC](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/tree/main/docs/demo-protobuf)
 
-```bash
-npm start
+```json
+// package.json
+"scripts": {
+  "1. download prices": "node index.js",
+  "2. generate protobuf runtime": "protoc --js_out=import_style=commonjs,binary:. prices.proto",
+  "3. run protobuf transformation": "node index.js",
+  "4. start grpc server": "node grpc-server.js",
+  "5. start grpc client": "node grpc-client.js"
+}
+```
+
+### [Demo - Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
+
+- `./packages/common` - common libraries used in other project's services
+- `./packages/services/grpc` - gRPC services we build to share the product
+- `./proto` - proto files, which describe protocol of input/output and communication between the services
+- `./node_modules` - dependencies, shared between all microservices
+- `./lerna.json` - lerna's configuration file, defining how it should work with monorepo
+
+```json
+"workspaces": [
+  "packages/common/*",
+  "packages/services/grpc/*"
+]
 ```
 
 ```js
@@ -325,6 +361,10 @@ const all = require('@common/go-grpc')
 const client = new all.currencyConverter.CurrencyConverterClient('0.0.0.0:50052', all.createInsecure());
 const response = await client.Convert(new all.currencyConverter.ConvertRequest({ sellAmount: 100, sellCurrency: 'USD', buyCurrency: 'GBP' }));
 response.toObject()
+```
+
+```bash
+npm start
 ```
 
 ### [Nest Framework](https://nestjs.com/)
@@ -356,61 +396,39 @@ export class CatsController {
 }
 ```
 
+![](assets/nest-why.png)
+
 - [Nest Documentation](https://docs.nestjs.com/)
 - `TypeScript` with Web Servers
   - `Angular` for Backend
   - Decorators, special types to control application flow
   - `Express` or `Fastify`
-  - Dependency Injection, DDD, CQRS, AOP
   - Modular & Testable
   - CLI
   - REST APIs, GRPC, GraphQL
-
-#### Patterns
-
-![](assets/nest-why.png)
-
-- Decorators
-- Dependency Injection
-- Observables / RxJS
-- SOLID / DDD / AOP
-
-> A domain-way application's decomposition by clean architecture
+  - Dependency Injection
+  - Observables / RxJS
+  - SOLID / DDD / AOP / CQRS
 
 ![clean architecture](https://cdn-media-1.freecodecamp.org/images/1*nEATDe5dRLIWN3MSxSjG0A.png)
 
-> Domain is a core!
-
-> Good for mid-size or big systems with complex business logic
-
-#### Internals
-
-![](assets/nest-modules.png)
-
-.right-code[
+- Controllers
 - Providers
 - Modules
 - Middleware
-]
-
 - Guards
 - Pipes
 - Interceptors
 
-#### Controllers
-
-- Handling incoming requests and returning responses to the client
-
 ```ts
+// @Body(), @Get(), @Post(), @Put(), @Delete(), @Patch(), @Options(), @Head(), @All()
 @Get()
 findAll(@Req() request: Request): string {
   return 'This action returns all cats';
 }
 ```
 
-> @Body(), @Get(), @Post(), @Put(), @Delete(), @Patch(), @Options(), @Head(), @All()
-
-#### Demo - All together
+### Demo - All Together
 
 ```bash
 # npm i -g @nestjs/cli
@@ -689,9 +707,10 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 microservices
 pulumi
-azure
+google cloud platform
 devops
 node.js
+nestjs
 javascript
 protobuf
 grpc
