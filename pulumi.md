@@ -575,8 +575,6 @@ npm install
 ```shell
 pulumi config set gcp:project <your-gcp-project-id> # e.g. xtechnology
 pulumi config set gcp:region <your-region> # e.g us-west1
-
-
 ```
 
 8. Yay! Now we're ready to start coding our infrastructure straight away.
