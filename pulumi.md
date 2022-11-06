@@ -66,7 +66,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 - [Pulumi](#pulumi)
   - [Intro](#intro)
   - [Compared to Terraform?](#compared-to-terraform)
-  - [Pulumi and Azure setup](#pulumi-and-azure-setup)
+  - [Pulumi and Google Cloud Platform setup](#pulumi-and-google-cloud-platform-gcp-setup)
   - [Kubernetes Cluster](#kubernetes-cluster)
   - [Install ingress into kubernetes cluster](#install-ingress-into-kubernetes-cluster)
   - [DNS](#dns)
@@ -336,7 +336,7 @@ message HelloResponse {
 }
 ```
 
-### [Demo - Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-gcp-devops)
+### [Demo - Run Microservices Locally](https://github.com/x-technology/mono-repo-nodejs-svc-sample)
 
 - `./packages/common` - common libraries used in other project's services
 - `./packages/services/grpc` - gRPC services we build to share the product
