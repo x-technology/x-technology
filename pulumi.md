@@ -710,7 +710,7 @@ curl -X GET http://localhost:8080/currency-converter/convert
 
 But, we have DNS, right. Let's try the same call via domain name:
 ```shell
-curl -X GET http://in1.app/currency-converter/convert
+curl -X GET https://in1.app/currency-converter/convert
 ```
 
 Great 🎉!
