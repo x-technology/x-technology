@@ -572,6 +572,7 @@ npm install
 ```
 
 7. Configure access to GCP from pulumi
+
 ```shell
 pulumi config set gcp:project <your-gcp-project-id> # e.g. xtechnology
 pulumi config set gcp:region <your-region> # e.g us-west1
