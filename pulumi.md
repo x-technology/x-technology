@@ -467,17 +467,17 @@ curl http://localhost:3001/currency-converter/convert
 
 #### [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues) - Practical Exercises
 
-1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction) for each package and check content, is GRPC auto documented?
+`1.` Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction) for each package and check content, is GRPC auto documented?
 
 ```bash
 npm install --save @nestjs/swagger swagger-ui-express
 ```
 
-2. Split `packages/monolith` into separate microservices.
+`2.` Split `packages/monolith` into separate microservices.
 
 Make sure `turborepo` configuration is updated, build and start all services
 
-3. Fix type definitions inside controllers, why observable types are generated instead of Promises?
+`3.` Fix type definitions inside controllers, why observable types are generated instead of Promises?
 
 ```ts
 // packages/monolith/src/currency-converter/currency-converter.controller.ts
