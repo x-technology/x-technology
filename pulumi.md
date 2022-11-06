@@ -62,7 +62,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [Demo - All Together](#demo---all-together)
 
 - [Infrastructure - Google Cloud](#infrastructure---gcp)
-  - [Introduction to Google Cloud](#introduction-to-gcp) 
+  - [Introduction to Google Cloud](#introduction-to-gcp)
 - [Pulumi](#pulumi)
   - [Intro](#intro)
   - [Compared to Terraform?](#compared-to-terraform)
@@ -467,7 +467,7 @@ curl http://localhost:3001/currency-converter/convert
 
 #### [Issues](https://github.com/x-technology/micro-services-nestjs-infrastructure-pulumi-gcp/issues) - Practical Exercises
 
-1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction)
+1. Attach [Swagger Plugin](https://docs.nestjs.com/openapi/introduction) for each package and check content, is GRPC auto documented?
 
 ```bash
 npm install --save @nestjs/swagger swagger-ui-express
