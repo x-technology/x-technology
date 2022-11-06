@@ -57,7 +57,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [What is GRPC?](#what-is-grpc)
   - [What are Protocol Buffers?](#what-are-protocol-buffers)
   - [Demo - Hello Node.js GRPC](#demo---hello-nodejs-grpc)
-  - [Demo - Run Microservices Locally](#demo---all-microservices-locally)
+  - [Demo - Run Microservices Locally](#demo---run-microservices-locally)
   - [Nest Framework](#nest)
   - [Demo - All Together](#demo---all-together)
 
