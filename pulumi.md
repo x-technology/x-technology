@@ -28,7 +28,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 - [Preinstall Docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/install/)
 - [Preinstall Protocol Buffer Compiler](https://grpc.io/docs/protoc-installation/)
 - We prefer to use VSCode for a better experience with JavaScript and TypeScript (other IDEs are also ok)
-- todo @reddikh to add GCP
+- Install [gcloud](https://cloud.google.com/sdk/docs/install) CLI tool to access Google Cloud Resources.
 
 ### Instructors
 
@@ -47,7 +47,7 @@ The workshop gives a practical perspective of key principles needed to develop, 
 
 - [Introduction](#introduction)
   - [Who are we?](#who-are-we)
-  - [What are we going to do today?](#how-to-develop-build-and-deploy-nodejs-microservices-with-pulumi-and-azure-devops)
+  - [What are we going to do today?](#how-to-develop-build-and-deploy-nodejs-microservices-with-pulumi-and-gcp)
   - [Which technologies are we going to use?](#technologies)
 - [Crypto 🦄 Currency Converter - Node.js](#crypto-currency-converter)
   - [What we're building](#what-were-building)
@@ -61,9 +61,8 @@ The workshop gives a practical perspective of key principles needed to develop, 
   - [Nest Framework](#nest)
   - [Demo - All Together](#demo---all-together)
 
-todo @reddikh
-- [Infrastructure - Azure](#infrastructure---azure)
-  - [Introduction to Azure](#introduction-to-azure)
+- [Infrastructure - Google Cloud](#infrastructure---gcp)
+  - [Introduction to Google Cloud](#introduction-to-gcp) 
 - [Pulumi](#pulumi)
   - [Intro](#intro)
   - [Compared to Terraform?](#compared-to-terraform)
@@ -337,7 +336,7 @@ message HelloResponse {
 }
 ```
 
-### [Demo - Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
+### [Demo - Run Microservices Locally](https://github.com/x-technology/micro-services-infrastructure-pulumi-gcp-devops)
 
 - `./packages/common` - common libraries used in other project's services
 - `./packages/services/grpc` - gRPC services we build to share the product
@@ -500,32 +499,19 @@ Make sure `turborepo` configuration is updated, build and start all services
 
 ---
 
-todo @reddikh
-## Infrastructure - Azure
+## Infrastructure - Google Cloud Platform
 
-### Introduction to Azure
+### Introduction to Google Cloud Platform
 
-*`Microsoft Azure` is a enourmous cloud ecosystem that enables to organize, develop, publish applications worldwide*
+*`Google Cloud Platform` is a enourmous cloud ecosystem that enables to organize, develop, publish applications worldwide*
 
 - Organization Resources - Users, Tasks
 - CI/CD - Repositories, Pipelines, Artifacts
 - Integrations
 
-### Demo - [Migrate to Azure](https://dev.azure.com/xtechnology5/_git/XTechnology)
+## Docker - Build application as a docker image
 
-- Azure DevOps
-  - Repository
-- [Azure Container Registry](https://portal.azure.com/#@hellole.onmicrosoft.com/resource/subscriptions/8706d28d-203d-4127-ac6e-2ab12c9caf33/resourcegroups/xtechnology-microservices/providers/Microsoft.ContainerRegistry/registries/xtechnology/quickStart)
-
-```bash
-docker login xtechnology.azurecr.io
-docker image tag tmp-base2:latest xtechnology.azurecr.io/microservices-united:latest
-docker push xtechnology.azurecr.io/microservices-united:latest
-```
-
-- [Azure Pipelines](https://dev.azure.com/xtechnology5/XTechnology/_apps/hub/ms.vss-build-web.ci-designer-hub)
-  - [Service Connections](https://dev.azure.com/xtechnology5/XTechnology/_settings/adminservices)
-  - [Build and Push](https://dev.azure.com/xtechnology5/XTechnology/_build?definitionId=1&_a=summary)
+## GitHub Actions - Make builds automatically
 
 ## Pulumi
 ### Intro
@@ -554,13 +540,10 @@ Terraform is an open-source infrastructure as code software tool that provides a
 - Infrastructure Reuse and Modularity: Constrained. Can only reuse Terraform modules.
 - Secrets are stored in a separate product (Vault). There is no way to encrypt them in the state file.
 
-### Pulumi and Azure setup
+### Pulumi and Google Cloud Platform (GCP) setup
 Let's get started from pulumi installation and initial infrastructure repo setup.
 
-1. Let's first install `azure-cli` with a command. If you're a MacOS user follow the [brew](https://brew.sh/) command.
-```shell
-brew install azure-cli
-```
+1. Let's first install `gcloud` with a command. Follow instructions [here](https://cloud.google.com/sdk/docs/install) as installation depends on the machine and OS.
 
 2. Next, we need to get `pulumi` cli installed.
 ```shell
@@ -569,36 +552,45 @@ brew install pulumi
 
 3. Now it's time to create infrastructure project in `infra` folder with the following command.
 ```shell
-pulumi new azure-typescript
+pulumi new typescript
 ```
 
-4. Let's get authorized registered at Azure and Pulumi
-- https://portal.azure.com
+4. Let's get authorized registered at GCP and Pulumi
+- https://console.cloud.google.com
 - https://app.pulumi.com
 
 5. Get authorized in cli commands:
 ```shell
-az login
 pulumi login
+gcloud login
+gcloud auth application-default login
 ```
 
-6. Get dependencies installed in infrastructure folder
+6. Get dependencies installed in `infra` folder
 ```shell
-yarn install
+npm install
 ```
 
-7. Yay! Now we're ready to start coding our infrastructure straight away.
+7. Configure access to GCP from pulumi
+```shell
+pulumi config set gcp:project <your-gcp-project-id> # e.g. xtechnology
+pulumi config set gcp:region <your-region> # e.g us-west1
+
+
+```
+
+8. Yay! Now we're ready to start coding our infrastructure straight away.
 
 ### Kubernetes Cluster
 Let's get started with Kubernetes Cluster in Azure, and for this purpose we're going to use Pulumi to start.
 
 We need to import a file, containing description of our cluster.
-```typescript
-import * as cluster from "./cluster";
-import * as resourceGroup from "./resourceGroup";
 
-export let clusterName = cluster.k8sCluster.name;
-export let groupName = resourceGroup.resourceGroup.name;
+```typescript
+import { kubeconfig, cluster } from "./cluster";
+
+export const clusterName = cluster.name;
+export const config = kubeconfig;
 ```
 
 Now, let's try to do a simple command to build our infrastructure in the cloud:
@@ -606,48 +598,8 @@ Now, let's try to do a simple command to build our infrastructure in the cloud:
 pulumi up
 ```
 
-Let's check our cluster at the Azure website.
+Let's check our cluster at the Google Cloud Platform.
 Great! It's there, just in few lines of TypeScript code.
-
-### Registry
-
-Now we're good to add docker registry, where we're going to put our application code as a Docker image.
-
-Let's add the following lines into our `index.ts`:
-```typescript
-import { registry } from "./registry";
-
-export let registryName = registry.loginServer;
-```
-
-Once again `pulumi up` to see it's deployed.
-
-Now we can see our new registry created and here is the name of the registry in the output of pulumi command.
-So, let's build our application code into a docker image and push it to newly created registry by the following commands:
-
-Replace `registry-name` with real registry name from pulumi output.
-
-```shell
-az acr login --name registry-name
-docker build -t registry-name.azurecr.io/grpc:latest .
-docker push registry-name.azurecr.io/grpc:latest
-```
-
-Great the image is there in the cloud! It's ready to be installed from the cluster, or not yet?
-
-We need to give reading permissions to our cluster, so it's allowed to pull images from registry.
-
-```typescript
-import * as azure from "@pulumi/azure";
-
-const principalId = cluster.k8sCluster.identityProfile.apply(p => p!["kubeletidentity"].objectId!);
-const assignment = new azure.authorization.Assignment("workshop-assignment", {
-  principalId: principalId,
-  roleDefinitionName: "AcrPull",
-  scope: registry.id,
-  skipServicePrincipalAadCheck: true,
-});
-```
 
 ### Install ingress into kubernetes cluster
 **What is Ingress?**
@@ -657,58 +609,62 @@ Ingress exposes HTTP and HTTPS routes from outside the cluster to services withi
 
 Let's add it with the following code:
 ```typescript
-import * as k8s_system from "./k8s/system";
+import { ingressServiceIP } from "./k8s/system";
 
-export let ingressServiceIP = k8s_system.ingressServiceIP;
+export const externalIp = ingressServiceIP;
 ```
 
-Right after applying this code, we can see `ingressServiceIP` it's our public IP of the cluster.
+Right after applying this code, we can see `externalIp` it's our public IP of the cluster.
 Now let's attach DNS to this IP.
 
 ### DNS
 We're going to use CloudFlare for DNS as it provides very rich api and also an extra features like Anti-Ddos and more.
 
 ```typescript
-import * as dns from "./dns";
+import { mainRecord } from "./dns";
 
-export let dnsRecord = dns.mainRecord.hostname;
+export const domain = mainRecord;
 ```
 
 Once again `pulumi up` to see the changes applied.
 
-### Deploy Microservices
+### Deploy NestJs Application
 
 ```typescript
-import * as apps from "./k8s/apps";
+import { currencyConverter } from "./k8s/apps";
 
-export let currencyConverter = apps.currencyConverter.urn;
-export let appNamespace = apps.appNamespace.metadata.name;
+export const service = currencyConverter.urn;
 ```
 
-Get credentials for using `kubectl`
+Let's find clusterName in pulumi output and use it to get access to cluster with `kubectl` command.
 ```shell
-az aks get-credentials --admin --name workshop-cluster1437dadd -g workshop-group5e64df12
+gcloud container clusters get-credentials apps-cluster-4eef4bd --region=europe-west2-b
 ```
 
 Let's create a proxy forwarding to our service inside the kubernetes cluster
 ```shell
-kubectl port-forward -n apps-q0fg8ahd svc/currency-converter-grpc 50051:50051
+kubectl port-forward -n apps-q0fg8ahd svc/currency-converter-grpc 8080:80
 ```
 
 Now it's the moment to call our currency-converter:
 ```shell
-echo '{"sellCurrency": "GBP", "buyCurrency": "USD", "sellAmount": 150}' | grpcurl -plaintext -import-path ./proto -proto currency-converter.proto -d @ 127.0.0.1:50051 currencyConverter.CurrencyConverter.Convert
+curl -X GET http://localhost:8080/currency-converter/convert
+```
+
+But, we have DNS, right. Let's try the same call via domain name:
+```shell
+curl -X GET http://in1.app/currency-converter/convert
 ```
 
 Great 🎉!
 
-We've just created the full infrastructure and deployed our microservices into the Kubernetes cluster using Helm charts and pulumi.
+We've just created the full infrastructure and deployed our NestJs application into the Kubernetes cluster using Helm chart, pulumi, and Typescript.
 
 ### Helm
 
 Helm is a package manager for Kubernetes. Helm is the K8s equivalent of yum or apt. Helm deploys charts, which you can think of as a packaged application.
 
-We store our helm charts inside the `./infrastructure/charts` folder.
+We store our helm charts inside the `./infra/charts` folder.
 
 By running a command we can create a new helm chart:
 ```shell
