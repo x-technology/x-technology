@@ -559,11 +559,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         env:
-          DOCKER_USERNAME: \${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: \${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: $\{\{ secrets.DOCKER_USERNAME \}\}
+          DOCKER_PASSWORD: $\{\{ secrets.DOCKER_PASSWORD \}\}
         run: |
-          IMAGE_TAGGED="xtechnology/\${{ github.event.repository.name }}:${GITHUB_SHA}"
-          IMAGE_LATEST="xtechnology/\${{ github.event.repository.name }}:latest"
+          IMAGE_TAGGED="xtechnology/$\{\{ github.event.repository.name \}\}:${GITHUB_SHA}"
+          IMAGE_LATEST="xtechnology/\$\{\{ github.event.repository.name \}\}:latest"
           echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
           docker build -t ${IMAGE_TAGGED} -t ${IMAGE_LATEST} .
           docker push ${IMAGE_TAGGED}
