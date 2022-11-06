@@ -511,7 +511,66 @@ Make sure `turborepo` configuration is updated, build and start all services
 
 ## Docker - Build application as a docker image
 
+Let's have a quick look into Dockerfile and see how it works.
+
+```dockerfile
+FROM node:16.18.0 as builder
+
+RUN apt update && \
+  apt install -y protobuf-compiler
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+COPY package*.json turbo.json ./
+
+COPY packages ./packages
+
+# Install workspace dependencies
+RUN npm install
+
+# Creates a "dist" folder with the production build
+RUN npm run build
+
+# Start the server using the production build
+CMD [ "node", "packages/dist/main.js" ]
+
+```
+
 ## GitHub Actions - Make builds automatically
+
+Here is GitHub Actions file which defines building/publishing docker image on every push to repository in specific paths.
+
+```yaml
+name: Docker Image Build
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/**
+      - Dockerfile
+      - .dockerignore
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          IMAGE_TAGGED="xtechnology/${{ github.event.repository.name }}:${GITHUB_SHA}"
+          IMAGE_LATEST="xtechnology/${{ github.event.repository.name }}:latest"
+          echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
+          docker build -t ${IMAGE_TAGGED} -t ${IMAGE_LATEST} .
+          docker push ${IMAGE_TAGGED}
+          docker push ${IMAGE_LATEST}
+          docker logout
+```
 
 ## Pulumi
 ### Intro
