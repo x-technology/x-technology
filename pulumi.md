@@ -640,7 +640,7 @@ pulumi config set gcp:region <your-region> # e.g us-west1
 8. Yay! Now we're ready to start coding our infrastructure straight away.
 
 ### Kubernetes Cluster
-Let's get started with Kubernetes Cluster in Azure, and for this purpose we're going to use Pulumi to start.
+Let's get started with Kubernetes Cluster in GCP, and for this purpose we're going to use Pulumi to start.
 
 We need to import a file, containing description of our cluster.
 
