@@ -155,7 +155,7 @@ We hope you like our content, and welcome any contribution!
 - [Youtube](https://www.youtube.com/@x-technology)
 - [Eventbrite](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 - [Twitter](https://twitter.com/XTechnology5)
-- [Discord](https://discord.gg/ZTnWdVpUPV)
+- [Discord](https://discord.com/invite/ZTnWdVpUPV)
 
 ![repository-open-graph-template 1](https://user-images.githubusercontent.com/1259644/115153860-493a2880-a078-11eb-85c8-201b1512ee4b.png)
 
