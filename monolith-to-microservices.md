@@ -383,9 +383,7 @@ Fast & easy to
 
 ## Feedback
 
-Please share your feedback on our workshop. Thank you and have a great coding!
-
-![share feedback](./assets/msg-1742589788-70.jpg)
+Please [share your feedback](https://forms.gle/7jyTCxQBqata6SiX6) on our workshop. Thank you and have a great coding!
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
