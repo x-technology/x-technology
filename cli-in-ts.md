@@ -101,7 +101,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 
 ## Who are we?
 
-![Alex](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/alex.jpg?raw=true)
 
 ### Alex Korzhikov
 
