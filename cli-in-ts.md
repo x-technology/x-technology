@@ -35,7 +35,6 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 - You’ll need to have a laptop with you. Windows, Linux or Mac doesn’t matter. Ideally, you should feel comfortable using this computer for daily tasks. Don't forget to take a charger.
 - [Preinstall Node.js, npm](https://nodejs.org/en/download/)
 - Git, account on [Github](https://github.com/)
-- [Preinstall Protocol Buffer Compiler](https://grpc.io/docs/protoc-installation/)
 - We prefer to use VSCode for a better experience with JavaScript and TypeScript (other IDEs are also ok)
 
 ### Instructors
@@ -105,24 +104,26 @@ Our goals are to learn awesome technologies, practice modern techniques, and of 
 ![Alex](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/alex.jpg?raw=true)
 
 ### Alex Korzhikov
-#### `JavaScript, Node, Web Components, TypeScript`
-### @ING @Otus
 
-- Twitter: **[AlexKorzhikov](https://twitter.com/AlexKorzhikov)**
-- Medium: **[korzio](https://medium.com/@korzio)**
-- Github: **[korzio](https://github.com/korzio)**
+![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
 
-## Who are we?
+Software Engineer, Netherlands
+
+My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
+
+- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
+- [korzio](https://github.com/korzio)
+
+### Pavlik Kiselev
 
 ![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
 
-### Pavlik Kiselev
-#### `JavaScript, Serverless, React, GraphQL`
-### @Frontmen
+Software Engineer, Netherlands
 
-- **[LinkedIn](
-https://www.linkedin.com/in/pavlik-kiselev-06993347/)**
-- Github: **[paulcodiny](https://github.com/paulcodiny)**
+JavaScript developer with full-stack experience and frontend passion. He runs a small development agency [codeville.agency](https://codeville.agency/) and likes to talk about technologies they use: React, Remix and Serverless.
+
+- [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
+- [paulcodiny](https://github.com/paulcodiny)
 
 # CLI in Node.js
 
