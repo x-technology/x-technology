@@ -52,6 +52,44 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
 
+`60.` [Azure Machine Learning - Train and Deploy - XTechnology Code Hour](https://www.youtube.com/watch?v=CvFR61SFHj8) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *21 Jan 2023*
+
+`59.` [Bootstrap Microservices - Episode I - Project Generation Tool - XT Code Hour](https://www.youtube.com/watch?v=MWZz7REk9mI) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *14 Jan 2023*
+
+`58.` [Explore & Evaluate - FrontEnd System Design Mock Interview, Episode II - XTechnology Code Hour](https://www.youtube.com/watch?v=afVtok_oaEA) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *7 Jan 2023*
+
+`57.` [React Query Hooks - XT Code Hour](https://www.youtube.com/watch?v=rLasA328dEM) by [Valentin Kononov](https://kononov-space.fly.dev/about/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *24 Dec 2022*
+
+`56.` [CodeSignal - Interviews for Data Scientists](https://www.youtube.com/watch?v=WgPENFU3pE0) by [Nikolay Sheyko](https://www.linkedin.com/in/nikolay-sheyko), [Akshita Dixit](https://akshitadixit.bio.link/) & [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *17 Dec 2022*
+
+`55.` [Node.js vs Deno vs Bun - XT Code Hour](https://www.youtube.com/watch?v=lz1IR33EUig) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *3 Dec 2022*
+
+`54.` [Why and how to apply for a conference?](https://www.youtube.com/watch?v=Kp99MA0vdzI) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *19 Nov 2022*
+
+`53.` [FrontEnd System Design Mock Interview - Episode I - XTechnology Code Hour](https://www.youtube.com/watch?v=vjyGf_7B3y0) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *12 Nov 2022*
+
+`52.` [GRPC Microservices in Yandex Cloud with Pulumi - Code Hour](https://www.youtube.com/watch?v=43qtXMLMBDc) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 Oct 2022*
+
+`51.` [Software System Design - Mock interview - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=5IlIC0bu8Iw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *22 Oct 2022*
+
+`50.` [LeetCode with SQL - XTechnology Code Hour](https://www.youtube.com/watch?v=8TnRykzlD9o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *15 Oct 2022*
+
+`49.` [GRPC Microservice again in NestJS! - XTechnology - Code Hour](https://www.youtube.com/watch?v=sYe5IcwmYbE) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), *8 Oct 2022*
+
+`48.` [Computer Vision 101 - Image Classification with PyTorch Part III - XTechnology Code Hour](https://www.youtube.com/watch?v=lX_Ysn8nhAA) by [Alexey Zaitsev](https://twitter.com/proxcentb), *1 Oct 2022*
+
+`47.` [Microservices in Go with Micro & Linkerd - Code Hour](https://www.youtube.com/watch?v=l4qlAT6vuN4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *24 Sep 2022*
+
+`46.` [LeetCode with Python - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=NPsvlaPh63c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *17 Sep 2022*
+
+`45.` [Software System Design - Mock interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=0Fd-0YfVPvs) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *11 Sep 2022*
+
+`44.` [Computer Vision 101 - Image Classification with PyTorch Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=gF75Abn3A_8) by [Alexey Zaitsev](https://twitter.com/proxcentb), *10 Sep 2022*
+
+`43.` [Software System Design - Mock interview - XTechnology Code Hour](https://www.youtube.com/watch?v=FYWxVyvyNJQ) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *4 Sep 2022*
+
+`42.` [Computer Vision 101 - Image Classification with PyTorch - XTechnology Code Hour](https://www.youtube.com/watch?v=QizLa7RdrZo) by [Alexey Zaitsev](https://twitter.com/proxcentb), *27 Aug 2022*
+
 `41.` [Building open source project - Part IV - Seeding a DB, NestJS & TypeORM](https://youtu.be/Yhu6jwhJQjk) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), [Denis Volper](https://t.me/denisvolper) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *20 Aug 2022*
 
 `40.` [ML System Design interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *13 Aug 2022*
