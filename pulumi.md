@@ -92,7 +92,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 #### Andrew Reddikh
 
-[![andrew reddikh photo](https://andrew.red/photo.jpg)](https://andrew.red)
+[![andrew reddikh photo](https://andrew.red/static/8ff3a66d3bd0a98ee9ed80636e94fc3d/65c8c/photo.avif)](https://andrew.red)
 
 Software Engineer, United Kingdom
 

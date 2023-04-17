@@ -77,7 +77,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 #### Andrew Reddikh
 
-[![andrew reddikh](https://andrew.red/photo.jpg)](https://andrew.red)
+[![andrew reddikh](https://andrew.red/static/8ff3a66d3bd0a98ee9ed80636e94fc3d/65c8c/photo.avif)](https://andrew.red)
 
 Software Engineer, United Kingdom
 
@@ -245,7 +245,7 @@ Application
   - retrieves and updates database,
   - returns a JSON response
 
-### Monolith
+### [Monolith](https://microservices.io/patterns/monolithic.html)
 
 Application developed and deployed as a single unit which can sustain consistent state
 
@@ -257,13 +257,13 @@ Slow & difficult to
   - deploy, debug, and scale,
   - maintain *Long Term Support* for technology stack
 
-### Microservice
+### [Microservices](https://microservices.io/patterns/microservices.html)
 
 > An architectural pattern, affects an organization, process, and result!
 
 ![Microservice org benefits](https://microservices.io/i/successtriangle.png)
 
-Application as a set of services that are
+Application as a set of [services](http://chrisrichardson.net/post/microservices/general/2019/02/16/whats-a-service-part-1.html) that are
   - deliver business feature,
   - independently deployable,
   - owned by a small team,
@@ -296,11 +296,11 @@ Fast & easy to
 - No dependencies on monolith
 - Cohesive and loosely coupled
 
-### Architecture Patterns
+### [Architecture Patterns](https://microservices.io/patterns/microservices.html#related-patterns)
 
 - Solid Principles
   - Single Responsibility Principle
-- Clean Architecture
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - Command Query Responsibility Segregation
   - Event Sourcing
   - Sagas 😇
@@ -360,6 +360,8 @@ Fast & easy to
 
 > Make the most of the monolith
 
+[![](https://martinfowler.com/bliki/images/microservicePrerequisites/sketch.png)](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+
 > Mind new features as separate services
 
 > Success is improved velocity and reliability
@@ -391,7 +393,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 - [Bank Application](https://github.com/pietrzakadrian/bank-server) by [Adrian Pietrzak](https://twitter.com/PietrzakAdrian)
 - [Melvin E. Conway's law, 1967](https://en.wikipedia.org/wiki/Conway%27s_law)
-- [Monolith](https://microservices.io/patterns/monolithic.html)
+- [Microservice Architecture](https://microservices.io/patterns/monolithic.html)
 - [Prereqiuisites and principles](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
 - [How to break a Monolith into Microservices](https://martinfowler.com/articles/break-monolith-into-microservices.html)
 
