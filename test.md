@@ -5,8 +5,7 @@ title: Test
 # File to Test things on Production
 
 ```mermaid
-flowchart LR
-
+graph LR
   A-->B
   B-->C
   C-->D
