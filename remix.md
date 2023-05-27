@@ -117,7 +117,8 @@ const Invoice = ({ id }: InvoiceProps) => {
 ```
 
 ### Waterfall Loading (Solution)
-- ![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
+
+![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
 
 ### Remix Rendering Approach
 - Small demo
@@ -166,14 +167,16 @@ export default function Gists() {
 ```
 
 ### Rendering Approaches
-- ![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)
+
+![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)
 
 ### Remix Rendering Approaches
 - Server-side rendering + client-side hydration
 - Pure server-side rendering
 
 ### Remix Blog Tutorial
-- ![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
+
+![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
 
 ```jsx
 // https://github.com/remix-run/examples/blob/main/_official-blog-tutorial/app/routes/posts/index.tsx
@@ -246,6 +249,8 @@ app/
 - SEO
 - Error boundaries
 - Stacks
+
+![remix error boundaries user interface example with message something went wrong](https://remix.run/docs-images/error-boundary.png)
 
 ## Promises
 - Web standards
