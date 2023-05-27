@@ -59,7 +59,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 ## Remix Framework
 
-<iframe src="https://app.sli.do/event/1Z6LF8MxZFNjo1E2PBg9VD" width="500px" ></iframe>
+<iframe src="https://wall.sli.do/event/1Z6LF8MxZFNjo1E2PBg9VD?section=414edbc6-a745-42d6-a140-f0f827e8d5fa" width="50%" height="400px" ></iframe>
 
 - [Remix Framework](https://remix.run)
 
