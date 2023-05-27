@@ -1,4 +1,4 @@
-Back to the roots with Remix
+# Back to the roots with Remix
 
 The modern web would be different without rich client-side applications supported by powerful frameworks: React, Angular, Vue, Lit, and many others. These frameworks rely on client-side JavaScript, which is their core. However, there are other approaches to rendering. One of them (quite old, by the way) is server-side rendering entirely **without JavaScript**.
 Let's find out if this is a good idea and how Remix can help us with it?
@@ -13,8 +13,9 @@ Let's find out if this is a good idea and how Remix can help us with it?
 ## Agenda
 
 - Introduction 📢
-- Example Application 💻
-- Theory 📕
+- Demo - Example Application 💻
+- About Remix 📕
+  - How Remix Works 🛠️
   - Esbuild Experiment 🔬
 - Remix Dive In 🏊‍♀️
 - Summary 🥟
@@ -49,50 +50,206 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 ## Remix Framework
 - [Remix Framework](https://remix.run)
 
-## Rendering Approaches
-- ![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)
+## Demo - Example Application
 
-## Remix Rendering Approach
+### Waterfall Loading (Problem)
+- [Waterfall Loading Problem Code](https://gist.github.com/)
+
+```jsx
+import { useParams } from "react-router";
+
+type useQueryType = { <T>(x: string): { data: T | null } };
+const useQuery: useQueryType = (type) => ({ data: null });
+
+type SalesType = { id: number; overdue: string; dueSoon: string };
+type InvoiceType = { id: number; user: string; value: string; details: string };
+
+// URL: /sales/invoices/1
+export const InvoicesPage = () => {
+  return (
+    <div>
+      <Invoices />
+    </div>
+  );
+};
+
+const Invoices = () => {
+  const { data: invoices } = useQuery<InvoiceType[]>("invoices");
+  if (!invoices) return null;
+  const { invoiceId } = useParams();
+  return (
+    <>
+        <ul>
+          {invoices.map((invoice: InvoiceType) => (
+            <li key={invoice.id}>
+              <a href={`/invoices/${invoice.id}`}>{invoice.user} {invoice.value}</a>
+            </li>
+          ))}
+        </ul>
+        {invoiceId && <Invoice id={Number(invoiceId)} />}
+    </>
+  );
+};
+
+type InvoiceProps = { id: number };
+const Invoice = ({ id }: InvoiceProps) => {
+  const { data: invoice } = useQuery<InvoiceType>(`invoices/${id}`);
+  if (!invoice) return null;
+  return (
+    <div>
+      {invoice.user}: {invoice.details}
+    </div>
+  );
+};
+```
+
+### Waterfall Loading (Solution)
+- ![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
+
+### Remix Rendering Approach
 - Small demo
 
-## Remix Rendering Approaches
+## About Remix
+
+> a modern full stack web framework
+
+```jsx
+import { json } from "@remix-run/node"; // or cloudflare/deno
+
+export async function loader() {
+  const res = await fetch("https://api.github.com/gists");
+  const gists = await res.json();
+
+  return json(
+    gists.map((gist) => ({
+      description: gist.description,
+      url: gist.html_url,
+      files: Object.keys(gist.files),
+      owner: gist.owner.login,
+    }))
+  );
+}
+
+export default function Gists() {
+  const gists = useLoaderData<typeof loader>();
+
+  return (
+    <ul>
+      {gists.map((gist) => (
+        <li key={gist.id}>
+          <a href={gist.url}>
+            {gist.description}, {gist.owner}
+          </a>
+          <ul>
+            {gist.files.map((key) => (
+              <li key={key}>{key}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+### Rendering Approaches
+- ![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)
+
+### Remix Rendering Approaches
 - Server-side rendering + client-side hydration
 - Pure server-side rendering
 
-## Remix Blog Tutorial
+### Remix Blog Tutorial
 - ![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
 
-## Building
-- ![Building](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/build.png?raw=true)
+```jsx
+// https://github.com/remix-run/examples/blob/main/_official-blog-tutorial/app/routes/posts/index.tsx
+import { json } from "@remix-run/node"
+import { Link, useLoaderData } from "@remix-run/react"
 
-## Esbuild Remix Experiment
+import { getPosts } from "~/models/post.server"
 
-> DIY Let's do Remix today with own hands!
+export const loader = async () => json({ posts: await getPosts() })
 
-Alex Korzhikov - March, 2023
-
-- How Remix Works
-  - [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
-- Esbuild Experiment
-- Summary
-  - Problems
+export default function Posts() {
+  const { posts } = useLoaderData<typeof loader>()
+  return (
+    <main>
+      <h1>Posts</h1>
+      <Link to="admin" className="text-red-600 underline">Admin</Link>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link to={post.slug} className="text-blue-600 underline">{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+  )
+}
+```
 
 ### [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
 
-- compiler - server side and client side app, alongside with manifest meta information?
+- compiler - server side and client side app, alongside with manifest meta information
+
+> *a compiler for React Router*
 
 ![How Compiler Works](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-compiler.png?raw=true)
 
 - server
   - serves routes come from build
   - adapters to transform routes to a particular http server
-  - controller and view (not a model) - each route can contain loader, action, and default component
+  - controller and view (not a model) - each route can contain `loader, action & default component`
 - client
   - hydration
+  - web worker
+  - forms
+  - session
+  - cookies
+  - auth
 
 ![How Server and Client Work](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-server-and-client-work.png?raw=true)
 
+### Remix Routing
+```bash
+app/
+├── routes/
+│   ├── about.tsx           // route is based on the static path
+│   ├── blog/               // route has an additional "/blog" segment in the URL
+│   │   ├── $postId.tsx     // dynamic params
+│   │   ├── categories.tsx  // static segments
+│   │   └── index.tsx       // index of the "/blog" directory
+│   ├── $.tsx               // splat route (catch-all routes)
+│   ├── blog.authors.tsx    // dot delimiter
+│   ├── blog.tsx            // layout for a regular route
+│   └── index.tsx
+└── root.tsx
+```
+- Optional segments and pathless routes, that are you not reflected in the URL
+
+## Other Features
+- Authentication
+- SEO
+- Error boundaries
+- Stacks
+
+## Promises
+- Web standards
+- Modern web app UX
+- Better websites
+
+## Results
+- Navigation input
+- Form-based mutations
+- Optimistic updates
+- Good UX by default
+
 ### Esbuild Experiment
+
+> DIY Let's do Remix today with own hands!
+
+- [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
 
 #### Goals
 
@@ -107,45 +264,70 @@ Alex Korzhikov - March, 2023
 - add esbuild, jsx
 - ~~dev routes client~~
 - react ssr
+- demo esbuild experiment
 
-## Remix Routing
+![State of current implementation](assets/esbuild-experiment-outcome.png)
+
+#### Build
+
+![Build](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/build.png?raw=true)
+
+```jsx
+// app/routes/posts/index.tsx
+var posts_exports = {};
+__export(posts_exports, {
+  default: () => Posts,
+  loader: () => loader5
+});
+var import_node7 = require("@remix-run/node"),
+    import_react7 = require("@remix-run/react");
+var import_jsx_dev_runtime7 = require("react/jsx-dev-runtime"),
+    loader5 = async () => (0, import_node7.json)({ posts: await getPosts() });
+function Posts() {
+  let { posts } = (0, import_react7.useLoaderData)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("main", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h1", { children: "Posts" }, void 0, !1, {
+      fileName: "app/routes/posts/index.tsx"
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_react7.Link, { to: "admin", ...
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: posts.map((post) => ...
+    }, this) }, post.slug, !1, {
+      fileName: "app/routes/posts/index.tsx"
+    ...
+}
 ```
-app/
-    ├── routes/
-    │   ├── about.tsx           // route is based on the static path
-    │   ├── blog/               // route has an additional "/blog" segment in the URL
-    │   │   ├── $postId.tsx     // dynamic params
-    │   │   ├── categories.tsx  // static segments
-    │   │   └── index.tsx       // index of the "/blog" directory
-    │   ├── $.tsx               // splat route (catch-all routes)
-    │   ├── blog.authors.tsx    // dot delimiter
-    │   ├── blog.tsx            // layout for a regular route
-    │   └── index.tsx
-    └── root.tsx
+
+```jsx
+import { createPost } from "~/models/post.server"
+
+export const action = async ({ request }: ActionArgs) => {
+  const formData = await request.formData()
+
+  const title = formData.get("title")
+  if (!title) return json({ error: "Title is required" })
+
+  await createPost({ title })
+
+  return redirect("/posts/admin")
+};
+
+export default function NewPost() {
+  const transition = useTransition()
+  const isCreating = Boolean(transition.submission)
+
+  return (
+    <Form method="post">
+      <label>
+        Post Title:{" "}<input type="text" name="title" />
+      </label>
+      <button type="submit" disabled={isCreating}>
+        {isCreating ? "Creating..." : "Create Post"}
+      </button>
+    </Form>
+  );
+}
 ```
-- Optional segments and pathless routes, that are you not reflected in the URL
-
-## Waterfall Loading (Problem)
-- [Waterfall Loading Problem Code](https://gist.github.com/)
-
-## Waterfall Loading (Solution)
-- ![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
-
-## Other Features
-- Authentication
-- SEO
-- Error boundaries
-
-## Promises
-- Web standards
-- Modern web app UX
-- Better websites
-
-## Results
-- Navigation input
-- Form-based mutations
-- Optimistic updates
-- Good UX by default
 
 ## How to Start
 - Do the tutorials (blog or jokes app)
@@ -172,6 +354,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
 - [Fundamentals of Redux Course from Dan Abramov](https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867)
 - [Test Remix App](https://github.com/korzio/testcodesandbix)
+- [Remix Community](https://remix.run/docs/en/1.16.1/pages/community)
 
 ### Technologies
 
