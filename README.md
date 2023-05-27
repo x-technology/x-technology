@@ -36,6 +36,8 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
+- [Back to the roots with Remix](./remix.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), 2023
+
 - [How to develop, build, and deploy Node.js NestJS GRPC microservices with Pulumi and Google Cloud Platform](./pulumi.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
 - [Mastering CLI with TypeScript](./cli-in-ts.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
