@@ -1,3 +1,13 @@
+---
+title: XTechnology Workshop - Back to the roots with Remix
+---
+
+[![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
+
+<div class="twitter-btn">
+  <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
+</div>
+
 # Back to the roots with Remix
 
 The modern web would be different without rich client-side applications supported by powerful frameworks: React, Angular, Vue, Lit, and many others. These frameworks rely on client-side JavaScript, which is their core. However, there are other approaches to rendering. One of them (quite old, by the way) is server-side rendering entirely **without JavaScript**.
@@ -48,6 +58,9 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 - [Movies - Github Repository](https://github.com/korzio/testcodesandbix)
 
 ## Remix Framework
+
+<iframe src="https://app.sli.do/event/1Z6LF8MxZFNjo1E2PBg9VD" width="500px" ></iframe>
+
 - [Remix Framework](https://remix.run)
 
 ## Demo - Example Application
