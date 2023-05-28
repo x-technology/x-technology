@@ -112,7 +112,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 - [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
 - [paulcodiny](https://github.com/paulcodiny)
 
-# Code
+## Code
 
 - [Movies - CodeSandbox Project](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw?file=%2Fapp%2Froutes%2Fmovies%2F%24movieId.reviews.tsx)
 - [Movies - Github Repository](https://github.com/korzio/testcodesandbix)
@@ -122,66 +122,6 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 <iframe src="https://wall.sli.do/event/1Z6LF8MxZFNjo1E2PBg9VD?section=414edbc6-a745-42d6-a140-f0f827e8d5fa" width="50%" height="400px" ></iframe>
 
 - [Remix Framework](https://remix.run)
-
-## Demo - Example Application
-
-### Waterfall Loading (Problem)
-- [Waterfall Loading Problem Code](https://gist.github.com/)
-
-```jsx
-import { useParams } from "react-router";
-
-type useQueryType = { <T>(x: string): { data: T | null } };
-const useQuery: useQueryType = (type) => ({ data: null });
-
-type SalesType = { id: number; overdue: string; dueSoon: string };
-type InvoiceType = { id: number; user: string; value: string; details: string };
-
-// URL: /sales/invoices/1
-export const InvoicesPage = () => {
-  return (
-    <div>
-      <Invoices />
-    </div>
-  );
-};
-
-const Invoices = () => {
-  const { data: invoices } = useQuery<InvoiceType[]>("invoices");
-  if (!invoices) return null;
-  const { invoiceId } = useParams();
-  return (
-    <>
-        <ul>
-          {invoices.map((invoice: InvoiceType) => (
-            <li key={invoice.id}>
-              <a href={`/invoices/${invoice.id}`}>{invoice.user} {invoice.value}</a>
-            </li>
-          ))}
-        </ul>
-        {invoiceId && <Invoice id={Number(invoiceId)} />}
-    </>
-  );
-};
-
-type InvoiceProps = { id: number };
-const Invoice = ({ id }: InvoiceProps) => {
-  const { data: invoice } = useQuery<InvoiceType>(`invoices/${id}`);
-  if (!invoice) return null;
-  return (
-    <div>
-      {invoice.user}: {invoice.details}
-    </div>
-  );
-};
-```
-
-### Waterfall Loading (Solution)
-
-![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
-
-### Remix Rendering Approach
-- Small demo
 
 ## About Remix
 
@@ -234,7 +174,7 @@ export default function Gists() {
 - Server-side rendering + client-side hydration
 - Pure server-side rendering
 
-### Remix Blog Tutorial
+### Remix Example Application
 
 ![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
 
@@ -265,7 +205,7 @@ export default function Posts() {
 }
 ```
 
-### [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
+## [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
 
 - compiler - server side and client side app, alongside with manifest meta information
 
@@ -304,7 +244,7 @@ app/
 ```
 - Optional segments and pathless routes, that are you not reflected in the URL
 
-## Other Features
+### Other Features
 - Authentication
 - SEO
 - Error boundaries
@@ -312,41 +252,7 @@ app/
 
 ![remix error boundaries user interface example with message something went wrong](https://remix.run/docs-images/error-boundary.png)
 
-## Promises
-- Web standards
-- Modern web app UX
-- Better websites
-
-## Results
-- Navigation input
-- Form-based mutations
-- Optimistic updates
-- Good UX by default
-
-### Esbuild Experiment
-
-> DIY Let's do Remix today with own hands!
-
-- [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
-
-#### Goals
-
-- Play around esbuild and compile javascript code
-- Understand how remix works
-
-#### Steps
-
-![First Steps](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-high-level.png?raw=true)
-
-- dev routes server
-- add esbuild, jsx
-- ~~dev routes client~~
-- react ssr
-- demo esbuild experiment
-
-![State of current implementation](assets/esbuild-experiment-outcome.png)
-
-#### Build
+### Build
 
 ![Build](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/build.png?raw=true)
 
@@ -407,17 +313,110 @@ export default function NewPost() {
 }
 ```
 
-## How to Start
+### Esbuild Experiment
+
+> DIY Let's do Remix today with own hands!
+
+- [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
+
+#### Goals
+
+- Play around esbuild and compile javascript code
+- Understand how remix works
+
+#### Steps
+
+![First Steps](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-high-level.png?raw=true)
+
+- dev routes server
+- add esbuild, jsx
+- ~~dev routes client~~
+- react ssr
+- demo esbuild experiment
+
+![State of current implementation](assets/esbuild-experiment-outcome.png)
+
+#### Esbuild Experiment Summary
+
+![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
+
+### Waterfall Loading (Problem)
+- [Waterfall Loading Problem Code](https://gist.github.com/)
+
+```jsx
+import { useParams } from "react-router";
+
+type useQueryType = { <T>(x: string): { data: T | null } };
+const useQuery: useQueryType = (type) => ({ data: null });
+
+type SalesType = { id: number; overdue: string; dueSoon: string };
+type InvoiceType = { id: number; user: string; value: string; details: string };
+
+// URL: /sales/invoices/1
+export const InvoicesPage = () => {
+  return (
+    <div>
+      <Invoices />
+    </div>
+  );
+};
+
+const Invoices = () => {
+  const { data: invoices } = useQuery<InvoiceType[]>("invoices");
+  if (!invoices) return null;
+  const { invoiceId } = useParams();
+  return (
+    <>
+        <ul>
+          {invoices.map((invoice: InvoiceType) => (
+            <li key={invoice.id}>
+              <a href={`/invoices/${invoice.id}`}>{invoice.user} {invoice.value}</a>
+            </li>
+          ))}
+        </ul>
+        {invoiceId && <Invoice id={Number(invoiceId)} />}
+    </>
+  );
+};
+
+type InvoiceProps = { id: number };
+const Invoice = ({ id }: InvoiceProps) => {
+  const { data: invoice } = useQuery<InvoiceType>(`invoices/${id}`);
+  if (!invoice) return null;
+  return (
+    <div>
+      {invoice.user}: {invoice.details}
+    </div>
+  );
+};
+```
+
+### Waterfall Loading (Solution)
+
+![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
+
+### Demo - Comparison With Other Frameworks
+
+## Summary
+
+### Promises
+- Web standards
+- Modern web app UX
+- Better websites
+
+### Results
+- Navigation input
+- Form-based mutations
+- Optimistic updates
+- Good UX by default
+
+### How to Start
 - Do the tutorials (blog or jokes app)
 - Deploy to vercel.com
 - Write about it
 
-## Statement
+### Statement
 - Remix is cool but use it wisely
-
-## Summary
-
-![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
 
 ## Feedback
 
