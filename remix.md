@@ -334,7 +334,7 @@ export default function NewPost() {
 - react ssr
 - demo esbuild experiment
 
-![State of current implementation](assets/esbuild-experiment-outcome.png)
+![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
 
 #### Esbuild Experiment Summary
 
@@ -396,6 +396,10 @@ const Invoice = ({ id }: InvoiceProps) => {
 ![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
 
 ### Demo - Comparison With Other Frameworks
+
+- Remix
+- NextJS
+- Astro
 
 ## Summary
 
