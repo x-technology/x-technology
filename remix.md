@@ -86,7 +86,7 @@ Let's find out if this is a good idea and how Remix can help us with it?
 - Demo - Example Application 💻
 - About Remix 📕
   - How Remix Works 🛠️
-  - Esbuild Experiment 🔬
+  - How to Build Remix 🔬
 - Remix Dive In 🏊‍♀️
 - Summary 🥟
 
@@ -217,6 +217,38 @@ export default function Posts() {
   - serves routes come from build
   - adapters to transform routes to a particular http server
   - controller and view (not a model) - each route can contain `loader, action & default component`
+
+```jsx
+import { createPost } from "~/models/post.server"
+
+export const action = async ({ request }: ActionArgs) => {
+  const formData = await request.formData()
+
+  const title = formData.get("title")
+  if (!title) return json({ error: "Title is required" })
+
+  await createPost({ title })
+
+  return redirect("/posts/admin")
+};
+
+export default function NewPost() {
+  const transition = useTransition()
+  const isCreating = Boolean(transition.submission)
+
+  return (
+    <Form method="post">
+      <label>
+        Post Title:{" "}<input type="text" name="title" />
+      </label>
+      <button type="submit" disabled={isCreating}>
+        {isCreating ? "Creating..." : "Create Post"}
+      </button>
+    </Form>
+  );
+}
+```
+
 - client
   - hydration
   - web worker
@@ -282,38 +314,7 @@ function Posts() {
 }
 ```
 
-```jsx
-import { createPost } from "~/models/post.server"
-
-export const action = async ({ request }: ActionArgs) => {
-  const formData = await request.formData()
-
-  const title = formData.get("title")
-  if (!title) return json({ error: "Title is required" })
-
-  await createPost({ title })
-
-  return redirect("/posts/admin")
-};
-
-export default function NewPost() {
-  const transition = useTransition()
-  const isCreating = Boolean(transition.submission)
-
-  return (
-    <Form method="post">
-      <label>
-        Post Title:{" "}<input type="text" name="title" />
-      </label>
-      <button type="submit" disabled={isCreating}>
-        {isCreating ? "Creating..." : "Create Post"}
-      </button>
-    </Form>
-  );
-}
-```
-
-### Esbuild Experiment
+### How to Build Remix
 
 > DIY Let's do Remix today with own hands!
 
@@ -332,7 +333,7 @@ export default function NewPost() {
 - add esbuild, jsx
 - ~~dev routes client~~
 - react ssr
-- demo esbuild experiment
+- demo esbuild remix yourself
 
 ![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
 
@@ -428,7 +429,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 ## Links
 
-- [Esbuild Remix Experiment](https://github.com/x-technology/back-to-the-roots-with-remix/tree/main/esbuild-experiment)
+- [Esbuild Remix Build](https://github.com/x-technology/back-to-the-roots-with-remix/tree/main/esbuild-experiment)
 - [Remix](https://remix.run/)
 - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
 - [Fundamentals of Redux Course from Dan Abramov](https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867)
