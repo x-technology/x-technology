@@ -178,6 +178,19 @@ export default function Gists() {
 
 ![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
 
+## [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
+
+> *a compiler for React Router*
+
+![How Compiler Works](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-compiler.png?raw=true)
+
+- compiler - server side and client side app, alongside with manifest meta information
+
+- server
+  - serves routes come from build
+  - adapters to transform routes to a particular http server
+  - controller and view (not a model) - each route can contain `loader, action & default component`
+
 ```jsx
 // https://github.com/remix-run/examples/blob/main/_official-blog-tutorial/app/routes/posts/index.tsx
 import { json } from "@remix-run/node"
@@ -205,18 +218,13 @@ export default function Posts() {
 }
 ```
 
-## [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
-
-- compiler - server side and client side app, alongside with manifest meta information
-
-> *a compiler for React Router*
-
-![How Compiler Works](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-compiler.png?raw=true)
-
-- server
-  - serves routes come from build
-  - adapters to transform routes to a particular http server
-  - controller and view (not a model) - each route can contain `loader, action & default component`
+- client
+  - hydration
+  - web worker
+  - forms
+  - session
+  - cookies
+  - auth
 
 ```jsx
 import { createPost } from "~/models/post.server"
@@ -249,14 +257,6 @@ export default function NewPost() {
 }
 ```
 
-- client
-  - hydration
-  - web worker
-  - forms
-  - session
-  - cookies
-  - auth
-
 ![How Server and Client Work](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-server-and-client-work.png?raw=true)
 
 ### Remix Routing
@@ -277,8 +277,7 @@ app/
 - Optional segments and pathless routes, that are you not reflected in the URL
 
 ### Other Features
-- Authentication
-- SEO
+
 - Error boundaries
 - Stacks
 
@@ -410,6 +409,8 @@ const Invoice = ({ id }: InvoiceProps) => {
 - Form-based mutations
 - Optimistic updates
 - Good UX by default
+- Authentication
+- SEO
 
 ### How to Start
 - Do the tutorials (blog or jokes app)
