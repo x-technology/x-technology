@@ -62,6 +62,10 @@ title: XTechnology Workshop - Back to the roots with Remix
     vertical-align: top;
     zoom: 1;
   }
+
+  img[alt*="photo"] {
+    max-width: 250px !important;
+  }
 </style>
 
 <div class="twitter-btn">
@@ -87,7 +91,7 @@ Let's find out if this is a good idea and how Remix can help us with it?
 - About Remix 📕
   - How Remix Works 🛠️
   - How to Build Remix 🔬
-- Remix Dive In 🏊‍♀️
+- Comparison With Other Frameworks 🏊‍♀️
 - Summary 🥟
 
 ### Alex Korzhikov
@@ -114,6 +118,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 ## Code
 
+- [Back to the roots with Remix - Github Repository](https://github.com/x-technology/back-to-the-roots-with-remix)
 - [Movies - CodeSandbox Project](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw?file=%2Fapp%2Froutes%2Fmovies%2F%24movieId.reviews.tsx)
 - [Movies - Github Repository](https://github.com/korzio/testcodesandbix)
 
