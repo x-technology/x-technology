@@ -168,7 +168,7 @@ export default function Gists() {
 
 ### Rendering Approaches
 
-![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)
+[![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)](https://web.dev/rendering-on-the-web/)
 
 ### Remix Rendering Approaches
 - Server-side rendering + client-side hydration
@@ -336,10 +336,6 @@ export default function NewPost() {
 
 ![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
 
-#### Esbuild Experiment Summary
-
-![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
-
 ### Waterfall Loading (Problem)
 - [Waterfall Loading Problem Code](https://gist.github.com/)
 
@@ -424,7 +420,9 @@ const Invoice = ({ id }: InvoiceProps) => {
 
 ## Feedback
 
-Please [share your feedback](https://forms.gle/8UcN6H1VaWtekCaPA) on our workshop. Thank you and have a great coding!
+Please [share your feedback](https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/15f20797-bab2-4d97-abac-68e06dd51c65) on the workshop. Thank you and have a great coding!
+
+<iframe src="https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/ccdc5778-86f4-404e-9a65-20e9870bb135" width="50%" height="400px"></iframe>
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
