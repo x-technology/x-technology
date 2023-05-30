@@ -90,7 +90,7 @@ Let's find out if this is a good idea and how Remix can help us with it?
 - Demo - Example Application 💻
 - About Remix 📕
   - How Remix Works 🛠️
-  - How to Build Remix 🔬
+  - How Remix Builds 🔬
 - Comparison With Other Frameworks 🏊‍♀️
 - Summary 🥟
 
@@ -318,7 +318,7 @@ function Posts() {
 }
 ```
 
-### How to Build Remix
+### How Remix Builds
 
 > DIY Let's do Remix today with own hands!
 
