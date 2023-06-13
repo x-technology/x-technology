@@ -396,11 +396,10 @@ const Invoice = ({ id }: InvoiceProps) => {
 
 ![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
 
-### Demo - Comparison With Other Frameworks
+### Demo - Comparison With NextJS
 
 - Remix
 - NextJS
-- Astro
 
 ## Summary
 
