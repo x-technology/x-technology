@@ -16,6 +16,11 @@ title: XTechnology Workshop - How to convert crypto currencies with GRPC microse
   img[alt="microservices graph"] {
     width: 500px;
   }
+
+  img[alt*="photo"] {
+    max-width: 250px !important;
+  }
+
   /* twitter button */
   .twitter-btn {
     width: 200px;
@@ -804,7 +809,7 @@ Let's grab a task based on the things you'd like to do 👇
 </ul>
 </details>
 
-<details><summary>What are the GRPC alternatives?</summary>
+<details><summary>[What are the GRPC](https://www.karanpratapsingh.com/courses/system-design/rest-graphql-grpc) alternatives?</summary>
 <ul>
   <li>REST("JSON"-ish over HTTP)</li>
   <li>GraphQL</li>
