@@ -868,6 +868,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [GraphQL, gRPC or REST? Resolving the API Developer's Dilemma - Rob Crowley](https://www.youtube.com/watch?v=l_P6m3JTyp0)
 - [The Story of Why We Migrate to gRPC and How We Go About It - Matthias Grüter, Spotify](https://www.youtube.com/watch?v=fMq3IpPE3TU)
 - [Introduction to gRPC: A general RPC framework that puts mobile and HTTP/2 first by Mete Atamel](https://www.youtube.com/watch?v=kUz2zjkKxFg)
+- [GraphQL vs REST comparison](https://www.apollographql.com/blog/graphql/basics/graphql-vs-rest/)
 
 ### Technologies
 
