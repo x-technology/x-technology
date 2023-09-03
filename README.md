@@ -31,6 +31,7 @@ We experiment with projects to explore technologies.
 - [TimeMate](https://github.com/x-technology/timemate)
 - [OhMyGRPC](https://github.com/x-technology/micro-services-infrastructure-pulumi-azure-devops)
 - [NestJS REST API Boilerplate](https://github.com/x-technology/nest-typeorm-boilerplate)
+- [GraphQL Over gRPC](https://github.com/x-technology/graphql-over-grpc)
 
 ## [Workshops](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
