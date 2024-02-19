@@ -809,10 +809,11 @@ Let's grab a task based on the things you'd like to do 👇
 </ul>
 </details>
 
-<details><summary>[What are the GRPC](https://www.karanpratapsingh.com/courses/system-design/rest-graphql-grpc) alternatives?</summary>
+<details><summary>What are the GRPC alternatives?</summary>
 <ul>
   <li>REST("JSON"-ish over HTTP)</li>
   <li>GraphQL</li>
+  <li>[More...](https://www.karanpratapsingh.com/courses/system-design/rest-graphql-grpc)</li>
 </ul>
 <table>
     <tr>
