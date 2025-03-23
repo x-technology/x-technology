@@ -72,6 +72,19 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
   <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
 </div>
 
+## WIP
+
+- [ ] Which LLM? OpenAI? preinstall Ollama? huggingface
+
+### 2025-05-23
+
+- [ ] dry runs in ING/XT?
+
+### 2025-05-18
+
+- [ ] @pavlik to build use case
+- [ ] @alex to prepare theory - how to split documents
+
 # Building a RAG System in Node.js: Vector Databases, Embeddings & Chunking
 
 Large Language Models (LLMs) are powerful, but they often lack real-time knowledge. Retrieval-Augmented Generation (RAG) bridges this gap by fetching relevant information from external sources before generating responses. In this workshop, we’ll explore how to build an efficient RAG pipeline in Node.js using RSS feeds as a data source. We’ll compare different vector databases (FAISS, pgvector, Elasticsearch), embedding methods, and testing strategies. We’ll also cover the crucial role of chunking—splitting and structuring data effectively for better retrieval performance.
@@ -89,6 +102,8 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
   - Generative AI
     - LLMs
     - RAG
+    - Langchain
+      - Also, Langgraph & Langsmith
   - Vector Databases
   - Langchain
 - Setup / 2 min / @pavlik
@@ -104,11 +119,85 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
   - How to retrieve documents / 5 min / @alex
     - prepared json, csv
   - How to split documents / 15 min / @alex
-    - Strategies
-      - practice / @pavlik
+    > Chunking involves breaking down texts into smaller, manageable pieces called “chunks.” Each chunk becomes a unit of information that is vectorized and stored in a database, fundamentally shaping the efficiency and effectiveness of natural language processing tasks. Chunking is central to several aspects of RAG systems.
+
+    [![text splitter](https://python.langchain.com/assets/images/text_splitters-7961ccc13e05e2fd7f7f58048e082f47.png)](https://python.langchain.com/docs/concepts/text_splitters/)
+
+    [text splitter online example](https://chunkviz.up.railway.app/)
+    [text splitter online example 2](https://textsplittervisualizer.com/)
+
+    ![text splitter example](assets/text-splitter-online.png)
+
+    <video controls>
+      <source src="https://framerusercontent.com/assets/Syj9M1soD3kB2EvO4GeoATDATI.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    - Prepare
+      - what dataset you have?
+        - pdf docs, tables, code base, images in text?
+      - what are search queries for your business use case?
+        - types of retrieval queries?
+      - How to test it upfront, TDD?
+        - [Evaluate a simple LLM application](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/)
+        - [unit test LLM outputs](https://docs.confident-ai.com/docs/evaluation-test-cases)
+        - [Langsmith?](https://docs.smith.langchain.com/evaluation/tutorials/rag)
+        - Metrics:
+          - chunk attributions/utilization - if chunk contributed to model/rag response
+      - Considerations:
+        - DB size based on chunking methods. So, latency
+        - LLM usage/price
+        - embedding model size/llm context
+    - Why?
+      - normalize documents
+      - model limitations: Many embedding models and language models have maximum input size constraints.
+      - representation quality: For longer documents, the quality of embeddings or other representations may degrade as they try to capture too much information.
+      - Enhancing retrieval precision: In information retrieval systems, splitting can improve the granularity of search results, allowing for more precise matching of queries to relevant document sections.
+      - Optimizing computational resources: Working with smaller chunks of text can be more memory-efficient and allow for better parallelization of processing tasks.
+    - What?
+      - Chunk Size - The number of characters you would like in your chunks. 50, 100, 100,000, etc.
+      - Chunk Overlap - The amount you would like your sequential chunks to overlap. This is to try to avoid cutting a single piece of context into multiple pieces. This will create duplicate data across chunks.
+      - Chunks as **Documents**, also for other strategies
+    - How? Strategies
+      - Length-based (`CharacterTextSplitter`)
+        - Character/Token splitters
+        ```js
+        import { CharacterTextSplitter } from "@langchain/textsplitters";
+        const textSplitter = new CharacterTextSplitter({
+          chunkSize: 100,
+          chunkOverlap: 0,
+        });
+        const texts = await textSplitter.splitText(document);
+        ```
+        - Pros: Easy & Simple
+        - Cons: Very rigid and doesn't take into account the structure of your text
+      - Text-structured based (`RecursiveCharacterTextSplitter`)
+        > What split characters do you think [are included](https://github.com/langchain-ai/langchain/blob/9ef2feb6747f5a69d186bd623b569ad722829a5e/libs/langchain/langchain/text_splitter.py#L842) in Langchain by default?
+      - Document-structured based
+        - [Code splitters](https://python.langchain.com/docs/how_to/code_splitter/)
+        > [more separators](https://github.com/langchain-ai/langchain/blob/9ef2feb6747f5a69d186bd623b569ad722829a5e/libs/langchain/langchain/text_splitter.py#L983)
+      - Semantic meaning based
+        - Heirarchical clustering with positional reward?
+        - break points between sequential sentences
+        - NLP?
+          - [text into propositions](https://chentong0.github.io/factoid-wiki/) (facts)
+          - spacy/ntlk?
+        - Cons: complexity
+      - More / Agentic Chunking
+        - [multiple embeddings](https://js.langchain.com/docs/how_to/multi_vector/)
+        - Cons: expensive, LLM dependent
+        - LM approach?
+          - summarize images in text
+        - Summarize documents/chunks?
+          - propositions (again)
+        - store documents as hypothetical Questions
+          - chat messages
+    - practice / @pavlik
+      > try different splitters
   - How to store / 30 min / @alex
     - Embeddings
       > embed or not?
+      > How to choose embeddings?
       - practice / @pavlik
     - Dbs
       - practice / @pavlik
@@ -116,15 +205,6 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
   - Testing? / 20 min / @alex
 - Summary / @alex @pavlik
   - Performance & Optimization Considerations
-
-## WIP
-
-- [ ] Which LLM? OpenAI? preinstall Ollama? huggingface
-
-### 2025-05-18
-
-- [ ] @pavlik to build use case
-- [ ] @alex to prepare theory - how to split documents
 
 ### Alex Korzhikov
 
@@ -150,311 +230,9 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 ## Code
 
-- [Back to the roots with Remix - Github Repository](https://github.com/x-technology/back-to-the-roots-with-remix)
-- [Movies - CodeSandbox Project](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw?file=%2Fapp%2Froutes%2Fmovies%2F%24movieId.reviews.tsx)
-- [Movies - Github Repository](https://github.com/korzio/testcodesandbix)
-
-## Remix Framework
-
-<iframe src="https://wall.sli.do/event/1Z6LF8MxZFNjo1E2PBg9VD?section=414edbc6-a745-42d6-a140-f0f827e8d5fa" width="50%" height="400px" ></iframe>
-
-- [Remix Framework](https://remix.run)
-
-## [About](https://2022.stateofjs.com/en-US/libraries/rendering-frameworks/) Remix
-
-> a modern full stack web framework
-
-```jsx
-import { json } from "@remix-run/node"; // or cloudflare/deno
-
-export async function loader() {
-  const res = await fetch("https://api.github.com/gists");
-  const gists = await res.json();
-
-  return json(
-    gists.map((gist) => ({
-      description: gist.description,
-      url: gist.html_url,
-      files: Object.keys(gist.files),
-      owner: gist.owner.login,
-    }))
-  );
-}
-
-export default function Gists() {
-  const gists = useLoaderData<typeof loader>();
-
-  return (
-    <ul>
-      {gists.map((gist) => (
-        <li key={gist.id}>
-          <a href={gist.url}>
-            {gist.description}, {gist.owner}
-          </a>
-          <ul>
-            {gist.files.map((key) => (
-              <li key={key}>{key}</li>
-            ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
-}
-```
-
-### Rendering Approaches
-
-[![Rendering Approaches](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/foundation.png?raw=true)](https://web.dev/rendering-on-the-web/)
-
-### Remix Rendering Approaches
-- Server-side rendering + client-side hydration
-- Pure server-side rendering
-
-### Remix Example Application
-
-![Remix Blog Tutorial](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/code-samples.png?raw=true)
-
-## [How Remix Works](https://remix.run/docs/en/main/pages/technical-explanation)
-
-> *a compiler for React Router*
-
-![How Compiler Works](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-compiler.png?raw=true)
-
-- compiler - server side and client side app, alongside with manifest meta information
-
-- server
-  - serves routes come from build
-  - adapters to transform routes to a particular http server
-  - controller and view (not a model) - each route can contain `loader, action & default component`
-
-```jsx
-// https://github.com/remix-run/examples/blob/main/_official-blog-tutorial/app/routes/posts/index.tsx
-import { json } from "@remix-run/node"
-import { Link, useLoaderData } from "@remix-run/react"
-
-import { getPosts } from "~/models/post.server"
-
-export const loader = async () => json({ posts: await getPosts() })
-
-export default function Posts() {
-  const { posts } = useLoaderData<typeof loader>()
-  return (
-    <main>
-      <h1>Posts</h1>
-      <Link to="admin" className="text-red-600 underline">Admin</Link>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link to={post.slug} className="text-blue-600 underline">{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
-  )
-}
-```
-
-- client
-  - hydration
-  - web worker
-  - forms
-  - session
-  - cookies
-  - auth
-
-```jsx
-import { createPost } from "~/models/post.server"
-
-export const action = async ({ request }: ActionArgs) => {
-  const formData = await request.formData()
-
-  const title = formData.get("title")
-  if (!title) return json({ error: "Title is required" })
-
-  await createPost({ title })
-
-  return redirect("/posts/admin")
-};
-
-export default function NewPost() {
-  const transition = useTransition()
-  const isCreating = Boolean(transition.submission)
-
-  return (
-    <Form method="post">
-      <label>
-        Post Title:{" "}<input type="text" name="title" />
-      </label>
-      <button type="submit" disabled={isCreating}>
-        {isCreating ? "Creating..." : "Create Post"}
-      </button>
-    </Form>
-  );
-}
-```
-
-![How Server and Client Work](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/remix-server-and-client-work.png?raw=true)
-
-### Remix Routing
-```bash
-app/
-├── routes/
-│   ├── about.tsx           // route is based on the static path
-│   ├── blog/               // route has an additional "/blog" segment in the URL
-│   │   ├── $postId.tsx     // dynamic params
-│   │   ├── categories.tsx  // static segments
-│   │   └── index.tsx       // index of the "/blog" directory
-│   ├── $.tsx               // splat route (catch-all routes)
-│   ├── blog.authors.tsx    // dot delimiter
-│   ├── blog.tsx            // layout for a regular route
-│   └── index.tsx
-└── root.tsx
-```
-- Optional segments and pathless routes, that are you not reflected in the URL
-
-### Other Features
-
-- Error boundaries
-- Stacks
-
-![remix error boundaries user interface example with message something went wrong](https://remix.run/docs-images/error-boundary.png)
-
-### Build
-
-![Build](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/build.png?raw=true)
-
-```jsx
-// app/routes/posts/index.tsx
-var posts_exports = {};
-__export(posts_exports, {
-  default: () => Posts,
-  loader: () => loader5
-});
-var import_node7 = require("@remix-run/node"),
-    import_react7 = require("@remix-run/react");
-var import_jsx_dev_runtime7 = require("react/jsx-dev-runtime"),
-    loader5 = async () => (0, import_node7.json)({ posts: await getPosts() });
-function Posts() {
-  let { posts } = (0, import_react7.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("main", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h1", { children: "Posts" }, void 0, !1, {
-      fileName: "app/routes/posts/index.tsx"
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_react7.Link, { to: "admin", ...
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: posts.map((post) => ...
-    }, this) }, post.slug, !1, {
-      fileName: "app/routes/posts/index.tsx"
-    ...
-}
-```
-
-### How Remix Builds
-
-> DIY Let's do Remix today with own hands!
-
-- [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
-
-#### Goals
-
-- Play around esbuild and compile javascript code
-- Understand how remix works
-
-#### Steps
-
-![First Steps](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-high-level.png?raw=true)
-
-- dev routes server
-- add esbuild, jsx
-- ~~dev routes client~~
-- react ssr
-- demo esbuild remix yourself
-
-![State of current implementation](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/assets/esbuild-experiment-outcome.png?raw=true)
-
-### Waterfall Loading (Problem)
-- [Waterfall Loading Problem Code](https://gist.github.com/)
-
-```jsx
-import { useParams } from "react-router";
-
-type useQueryType = { <T>(x: string): { data: T | null } };
-const useQuery: useQueryType = (type) => ({ data: null });
-
-type SalesType = { id: number; overdue: string; dueSoon: string };
-type InvoiceType = { id: number; user: string; value: string; details: string };
-
-// URL: /sales/invoices/1
-export const InvoicesPage = () => {
-  return (
-    <div>
-      <Invoices />
-    </div>
-  );
-};
-
-const Invoices = () => {
-  const { data: invoices } = useQuery<InvoiceType[]>("invoices");
-  if (!invoices) return null;
-  const { invoiceId } = useParams();
-  return (
-    <>
-        <ul>
-          {invoices.map((invoice: InvoiceType) => (
-            <li key={invoice.id}>
-              <a href={`/invoices/${invoice.id}`}>{invoice.user} {invoice.value}</a>
-            </li>
-          ))}
-        </ul>
-        {invoiceId && <Invoice id={Number(invoiceId)} />}
-    </>
-  );
-};
-
-type InvoiceProps = { id: number };
-const Invoice = ({ id }: InvoiceProps) => {
-  const { data: invoice } = useQuery<InvoiceType>(`invoices/${id}`);
-  if (!invoice) return null;
-  return (
-    <div>
-      {invoice.user}: {invoice.details}
-    </div>
-  );
-};
-```
-
-### Waterfall Loading (Solution)
-
-![Waterfall Loading Solution](https://github.com/x-technology/back-to-the-roots-with-remix/blob/main/remix-s/src/assets/waterfall-solution.png?raw=true)
-
-### Demo - Comparison With NextJS
-
-- Remix
-- NextJS
+- [RAG Workshop](https://github.com/korzio/rag-workshop)
 
 ## Summary
-
-### Promises
-- Web standards
-- Modern web app UX
-- Better websites
-
-### Results
-- Navigation input
-- Form-based mutations
-- Optimistic updates
-- Good UX by default
-- Authentication
-- SEO
-
-### How to Start
-- Do the tutorials (blog or jokes app)
-- Deploy to vercel.com
-- Write about it
-
-### Statement
-- Remix is cool but use it wisely
 
 ## Feedback
 
@@ -466,16 +244,14 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 ## Links
 
-- [Esbuild Remix Build](https://github.com/x-technology/back-to-the-roots-with-remix/tree/main/esbuild-experiment)
-- [Remix](https://remix.run/)
-- [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
-- [Fundamentals of Redux Course from Dan Abramov](https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867)
-- [Test Remix App](https://github.com/korzio/testcodesandbix)
-- [Remix Community](https://remix.run/docs/en/1.16.1/pages/community)
+- [Mete Atamel - A blog about software development and more](https://atamel.dev/)
+- [Build a Retrieval Augmented Generation (RAG) App](https://js.langchain.com/docs/tutorials/rag/)
+- [5 Levels Of Text Splitting](https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb)
+- [LlamaIndex - End-to-end tooling to ship a context-augmented AI agent to production](https://llama-playground.vercel.app/)
+- [Ragas - ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
+- [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
 
 ### Technologies
 
-- remix
-- javascript
-- react
-- esbuild
+- LLM
+- Langchain
