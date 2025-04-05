@@ -158,32 +158,22 @@ async function rag(q) {
 
 Questions:
 <details><summary>Why do we need RAG?</summary>
-
-- Additional, specific knowledge
-
-- Reduce hallucinations
-
-- Control system costs
+- Additional, specific knowledge<br>
+- Reduce hallucinations<br>
+- Control system costs<br>
 </details>
 
 <details><summary>What do we need to build a RAG?</summary>
-
-- Application (backend)
-
-- Search system (vector databases)
-
-- LLM (blackbox)
+- Application (backend)<br>
+- Search system (vector databases)<br>
+- LLM (blackbox)<br>
 </details>
 
 <details><summary>Why can't we just put all context in our LLM and ask it about?</summary>
-
-- Cost
-
-- Slow
-
-- Size
-
-- Noize
+- Cost<br>
+- Slow<br>
+- Size<br>
+- Noize<br>
 </details>
 
 - Langchain 🦜️🔗
@@ -200,9 +190,9 @@ LangChain is a Python and JavaScript framework that brings flexible abstractions
 
 ## Feedback
 
-Please [share your feedback](https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/15f20797-bab2-4d97-abac-68e06dd51c65) on the workshop. Thank you and have a great coding!
+Please [share your feedback](https://app.sli.do/event/wV641HGAr8jeVnULeLAAg2) on the workshop. Thank you and have a great coding!
 
-<iframe src="https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/ccdc5778-86f4-404e-9a65-20e9870bb135" width="50%" height="400px"></iframe>
+<iframe src="https://wall.sli.do/event/wV641HGAr8jeVnULeLAAg2/?section=fdc6bb93-244d-4320-ac2d-cd6a3ffd6a38" width="50%" height="400px"></iframe>
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
@@ -244,7 +234,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [x] @pavlik to build use case
 - [x] @alex to prepare theory - how to split documents
 
-## Agenda
+### Agenda
 
 - Introduction 📢 / 5 min / @alex @pavlik
 - About Everything (theory) / 10 min / @alex
@@ -292,7 +282,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
     ![text splitter example](assets/text-splitter-online.png)
 
-    <video controls>
+    <video width="50%" height="400px" controls>
       <source src="https://framerusercontent.com/assets/Syj9M1soD3kB2EvO4GeoATDATI.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
