@@ -72,19 +72,6 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
   <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
 </div>
 
-## WIP
-
-- [ ] Which LLM? OpenAI? preinstall Ollama? huggingface
-
-### 2025-05-23
-
-- [ ] dry runs in ING/XT?
-
-### 2025-05-18
-
-- [ ] @pavlik to build use case
-- [ ] @alex to prepare theory - how to split documents
-
 # Building a RAG System in Node.js: Vector Databases, Embeddings & Chunking
 
 Large Language Models (LLMs) are powerful, but they often lack real-time knowledge. Retrieval-Augmented Generation (RAG) bridges this gap by fetching relevant information from external sources before generating responses. In this workshop, we’ll explore how to build an efficient RAG pipeline in Node.js using RSS feeds as a data source. We’ll compare different vector databases (FAISS, pgvector, Elasticsearch), embedding methods, and testing strategies. We’ll also cover the crucial role of chunking—splitting and structuring data effectively for better retrieval performance.
@@ -95,13 +82,188 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 - Experience with Node.js and API development
 - Basic knowledge of databases and LLMs is helpful but not required
 
+## Code
+
+- [RAG Workshop](https://github.com/x-technology/rag-workshop)
+
+## Agenda
+
+- [Introduction 📢](#introduction)
+- [About Everything](#about-everything)
+
+## Introduction
+
+### Alex Korzhikov
+
+![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
+
+Software Engineer, Netherlands
+
+My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
+
+- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
+- [korzio](https://github.com/korzio)
+
+### Pavlik Kiselev
+
+![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
+
+Software Engineer, Netherlands
+
+JavaScript developer with full-stack experience and frontend passion. He runs a small development agency [codeville.agency](https://codeville.agency/) and likes to talk about technologies they use: React, Remix and Serverless.
+
+- [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
+- [paulcodiny](https://github.com/paulcodiny)
+
+## About Everything
+
+- Generative Artificial Intelligence (GenAI)
+
+Use of Artificial Intelligence to produce human consumable content in **text**, image, audio, video format.
+
+- Language Model (LM)
+
+Language Models are Machine Learning models trained on natural language resources and aim predict next word based on given context.
+
+LM relevant tasks - summarization, Q&A, classification, and more.
+
+- Large Language Model (LLM)
+
+Artificial Intelligence is powered by Large Language Models - models trained on tons of sources and materials, having billions of parameters.
+
+![llm as blackbox](assets/llm-blackbox.png)
+
+- Retrieval Augmented Generation (RAG)
+
+RAG is a method that combines information retrieval with language model generation.
+
+![alt text](assets/rag.png)
+
+Retrieval = Search
+
+Generation = LLM
+
+Use Cases:
+- Chat with user
+- Analyze and summarise documents
+
+```js
+async function rag(q) {
+  const results = await search(q)
+  const prompt = makePrompt(q, results)
+  const answer = await llm(prompt)
+  return answer
+}
+```
+
+Questions:
+<details><summary>Why do we need RAG?</summary>
+
+- Additional, specific knowledge
+
+- Reduce hallucinations
+
+- Control system costs
+</details>
+
+<details><summary>What do we need to build a RAG?</summary>
+
+- Application (backend)
+
+- Search system (vector databases)
+
+- LLM (blackbox)
+</details>
+
+<details><summary>Why can't we just put all context in our LLM and ask it about?</summary>
+
+- Cost
+
+- Slow
+
+- Size
+
+- Noize
+</details>
+
+- Langchain 🦜️🔗
+
+LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
+
+## Setup
+
+- Node.js
+- Ollama / OpenAI
+- `npm i langchain`
+
+## Summary
+
+## Feedback
+
+Please [share your feedback](https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/15f20797-bab2-4d97-abac-68e06dd51c65) on the workshop. Thank you and have a great coding!
+
+<iframe src="https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/ccdc5778-86f4-404e-9a65-20e9870bb135" width="50%" height="400px"></iframe>
+
+If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
+
+## Links
+
+- [Mete Atamel - A blog about software development and more](https://atamel.dev/)
+- [Build a Retrieval Augmented Generation (RAG) App](https://js.langchain.com/docs/tutorials/rag/)
+- [5 Levels Of Text Splitting](https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb)
+- [LlamaIndex - End-to-end tooling to ship a context-augmented AI agent to production](https://llama-playground.vercel.app/)
+- [Ragas - ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
+- [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
+- [LLM Zoomcamp: A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
+
+### Technologies
+
+- LLM
+- Langchain
+
+## WIP
+
+- [x] Which LLM? OpenAI? preinstall **Ollama**? huggingface
+
+### 2025-03-30
+
+- [x] @pavlik relevant documents to current processing article
+  > which articles are relevant to current one
+
+### 2025-03-25
+
+- [ ] @alex embedding
+- [ ] @pavlik alternative with ollama, in-memory store
+
+### 2025-03-23
+
+- [x] dry runs in ING/XT?
+
+### 2025-03-18
+
+- [x] @pavlik to build use case
+- [x] @alex to prepare theory - how to split documents
+
 ## Agenda
 
 - Introduction 📢 / 5 min / @alex @pavlik
 - About Everything (theory) / 10 min / @alex
   - Generative AI
     - LLMs
+      - LM
+        > predict next word based on what you have typed so far
+      - LLM trained on tons of materials, millions of parameters
+      - black box (prompt -> LLM -> answer)
     - RAG
+      Retrieval Augmented Generation
+      Retrieval = Search
+      Generation = LLM
+      > Why can't we just put all context in our LLM and ask it about?
+      > Why do we need RAG?
+       - more context given
+      - [ ] IMAGE: User Query -> DB KBs -> Found items -> Context to LLM -> answer
+      > What to use?
+        - DBs, LLMs
     - Langchain
       - Also, Langgraph & Langsmith
   - Vector Databases
@@ -113,11 +275,13 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
   - `npm i langchain`
 - Practical Examples / 10 min / @pavlik
   - First call to LLM
+    > openai api quickly explained, how to create/use token?
   - Chat?
   - Langchain?
 - Use Case - Retrieve and Parse RSS Documents, Organize with DB, Query, LLM
-  - How to retrieve documents / 5 min / @alex
+  - How to get documents / 5 min / @alex
     - prepared json, csv
+    - [ ] naive implementation (search, prompt, llm)
   - How to split documents / 15 min / @alex
     > Chunking involves breaking down texts into smaller, manageable pieces called “chunks.” Each chunk becomes a unit of information that is vectorized and stored in a database, fundamentally shaping the efficiency and effectiveness of natural language processing tasks. Chunking is central to several aspects of RAG systems.
 
@@ -194,64 +358,20 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
           - chat messages
     - practice / @pavlik
       > try different splitters
-  - How to store / 30 min / @alex
+  - How to store & retrieve / 30 min / @alex
     - Embeddings
       > embed or not?
+      - decrease vector dimension compare to traditional text indexing
       > How to choose embeddings?
-      - practice / @pavlik
+      metrics:
+        - relevant documents
+      > generate questions from documents to prepare for metrics, check how many documents are returned by query
     - Dbs
+      - elasticsearch
+      - practice / @pavlik
+    - Rerankings
       - practice / @pavlik
   - Retrieve & Summarize / 10 min / @pavlik
-  - Testing? / 20 min / @alex
+  - ~~Testing? / 20 min / @alex~~
 - Summary / @alex @pavlik
   - Performance & Optimization Considerations
-
-### Alex Korzhikov
-
-![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
-
-Software Engineer, Netherlands
-
-My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
-
-- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
-- [korzio](https://github.com/korzio)
-
-### Pavlik Kiselev
-
-![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
-
-Software Engineer, Netherlands
-
-JavaScript developer with full-stack experience and frontend passion. He runs a small development agency [codeville.agency](https://codeville.agency/) and likes to talk about technologies they use: React, Remix and Serverless.
-
-- [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
-- [paulcodiny](https://github.com/paulcodiny)
-
-## Code
-
-- [RAG Workshop](https://github.com/korzio/rag-workshop)
-
-## Summary
-
-## Feedback
-
-Please [share your feedback](https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/15f20797-bab2-4d97-abac-68e06dd51c65) on the workshop. Thank you and have a great coding!
-
-<iframe src="https://app.sli.do/event/dy4mpxE9mxH2HDk47GEMzX/embed/polls/ccdc5778-86f4-404e-9a65-20e9870bb135" width="50%" height="400px"></iframe>
-
-If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
-
-## Links
-
-- [Mete Atamel - A blog about software development and more](https://atamel.dev/)
-- [Build a Retrieval Augmented Generation (RAG) App](https://js.langchain.com/docs/tutorials/rag/)
-- [5 Levels Of Text Splitting](https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb)
-- [LlamaIndex - End-to-end tooling to ship a context-augmented AI agent to production](https://llama-playground.vercel.app/)
-- [Ragas - ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
-- [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
-
-### Technologies
-
-- LLM
-- Langchain
