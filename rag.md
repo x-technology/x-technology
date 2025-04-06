@@ -13,8 +13,8 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     filter: grayscale(100%);
   }
 
-  img[alt="text splitter example"] {
-    width: 400px;
+  img[alt="text splitter example"], img[alt="embeddings vs indexing"] {
+    width: 500px;
   }
   /* twitter button */
   .twitter-btn {
@@ -191,7 +191,7 @@ LangChain is a Python and JavaScript framework that brings flexible abstractions
 
 ## Use Case - Exploring Node.js News
 
-<video width="50%" height="400px" controls>
+<video width="50%" height="500px" controls>
   <source src="https://framerusercontent.com/assets/Syj9M1soD3kB2EvO4GeoATDATI.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -201,7 +201,7 @@ We aim to understand what happened in the Node.js community over the past year. 
 2. Store the documents in a database
 3. Analyze and query the documents by asking targeted questions
 
-<iframe src="https://atlas.nomic.ai/data/todexex279/nodejs-v4-2024/map" width="50%" height="400px"></iframe>
+<iframe src="https://atlas.nomic.ai/data/todexex279/nodejs-v4-2024/map" width="50%" height="500px"></iframe>
 
 ### How do we find sources?
 - Own collection
@@ -281,7 +281,7 @@ const texts = await textSplitter.splitText(document);
 
 ### To embed or not?
 
-![alt text](assets/docs-index.png)
+![embeddings vs indexing](assets/docs-index.png)
 
 ## Practice #3 - Store & Retrieve
 
@@ -303,7 +303,7 @@ Evaluates the rank position of the first relevant document.
 
 Please [share your feedback](https://app.sli.do/event/wV641HGAr8jeVnULeLAAg2) on the workshop. Thank you and have a great coding!
 
-<iframe src="https://wall.sli.do/event/wV641HGAr8jeVnULeLAAg2/?section=fdc6bb93-244d-4320-ac2d-cd6a3ffd6a38" width="50%" height="400px"></iframe>
+<iframe src="https://wall.sli.do/event/wV641HGAr8jeVnULeLAAg2/?section=fdc6bb93-244d-4320-ac2d-cd6a3ffd6a38" width="50%" height="500px"></iframe>
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
@@ -393,7 +393,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
     ![text splitter example](assets/text-splitter-online.png)
 
-    <video width="50%" height="400px" controls>
+    <video width="50%" height="500px" controls>
       <source src="https://framerusercontent.com/assets/Syj9M1soD3kB2EvO4GeoATDATI.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
