@@ -13,8 +13,8 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     filter: grayscale(100%);
   }
 
-  img[alt="microservices graph"] {
-    width: 500px;
+  img[alt="text splitter example"] {
+    width: 400px;
   }
   /* twitter button */
   .twitter-btn {
@@ -185,11 +185,16 @@ LangChain is a Python and JavaScript framework that brings flexible abstractions
 - Ollama / OpenAI
 - `npm i langchain`
 
-## Examples
+## Practice #1 - Hello World
 
 - First call to LLM
 
 ## Use Case - Exploring Node.js News
+
+<video width="50%" height="400px" controls>
+  <source src="https://framerusercontent.com/assets/Syj9M1soD3kB2EvO4GeoATDATI.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 We aim to understand what happened in the Node.js community over the past year. To achieve this, we:
 1. Collect and process news, popular blog posts, and articles
@@ -219,6 +224,79 @@ We aim to understand what happened in the Node.js community over the past year. 
 
 ### [Articles](https://github.com/x-technology/rag-workshop/blob/main/assets/articles.json)
 
+- What dataset you do have?
+- Which format you need to parse?
+- What are the most often queries?
+
+## Chunk Documents
+
+### To chunk or not to chunk?
+
+[![text splitter](https://python.langchain.com/assets/images/text_splitters-7961ccc13e05e2fd7f7f58048e082f47.png)](https://python.langchain.com/docs/concepts/text_splitters/)
+
+> Chunking involves breaking down texts into smaller, manageable pieces called "chunks". Each chunk becomes a unit of information that is vectorized and stored in a database, fundamentally shaping the efficiency and effectiveness of natural language processing tasks.
+
+- Normalize documents
+- Reduce context (latency, LLM usage & cost)
+- Enhance retrieval precision
+
+### How do we split documents?
+
+[![text splitter example](assets/text-splitter-online.png)](https://chunkviz.up.railway.app/)
+
+- Chunk Size
+> The number of characters we would like in our chunks. 50, 100, 100,000, etc.
+
+- Chunk Overlap
+> The amount we would like our sequential chunks to overlap. This is to try to avoid cutting a single piece of context into multiple pieces. This will create duplicate data across chunks.
+
+- Length-based (`CharacterTextSplitter`) - Easy & Simple, don't take into account the text's structure
+
+- Character/Token [splitters](https://textsplittervisualizer.com/)
+```js
+import { CharacterTextSplitter } from "@langchain/textsplitters";
+const textSplitter = new CharacterTextSplitter({
+  chunkSize: 100,
+  chunkOverlap: 0,
+});
+const texts = await textSplitter.splitText(document);
+```
+
+- Text-structured based (`RecursiveCharacterTextSplitter`)
+
+> What split characters do you think [are included](https://github.com/langchain-ai/langchain/blob/9ef2feb6747f5a69d186bd623b569ad722829a5e/libs/langchain/langchain/text_splitter.py#L842) in Langchain by default?
+
+- [Document-structured based](https://python.langchain.com/docs/how_to/code_splitter/)
+
+- Semantic meaning based - [Extract Propositions](https://chentong0.github.io/factoid-wiki/)
+
+- Agentic Chunking
+  - Summarize text, images
+  - Generate hypothetical questions
+  - [Multiple embeddings](https://js.langchain.com/docs/how_to/multi_vector/)
+
+## Practice #2 - Chunking
+
+## Store & Retrieve
+
+### To embed or not?
+
+![alt text](assets/docs-index.png)
+
+## Practice #3 - Store & Retrieve
+
+## Evaluation
+
+- Hit Rate (HR) or Recall at k:
+Measures the proportion of queries for which at least one relevant document is retrieved in the top k results.
+
+- Mean Reciprocal Rank (MRR):
+Evaluates the rank position of the first relevant document.
+
+- Chunk attributions/utilization - if chunk contributed to model/rag response
+
+## Practice #3 - Evaluation
+
 ## Summary
 
 ## Feedback
@@ -244,7 +322,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - LLM
 - Langchain
 
-## WIP
+<details><summary>WIP</summary>
 
 - [x] Which LLM? OpenAI? preinstall **Ollama**? huggingface
 
@@ -308,7 +386,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
   - How to split documents / 15 min / @alex
     > Chunking involves breaking down texts into smaller, manageable pieces called “chunks.” Each chunk becomes a unit of information that is vectorized and stored in a database, fundamentally shaping the efficiency and effectiveness of natural language processing tasks. Chunking is central to several aspects of RAG systems.
 
-    [![text splitter](https://python.langchain.com/assets/images/text_splitters-7961ccc13e05e2fd7f7f58048e082f47.png)](https://python.langchain.com/docs/concepts/text_splitters/)
+
 
     [text splitter online example](https://chunkviz.up.railway.app/)
     [text splitter online example 2](https://textsplittervisualizer.com/)
@@ -398,3 +476,5 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
   - ~~Testing? / 20 min / @alex~~
 - Summary / @alex @pavlik
   - Performance & Optimization Considerations
+
+</details>
