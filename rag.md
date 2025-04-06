@@ -156,17 +156,10 @@ async function rag(q) {
 }
 ```
 
-Questions:
 <details><summary>Why do we need RAG?</summary>
 - Additional, specific knowledge<br>
 - Reduce hallucinations<br>
 - Control system costs<br>
-</details>
-
-<details><summary>What do we need to build a RAG?</summary>
-- Application (backend)<br>
-- Search system (vector databases)<br>
-- LLM (blackbox)<br>
 </details>
 
 <details><summary>Why can't we just put all context in our LLM and ask it about?</summary>
@@ -174,6 +167,12 @@ Questions:
 - Slow<br>
 - Size<br>
 - Noize<br>
+</details>
+
+<details><summary>What do we need to build a RAG?</summary>
+- Application (backend)<br>
+- Search system (vector databases)<br>
+- LLM (blackbox)<br>
 </details>
 
 ### [Langchain](https://js.langchain.com/docs/introduction/) 🦜️🔗
@@ -185,6 +184,40 @@ LangChain is a Python and JavaScript framework that brings flexible abstractions
 - Node.js
 - Ollama / OpenAI
 - `npm i langchain`
+
+## Examples
+
+- First call to LLM
+
+## Use Case - Exploring Node.js News
+
+We aim to understand what happened in the Node.js community over the past year. To achieve this, we:
+1. Collect and process news, popular blog posts, and articles
+2. Store the documents in a database
+3. Analyze and query the documents by asking targeted questions
+
+<iframe src="https://atlas.nomic.ai/data/todexex279/nodejs-v4-2024/map" width="50%" height="400px"></iframe>
+
+### How do we find sources?
+- Own collection
+- Ask ChatGPT <i>What are the best online resource to follow on Node.js news? Output urls and short description</i>
+
+### How do we scrap articles?
+
+- Direct fetch requests
+- Run browser and navigate to urls
+- Use external [services](https://console.apify.com/actors/tasks/mhbgzDv598tdTbltb/input)
+
+### Some scrapping and text quality problems
+
+- Paywalls
+- Anti-bot protections
+  - Cat & mouse game
+- [Noise](https://github.com/x-technology/tech-people-stats/tree/feat/js-langchain/experiments/nodejs-v2/text-links-dataset_ai-web-scraper---extracted-urls-v2_2024-01-13_15-46-37-422.json) (marketing texts, tags, js, css)
+  - Clean & parse
+  - Noise reduction [algorithms](https://github.com/x-technology/tech-people-stats/blob/feat/js-langchain/langchain/parse-body.js)
+
+### [Articles](https://github.com/x-technology/rag-workshop/blob/main/assets/articles.json)
 
 ## Summary
 
@@ -271,7 +304,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - Use Case - Retrieve and Parse RSS Documents, Organize with DB, Query, LLM
   - How to get documents / 5 min / @alex
     - prepared json, csv
-    - [ ] naive implementation (search, prompt, llm)
+    - [x] naive implementation (search, prompt, llm)
   - How to split documents / 15 min / @alex
     > Chunking involves breaking down texts into smaller, manageable pieces called “chunks.” Each chunk becomes a unit of information that is vectorized and stored in a database, fundamentally shaping the efficiency and effectiveness of natural language processing tasks. Chunking is central to several aspects of RAG systems.
 
