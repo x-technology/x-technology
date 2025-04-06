@@ -117,23 +117,23 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 ## About Everything
 
-- Generative Artificial Intelligence (GenAI)
+### Generative Artificial Intelligence (GenAI)
 
 Use of Artificial Intelligence to produce human consumable content in **text**, image, audio, video format.
 
-- Language Model (LM)
+### Language Model (LM)
 
 Language Models are Machine Learning models trained on natural language resources and aim predict next word based on given context.
 
 LM relevant tasks - summarization, Q&A, classification, and more.
 
-- Large Language Model (LLM)
+### Large Language Model (LLM)
 
 Artificial Intelligence is powered by Large Language Models - models trained on tons of sources and materials, having billions of parameters.
 
 ![llm as blackbox](assets/llm-blackbox.png)
 
-- Retrieval Augmented Generation (RAG)
+### Retrieval Augmented Generation (RAG)
 
 RAG is a method that combines information retrieval with language model generation.
 
@@ -176,7 +176,7 @@ Questions:
 - Noize<br>
 </details>
 
-- Langchain 🦜️🔗
+### [Langchain](https://js.langchain.com/docs/introduction/) 🦜️🔗
 
 LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
 
