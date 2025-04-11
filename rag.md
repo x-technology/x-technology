@@ -279,9 +279,17 @@ const texts = await textSplitter.splitText(document);
 
 ## Store & Retrieve
 
+![what are embedding models](https://ollama.com/public/blog/what-are-embeddings.svg)
+
 ### To embed or not?
 
+An embedding is a vector representation of data in embedding space (projecting the high-dimensional space of initial data vectors into a lower-dimensional space).
+
 ![embeddings vs indexing](assets/docs-index.png)
+
+Vectors are stored in a database, which compare them as a way to search for data that is similar in meaning (by using [dot product](https://en.wikipedia.org/wiki/Dot_product) or [cosine](https://en.wikipedia.org/wiki/Cosine_similarity) measurement).
+
+[![embedding space](https://developers.google.com/static/machine-learning/crash-course/images/embeddings_3D_tangyuan.png)](https://developers.google.com/machine-learning/crash-course/embeddings/embedding-space)
 
 ## Practice #3 - Store & Retrieve
 
@@ -295,7 +303,7 @@ Evaluates the rank position of the first relevant document.
 
 - Chunk attributions/utilization - if chunk contributed to model/rag response
 
-## Practice #3 - Evaluation
+## Practice #4 - Evaluation
 
 ## Summary
 
@@ -316,6 +324,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [Ragas - ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
 - [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
 - [LLM Zoomcamp: A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
+- [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/)
 
 ### Technologies
 
@@ -325,6 +334,11 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 <details><summary>WIP</summary>
 
 - [x] Which LLM? OpenAI? preinstall **Ollama**? huggingface
+
+### 2025-04-06
+
+- LangChain
+- embedding - different models different sizes incompatible
 
 ### 2025-03-30
 
