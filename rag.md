@@ -9,7 +9,7 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     display: none;
   }
 
-  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"] {
+  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="rag triad"], img[alt="reranking process"] {
     width: 500px;
   }
   /* twitter button */
@@ -85,22 +85,28 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 ## Agenda
 
 - [Introduction 📢](#introduction)
-- [About Everything](#about-everything)
-- [Setup](#setup)
-- [Practice #1 - Hello World](#practice-1---hello-world)
-- [Use Case - Exploring Node.js News](#use-case---exploring-nodejs-news)
-- [Chunk Documents](#chunk-documents)
-- [Practice #2 - Chunking](#practice-2---chunking)
-- [Store & Retrieve](#store--retrieve)
-- [Practice #3 - Store & Retrieve](#practice-3---store--retrieve)
-- [Reranking](#reranking)
-- [Evaluation](#evaluation)
-- [Practice #4 - Evaluation](#practice-4---evaluation)
-- [Summary](#summary)
-- [Feedback](#feedback)
-- [Links](#links)
+- [About Everything 🌎](#about-everything)
+- [Setup 🛠️](#setup)
+- [Practice #1 - Hello World 👋](#practice-1---hello-world)
+- [Use Case - Exploring Node.js News 📰](#use-case---exploring-nodejs-news)
+- [Chunking ✂️](#chunking)
+- [Practice #2 - Chunking 🧩](#practice-2---chunking)
+- [Store & Retrieve 🗂️](#store--retrieve)
+- [Practice #3 - Store & Retrieve 🔍](#practice-3---store--retrieve)
+- [Reranking 🥇](#reranking)
+- [Evaluation 📊](#evaluation)
+- [Practice #4 - Evaluation 🧪](#practice-4---evaluation)
+- [Summary 📚](#summary)
+- [Feedback 💬](#feedback)
+- [Links 🔗](#links)
 
 ## Introduction
+
+<!-- disclaimers: we are not DS, focus on usage, introduce high level and black box context -->
+
+- Explore RAG's scope, architecture and components
+- Practice various RAG aspects with chosen technologies
+- Feedback & evaluate
 
 ### Alex Korzhikov
 
@@ -237,7 +243,7 @@ We aim to understand what happened in the Node.js community over the past year. 
 - Which format you need to parse?
 - What are the most often queries?
 
-## Chunk Documents
+## Chunking
 
 ### To chunk or not to chunk?
 
@@ -290,6 +296,8 @@ const texts = await textSplitter.splitText(document);
 
 ![what are embedding models](https://ollama.com/public/blog/what-are-embeddings.svg)
 
+- Semantic VS Keyword Search
+
 ### To embed or not?
 
 An embedding is a vector representation of data in embedding space (projecting the high-dimensional space of initial data vectors into a lower-dimensional space).
@@ -302,11 +310,22 @@ Vectors are stored in a database, which compare them as a way to search for data
 
 - [Ollama supported embedding models](https://ollama.com/search?c=embedding)
 
-- Can we exchange embedding models with same produced vector dimensions?
+<details><summary>Can we exchange embedding models with equal vector dimensions?</summary>
+- Nope<br>
+<img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
+</details
 
 ## Practice #3 - Store & Retrieve
 
 ## Reranking
+
+![reranking process](./assets/reranking.png)
+
+> Rerankers analyze the initial search output and adjust the ranking to better match user preferences and application requirements
+
+- Improve quality (other models and more context involved)
+- Cost considerations
+- Vector VS LLM based
 
 ## Evaluation
 
@@ -345,6 +364,12 @@ Metrics:
 - Faithfulness / Groundedness - whether the actual output factually aligns with the retrieved context
 - Answer relevancy - how relevant the actual output is to the provided input
 
+### Frameworks
+
+- [DeepEval](https://docs.confident-ai.com/)
+- [TruLens](https://www.trulens.org/)
+- [Ragas](https://docs.ragas.io/en/latest/getstarted/)
+
 ### Our choice
 
 - Hit Rate (HR) or Recall at k:
@@ -376,11 +401,12 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [Build a Retrieval Augmented Generation (RAG) App](https://js.langchain.com/docs/tutorials/rag/)
 - [5 Levels Of Text Splitting](https://github.com/FullStackRetrieval-com/RetrievalTutorials/blob/main/tutorials/LevelsOfTextSplitting/5_Levels_Of_Text_Splitting.ipynb)
 - [LlamaIndex - End-to-end tooling to ship a context-augmented AI agent to production](https://llama-playground.vercel.app/)
-- [Ragas - ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
+- [Ragas - Ultimate toolkit for evaluating and optimizing Large Language Model (LLM) applications.](https://github.com/explodinggradients/ragas)
 - [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
-- [LLM Zoomcamp: A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
+- [LLM Zoomcamp - A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
 - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/)
-- [DeepEval: RAG Evaluation](https://docs.confident-ai.com/guides/guides-rag-evaluation)
+- [DeepEval - RAG Evaluation](https://docs.confident-ai.com/guides/guides-rag-evaluation)
+- [Cohere - Say Goodbye to Irrelevant Search Results: Cohere Rerank Is Here](https://cohere.com/blog/rerank)
 
 ### Technologies
 
@@ -389,8 +415,6 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - RAG
 
 <details><summary>WIP</summary>
-
-## WIP
 
 - [x] Which LLM? OpenAI? preinstall **Ollama**? huggingface
 
