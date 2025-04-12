@@ -313,7 +313,7 @@ Vectors are stored in a database, which compare them as a way to search for data
 <details><summary>Can we exchange embedding models with equal vector dimensions?</summary>
 - Nope<br>
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
-</details
+</details>
 
 ## Practice #3 - Store & Retrieve
 
