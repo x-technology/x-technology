@@ -9,11 +9,7 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     display: none;
   }
 
-  img[alt="andrew reddikh"] {
-    filter: grayscale(100%);
-  }
-
-  img[alt="text splitter example"], img[alt="embeddings vs indexing"] {
+  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"] {
     width: 500px;
   }
   /* twitter button */
@@ -90,6 +86,19 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 
 - [Introduction 📢](#introduction)
 - [About Everything](#about-everything)
+- [Setup](#setup)
+- [Practice #1 - Hello World](#practice-1---hello-world)
+- [Use Case - Exploring Node.js News](#use-case---exploring-nodejs-news)
+- [Chunk Documents](#chunk-documents)
+- [Practice #2 - Chunking](#practice-2---chunking)
+- [Store & Retrieve](#store--retrieve)
+- [Practice #3 - Store & Retrieve](#practice-3---store--retrieve)
+- [Reranking](#reranking)
+- [Evaluation](#evaluation)
+- [Practice #4 - Evaluation](#practice-4---evaluation)
+- [Summary](#summary)
+- [Feedback](#feedback)
+- [Links](#links)
 
 ## Introduction
 
@@ -264,14 +273,14 @@ const texts = await textSplitter.splitText(document);
 
 - Text-structured based (`RecursiveCharacterTextSplitter`)
 
-> What split characters do you think [are included](https://github.com/langchain-ai/langchain/blob/9ef2feb6747f5a69d186bd623b569ad722829a5e/libs/langchain/langchain/text_splitter.py#L842) in Langchain by default?
+- What split characters do you think [are included](https://github.com/langchain-ai/langchain/blob/9ef2feb6747f5a69d186bd623b569ad722829a5e/libs/langchain/langchain/text_splitter.py#L842) in Langchain by default?
 
 - [Document-structured based](https://python.langchain.com/docs/how_to/code_splitter/)
 
 - Semantic meaning based - [Extract Propositions](https://chentong0.github.io/factoid-wiki/)
 
 - Agentic Chunking
-  - Summarize text, images
+  - Summarize text, propositions, images
   - Generate hypothetical questions
   - [Multiple embeddings](https://js.langchain.com/docs/how_to/multi_vector/)
 
@@ -291,9 +300,52 @@ Vectors are stored in a database, which compare them as a way to search for data
 
 [![embedding space](https://developers.google.com/static/machine-learning/crash-course/images/embeddings_3D_tangyuan.png)](https://developers.google.com/machine-learning/crash-course/embeddings/embedding-space)
 
+- [Ollama supported embedding models](https://ollama.com/search?c=embedding)
+
+- Can we exchange embedding models with same produced vector dimensions?
+
 ## Practice #3 - Store & Retrieve
 
+## Reranking
+
 ## Evaluation
+
+![RAG Triad](https://d2lsxfc3p6r9rv.cloudfront.net/rag-triad.svg)
+
+> Evaluate RAG the retriever and generator of a RAG pipeline seperately
+
+### Retriever
+
+Hyperparameters:
+- Database
+- Embedding model
+- Chunk size
+- Top-K documents
+- LLM temperature
+- Prompt template
+- Reranking model
+- etc.
+
+> Does your reranker model ranks the retrieved nodes in the "correct" order?
+
+Metrics:
+- Contextual Relevance - the overall relevance of the retrieved context for a given input
+- Contextual Recall - how well the retrieved context aligns with the expected output
+- Contextual Precision - whether nodes in the retrieved context that are relevant to the given input are ranked higher than irrelevant ones
+
+### Generation
+
+Hyperparameters:
+- Prompt template
+- LLM
+
+> Can we use a smaller, faster, cheaper LLM?
+
+Metrics:
+- Faithfulness / Groundedness - whether the actual output factually aligns with the retrieved context
+- Answer relevancy - how relevant the actual output is to the provided input
+
+### Our choice
 
 - Hit Rate (HR) or Recall at k:
 Measures the proportion of queries for which at least one relevant document is retrieved in the top k results.
@@ -302,6 +354,9 @@ Measures the proportion of queries for which at least one relevant document is r
 Evaluates the rank position of the first relevant document.
 
 - Chunk attributions/utilization - if chunk contributed to model/rag response
+
+- What low numbers might show us?
+- How do we define numbers?
 
 ## Practice #4 - Evaluation
 
@@ -325,13 +380,17 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [deepeval - the open-source LLM evaluation framework](https://docs.confident-ai.com/)
 - [LLM Zoomcamp: A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
 - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/)
+- [DeepEval: RAG Evaluation](https://docs.confident-ai.com/guides/guides-rag-evaluation)
 
 ### Technologies
 
 - LLM
 - Langchain
+- RAG
 
 <details><summary>WIP</summary>
+
+## WIP
 
 - [x] Which LLM? OpenAI? preinstall **Ollama**? huggingface
 
@@ -347,8 +406,8 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 
 ### 2025-03-25
 
-- [ ] @alex embedding
-- [ ] @pavlik alternative with ollama, in-memory store
+- [x] @alex embedding
+- [x] @pavlik alternative with ollama, in-memory store
 
 ### 2025-03-23
 
