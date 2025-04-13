@@ -116,7 +116,7 @@ Software Engineer, Netherlands
 
 My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
 
-- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
+- [AlexKorzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/)
 - [korzio](https://github.com/korzio)
 
 ### Pavlik Kiselev
@@ -192,7 +192,7 @@ async function rag(q) {
 
 ### [Langchain](https://js.langchain.com/docs/introduction/) 🦜️🔗
 
-LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
+> LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
 
 ## Setup
 
@@ -268,13 +268,14 @@ We aim to understand what happened in the Node.js community over the past year. 
 - Length-based (`CharacterTextSplitter`) - Easy & Simple, don't take into account the text's structure
 
 - Character/Token [splitters](https://textsplittervisualizer.com/)
+
 ```js
-import { CharacterTextSplitter } from "@langchain/textsplitters";
+import { CharacterTextSplitter } from "@langchain/textsplitters"
 const textSplitter = new CharacterTextSplitter({
   chunkSize: 100,
   chunkOverlap: 0,
 });
-const texts = await textSplitter.splitText(document);
+const texts = await textSplitter.splitText(document)
 ```
 
 - Text-structured based (`RecursiveCharacterTextSplitter`)
