@@ -275,7 +275,7 @@ We aim to understand what happened in the Node.js community over the past year. 
 
 - Character/Token [splitters](https://textsplittervisualizer.com/)
 ```js
-import { CharacterTextSplitter } from "@langchain/textsplitters";
+const { CharacterTextSplitter } = require("@langchain/textsplitters");
 const textSplitter = new CharacterTextSplitter({
   chunkSize: 100,
   chunkOverlap: 0,
@@ -297,6 +297,15 @@ const texts = await textSplitter.splitText(document);
   - [Multiple embeddings](https://js.langchain.com/docs/how_to/multi_vector/)
 
 ## Practice #2 - Chunking
+```js
+const { RecursiveCharacterTextSplitter } = require("@langchain/textsplitters");
+const splitter = new RecursiveCharacterTextSplitter({
+  chunkSize: 100,
+  chunkOverlap: 0,
+});
+
+return await splitter.splitText(text);
+```
 
 ## Store & Retrieve
 
@@ -322,7 +331,14 @@ Vectors are stored in a database, which compare them as a way to search for data
 </details>
 
 ## Practice #3 - Store & Retrieve
-
+```js
+await Chroma.fromTexts(
+  texts,
+  { id: Array.from({ length: texts.length }, (_, i) => `chunk-${i}`) },
+  embeddings,
+  { collectionName: "rag_node_workshop_articles" },
+);
+```
 ## Reranking
 
 ![reranking process](./assets/reranking.png)
@@ -390,6 +406,11 @@ Evaluates the rank position of the first relevant document.
 - How do we define numbers?
 
 ## Practice #4 - Evaluation
+```js
+const relevantDocs = await getRelevantDocuments(vectorStore, summary);
+const relevance = relevantDocs.map((d) => d.pageContent === chunk);
+console.log(hitRate(relevance));
+```
 
 ## Summary
 
