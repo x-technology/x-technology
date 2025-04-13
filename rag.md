@@ -9,7 +9,7 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     display: none;
   }
 
-  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="rag triad"], img[alt="reranking process"] {
+  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"] {
     width: 500px;
   }
   /* twitter button */
@@ -332,7 +332,7 @@ Vectors are stored in a database, which compare them as a way to search for data
 
 ![RAG Triad](https://d2lsxfc3p6r9rv.cloudfront.net/rag-triad.svg)
 
-> Evaluate RAG the retriever and generator of a RAG pipeline seperately
+> Evaluate RAG the retriever and generator of a RAG pipeline separately
 
 ### Retriever
 
