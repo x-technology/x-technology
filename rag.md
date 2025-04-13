@@ -125,7 +125,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 Software Engineer, Netherlands
 
-JavaScript developer with full-stack experience and frontend passion. He runs a small development agency [codeville.agency](https://codeville.agency/) and likes to talk about technologies they use: React, Remix and Serverless.
+JavaScript developer with full-stack experience and frontend passion. He happily works at ING in a Fraud Prevention department, where helps to protect the finances of the ING customers.
 
 - [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
 - [paulcodiny](https://github.com/paulcodiny)
@@ -202,7 +202,13 @@ LangChain is a Python and JavaScript framework that brings flexible abstractions
 
 ## Practice #1 - Hello World
 
-- First call to LLM
+```js
+ollama.chat({
+  messages: [
+    { role: "user", content: "What is retrieval-augmented generation?" },
+  ],
+});
+```
 
 ## Use Case - Exploring Node.js News
 
