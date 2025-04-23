@@ -114,7 +114,7 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 
 Software Engineer, Netherlands
 
-My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
+My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 🎧 ⚽️ 💻 👋 ☕️ 🌊 🎾
 
 - [AlexKorzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/)
 - [korzio](https://github.com/korzio)
