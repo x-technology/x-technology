@@ -37,17 +37,19 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
-- [Back to the roots with Remix](./remix.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), 2023
+- [Building RAG System in Node.js](./rag.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), 2025
 
-- [How to develop, build, and deploy Node.js NestJS GRPC microservices with Pulumi and Google Cloud Platform](./pulumi.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+- [Back to the roots with Remix](./remix.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), 2023
 
-- [Mastering CLI with TypeScript](./cli-in-ts.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
+- [How to develop, build, and deploy Node.js NestJS GRPC microservices with Pulumi and Google Cloud Platform](./pulumi.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-- [How to Decompose Monolith API into GRPC Microservices](./monolith-to-microservices.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+- [Mastering CLI with TypeScript](./cli-in-ts.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
 
-- [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+- [How to Decompose Monolith API into GRPC Microservices](./monolith-to-microservices.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-- [Deploy Node.js microservices with Pulumi and Azure DevOps](./devops.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+- [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
+
+- [Deploy Node.js microservices with Pulumi and Azure DevOps](./devops.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
 ## [Meetups](https://www.eventbrite.co.uk/o/xtechnology-32181547901)
 
@@ -57,53 +59,53 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `60.` [Azure Machine Learning - Train and Deploy - XTechnology Code Hour](https://www.youtube.com/watch?v=CvFR61SFHj8) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *21 Jan 2023*
 
-`59.` [Bootstrap Microservices - Episode I - Project Generation Tool - XT Code Hour](https://www.youtube.com/watch?v=MWZz7REk9mI) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *14 Jan 2023*
+`59.` [Bootstrap Microservices - Episode I - Project Generation Tool - XT Code Hour](https://www.youtube.com/watch?v=MWZz7REk9mI) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *14 Jan 2023*
 
-`58.` [Explore & Evaluate - FrontEnd System Design Mock Interview, Episode II - XTechnology Code Hour](https://www.youtube.com/watch?v=afVtok_oaEA) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *7 Jan 2023*
+`58.` [Explore & Evaluate - FrontEnd System Design Mock Interview, Episode II - XTechnology Code Hour](https://www.youtube.com/watch?v=afVtok_oaEA) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347), *7 Jan 2023*
 
-`57.` [React Query Hooks - XT Code Hour](https://www.youtube.com/watch?v=rLasA328dEM) by [Valentin Kononov](https://kononov-space.fly.dev/about/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *24 Dec 2022*
+`57.` [React Query Hooks - XT Code Hour](https://www.youtube.com/watch?v=rLasA328dEM) by [Valentin Kononov](https://kononov-space.fly.dev/about/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *24 Dec 2022*
 
 `56.` [CodeSignal - Interviews for Data Scientists](https://www.youtube.com/watch?v=WgPENFU3pE0) by [Nikolay Sheyko](https://www.linkedin.com/in/nikolay-sheyko), [Akshita Dixit](https://akshitadixit.bio.link/) & [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *17 Dec 2022*
 
-`55.` [Node.js vs Deno vs Bun - XT Code Hour](https://www.youtube.com/watch?v=lz1IR33EUig) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *3 Dec 2022*
+`55.` [Node.js vs Deno vs Bun - XT Code Hour](https://www.youtube.com/watch?v=lz1IR33EUig) by [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *3 Dec 2022*
 
-`54.` [Why and how to apply for a conference?](https://www.youtube.com/watch?v=Kp99MA0vdzI) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *19 Nov 2022*
+`54.` [Why and how to apply for a conference?](https://www.youtube.com/watch?v=Kp99MA0vdzI) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), [Andrew Reddikh](https://twitter.com/AndrewRedUK) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *19 Nov 2022*
 
-`53.` [FrontEnd System Design Mock Interview - Episode I - XTechnology Code Hour](https://www.youtube.com/watch?v=vjyGf_7B3y0) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *12 Nov 2022*
+`53.` [FrontEnd System Design Mock Interview - Episode I - XTechnology Code Hour](https://www.youtube.com/watch?v=vjyGf_7B3y0) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *12 Nov 2022*
 
-`52.` [GRPC Microservices in Yandex Cloud with Pulumi - Code Hour](https://www.youtube.com/watch?v=43qtXMLMBDc) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 Oct 2022*
+`52.` [GRPC Microservices in Yandex Cloud with Pulumi - Code Hour](https://www.youtube.com/watch?v=43qtXMLMBDc) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 Oct 2022*
 
-`51.` [Software System Design - Mock interview - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=5IlIC0bu8Iw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *22 Oct 2022*
+`51.` [Software System Design - Mock interview - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=5IlIC0bu8Iw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *22 Oct 2022*
 
-`50.` [LeetCode with SQL - XTechnology Code Hour](https://www.youtube.com/watch?v=8TnRykzlD9o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *15 Oct 2022*
+`50.` [LeetCode with SQL - XTechnology Code Hour](https://www.youtube.com/watch?v=8TnRykzlD9o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *15 Oct 2022*
 
-`49.` [GRPC Microservice again in NestJS! - XTechnology - Code Hour](https://www.youtube.com/watch?v=sYe5IcwmYbE) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), *8 Oct 2022*
+`49.` [GRPC Microservice again in NestJS! - XTechnology - Code Hour](https://www.youtube.com/watch?v=sYe5IcwmYbE) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), *8 Oct 2022*
 
 `48.` [Computer Vision 101 - Image Classification with PyTorch Part III - XTechnology Code Hour](https://www.youtube.com/watch?v=lX_Ysn8nhAA) by [Alexey Zaitsev](https://twitter.com/proxcentb), *1 Oct 2022*
 
-`47.` [Microservices in Go with Micro & Linkerd - Code Hour](https://www.youtube.com/watch?v=l4qlAT6vuN4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *24 Sep 2022*
+`47.` [Microservices in Go with Micro & Linkerd - Code Hour](https://www.youtube.com/watch?v=l4qlAT6vuN4) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *24 Sep 2022*
 
-`46.` [LeetCode with Python - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=NPsvlaPh63c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *17 Sep 2022*
+`46.` [LeetCode with Python - Episode 3 - XTechnology Code Hour](https://www.youtube.com/watch?v=NPsvlaPh63c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *17 Sep 2022*
 
-`45.` [Software System Design - Mock interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=0Fd-0YfVPvs) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *11 Sep 2022*
+`45.` [Software System Design - Mock interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=0Fd-0YfVPvs) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *11 Sep 2022*
 
 `44.` [Computer Vision 101 - Image Classification with PyTorch Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=gF75Abn3A_8) by [Alexey Zaitsev](https://twitter.com/proxcentb), *10 Sep 2022*
 
-`43.` [Software System Design - Mock interview - XTechnology Code Hour](https://www.youtube.com/watch?v=FYWxVyvyNJQ) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *4 Sep 2022*
+`43.` [Software System Design - Mock interview - XTechnology Code Hour](https://www.youtube.com/watch?v=FYWxVyvyNJQ) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *4 Sep 2022*
 
 `42.` [Computer Vision 101 - Image Classification with PyTorch - XTechnology Code Hour](https://www.youtube.com/watch?v=QizLa7RdrZo) by [Alexey Zaitsev](https://twitter.com/proxcentb), *27 Aug 2022*
 
-`41.` [Building open source project - Part IV - Seeding a DB, NestJS & TypeORM](https://youtu.be/Yhu6jwhJQjk) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), [Denis Volper](https://t.me/denisvolper) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *20 Aug 2022*
+`41.` [Building open source project - Part IV - Seeding a DB, NestJS & TypeORM](https://youtu.be/Yhu6jwhJQjk) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/), [Denis Volper](https://t.me/denisvolper) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *20 Aug 2022*
 
 `40.` [ML System Design interview - Episode 2 - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *13 Aug 2022*
 
-`39.` [LeetCode with JavaScript - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *6 Aug 2022*
+`39.` [LeetCode with JavaScript - XTechnology Code Hour](https://www.youtube.com/watch?v=BjObXlMjNPw) by [Pavlik Kiselev](https://nl.linkedin.com/in/%F0%9F%92%BB-pavlik-kiselev-06993347) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *6 Aug 2022*
 
-`38.` [Building open source project - Part III - NestJS, Docs and seeders for DB](https://www.youtube.com/watch?v=5o0RRcmP9M0) by [Denis Volper](https://t.me/denisvolper), [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *30 Jul 2022*
+`38.` [Building open source project - Part III - NestJS, Docs and seeders for DB](https://www.youtube.com/watch?v=5o0RRcmP9M0) by [Denis Volper](https://t.me/denisvolper), [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *30 Jul 2022*
 
-`37.` [LeetCode with Python - XTechnology Code Hour](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *23 Jul 2022*
+`37.` [LeetCode with Python - XTechnology Code Hour](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *23 Jul 2022*
 
-`36.` [Building open source project - Part II - NestJS and TypeORM](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *16 Jul 2022*
+`36.` [Building open source project - Part II - NestJS and TypeORM](https://www.youtube.com/watch?v=qH-AlGOOY-o) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *16 Jul 2022*
 
 `35.` [Building open source project - Part I - NestJS REST API Boilerplate](https://www.youtube.com/watch?v=JhkwPVQ65p8) by [Andrey Balakirev](https://www.linkedin.com/in/jifeon/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *9 Jul 2022*
 
@@ -115,13 +117,13 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `31.` [Develop, build, and deploy Node.js monorepo application into k8s cluster - XT Code Hour](https://www.youtube.com/watch?v=AH430i-ybc4) by [Andrew Balakirev](https://www.linkedin.com/in/jifeon/), *5 Jun 2022*
 
-`30.` [How to Decompose Monolith API into GRPC Microservices](https://www.eventbrite.co.uk/e/breaking-a-monolith-api-into-grpc-microservices-tickets-347221427637?aff=github) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *28 May 2022*
+`30.` [How to Decompose Monolith API into GRPC Microservices](https://www.eventbrite.co.uk/e/breaking-a-monolith-api-into-grpc-microservices-tickets-347221427637?aff=github) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *28 May 2022*
 
-`29.` [Banking Monolith and NestJS - First MicroService, Part III - XT Code Hour](https://www.youtube.com/watch?v=350Hd4WqGm4) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *21 May 2022*
+`29.` [Banking Monolith and NestJS - First MicroService, Part III - XT Code Hour](https://www.youtube.com/watch?v=350Hd4WqGm4) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *21 May 2022*
 
-`28.` [Banking Monolith and NestJS - Start Application, Part II - XT Code Hour](https://www.youtube.com/watch?v=HMjnJJZuuLM) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *14 May 2022*
+`28.` [Banking Monolith and NestJS - Start Application, Part II - XT Code Hour](https://www.youtube.com/watch?v=HMjnJJZuuLM) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *14 May 2022*
 
-`27.` [Banking Monolith and NestJS - Introduction, Part I - XT Code Hour](https://www.youtube.com/watch?v=yY9sLpwFKxM) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *7 May 2022*
+`27.` [Banking Monolith and NestJS - Introduction, Part I - XT Code Hour](https://www.youtube.com/watch?v=yY9sLpwFKxM) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *7 May 2022*
 
 `26.` [Deploy a full stack application to Azure using Bicep templates - Part II - Real Use Case](https://www.youtube.com/watch?v=uOLm15RP5P8) by [Evgeny Rudinsky](https://www.linkedin.com/in/evgenyrudinsky/), *30 April 2022*
 
@@ -131,15 +133,15 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `23.` [AI and Coffee - XT Code Hour](https://www.youtube.com/watch?v=hViPSVy_q1g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *9 April 2022*
 
-`22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
+`22.` [Deploy Node.js microservices with Pulumi and Azure DevOps](https://www.eventbrite.com/e/deploy-nodejs-microservices-with-pulumi-and-azure-devops-tickets-308874149897) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *2 April 2022*
 
-`21.` [Devops Code Hour - Pulumi, Azure, Docker - XT Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
+`21.` [Devops Code Hour - Pulumi, Azure, Docker - XT Code Hour](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *26 March 2022*
 
 `20.` [Python LeetCode and Coffee ️ - XT Code Hour](https://youtu.be/pZ-v-POS56g) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *19 March 2022*
 
 `19.` [Bringing New Talents to Girls Tech](https://www.youtube.com/watch?v=erzYHI4aNqc) by [Veronika Mutsei](https://www.linkedin.com/in/veronika-mutsei-78b46164/), *19 February 2022*
 
-`18.` [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 January 2022*
+`18.` [How to convert crypto currencies with GRPC microservices in Node.js](./grpc.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/) & [Andrew Reddikh](https://twitter.com/AndrewRedUK), *29 January 2022*
 
 `17.` [Introducing TimeMate - How to make Time & Microservices work for you with Golang and GRPC](https://youtu.be/sk6JBVmiXj4) by [Andrew Reddikh](https://twitter.com/AndrewRedUK), *18 December 2021*
 
@@ -159,19 +161,19 @@ We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk
 
 `9.` [GetConf #2 - Tailoring Flutter and Backend in Small Steps](https://youtu.be/tRqwIrlytt8)
 
-`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.youtube.com/watch?v=TKV8eUeOeE8) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *8 May 2021*
+`8.` [PizzaScript #3 - WebAssembly as a Compilation Target](https://www.youtube.com/watch?v=TKV8eUeOeE8) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *8 May 2021*
 
 `7.` [Airbnb Analytics #3 - Data Cleaning & How Programming Knowledge May Help You Invest Talk](https://www.youtube.com/watch?v=6iJ8MMDNQ9c) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
 `6.` [Introducing SailMapAI and GetConf - GAN Sea Maps Generator and a Mobile App for Conferences](https://youtu.be/7jtzvDK2mKk)
 
-`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *27 March 2021*
+`5.` [PizzaScript #2 - Parser with RxGo](https://youtu.be/a3RvC2fvr_g) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *27 March 2021*
 
 `4.` [Airbnb Analytics #2- Scraping Airbnb website with Python and Selenium](https://youtu.be/L8ooiuBnZ8M) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/)
 
 `3.` [Introducing GooseOps - A Handy Toolset for adopting DevOps practices into a startup project](https://youtu.be/3ofIaeM4nls) by [Andrew Reddikh](https://twitter.com/AndrewRedUK)
 
-`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk) by [Alex Korzhikov](https://twitter.com/AlexKorzhikov), *13 February 2021*
+`2.` [Introducing PizzaScript - Programming Language Compiler on Go to WebAssembly](https://youtu.be/V6naUYo1Wdk) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/), *13 February 2021*
 
 `1.` [Introducing Airbnb Analytics Scraping Airbnb website with Python and Beautiful Soup](https://youtu.be/B7uOXdHc8jc) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/), *30 January 2021*
 

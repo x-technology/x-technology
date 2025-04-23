@@ -312,7 +312,7 @@ Vectors are stored in a database, which compare them as a way to search for data
 - [Ollama supported embedding models](https://ollama.com/search?c=embedding)
 
 <details><summary>Can we exchange embedding models with equal vector dimensions?</summary>
-- Nope<br>
+- Nope, also embedding models evolve over time<br>
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 </details>
 
@@ -346,12 +346,11 @@ Hyperparameters:
 - Reranking model
 - etc.
 
-> Does your reranker model ranks the retrieved nodes in the "correct" order?
+> Does your reranker model ranks the retrieved documents in the "correct" order?
 
 Metrics:
-- Contextual Relevance - the overall relevance of the retrieved context for a given input
-- Contextual Recall - how well the retrieved context aligns with the expected output
-- Contextual Precision - whether nodes in the retrieved context that are relevant to the given input are ranked higher than irrelevant ones
+- Precision - whether documents in the retrieved context that are relevant to the given input are ranked higher than irrelevant ones
+- Recall - how well the retrieved context aligns with the expected output, or if all relevant documents are retrieved
 
 ### Generation
 
@@ -408,6 +407,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/embeddings/)
 - [DeepEval - RAG Evaluation](https://docs.confident-ai.com/guides/guides-rag-evaluation)
 - [Cohere - Say Goodbye to Irrelevant Search Results: Cohere Rerank Is Here](https://cohere.com/blog/rerank)
+- [5-Day Gen AI Intensive Course with Google Learn Guide](https://www.kaggle.com/learn-guide/5-day-genai)
 
 ### Technologies
 
