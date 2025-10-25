@@ -87,15 +87,15 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 - [Introduction 📢](#introduction)
 - [About Everything 🌎](#about-everything)
 - [Setup 🛠️](#setup)
-- [Practice #1 - Hello World 👋](#practice-1---hello-world)
+- [Demo #1 - Hello World 👋](#Demo-1---hello-world)
 - [Use Case - Exploring Node.js News 📰](#use-case---exploring-nodejs-news)
 - [Chunking ✂️](#chunking)
-- [Practice #2 - Chunking 🧩](#practice-2---chunking)
+- [Demo #2 - Chunking 🧩](#Demo-2---chunking)
 - [Store & Retrieve 🗂️](#store--retrieve)
-- [Practice #3 - Store & Retrieve 🔍](#practice-3---store--retrieve)
+- [Demo #3 - Store & Retrieve 🔍](#Demo-3---store--retrieve)
 - [Reranking 🥇](#reranking)
 - [Evaluation 📊](#evaluation)
-- [Practice #4 - Evaluation 🧪](#practice-4---evaluation)
+- [Demo #4 - Evaluation 🧪](#Demo-4---evaluation)
 - [Summary 📚](#summary)
 - [Feedback 💬](#feedback)
 - [Links 🔗](#links)
@@ -105,7 +105,7 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 <!-- disclaimers: we are not DS, focus on usage, introduce high level and black box context -->
 
 - Explore RAG's scope, architecture and components
-- Practice various RAG aspects with chosen technologies
+- Demo various RAG aspects with chosen technologies
 - Feedback & evaluate
 
 ### Alex Korzhikov
@@ -154,11 +154,14 @@ RAG is a method that combines information retrieval with language model generati
 
 ![alt text](assets/rag.png)
 
+Indexing = Offline
+
 Retrieval = Search
 
 Generation = LLM
 
 Use Cases:
+
 - Chat with user
 - Analyze and summarise documents
 
@@ -200,7 +203,7 @@ async function rag(q) {
 - Ollama / OpenAI
 - `npm i langchain`
 
-## Practice #1 - Hello World
+## Demo #1 - Hello World
 
 ```js
 ollama.chat({
@@ -218,6 +221,7 @@ ollama.chat({
 </video>
 
 We aim to understand what happened in the Node.js community over the past year. To achieve this, we:
+
 1. Collect and process news, popular blog posts, and articles
 2. Store the documents in a database
 3. Analyze and query the documents by asking targeted questions
@@ -225,6 +229,7 @@ We aim to understand what happened in the Node.js community over the past year. 
 <iframe src="https://atlas.nomic.ai/data/todexex279/nodejs-v4-2024/map" width="50%" height="500px"></iframe>
 
 ### How do we find sources?
+
 - Own collection
 - Ask ChatGPT <i>What are the best online resource to follow on Node.js news? Output urls and short description</i>
 
@@ -276,11 +281,11 @@ We aim to understand what happened in the Node.js community over the past year. 
 - Character/Token [splitters](https://textsplittervisualizer.com/)
 
 ```js
-const { CharacterTextSplitter } = require("@langchain/textsplitters");
+const { CharacterTextSplitter } = require("@langchain/textsplitters")
 const textSplitter = new CharacterTextSplitter({
   chunkSize: 100,
   chunkOverlap: 0,
-});
+})
 const texts = await textSplitter.splitText(document)
 ```
 
@@ -297,7 +302,7 @@ const texts = await textSplitter.splitText(document)
   - Generate hypothetical questions
   - [Multiple embeddings](https://js.langchain.com/docs/how_to/multi_vector/)
 
-## Practice #2 - Chunking
+## Demo #2 - Chunking
 ```js
 const { RecursiveCharacterTextSplitter } = require("@langchain/textsplitters");
 const splitter = new RecursiveCharacterTextSplitter({
@@ -320,6 +325,11 @@ An embedding is a vector representation of data in embedding space (projecting t
 
 ![embeddings vs indexing](assets/docs-index.png)
 
+<!-- https://en.wikipedia.org/wiki/Maximum_inner-product_search
+SVD
+ANN algorithms -->
+
+
 Vectors are stored in a database, which compare them as a way to search for data that is similar in meaning (by using [dot product](https://en.wikipedia.org/wiki/Dot_product) or [cosine](https://en.wikipedia.org/wiki/Cosine_similarity) measurement).
 
 [![embedding space](https://developers.google.com/static/machine-learning/crash-course/images/embeddings_3D_tangyuan.png)](https://developers.google.com/machine-learning/crash-course/embeddings/embedding-space)
@@ -331,7 +341,7 @@ Vectors are stored in a database, which compare them as a way to search for data
 <img src="https://i.kym-cdn.com/photos/images/original/002/086/808/90f.gif" alt="obvious reaction"/>
 </details>
 
-## Practice #3 - Store & Retrieve
+## Demo #3 - Store & Retrieve
 ```js
 await Chroma.fromTexts(
   texts,
@@ -373,6 +383,7 @@ Hyperparameters:
 Metrics:
 - Precision - whether documents in the retrieved context that are relevant to the given input are ranked higher than irrelevant ones
 - Recall - how well the retrieved context aligns with the expected output, or if all relevant documents are retrieved
+<!-- > also used in embedding models evaluation -->
 
 ### Generation
 
@@ -435,9 +446,36 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [DeepEval - RAG Evaluation](https://docs.confident-ai.com/guides/guides-rag-evaluation)
 - [Cohere - Say Goodbye to Irrelevant Search Results: Cohere Rerank Is Here](https://cohere.com/blog/rerank)
 - [5-Day Gen AI Intensive Course with Google Learn Guide](https://www.kaggle.com/learn-guide/5-day-genai)
+- [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/)
+- [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)
 
 ### Technologies
 
 - LLM
 - Langchain
 - RAG
+- AI Agents
+- MCP
+
+<!--
+
+# 2025-09-17
+
+- structure
+  - [definitions](https://modelcontextprotocol.io/docs/getting-started/intro)
+  - [explanation](https://modelcontextprotocol.io/docs/learn/architecture)
+  - what are examples?
+  - maybe build your own mcp protocol executor as an example?
+  - how this work with rag model? db has mcp with search?
+
+# 2025-09-19
+
+- examples
+  - mention mcp local server chroma
+  - self made client - server manager - vs sdk
+
+# 2025-10-05
+
+- [ ] add function to llm
+
+-->
