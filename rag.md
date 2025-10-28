@@ -425,19 +425,15 @@ console.log(hitRate(relevance));
 
 ## MCP World
 
-[![alt text](assets/mcp-agents-ecosystem.png)](https://arxiv.org/abs/2504.16736)
-
-[![alt text](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
-
-![alt text](assets/mcp-deep-dive.png)
-
-https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/
-
-- What are AI agents?
-
 - AI agents
 
-> Agents are AI systems that can:
+![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
+
+> AI agents are AI programs built on top of LLMs. They use LLM information-processing capabilities to obtain data, make decisions, and take actions on behalf of human users.
+
+- [AI SDK Vercel](https://ai-sdk.dev/docs/introduction)
+
+<!-- > Agents are AI systems that can:
 >
 > Make decisions about what actions to take
 > Use tools to accomplish tasks
@@ -465,10 +461,7 @@ https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/
 > So in agentic RAG, the system
 > has access to the history of previous actions
 > makes decisions independently based on the current information and the previous actions
-
-![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
-
-> AI agents are AI programs built on top of LLMs. They use LLM information-processing capabilities to obtain data, make decisions, and take actions on behalf of human users.
+![alt text](assets/mcp-deep-dive.png)
 
 https://www.anthropic.com/engineering/building-effective-agents
 
@@ -488,9 +481,7 @@ which provides essential capabilities for reasoning, understanding language, and
 > - Action Execution: The ability to interact with their environment by executing actions, whether through API calls, database queries, or interaction
 with external systems.
 
-https://lilianweng.github.io/posts/2023-06-23-agent/
-
-- [ ] what are components in the agent of our system?
+-->
 
 - Agents vs Workflows
 
@@ -498,87 +489,80 @@ https://lilianweng.github.io/posts/2023-06-23-agent/
 
 > Agent protocols are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems
 
-- MCP
+- [Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)
+- [ANP - Agent Network Protocol](https://www.agent-network-protocol.com/)
 
-Model Context Protocol
-Since Nov 2024
+[![alt text](assets/mcp-agents-ecosystem.png)](https://arxiv.org/abs/2504.16736)
 
-[Specification](https://modelcontextprotocol.io/specification/2025-06-18#overview)
+[![alt text](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
+
+- MCP - Model Context Protocol
+
+Anthropic, November 2024, [Specification](https://modelcontextprotocol.io/specification/2025-06-18#overview)
+
 > MCP provides a standardized way for applications to:
 > - Share contextual information with language models
 > - Expose tools and capabilities to AI systems
 > - Build composable integrations and workflows
 
-> MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way
+<!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
 
-Features
-- sampling
-- elicitation - servers proactively request context from users
-
-Alternatives
-- going from https://platform.openai.com/docs/guides/function-calling
-
-function calling flow
-> tools are defined when making a connection to llm
-> pretty manual
+based on [the Function calling flow](https://platform.openai.com/docs/guides/function-calling)
 
 ```js
 for (const toolCall of response.output) {
   if (toolCall.type !== "function_call") {
-    continue;
+    continue
   }
 
-  const name = toolCall.name;
-  const args = JSON.parse(toolCall.arguments);
+  const name = toolCall.name
+  const args = JSON.parse(toolCall.arguments)
 
-  const result = callFunction(name, args);
+  const result = callFunction(name, args)
   input.push({
     type: "function_call_output",
     call_id: toolCall.call_id,
     output: result.toString(),
-  });
+  })
 }
 ```
 
-![function call flow](https://cdn.openai.com/API/docs/images/function-calling-diagram-steps.png)
-- [AI SDK Vercel](https://ai-sdk.dev/docs/introduction)
-- [Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)
-- [ANP - Agent Network Protocol](https://www.agent-network-protocol.com/)
+[Features](https://modelcontextprotocol.io/specification/2025-06-18#features)
+- Resources: Context and data, for the user or the AI model to use
+- Prompts: Templated messages and workflows for users
+- [Tools](https://platform.openai.com/docs/guides/tools): Functions for the AI model to execute
+- Communication Layer: Authentication, Notifications, [JSON-RPC](https://www.jsonrpc.org/specification)
+- [Servers](https://github.com/modelcontextprotocol/servers)
 
-![](https://www.agent-network-protocol.com/images/agentic-web3.png)
+![alt text](assets/mcp-message-flow.png)
+
+<!-- ![function call flow](https://cdn.openai.com/API/docs/images/function-calling-diagram-steps.png)
 
 Clients on AI Agents (host applications) <-> MCP Servers
 
 Clients mainatin connection with servers
 
-![alt text](assets/mcp-message-flow.png)
+
 
 ```mermaid
 sequenceDiagram
-    participant Server
-    participant Client
+participant Server
+participant Client
 
-    Note over Server,Client: Discovery
-    Server->>Client: roots/list
-    Client-->>Server: Available roots
+Note over Server,Client: Discovery
+Server->>Client: roots/list
+Client- ->>Server: Available roots
 
-    Note over Server,Client: Changes
-    Client--)Server: notifications/roots/list_changed
-    Server->>Client: roots/list
-    Client-->>Server: Updated roots
+Note over Server,Client: Changes
+Client--)Server: notifications/roots/list_changed
+Server->>Client: roots/list
+Client- ->>Server: Updated roots
 ```
 
 > In the initial phase of a complete MCP invocation cycle, when faced with a user query, the host employs the LLMs’ understanding and reasoning capabilities to infer the context necessary to formulate a response to the query. Concurrently, the multiple clients connected to the host provide natural language descriptions of the available resources. Based on the information available, the host determines which resources to request context from and initiating a strategic context request to the corresponding client. In the request phase of the MCP invocation cycle, the client sends an executive context request to the corresponding server, encompassing operations such as data modifications or tool invocations. Upon receiving the client’s request, the server operates on the resources as specified and subsequently transmits the obtained context to the client, which then passes it on to the host. In the response phase of the MCP cycle, the host combines the context obtained to formulate a reply to the user query, thereby completing the cycle.
 
 > [ ] is it right that tool_use is detected by LLM?
-
 https://blog.langchain.com/mcp-fad-or-fixture/
-
-Protocol
-
-- tools
-
-https://platform.openai.com/docs/guides/tools
 
 > A function or tool refers in the abstract to a piece of functionality that we tell the model it has access to. As a model generates a response to a prompt, it may decide that it needs data or functionality provided by a tool to follow the prompt's instructions.
 > You could give the model access to tools that:
@@ -587,6 +571,9 @@ https://platform.openai.com/docs/guides/tools
 > Issue refunds for a lost order
 > Or anything else you'd like the model to be able to know or do as it responds to a prompt.
 > When we make an API request to the model with a prompt, we can include a list of tools the model could consider using. For example, if we wanted the model to be able to answer questions about the current weather somewhere in the world, we might give it access to a get_weather tool that takes location as an argument.
+
+-->
+
 
 ```json
 {
@@ -624,7 +611,7 @@ https://platform.openai.com/docs/guides/tools
 }
 ```
 
-> Tools let LLMs take actions through your server. Tools can perform computation, fetch data and have side effects. Tools should be designed to be model-controlled - i.e. AI models will decide which tools to call, and the arguments
+<!-- > Tools let LLMs take actions through your server. Tools can perform computation, fetch data and have side effects. Tools should be designed to be model-controlled - i.e. AI models will decide which tools to call, and the arguments
 
 - [ResourceLink](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#resource-links)
 
@@ -632,8 +619,6 @@ https://platform.openai.com/docs/guides/tools
 - prompts
 - notifications
 
-Communication Layer
-- Base Protocol: Core [JSON-RPC](https://www.jsonrpc.org/specification) message types
 
 ```json
 {
@@ -651,27 +636,17 @@ Communication Layer
   - sse
 - Lifecycle Management: Connection initialization, capability negotiation, and session control
 - Authorization: Authentication and authorization framework for HTTP-based transports
+-->
 
-Dev Process Overview
-
-- [sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- server
-- [client](https://modelcontextprotocol.io/docs/develop/build-client#node)
-- mcp inspector
-
-[Example](https://github.com/modelcontextprotocol/typescript-sdk?tab=readme-ov-file#quick-start)
+[Development Process Example](https://github.com/modelcontextprotocol/typescript-sdk?tab=readme-ov-file#quick-start)
+- [SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- Server
 
 ```bash
 npx -y tsx 4-mcp.ts
 ```
 
-- inspector
-
-![inspector](https://raw.githubusercontent.com/modelcontextprotocol/inspector/main/mcp-inspector.png)
-
-```bash
-npx @modelcontextprotocol/inspector
-```
+- [Client](https://modelcontextprotocol.io/docs/develop/build-client#node)
 
 - vscode github copilot
 - vscode openai codex
@@ -690,24 +665,26 @@ npx @modelcontextprotocol/inspector
 url = "http://localhost:3000/mcp"
 ```
 
-Environments
+- MCP inspector
 
-- ide?
+```bash
+npx @modelcontextprotocol/inspector
+```
 
-- [Servers](https://github.com/modelcontextprotocol/servers)
+![inspector](https://raw.githubusercontent.com/modelcontextprotocol/inspector/main/mcp-inspector.png)
 
-
+- What are components in the agent of our system?
 - What can you do with MCPs locally?
+
+<!--
 - Attach to agentic product demo?
 - Artificial layer, why not to introduce default mcp for any potential API?
-
 https://github.com/alexeygrigorev/rag-agents-workshop
+-->
 
-### Use Case Architecture / Tech Design
+### Demo #5 - MCP
 
-AI Agent - our app?
-
-Let's define permissions...
+...
 
 ## Summary
 
@@ -734,6 +711,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [5-Day Gen AI Intensive Course with Google Learn Guide](https://www.kaggle.com/learn-guide/5-day-genai)
 - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/)
 - [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)
+- [Lilian Weng - LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
 ### Technologies
 
