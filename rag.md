@@ -9,7 +9,7 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
     display: none;
   }
 
-  img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"] {
+  img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"],  {
     width: 500px;
   }
   /* twitter button */
@@ -96,6 +96,8 @@ Large Language Models (LLMs) are powerful, but they often lack real-time knowled
 - [Reranking 🥇](#reranking)
 - [Evaluation 📊](#evaluation)
 - [Demo #4 - Evaluation 🧪](#Demo-4---evaluation)
+- [MCP World 🌎](#mcp-world)
+- [Demo #5 - MCP ⛵️](#Demo-5---mcp)
 - [Summary 📚](#summary)
 - [Feedback 💬](#feedback)
 - [Links 🔗](#links)
@@ -682,7 +684,7 @@ npx @modelcontextprotocol/inspector
 https://github.com/alexeygrigorev/rag-agents-workshop
 -->
 
-### Demo #5 - MCP
+## Demo #5 - MCP
 
 ...
 
