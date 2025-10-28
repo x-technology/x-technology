@@ -11,6 +11,7 @@ title: XTechnology Workshop - Building a RAG System in Node.js: Vector Databases
 
   img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"],  {
     width: 500px;
+    max-height: 600px;
   }
   /* twitter button */
   .twitter-btn {
