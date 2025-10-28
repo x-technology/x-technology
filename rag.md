@@ -430,7 +430,7 @@ console.log(hitRate(relevance));
 
 - AI agents
 
-![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
+[![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
 > AI agents are AI programs built on top of LLMs. They use LLM information-processing capabilities to obtain data, make decisions, and take actions on behalf of human users.
 
