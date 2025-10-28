@@ -687,7 +687,22 @@ https://github.com/alexeygrigorev/rag-agents-workshop
 
 ## Demo #5 - MCP
 
-...
+```js
+const client = new Client({
+  name: "rag-workshop-mcp-client",
+  version: "1.0.0",
+});
+
+// Call a tool
+const result = await client.callTool({
+  name: "get_documents",
+  arguments: {
+    q: "What's terraform used for?",
+  },
+});
+
+console.log(result);
+```
 
 ## Summary
 
