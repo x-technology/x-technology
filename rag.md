@@ -691,7 +691,7 @@ https://github.com/alexeygrigorev/rag-agents-workshop
 const client = new Client({
   name: "rag-workshop-mcp-client",
   version: "1.0.0",
-});
+})
 
 // Call a tool
 const result = await client.callTool({
@@ -699,9 +699,7 @@ const result = await client.callTool({
   arguments: {
     q: "What's terraform used for?",
   },
-});
-
-console.log(result);
+})
 ```
 
 ## Summary
