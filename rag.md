@@ -706,6 +706,8 @@ console.log(result);
 
 ## Summary
 
+The workshop overviews and samples RAG system architecture in Node.js, connecting data ingestion, embedding, and retrieval layers into a unified pipeline. It explores how the RAG pattern enhances LLMs with external knowledge, improving accuracy and adaptability in real-world applications.
+
 ## Feedback
 
 Please [share your feedback](https://app.sli.do/event/wV641HGAr8jeVnULeLAAg2) on the workshop. Thank you and have a great coding!
