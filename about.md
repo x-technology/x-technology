@@ -20,7 +20,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 - [Twitter AlexKorzhikov](https://twitter.com/AlexKorzhikov)
 - [Github korzio](https://github.com/korzio)
-- [Linkedin alex-korzhikov](https://www.linkedin.com/in/alex-korzhikov-8614011a/)
+- [Linkedin alex-korzhikov](https://www.linkedin.com/in/alex-korzhikov/)
 
 #### Igor Smirnov
 
