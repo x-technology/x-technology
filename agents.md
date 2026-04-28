@@ -93,6 +93,7 @@ references: OpenClaw, n8n, LangChain
 ## 2026-04-28
 
 - [ ] what are stop execute evaluation practices?
+- [ ] does n8n use a2a?
 
 ## 2026-04-22
 
@@ -268,6 +269,8 @@ https://developers.openai.com/api/docs/guides/agents/define-agents#when-to-split
 OpenClaw
 
 ## Agent Protocols
+
+![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
 
 > Agent protocols are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems
 
