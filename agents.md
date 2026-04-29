@@ -71,14 +71,6 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
 
 # Drafts
 
-Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
-
-This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We’ll examine agent architecture, planning loops, memory models, and tool execution. We’ll also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we’ll address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems.
-
-All examples and concepts will be grounded in the Node.js stack and we will explore why Node.js is particularly well-suited for building production-ready agent runtimes — serving as the control plane for supervision, integration, streaming execution, and distributed coordination.
-
-references: OpenClaw, n8n, LangChain
-
 Пока что такой план обсудили на воркшоп
 1. Теория про агентов. Что такое вообще
 2. Разработка агента "на коленке"
@@ -90,10 +82,18 @@ references: OpenClaw, n8n, LangChain
 8. Практика
 9. Конец
 
+## 2026-04-29
+
+- [ ] @pavlik to make use case diagram
+- [ ] @pavlik @alex session inMemoryRunner alternatives
+  await runner.sessionService.createSession({ appName: APP_NAME, userId: USER_ID, sessionId: SESSION_ID });
+- [ ] @pavlik from 03 example remove llm from agents
+
 ## 2026-04-28
 
 - [ ] what are stop execute evaluation practices?
-- [ ] does n8n use a2a?
+- [x] does n8n use a2a?
+- [x] Why Node.js for agent runtimes?
 
 ## 2026-04-22
 
@@ -107,9 +107,11 @@ references: OpenClaw, n8n, LangChain
 
 read about [claude sdk ](https://code.claude.com/docs/en/agent-sdk/claude-code-features)
 
-# Building a RAG System in Node.js: Vector Databases, Embeddings & Chunking
+# Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
 
-Large Language Models (LLMs) are powerful, but they often lack real-time knowledge. Retrieval-Augmented Generation (RAG) bridges this gap by fetching relevant information from external sources before generating responses. In this workshop, we’ll explore how to build an efficient RAG pipeline in Node.js using RSS feeds as a data source. We’ll compare different vector databases (FAISS, pgvector, Elasticsearch), embedding methods, and testing strategies. We’ll also cover the crucial role of chunking—splitting and structuring data effectively for better retrieval performance.
+This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We’ll examine agent architecture, planning loops, memory models, and tool execution. We’ll also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we’ll address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems.
+
+All examples and concepts will be grounded in the Node.js stack and we will explore why Node.js is particularly well-suited for building production-ready agent runtimes — serving as the control plane for supervision, integration, streaming execution, and distributed coordination.
 
 ## Prerequisites
 
@@ -241,9 +243,32 @@ which provides essential capabilities for reasoning, understanding language, and
 > - Tool-Using: Although LLMs inherently face limitations in mathematical reasoning, logical operations, and knowledge beyond their trained corpus, agents overcome these constraints by integrating external tools and APIs
 > - Action Execution: The ability to interact with their environment by executing actions, whether through API calls, database queries, or interaction
 with external systems.
+
+https://arxiv.org/abs/2504.16736
+
 -->
 
 ## Agents SDK
+
+|                                | **Claude Agent SDK**                                         | **OpenAI Agents SDK**                  | **Google ADK**                                           | **Vercel AI SDK**                      | **LangChain / LangGraph**                        | **CrewAI**                           | **OpenClaw**                                             |
+| ------------------------------ | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ | ------------------------------------ | -------------------------------------------------------- |
+| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains + stateful agent graphs        | Role-based multi-agent orchestration | Local-first autonomous assistant                         |
+| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                           | TypeScript / JavaScript                | Python, TypeScript                               | Python                               | TypeScript / Node.js                                     |
+| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                                   | Model-agnostic                       | Model-agnostic                                           |
+| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | **LangGraph DAG + cycles (full state machines)** | Sequential + hierarchical crews      | Autonomous loop (AutoGPT-style) ⚠️ *(behavior unstable)* |
+| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                | Custom tools                         | Plugins, browser, apps                                   |
+| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              | Built-in memory abstractions         | Persistent local memory                                  |
+| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                | ✅ Core concept                       | ❌                                                        |
+| **Structured output**          | JSON / tool schemas                                          | Strong schema enforcement              | Pydantic-style outputs                                   | `generateObject`                       | Output parsers                                   | Typed tasks                          | ⚠️ CHECK                                                 |
+| **Streaming**                  | Yes                                                          | Yes                                    | Yes                                                      | ✅ First-class                          | Yes                                              | Partial ⚠️                           | ⚠️ CHECK                                                 |
+| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                                  | ❌                                    | ⚠️ CHECK                                                 |
+| **Tracing / observability**    | Hooks                                                        | Built-in tracing                       | Vertex observability                                     | Built-in telemetry                     | LangSmith                                        | Logging                              | ⚠️ CHECK                                                 |
+| **Guardrails**                 | Permissions + tool control                                   | Built-in guardrails                    | Vertex policies                                          | Middleware                             | Custom callbacks                                 | Role constraints                     | ⚠️ CHECK                                                 |
+| **UI / frontend**              | ❌                                                            | ❌                                      | ❌                                                        | ✅ **Best-in-class (React, Next.js)**   | ❌                                                | ❌                                    | Messaging apps                                           |
+| **Visual / no-code**           | ❌                                                            | ⚠️ Agent Builder (limited)             | ✅ Vertex Studio                                          | ❌                                      | ⚠️ LangSmith UI                                  | ❌                                    | ❌                                                        |
+| **Privacy / hosting**          | Cloud (Anthropic)                                            | Cloud (OpenAI)                         | Cloud (Google)                                           | Depends on provider                    | Self-host possible                               | Self-host possible                   | ✅ Local-first                                            |
+| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Complex agent systems                            | Multi-agent simulations              | Personal assistants                                      |
+| **Maturity**                   | New (2025)                                                   | New (2025)                             | New (2025)                                               | Mature                                 | Most mature                                      | Mature                               | ⚠️ Varies                                                |
 
 Frameworks: CrewAI, LangGraph, MetaGPT
 - The [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript#query);
@@ -252,23 +277,63 @@ Frameworks: CrewAI, LangGraph, MetaGPT
 - Vellum, another GUI tool for building and testing complex workflows.
 - [AI SDK Vercel](https://ai-sdk.dev/docs/introduction)
 
-claude
+**claude**
 
 https://code.claude.com/docs/en/agent-sdk/agent-loop
 
 ### [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
 
-openai
+[built-in tools](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools)
+
+**openai**
 
 https://developers.openai.com/api/docs/guides/agents/define-agents#when-to-split-one-agent-into-several
 
+[built-in tools](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
+
+**[adk](https://adk.dev/get-started/typescript/)**
+
+```ts
+import {FunctionTool, LlmAgent} from '@google/adk';
+import {z} from 'zod';
+
+/* Mock tool implementation */
+const getCurrentTime = new FunctionTool({
+  name: 'get_current_time',
+  description: 'Returns the current time in a specified city.',
+  parameters: z.object({
+    city: z.string().describe("The name of the city for which to retrieve the current time."),
+  }),
+  execute: ({city}) => {
+    return {status: 'success', report: `The current time in ${city} is 10:30 AM`};
+  },
+});
+
+export const rootAgent = new LlmAgent({
+  name: 'hello_time_agent',
+  model: 'gemini-flash-latest',
+  description: 'Tells the current time in a specified city.',
+  instruction: `You are a helpful assistant that tells the current time in a city.
+                Use the 'getCurrentTime' tool for this purpose.`,
+  tools: [getCurrentTime],
+});
+```
+
+crewai
+
+key features:
+- model-agnostic
+- deployment-agnostic
+
 ### [Langchain](https://js.langchain.com/docs/introduction/) 🦜️🔗
+
+LangGraph
 
 > LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
 
-OpenClaw
+**OpenClaw**
 
-## Agent Protocols
+## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
 
@@ -276,7 +341,34 @@ OpenClaw
 
 - MCP
 - [Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)
+
+Key Concepts:
+- Agent Card	A JSON metadata document describing an agent's identity, capabilities, endpoint, skills, and authentication requirements.	Enables clients to discover agents and understand how to interact with them securely and effectively.
+- Task	A stateful unit of work initiated by an agent, with a unique ID and defined lifecycle.	Facilitates tracking of long-running operations and enables multi-turn interactions and collaboration.
+- Message	A single turn of communication between a client and an agent, containing content and a role ("user" or "agent").	Conveys instructions, context, questions, answers, or status updates that are not necessarily formal artifacts.
+- Part	The fundamental content container used within Messages and Artifacts. A Part holds one of: text content, a file reference (URL or inline bytes), or structured data.	Provides flexibility for agents to exchange various content types within messages and artifacts.
+- Artifact	A tangible output generated by an agent during a task (for example, a document, image, or structured data).	Delivers the concrete results of an agent's work, ensuring structured and retrievable outputs.
+
+- Service Discovery
+  - Registry
+  - Semantic Router
+
+![](https://github.com/a2aproject/a2a-samples/blob/main/demo/a2a_demo_arch.png?raw=true)
+
+[A2A and MCP: Detailed Comparison](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)
+
 - [ANP - Agent Network Protocol](https://www.agent-network-protocol.com/)
+
+> to define how agents connect with each other, building an open, secure, and efficient collaboration network for billions of intelligent agents
+
+![ANP](https://www.agent-network-protocol.com/images/agentic-web3.png)
+![ANP Protocol Architecture](https://www.agent-network-protocol.com/assets/protocol-layer-design.B9NUOG81.png)
+
+- MCP (Model Context Protocol): A bridge connecting AI models with tools/resources, using a client-server architecture, suitable for a single model accessing multiple tools and resources, such as accessing search engines, calling calculators, etc.
+- A2A (Agent2Agent): Designed for complex agent collaboration within enterprises, focusing on task-driven collaborative processes, suitable for completing complex task chains in trusted environments, such as workflow automation within enterprises.
+- ANP (Agent Network Protocol): Created for agent interconnection on the open internet, using a peer-to-peer architecture, enabling cross-platform and cross-organization agent discovery and interaction, such as communication between agents from different companies.
+
+In short: Use MCP to connect tools or resources, A2A for agent collaboration within enterprises, and ANP for agent connections on the open internet.
 
 [![alt text](assets/mcp-agents-ecosystem.png)](https://arxiv.org/abs/2504.16736)
 
@@ -300,12 +392,13 @@ Please [share your feedback](https://app.sli.do/event/wV641HGAr8jeVnULeLAAg2) on
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
-## Links
+## References
 
 - [Building effective agents - Engineering at Anthropic Dec 19, 2024](https://www.anthropic.com/engineering/building-effective-agents)
 - [LLM Zoomcamp - A Free Course on Real-Life Applications of LLMs](https://github.com/DataTalksClub/llm-zoomcamp)
 - [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)
 - [Lilian Weng - LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)
+- [Awesome AI Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
 ### Technologies
 
@@ -314,3 +407,5 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - RAG
 - AI Agents
 - MCP
+- OpenClaw
+- n8n
