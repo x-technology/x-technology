@@ -179,12 +179,63 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 > AI agents are AI programs built on top of LLMs. They use LLM information-processing capabilities to obtain data, make decisions, and take actions on behalf of human users.
 
+> The concept of an AI agent refers to a system or program that is capable of autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools.
+
 > Agents can be used for open-ended problems where it’s difficult or impossible to predict the required number of steps, and where you can’t hardcode a fixed path.
 
 ![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)
   - LLM
   - Loop
-  - Planning
+  - [Planning](https://arxiv.org/pdf/2402.02716)
+    ![Planning](https://www.researchgate.net/profile/Xu-Huang-37/publication/380756642/figure/fig1/AS:11431281246334630@1716345510279/Taxonomy-on-LLM-Agent-planning.png)
+      - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement and memory-augmented planning
+      p = (a0, a1, · · · , at) = plan(E, g; Θ, P).
+      g0, g1, · · · , gn = decompose(E, g; Θ, P);
+      pi = (ai0, ai1, · · · aim) = sub-plan(E, gi; Θ, P).
+      - Agent architectures: ReAct, PRACT, RAISE, Reflexion
+
+```ts
+// ReAct
+while (true) {
+  const response = await llm(messages, tools);
+
+  if (response.tool_call) {
+    const result = await runTool(response.tool_call);
+    messages.push(result);
+  } else {
+    return response.output;
+  }
+}
+```
+
+```ts
+// Reflector
+export async function reflexionLoop(task: string) {
+  let bestAnswer = null;
+  let bestScore = -Infinity;
+
+  for (let i = 0; i < 3; i++) {
+    console.log(`Attempt ${i + 1}`);
+
+    const trajectory = await runAgent(task);
+    const evaluation = await evaluateTrajectory(task, trajectory);
+    const reflection = await reflect(task, trajectory, evaluation);
+
+    storeReflection(reflection);
+
+    console.log("Score:", evaluation.score);
+    console.log("Lessons:", reflection.lessons);
+
+    if (evaluation.score > bestScore) {
+      bestScore = evaluation.score;
+      bestAnswer = trajectory.finalAnswer;
+    }
+  }
+
+  return bestAnswer;
+}
+```
+
     - Evaluation
   - Memory
   - Tools
@@ -193,7 +244,6 @@ JavaScript developer with full-stack experience and frontend passion. He happily
   - Guardrails
   - components - memory, llm, reasoning, research models, guardrails
 
-Agent architectures: ReAct, PRACT, RAISE, Reflexion
 
 
 <!-- > Agents are AI systems that can:
@@ -335,12 +385,21 @@ LangGraph
 
 ## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
+- Agentic AI systems
+
+[![agent protocols overview table](assets/agent-protocols-overview-table.png)](https://arxiv.org/abs/2504.16736)
+
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
 
 > Agent protocols are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems
 
 - MCP
+
+Inter-Agent Protocols
+
 - [Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)
+
+released in 04.2025
 
 Key Concepts:
 - Agent Card	A JSON metadata document describing an agent's identity, capabilities, endpoint, skills, and authentication requirements.	Enables clients to discover agents and understand how to interact with them securely and effectively.
@@ -370,15 +429,33 @@ Key Concepts:
 
 In short: Use MCP to connect tools or resources, A2A for agent collaboration within enterprises, and ANP for agent connections on the open internet.
 
+OR
+
+- MCP: Focused on providing structured context and tool integration for LLMs, emphasizing
+the connection between models and external resources.
+- ANP: Introduced decentralized identity mechanisms (e.g., W3C DID), enabling peer-to-peer
+communication between agents, enhancing system autonomy and flexibility.
+- A2A: Provided a standardized framework for collaboration between enterprise-level agents,
+supporting task management, message exchange, and multimodal outputs, thus facilitating
+cross-platform and multi-vendor agent collaboration.
+
 [![alt text](assets/mcp-agents-ecosystem.png)](https://arxiv.org/abs/2504.16736)
 
 [![alt text](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
+
+[![agent protocol use cases](assets/agent-protocol-use-cases.png)](https://arxiv.org/abs/2504.16736)
 
 ## Aspects
 
 - Security
 
 https://code.claude.com/docs/en/agent-sdk/secure-deployment
+
+- Infrastruscture
+n8n
+agent stack
+
+- Observability
 
 ## Summary
 
@@ -399,6 +476,9 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [A Survey of AI Agent Protocols](https://arxiv.org/abs/2504.16736)
 - [Lilian Weng - LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)
 - [Awesome AI Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
+- [Understanding the planning of LLM agents: A survey, 5 Feb 2024](https://arxiv.org/pdf/2402.02716)
+- [A2A: The Agent2Agent Protocol - DeepLearning.ai](https://learn.deeplearning.ai/courses/a2a-the-agent2agent-protocol)
+
 
 ### Technologies
 
