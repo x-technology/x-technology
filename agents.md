@@ -166,13 +166,13 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 A system that autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
 
+**LLM**
+
 [![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 
-LLM
+**Loop**
 
-Loop
-
-[Planning](https://arxiv.org/pdf/2402.02716) - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement, memory-augmented planning, evaluation
+**[Planning](https://arxiv.org/pdf/2402.02716)** - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement, memory-augmented planning, evaluation
 
 ![Planning smaller](https://www.researchgate.net/profile/Xu-Huang-37/publication/380756642/figure/fig1/AS:11431281246334630@1716345510279/Taxonomy-on-LLM-Agent-planning.png)
 
@@ -227,11 +227,11 @@ export async function reflexionLoop(task: string) {
 ```
 
 
-Memory - the processes used to gain, store, retain, and later retrieve information. Short-term vs long-term memory.
+**Memory** - the processes used to gain, store, retain, and later retrieve information. Short-term vs long-term memory.
 
-Tools - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
+**Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
-Guardrails
+**Guardrails**
 
 <!-- > Agents are AI systems that can:
 >
@@ -298,20 +298,8 @@ https://arxiv.org/abs/2504.16736
 | **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                |
 | **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              |
 | **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                |
-| **Structured output**          | JSON / tool schemas                                          | Strong schema enforcement              | Pydantic-style outputs                                   | `generateObject`                       | Output parsers                                   |
-| **Streaming**                  | Yes                                                          | Yes                                    | Yes                                                      | ✅ First-class                          | Yes                                              |
 | **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                                  |
-| **Tracing / observability**    | Hooks                                                        | Built-in tracing                       | Vertex observability                                     | Built-in telemetry                     | LangSmith                                        |
-| **Guardrails**                 | Permissions + tool control                                   | Built-in guardrails                    | Vertex policies                                          | Middleware                             | Custom callbacks                                 |
-| **UI / frontend**              | ❌                                                            | ❌                                      | ❌                                                        | ✅ **Best-in-class (React, Next.js)**   | ❌                                                |
-| **Visual / no-code**           | ❌                                                            | ⚠️ Agent Builder (limited)             | ✅ Vertex Studio                                          | ❌                                      | ⚠️ LangSmith UI                                  |
-| **Privacy / hosting**          | Cloud (Anthropic)                                            | Cloud (OpenAI)                         | Cloud (Google)                                           | Depends on provider                    | Self-host possible                               |
 | **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Complex agent systems                            |
-| **Maturity**                   | New (2025)                                                   | New (2025)                             | New (2025)                                               | Mature                                 | Most mature                                      |
-
-
-### [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
-
 
 ```ts
 import {FunctionTool, LlmAgent} from '@google/adk';
@@ -339,16 +327,11 @@ export const rootAgent = new LlmAgent({
 });
 ```
 
-key features:
-- [agent loop](https://code.claude.com/docs/en/agent-sdk/agent-loop)
-- model-agnostic
-- deployment-agnostic
-- built-in tools
-
-[built-in tools](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools)
-
-[built-in tools](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
-
+Key features:
+- [Agent loop](https://code.claude.com/docs/en/agent-sdk/agent-loop)
+- Model-agnostic
+- Deployment-agnostic
+- Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
 ## Demo #2 - SDK-Based Agent
 
@@ -421,6 +404,8 @@ cross-platform and multi-vendor agent collaboration.
 - Security
 
 https://code.claude.com/docs/en/agent-sdk/secure-deployment
+
+### [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
 
 - Infrastructure
 
