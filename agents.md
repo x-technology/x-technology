@@ -337,21 +337,166 @@ Key features:
 
 ## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
-- Agentic AI systems
+**Agentic AI** - systems composed of multiple co-ordinated AI agents that can break
+down tasks, collaborate, and pursue complex objectives autonomously over extended periods.
+
+> **Agent protocols** are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems [(c)](https://arxiv.org/abs/2504.16736)
 
 [![agent protocols overview table](assets/agent-protocols-overview-table.png)](https://arxiv.org/abs/2504.16736)
 
+**MCP** - Model Context Protocol
+
+Anthropic, November 2024, [Specification](https://modelcontextprotocol.io/specification/2025-06-18#overview)
+
+> MCP provides a standardized way for applications to:
+> - Share contextual information with language models
+> - Expose tools and capabilities to AI systems
+> - Build composable integrations and workflows
+
+<!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
+
+based on [the Function calling flow](https://platform.openai.com/docs/guides/function-calling)
+
+```js
+for (const toolCall of response.output) {
+  if (toolCall.type !== "function_call") {
+    continue
+  }
+
+  const name = toolCall.name
+  const args = JSON.parse(toolCall.arguments)
+
+  const result = callFunction(name, args)
+  input.push({
+    type: "function_call_output",
+    call_id: toolCall.call_id,
+    output: result.toString(),
+  })
+}
+```
+
+[Features](https://modelcontextprotocol.io/specification/2025-06-18#features)
+- Resources: Context and data, for the user or the AI model to use
+- Prompts: Templated messages and workflows for users
+- [Tools](https://platform.openai.com/docs/guides/tools): Functions for the AI model to execute
+- Communication Layer: Authentication, Notifications, [JSON-RPC](https://www.jsonrpc.org/specification)
+- [Servers](https://github.com/modelcontextprotocol/servers)
+
+![alt text](assets/mcp-message-flow.png)
+
+<!-- ![function call flow](https://cdn.openai.com/API/docs/images/function-calling-diagram-steps.png)
+
+Clients on AI Agents (host applications) <-> MCP Servers
+
+Clients mainatin connection with servers
+
+
+
+```mermaid
+sequenceDiagram
+participant Server
+participant Client
+
+Note over Server,Client: Discovery
+Server->>Client: roots/list
+Client- ->>Server: Available roots
+
+Note over Server,Client: Changes
+Client--)Server: notifications/roots/list_changed
+Server->>Client: roots/list
+Client- ->>Server: Updated roots
+```
+
+> In the initial phase of a complete MCP invocation cycle, when faced with a user query, the host employs the LLMs’ understanding and reasoning capabilities to infer the context necessary to formulate a response to the query. Concurrently, the multiple clients connected to the host provide natural language descriptions of the available resources. Based on the information available, the host determines which resources to request context from and initiating a strategic context request to the corresponding client. In the request phase of the MCP invocation cycle, the client sends an executive context request to the corresponding server, encompassing operations such as data modifications or tool invocations. Upon receiving the client’s request, the server operates on the resources as specified and subsequently transmits the obtained context to the client, which then passes it on to the host. In the response phase of the MCP cycle, the host combines the context obtained to formulate a reply to the user query, thereby completing the cycle.
+
+> [ ] is it right that tool_use is detected by LLM?
+https://blog.langchain.com/mcp-fad-or-fixture/
+
+> A function or tool refers in the abstract to a piece of functionality that we tell the model it has access to. As a model generates a response to a prompt, it may decide that it needs data or functionality provided by a tool to follow the prompt's instructions.
+> You could give the model access to tools that:
+> Get today's weather for a location
+> Access account details for a given user ID
+> Issue refunds for a lost order
+> Or anything else you'd like the model to be able to know or do as it responds to a prompt.
+> When we make an API request to the model with a prompt, we can include a list of tools the model could consider using. For example, if we wanted the model to be able to answer questions about the current weather somewhere in the world, we might give it access to a get_weather tool that takes location as an argument.
+
+-->
+
+
+```json
+{
+  "name": "get_weather_data",
+  "title": "Weather Data Retriever",
+  "description": "Get current weather data for a location",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "City name or zip code"
+      }
+    },
+    "required": ["location"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "temperature": {
+        "type": "number",
+        "description": "Temperature in celsius"
+      },
+      "conditions": {
+        "type": "string",
+        "description": "Weather conditions description"
+      },
+      "humidity": {
+        "type": "number",
+        "description": "Humidity percentage"
+      }
+    },
+    "required": ["temperature", "conditions", "humidity"]
+  }
+}
+```
+
+<!-- > Tools let LLMs take actions through your server. Tools can perform computation, fetch data and have side effects. Tools should be designed to be model-controlled - i.e. AI models will decide which tools to call, and the arguments
+
+- [ResourceLink](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#resource-links)
+
+- resources
+- prompts
+- notifications
+
+
+```json
+{
+  jsonrpc: "2.0";
+  id: string | number;
+  method: string;
+  params?: {
+    [key: string]: unknown;
+  };
+}
+```
+
+  - Streamable HTTP transport
+  - stdio
+  - sse
+- Lifecycle Management: Connection initialization, capability negotiation, and session control
+- Authorization: Authentication and authorization framework for HTTP-based transports
+-->
+
+<!--
+- Attach to agentic product demo?
+- Artificial layer, why not to introduce default mcp for any potential API?
+https://github.com/alexeygrigorev/rag-agents-workshop
+-->
+
+**[Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)** - Inter-Agent Protocol, April 2025
+
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
 
-> Agent protocols are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems
 
-- MCP
-
-Inter-Agent Protocols
-
-- [Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)
-
-released in 04.2025
 
 Key Concepts:
 - Agent Card	A JSON metadata document describing an agent's identity, capabilities, endpoint, skills, and authentication requirements.	Enables clients to discover agents and understand how to interact with them securely and effectively.
@@ -430,9 +575,9 @@ The workshop overviews and ...
 
 ## Feedback
 
-Please [share your feedback](https://app.sli.do/event/wV641HGAr8jeVnULeLAAg2) on the workshop. Thank you and have a great coding!
+Please [share your feedback](https://app.sli.do/event/tYQYSSUHF8UumnBvof18Dy) on the workshop. Thank you and have a great coding!
 
-<iframe src="https://wall.sli.do/event/wV641HGAr8jeVnULeLAAg2/?section=fdc6bb93-244d-4320-ac2d-cd6a3ffd6a38" width="50%" height="500px"></iframe>
+<iframe src="https://wall.sli.do/event/tYQYSSUHF8UumnBvof18Dy/?section=109753af-cb80-40ff-ab8b-9ec0c598e43d" width="50%" height="500px"></iframe>
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
