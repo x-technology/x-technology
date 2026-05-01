@@ -67,9 +67,6 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
     zoom: 1;
   }
 
-  img[alt*="photo"] {
-    max-width: 250px !important;
-  }
 </style>
 
 <div class="twitter-btn">
@@ -119,7 +116,7 @@ All examples and concepts will be grounded in the Node.js stack and we will expl
 
 ### Alex Korzhikov
 
-![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
+![alex korzhikov photo](https://lh3.googleusercontent.com/d/1TMH5jMn5N5JXfK00uK2Ltti3CW8sULqP)
 
 Software Engineer, Netherlands
 

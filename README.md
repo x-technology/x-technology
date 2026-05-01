@@ -37,6 +37,8 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
+- [Operating Agent-Based Systems](./agents.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2026
+
 - [Building RAG System in Node.js](./rag.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2025
 
 - [Back to the roots with Remix](./remix.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2023
@@ -56,6 +58,58 @@ We conduct workshops that are available for everyone live. We keep recordings an
 We [meet every other week on Saturdays at 10am CET](https://www.eventbrite.co.uk/o/xtechnology-32181547901) to discuss and challenge our projects together. Sometimes we invite experts and guests to participate in the events or give a side talk. Check out our [youtube channel](https://www.youtube.com/channel/UCQZNnzybEi0vvNbeDB0qABQ) for the full list.
 
 <img width="400" alt="meetups" src="https://user-images.githubusercontent.com/1259644/115154277-4fc99f80-a07a-11eb-9070-e002050f498e.png">
+
+`86.` [Now About Angular - XTechnology Code Hour](https://www.youtube.com/watch?v=mPvi_M1IaFM) by XTechnology, *~2024*
+
+`85.` [Tech People Stats - Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=meOKzse4cS4) by XTechnology, *~2024*
+
+`84.` [Tech People Stats - Part I - XTechnology Code Hour](https://www.youtube.com/watch?v=jCkXhBbBNjY) by XTechnology, *~2024*
+
+`83.` [LeetCode with Python - Episode 6 - XTechnology Code Hour](https://www.youtube.com/watch?v=G5vouRWDax8) by XTechnology, *~2024*
+
+`82.` [LeetCode with Python - Episode 5 - XTechnology Code Hour](https://www.youtube.com/watch?v=c3JzxDwkuag) by XTechnology, *~2024*
+
+`81.` [LeetCode with Python - Episode 4 - XTechnology Code Hour](https://www.youtube.com/watch?v=qphpyU30Z2U) by XTechnology, *~2024*
+
+`80.` [Pandas AI - a new awesome tool for Data Scientists](https://www.youtube.com/watch?v=E-01Da6o6z0) by XTechnology, *~2023*
+
+`79.` [Code Night - nighty coding of random open source projects and interesting discussions](https://www.youtube.com/watch?v=NCZDlWWyvZM) by XTechnology, *~2023*
+
+`78.` [Code Night - nighty coding of random open source projects and interesting discussions](https://www.youtube.com/watch?v=pmW7whYaaoA) by XTechnology, *~2023*
+
+`77.` [Code Night - nighty coding of random open source projects and interesting discussions](https://www.youtube.com/watch?v=9WQ6k9PXTGo) by XTechnology, *~2023*
+
+`76.` [Brewing GraphQL and GRPC - Part III - XTechnology Code Hour](https://www.youtube.com/watch?v=P9AqJWMFCME) by XTechnology, *~2023*
+
+`75.` [Brewing GraphQL and GRPC - Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=WNrpRvv_Gfg) by XTechnology, *~2023*
+
+`74.` [Brewing GraphQL and GRPC - XTechnology Code Hour](https://www.youtube.com/watch?v=X7JEgM_sfBI) by XTechnology, *~2023*
+
+`73.` [Neon Database - Explore, Set up and Taste - XTechnology Code Hour](https://www.youtube.com/watch?v=p9zwx6oA7HA) by XTechnology, *~2023*
+
+`72.` [Deep Learning 101 - Model training for MNIST with Pytorch - Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=-kcwA49NuHc) by XTechnology, *~2023*
+
+`71.` [Deep Learning 101 - Model training for MNIST with Pytorch - XTechnology Code Hour](https://www.youtube.com/watch?v=zeMmuIQWtqc) by XTechnology, *~2023*
+
+`70.` [Remix Overview - Building Remix Web Recommendation Service - Episode IV - XTechnology Code Hour](https://www.youtube.com/watch?v=rD0lHLOcjkM) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), *~2023*
+
+`69.` [Esbuild Experiment - Building Remix Web Recommendation Service - Episode III - XTechnology Code Hour](https://www.youtube.com/watch?v=npSptiwx8Cc) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), *~2023*
+
+`68.` [Building Remix Web Recommendation Service - Episode II - XTechnology Code Hour](https://www.youtube.com/watch?v=SStCASyUjds) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), *~2023*
+
+`67.` [Building Remix Web Recommendation Service - Episode I - XTechnology Code Hour](https://www.youtube.com/watch?v=4jfq6r_OVp4) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), *~2023*
+
+`66.` [TimeMate: Define pluggable architecture in Go - Episode I - XTechnology Code Hour](https://www.youtube.com/watch?v=zIiA8n3yDmo) by XTechnology, *~2023*
+
+`65.` [Banking Monolith & NestJS - Episode V Split - XTechnology Code Hour](https://www.youtube.com/watch?v=93tLWyakIqg) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/) & [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/), *~2023*
+
+`64.` [Banking Monolith & NestJS - Episode IV Reincarnation - XTechnology Code Hour](https://www.youtube.com/watch?v=5hDn7XhJU4s) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/) & [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/), *~2023*
+
+`63.` [NestJS through the Eyes of Developer - Episode II Exceptions Odyssey - XT Code Hour](https://www.youtube.com/watch?v=btyJCsRvczY) by XTechnology, *~2023*
+
+`62.` [NestJS Through the Eyes of Developer - Episode I - XT Code Hour](https://www.youtube.com/watch?v=pqlpkBrOfDw) by XTechnology, *~2023*
+
+`61.` [Azure Machine Learning - Train and Deploy - Part II - XTechnology Code Hour](https://www.youtube.com/watch?v=YhcyMYwerXY) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *~Feb 2023*
 
 `60.` [Azure Machine Learning - Train and Deploy - XTechnology Code Hour](https://www.youtube.com/watch?v=CvFR61SFHj8) by [Igor Smirnov](https://www.linkedin.com/in/igorsmirnov/) & [Annalisa Cadonna](https://www.linkedin.com/in/annalisa-cadonna/), *21 Jan 2023*
 
