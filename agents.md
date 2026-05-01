@@ -166,7 +166,7 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 A system that autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
 
-![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)
+[![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 
 LLM
 
@@ -289,48 +289,29 @@ https://arxiv.org/abs/2504.16736
 
 ## Agents SDK
 
-|                                | **Claude Agent SDK**                                         | **OpenAI Agents SDK**                  | **Google ADK**                                           | **Vercel AI SDK**                      | **LangChain / LangGraph**                        | **CrewAI**                           | **OpenClaw**                                             |
-| ------------------------------ | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ | ------------------------------------ | -------------------------------------------------------- |
-| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains + stateful agent graphs        | Role-based multi-agent orchestration | Local-first autonomous assistant                         |
-| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                           | TypeScript / JavaScript                | Python, TypeScript                               | Python                               | TypeScript / Node.js                                     |
-| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                                   | Model-agnostic                       | Model-agnostic                                           |
-| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | **LangGraph DAG + cycles (full state machines)** | Sequential + hierarchical crews      | Autonomous loop (AutoGPT-style) ⚠️ *(behavior unstable)* |
-| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                | Custom tools                         | Plugins, browser, apps                                   |
-| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              | Built-in memory abstractions         | Persistent local memory                                  |
-| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                | ✅ Core concept                       | ❌                                                        |
-| **Structured output**          | JSON / tool schemas                                          | Strong schema enforcement              | Pydantic-style outputs                                   | `generateObject`                       | Output parsers                                   | Typed tasks                          | ⚠️ CHECK                                                 |
-| **Streaming**                  | Yes                                                          | Yes                                    | Yes                                                      | ✅ First-class                          | Yes                                              | Partial ⚠️                           | ⚠️ CHECK                                                 |
-| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                                  | ❌                                    | ⚠️ CHECK                                                 |
-| **Tracing / observability**    | Hooks                                                        | Built-in tracing                       | Vertex observability                                     | Built-in telemetry                     | LangSmith                                        | Logging                              | ⚠️ CHECK                                                 |
-| **Guardrails**                 | Permissions + tool control                                   | Built-in guardrails                    | Vertex policies                                          | Middleware                             | Custom callbacks                                 | Role constraints                     | ⚠️ CHECK                                                 |
-| **UI / frontend**              | ❌                                                            | ❌                                      | ❌                                                        | ✅ **Best-in-class (React, Next.js)**   | ❌                                                | ❌                                    | Messaging apps                                           |
-| **Visual / no-code**           | ❌                                                            | ⚠️ Agent Builder (limited)             | ✅ Vertex Studio                                          | ❌                                      | ⚠️ LangSmith UI                                  | ❌                                    | ❌                                                        |
-| **Privacy / hosting**          | Cloud (Anthropic)                                            | Cloud (OpenAI)                         | Cloud (Google)                                           | Depends on provider                    | Self-host possible                               | Self-host possible                   | ✅ Local-first                                            |
-| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Complex agent systems                            | Multi-agent simulations              | Personal assistants                                      |
-| **Maturity**                   | New (2025)                                                   | New (2025)                             | New (2025)                                               | Mature                                 | Most mature                                      | Mature                               | ⚠️ Varies                                                |
+|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)**                                         | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents**                  | **[Google ADK](https://adk.dev/get-started/typescript/)**                                           | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction**                      | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview) / [LangGraph](https://docs.langchain.com/oss/javascript/langgraph/overview)**                        |
+| ------------------------------ | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ |
+| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains + stateful agent graphs        |
+| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                         | TypeScript / JavaScript                | Python, TypeScript                               |
+| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                                   |
+| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | **LangGraph DAG + cycles (full state machines)** |
+| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                |
+| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              |
+| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                |
+| **Structured output**          | JSON / tool schemas                                          | Strong schema enforcement              | Pydantic-style outputs                                   | `generateObject`                       | Output parsers                                   |
+| **Streaming**                  | Yes                                                          | Yes                                    | Yes                                                      | ✅ First-class                          | Yes                                              |
+| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                                  |
+| **Tracing / observability**    | Hooks                                                        | Built-in tracing                       | Vertex observability                                     | Built-in telemetry                     | LangSmith                                        |
+| **Guardrails**                 | Permissions + tool control                                   | Built-in guardrails                    | Vertex policies                                          | Middleware                             | Custom callbacks                                 |
+| **UI / frontend**              | ❌                                                            | ❌                                      | ❌                                                        | ✅ **Best-in-class (React, Next.js)**   | ❌                                                |
+| **Visual / no-code**           | ❌                                                            | ⚠️ Agent Builder (limited)             | ✅ Vertex Studio                                          | ❌                                      | ⚠️ LangSmith UI                                  |
+| **Privacy / hosting**          | Cloud (Anthropic)                                            | Cloud (OpenAI)                         | Cloud (Google)                                           | Depends on provider                    | Self-host possible                               |
+| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Complex agent systems                            |
+| **Maturity**                   | New (2025)                                                   | New (2025)                             | New (2025)                                               | Mature                                 | Most mature                                      |
 
-Frameworks: CrewAI, LangGraph, MetaGPT
-- The [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript#query);
-- Strands Agents SDK by AWS;
-- Rivet, a drag and drop GUI LLM workflow builder; and
-- Vellum, another GUI tool for building and testing complex workflows.
-- [AI SDK Vercel](https://ai-sdk.dev/docs/introduction)
-
-**claude**
-
-https://code.claude.com/docs/en/agent-sdk/agent-loop
 
 ### [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
 
-[built-in tools](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools)
-
-**openai**
-
-https://developers.openai.com/api/docs/guides/agents/define-agents#when-to-split-one-agent-into-several
-
-[built-in tools](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
-
-**[adk](https://adk.dev/get-started/typescript/)**
 
 ```ts
 import {FunctionTool, LlmAgent} from '@google/adk';
@@ -358,19 +339,16 @@ export const rootAgent = new LlmAgent({
 });
 ```
 
-crewai
-
 key features:
+- [agent loop](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 - model-agnostic
 - deployment-agnostic
+- built-in tools
 
-### [Langchain](https://js.langchain.com/docs/introduction/) 🦜️🔗
+[built-in tools](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools)
 
-LangGraph
+[built-in tools](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
-> LangChain is a Python and JavaScript framework that brings flexible abstractions and AI-first toolkit for developers to build with GenAI and integrate your applications with LLMs. It includes components for abstracting and chaining LLM prompts, configure and use vector databases (for semantic search), document loaders and splitters (to analyze documents and learn from them), output parsers, and more.
-
-**OpenClaw**
 
 ## Demo #2 - SDK-Based Agent
 
@@ -444,9 +422,16 @@ cross-platform and multi-vendor agent collaboration.
 
 https://code.claude.com/docs/en/agent-sdk/secure-deployment
 
-- Infrastruscture
-n8n
-agent stack
+- Infrastructure
+
+| | n8n | CrewAI | MetaGPT | OpenClaw |
+|---|---|---|---|---|
+| **Purpose** | Workflow automation platform | Multi-agent framework | Multi-agent meta-framework | Agent orchestration & deployment |
+| **Orchestration style** | Visual workflow DAG | Role-based agent crews | Role-based SOPs & pipelines | Graph-based agent routing |
+| **Hosting** | Self-hosted / cloud | Self-hosted / cloud | Self-hosted | Self-hosted / cloud |
+| **Agent integration** | Custom nodes, webhooks | Python-native | Python-native | API-first |
+| **Use case** | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Production agent deployment |
+| **Language** | JavaScript / TypeScript | Python | Python | Python / API |
 
 - Observability
 
