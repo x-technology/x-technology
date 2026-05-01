@@ -20,6 +20,11 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
     width: 500px;
     max-height: 600px;
   }
+
+  img[alt*="photo"] {
+    max-width: 300px !important;
+    max-height: 300px;
+  }
   /* twitter button */
   .twitter-btn {
     width: 200px;
@@ -85,9 +90,16 @@ All examples and concepts will be grounded in the Node.js stack and we will expl
 - Experience with Node.js and API development
 - Basic knowledge of databases and LLMs is helpful but not required
 
+## Goals
+
+- Understand agent components & architecture: loop, planning, memory, tools, guardrails
+- Compare agent SDKs and protocols (MCP, A2A, ANP)
+- Build and orchestrate agents with Node.js as the control plane
+- Add security, observability, and n8n integration to production systems
+
 ## Code
 
-- [RAG Workshop](https://github.com/x-technology/rag-workshop)
+- [Agents Workshop](https://github.com/x-technology/workshop-agents)
 
 ## Agenda
 
@@ -109,10 +121,6 @@ All examples and concepts will be grounded in the Node.js stack and we will expl
 ## Introduction
 
 <!-- disclaimers: we are not DS, focus on usage, introduce high level and black box context -->
-
-- Explore RAG's scope, architecture and components
-- Demo various RAG aspects with chosen technologies
-- Feedback & evaluate
 
 ### Alex Korzhikov
 
