@@ -76,44 +76,6 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
   <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
 </div>
 
-# Drafts
-
-Пока что такой план обсудили на воркшоп
-1. Теория про агентов. Что такое вообще
-2. Разработка агента "на коленке"
-3. Теория про SDK для агентов (посмотрю варианты)
-4. Разработка агента на SDK.
-5. Теория про оркестрацию. Что делать, когда агентов несколько
-6. Разработка ещё одного-двух агентов и встраивание его в n8n
-7. Теория общих правил оркестрации. Безопасность, мониторинг и т.д.
-8. Практика
-9. Конец
-
-## 2026-04-29
-
-- [ ] @pavlik to make use case diagram
-- [ ] @pavlik @alex session inMemoryRunner alternatives
-  await runner.sessionService.createSession({ appName: APP_NAME, userId: USER_ID, sessionId: SESSION_ID });
-- [ ] @pavlik from 03 example remove llm from agents
-
-## 2026-04-28
-
-- [ ] what are stop execute evaluation practices?
-- [x] does n8n use a2a?
-- [x] Why Node.js for agent runtimes?
-
-## 2026-04-22
-
-- [ ] need to try play with skills in artificial project
-
-## 2026-04-21
-
-- [x] need to try out next time with docker image
-
-## 2026-04-20
-
-read about [claude sdk ](https://code.claude.com/docs/en/agent-sdk/claude-code-features)
-
 # Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
 
 This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We’ll examine agent architecture, planning loops, memory models, and tool execution. We’ll also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we’ll address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems.
@@ -134,6 +96,18 @@ All examples and concepts will be grounded in the Node.js stack and we will expl
 
 - [Introduction 📢](#introduction)
 - [Setup 🛠️](#setup)
+- [AI Agents World 🌎](#ai-agents-world)
+- [Demo #1 - Standalone Baseline 👋](#demo-1---standalone-baseline)
+- [Agents SDK 🧰](#agents-sdk)
+- [Demo #2 - SDK-Based Agent 🤖](#demo-2---sdk-based-agent)
+- [Agent Protocols 🔗](#agent-protocols)
+- [Demo #3 - Orchestration 🎻](#demo-3---orchestration)
+- [Runtime 🔒](#runtime)
+- [Demo #4 - n8n Integration 🔄](#demo-4---n8n-integration)
+- [Demo #5 - Security & Observability 🔍](#demo-5---security--observability)
+- [Summary 📚](#summary)
+- [Feedback 💬](#feedback)
+- [References 🔗](#references)
 
 ## Introduction
 
@@ -305,6 +279,8 @@ https://arxiv.org/abs/2504.16736
 
 -->
 
+## Demo #1 - Standalone Baseline
+
 ## Agents SDK
 
 |                                | **Claude Agent SDK**                                         | **OpenAI Agents SDK**                  | **Google ADK**                                           | **Vercel AI SDK**                      | **LangChain / LangGraph**                        | **CrewAI**                           | **OpenClaw**                                             |
@@ -390,6 +366,8 @@ LangGraph
 
 **OpenClaw**
 
+## Demo #2 - SDK-Based Agent
+
 ## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
 - Agentic AI systems
@@ -452,7 +430,9 @@ cross-platform and multi-vendor agent collaboration.
 
 [![agent protocol use cases](assets/agent-protocol-use-cases.png)](https://arxiv.org/abs/2504.16736)
 
-## Aspects
+## Demo #3 - Orchestration
+
+## Runtime
 
 - Security
 
@@ -463,6 +443,10 @@ n8n
 agent stack
 
 - Observability
+
+## Demo #4 - n8n Integration
+
+## Demo #5 - Security & Observability
 
 ## Summary
 
@@ -496,3 +480,45 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - MCP
 - OpenClaw
 - n8n
+
+<!--
+
+# Drafts
+
+Пока что такой план обсудили на воркшоп
+1. Теория про агентов. Что такое вообще
+2. Разработка агента "на коленке"
+3. Теория про SDK для агентов (посмотрю варианты)
+4. Разработка агента на SDK.
+5. Теория про оркестрацию. Что делать, когда агентов несколько
+6. Разработка ещё одного-двух агентов и встраивание его в n8n
+7. Теория общих правил оркестрации. Безопасность, мониторинг и т.д.
+8. Практика
+9. Конец
+
+## 2026-04-29
+
+- [ ] @pavlik to make use case diagram
+- [ ] @pavlik @alex session inMemoryRunner alternatives
+  await runner.sessionService.createSession({ appName: APP_NAME, userId: USER_ID, sessionId: SESSION_ID });
+- [ ] @pavlik from 03 example remove llm from agents
+
+## 2026-04-28
+
+- [ ] what are stop execute evaluation practices?
+- [x] does n8n use a2a?
+- [x] Why Node.js for agent runtimes?
+
+## 2026-04-22
+
+- [ ] need to try play with skills in artificial project
+
+## 2026-04-21
+
+- [x] need to try out next time with docker image
+
+## 2026-04-20
+
+- [x] read about [claude sdk](https://code.claude.com/docs/en/agent-sdk/claude-code-features)
+
+-->
