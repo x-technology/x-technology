@@ -21,7 +21,7 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
     max-height: 600px;
   }
 
-  img[alt*="photo"] {
+  img[alt*="photo"], img[alt*="smaller"] {
     max-width: 300px !important;
     max-height: 300px;
   }
@@ -80,9 +80,7 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
 
 # Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
 
-This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We’ll examine agent architecture, planning loops, memory models, and tool execution. We’ll also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we’ll address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems.
-
-All examples and concepts will be grounded in the Node.js stack and we will explore why Node.js is particularly well-suited for building production-ready agent runtimes — serving as the control plane for supervision, integration, streaming execution, and distributed coordination.
+This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We examine agent architecture, planning loops, memory models, and tool execution. We also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems. All examples and concepts are grounded in the Node.js stack and we explore why Node.js is particularly well-suited for building production-ready agent runtimes — serving as the control plane for supervision, integration, streaming execution, and distributed coordination.
 
 ## Prerequisites
 
@@ -92,7 +90,7 @@ All examples and concepts will be grounded in the Node.js stack and we will expl
 
 ## Goals
 
-- Understand agent components & architecture: loop, planning, memory, tools, guardrails
+- Understand AI agent architecture: loop, planning, memory, tools, guardrails
 - Compare agent SDKs and protocols (MCP, A2A, ANP)
 - Build and orchestrate agents with Node.js as the control plane
 - Add security, observability, and n8n integration to production systems
@@ -152,33 +150,39 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 ## AI Agents World
 
-- [Agents vs Workflows](https://www.anthropic.com/engineering/building-effective-agents)
+### [RAG Recap](/rag#about-everything)
 
-> - Workflows are systems where LLMs and tools are orchestrated through predefined code paths.
-> - Agents, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+![rag](assets/rag.png)
 
-  - RAG Example
+### [LLM Agents vs Workflows](https://www.anthropic.com/engineering/building-effective-agents)
+
+> - Workflows are systems where LLMs and tools are orchestrated through predefined code paths
 
 - AI agents
 
+> - Agents, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks
+
 [![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
-> AI agents are AI programs built on top of LLMs. They use LLM information-processing capabilities to obtain data, make decisions, and take actions on behalf of human users.
-
-> The concept of an AI agent refers to a system or program that is capable of autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools.
-
-> Agents can be used for open-ended problems where it’s difficult or impossible to predict the required number of steps, and where you can’t hardcode a fixed path.
+A system that autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
 
 ![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)
-  - LLM
-  - Loop
-  - [Planning](https://arxiv.org/pdf/2402.02716)
-    ![Planning](https://www.researchgate.net/profile/Xu-Huang-37/publication/380756642/figure/fig1/AS:11431281246334630@1716345510279/Taxonomy-on-LLM-Agent-planning.png)
-      - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement and memory-augmented planning
-      p = (a0, a1, · · · , at) = plan(E, g; Θ, P).
-      g0, g1, · · · , gn = decompose(E, g; Θ, P);
-      pi = (ai0, ai1, · · · aim) = sub-plan(E, gi; Θ, P).
-      - Agent architectures: ReAct, PRACT, RAISE, Reflexion
+
+LLM
+
+Loop
+
+[Planning](https://arxiv.org/pdf/2402.02716) - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement, memory-augmented planning, evaluation
+
+![Planning smaller](https://www.researchgate.net/profile/Xu-Huang-37/publication/380756642/figure/fig1/AS:11431281246334630@1716345510279/Taxonomy-on-LLM-Agent-planning.png)
+
+```math
+p = (a0, a1, · · · , at) = plan(E, g; Θ, P).
+g0, g1, · · · , gn = decompose(E, g; Θ, P);
+pi = (ai0, ai1, · · · aim) = sub-plan(E, gi; Θ, P).
+```
+
+Prompt Architectures - ReAct, PRACT, RAISE, Reflexion, ...
 
 ```ts
 // ReAct
@@ -195,7 +199,7 @@ while (true) {
 ```
 
 ```ts
-// Reflector
+// Reflexion
 export async function reflexionLoop(task: string) {
   let bestAnswer = null;
   let bestScore = -Infinity;
@@ -222,15 +226,12 @@ export async function reflexionLoop(task: string) {
 }
 ```
 
-    - Evaluation
-  - Memory
-  - Tools
-    > ways for an LLM to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
-    - MCP
-  - Guardrails
-  - components - memory, llm, reasoning, research models, guardrails
 
+Memory - the processes used to gain, store, retain, and later retrieve information. Short-term vs long-term memory.
 
+Tools - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
+
+Guardrails
 
 <!-- > Agents are AI systems that can:
 >
