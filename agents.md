@@ -9,14 +9,7 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
     display: none;
   }
 
-  img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"],
-  img[alt="code agent work diagram"], img[alt="Planning"], img[alt="ANP"], img[alt="ANP Protocol Architecture"],
-  img[alt="agent protocols overview table"], img[alt="agent protocol use cases"] {
-    width: 500px;
-    max-height: 600px;
-  }
-
-  img:not([alt]), img[alt=""] {
+  img {
     width: 500px;
     max-height: 600px;
   }
@@ -340,22 +333,15 @@ Key features:
 **Agentic AI** - systems composed of multiple co-ordinated AI agents that can break
 down tasks, collaborate, and pursue complex objectives autonomously over extended periods.
 
+[![ai protocols dev timeline](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
+
 > **Agent protocols** are standardized frameworks that define the rules, formats, and procedures for structured communication among agents and between agents and external systems [(c)](https://arxiv.org/abs/2504.16736)
 
 [![agent protocols overview table](assets/agent-protocols-overview-table.png)](https://arxiv.org/abs/2504.16736)
 
 **MCP** - Model Context Protocol
 
-Anthropic, November 2024, [Specification](https://modelcontextprotocol.io/specification/2025-06-18#overview)
-
-> MCP provides a standardized way for applications to:
-> - Share contextual information with language models
-> - Expose tools and capabilities to AI systems
-> - Build composable integrations and workflows
-
-<!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
-
-based on [the Function calling flow](https://platform.openai.com/docs/guides/function-calling)
+Anthropic, November 2024, [Specification](https://modelcontextprotocol.io/specification/2025-06-18#overview) based on [the Function calling flow](https://platform.openai.com/docs/guides/function-calling)
 
 ```js
 for (const toolCall of response.output) {
@@ -375,7 +361,14 @@ for (const toolCall of response.output) {
 }
 ```
 
-[Features](https://modelcontextprotocol.io/specification/2025-06-18#features)
+> MCP provides a standardized way for applications to:
+> - Share contextual information with language models
+> - Expose tools and capabilities to AI systems
+> - Build composable integrations and workflows
+
+<!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
+
+[Features](https://modelcontextprotocol.io/specification/2025-06-18#features):
 - Resources: Context and data, for the user or the AI model to use
 - Prompts: Templated messages and workflows for users
 - [Tools](https://platform.openai.com/docs/guides/tools): Functions for the AI model to execute
@@ -389,8 +382,6 @@ for (const toolCall of response.output) {
 Clients on AI Agents (host applications) <-> MCP Servers
 
 Clients mainatin connection with servers
-
-
 
 ```mermaid
 sequenceDiagram
@@ -421,7 +412,6 @@ https://blog.langchain.com/mcp-fad-or-fixture/
 > When we make an API request to the model with a prompt, we can include a list of tools the model could consider using. For example, if we wanted the model to be able to answer questions about the current weather somewhere in the world, we might give it access to a get_weather tool that takes location as an argument.
 
 -->
-
 
 ```json
 {
@@ -467,7 +457,6 @@ https://blog.langchain.com/mcp-fad-or-fixture/
 - prompts
 - notifications
 
-
 ```json
 {
   jsonrpc: "2.0";
@@ -484,9 +473,6 @@ https://blog.langchain.com/mcp-fad-or-fixture/
   - sse
 - Lifecycle Management: Connection initialization, capability negotiation, and session control
 - Authorization: Authentication and authorization framework for HTTP-based transports
--->
-
-<!--
 - Attach to agentic product demo?
 - Artificial layer, why not to introduce default mcp for any potential API?
 https://github.com/alexeygrigorev/rag-agents-workshop
@@ -495,7 +481,6 @@ https://github.com/alexeygrigorev/rag-agents-workshop
 **[Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)** - Inter-Agent Protocol, April 2025
 
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
-
 
 
 Key Concepts:
@@ -511,9 +496,7 @@ Key Concepts:
 
 ![](https://github.com/a2aproject/a2a-samples/blob/main/demo/a2a_demo_arch.png?raw=true)
 
-[A2A and MCP: Detailed Comparison](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)
-
-- [ANP - Agent Network Protocol](https://www.agent-network-protocol.com/)
+**[ANP - Agent Network Protocol](https://www.agent-network-protocol.com/)**
 
 > to define how agents connect with each other, building an open, secure, and efficient collaboration network for billions of intelligent agents
 
@@ -535,10 +518,6 @@ communication between agents, enhancing system autonomy and flexibility.
 - A2A: Provided a standardized framework for collaboration between enterprise-level agents,
 supporting task management, message exchange, and multimodal outputs, thus facilitating
 cross-platform and multi-vendor agent collaboration.
-
-[![alt text](assets/mcp-agents-ecosystem.png)](https://arxiv.org/abs/2504.16736)
-
-[![alt text](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
 
 [![agent protocol use cases](assets/agent-protocol-use-cases.png)](https://arxiv.org/abs/2504.16736)
 
@@ -590,7 +569,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [Awesome AI Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 - [Understanding the planning of LLM agents: A survey, 5 Feb 2024](https://arxiv.org/pdf/2402.02716)
 - [A2A: The Agent2Agent Protocol - DeepLearning.ai](https://learn.deeplearning.ai/courses/a2a-the-agent2agent-protocol)
-
+- [A2A and MCP: Detailed Comparison](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)
 
 ### Technologies
 
