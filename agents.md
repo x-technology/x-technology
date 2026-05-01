@@ -9,7 +9,14 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
     display: none;
   }
 
-  img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"] {
+  img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"],
+  img[alt="code agent work diagram"], img[alt="Planning"], img[alt="ANP"], img[alt="ANP Protocol Architecture"],
+  img[alt="agent protocols overview table"], img[alt="agent protocol use cases"] {
+    width: 500px;
+    max-height: 600px;
+  }
+
+  img:not([alt]), img[alt=""] {
     width: 500px;
     max-height: 600px;
   }

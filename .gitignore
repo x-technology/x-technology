@@ -243,3 +243,4 @@ fabric.properties
 /creds.json
 .aider*
 chroma_data
+.claude
