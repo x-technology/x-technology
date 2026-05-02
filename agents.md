@@ -600,6 +600,17 @@ const movieAgentCard: AgentCard = {
 
 [![agent protocol use cases](assets/agent-protocol-use-cases.png)](https://arxiv.org/abs/2504.16736)
 
+<!--
+https://www.agent-network-protocol.com/guide/
+
+ANP, MCP, and A2A are complementary protocols, each solving agent communication problems in different scenarios:
+
+MCP (Model Context Protocol): A bridge connecting AI models with tools/resources, using a client-server architecture, suitable for a single model accessing multiple tools and resources, such as accessing search engines, calling calculators, etc.
+A2A (Agent2Agent): Designed for complex agent collaboration within enterprises, focusing on task-driven collaborative processes, suitable for completing complex task chains in trusted environments, such as workflow automation within enterprises.
+ANP (Agent Network Protocol): Created for agent interconnection on the open internet, using a peer-to-peer architecture, enabling cross-platform and cross-organization agent discovery and interaction, such as communication between agents from different companies.
+In short: Use MCP to connect tools or resources, A2A for agent collaboration within enterprises, and ANP for agent connections on the open internet.
+-->
+
 ## Demo #3 - Orchestration
 
 ## Runtime
