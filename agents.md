@@ -612,7 +612,7 @@ const movieAgentCard: AgentCard = {
   - Tools have permission settings to allow, block, or prompt the user for approval
   - Limit file, network, credentials access with proxy
 
-```json
+```ts
 options: {
   allowedTools: ["Read", "Glob", "Grep"],
   permissionMode: "acceptEdits",
@@ -662,8 +662,9 @@ docker run \
 
 ## Summary
 
-The workshop overviews and ...
-What's coming in next year?
+An agent runtime is a control plane — coordination, policy, memory, and tooling around an LLM. Node.js fits well as that plane, and SDKs plus protocols (MCP, A2A) give you the building blocks. Production readiness comes from structured outputs, guardrails, tracing, and connecting it all to automation tools like n8n.
+
+What's coming in next years?
 
 ## Feedback
 
