@@ -11,7 +11,7 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
 
   img[alt="autonomous agent 2023"],img[alt="alt text"],img[alt="function call flow"],img[alt="inspector"], img[alt="text splitter example"], img[alt="embeddings vs indexing"], img[alt="embedding space"], img[alt="what are embedding models"], img[alt="RAG Triad"], img[alt="reranking process"],
   img[alt="code agent work diagram"], img[alt="Planning"], img[alt="ANP"], img[alt="ANP Protocol Architecture"],
-  img[alt="agent protocols overview table"], img[alt="agent protocol use cases"], img:not([alt]), img[alt=""], img[alt*="normal size"] {
+  img[alt="agent protocol use cases"], img:not([alt]), img[alt=""], img[alt*="normal size"] {
     width: 500px;
     max-height: 600px;
   }
@@ -375,7 +375,7 @@ for (const toolCall of response.output) {
 - Communication Layer: Authentication, Notifications, [JSON-RPC](https://www.jsonrpc.org/specification)
 - [Servers](https://github.com/modelcontextprotocol/servers)
 
-![unknown](assets/mcp-message-flow.png)
+![mcp message flow normal size](assets/mcp-message-flow.png)
 
 <!-- ![function call flow](https://cdn.openai.com/API/docs/images/function-calling-diagram-steps.png)
 
