@@ -161,11 +161,11 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 A system that autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
 
-**LLM**
-
-[![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)](https://code.claude.com/docs/en/agent-sdk/agent-loop)
+**LLM** - Large Language Models trained on tons of sources and materials, having billions of parameters
 
 **Loop**
+
+[![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 
 **[Planning](https://arxiv.org/pdf/2402.02716)** - task decomposition, multi-plan selection, external module-aided planning, reflection and refinement, memory-augmented planning, evaluation
 
@@ -288,6 +288,7 @@ https://arxiv.org/abs/2504.16736
 | **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                         | TypeScript / JavaScript                | Python, TypeScript                               |
 | **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                                   |
 | **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | **LangGraph DAG + cycles (full state machines)** |
+| **Loop control**               | ⚠️ Hooks into steps, loop is internal                        | ❌ Hidden — tools + instructions only   | ⚠️ Orchestration-based, not loop-level                   | ❌ Loop is internal                     | ✅ Full — define nodes, edges, stop conditions    |
 | **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                |
 | **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              |
 | **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                |
