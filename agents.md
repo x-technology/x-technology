@@ -139,9 +139,48 @@ JavaScript developer with full-stack experience and frontend passion. He happily
 
 ## Setup
 
-- Node.js
-- Ollama / OpenAI
-- `npm i langchain`
+- Node.js 18+
+- OpenAI-compatible API key for live LLM demos is optional
+- Gemini / Google API key for ADK demos is optional
+- n8n is installed from this repo via `npm install`
+
+Project setup:
+
+```bash
+git clone https://github.com/x-technology/workshop-agents.git
+cd workshop-agents
+npm install
+```
+
+Optional environment examples:
+
+```bash
+# Step 01 raw HTTP demo
+export OPENAI_API_KEY=...
+# optional:
+export OPENAI_MODEL=gpt-4.1-mini
+export OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+```bash
+# Step 02 ADK demo with Gemini
+export GOOGLE_API_KEY=...
+# optional:
+export GEMINI_MODEL=gemini-2.5-flash
+```
+
+```bash
+# Step 02 ADK demo with OpenAI-compatible provider instead of Gemini
+export SDK_PROVIDER=openai
+export OPENAI_API_KEY=...
+export OPENAI_MODEL=gpt-4o-mini
+```
+
+Default offline-friendly behavior:
+
+- `npm run start:01` falls back to naive keyword routing if `OPENAI_API_KEY` is not set
+- `npm run start:02` stays on the ADK path and falls back to a local keyword-based `BaseLlm`
+- `npm run start:05` writes a local JSONL trace to `src/05-security-observability/trace.jsonl`
 
 ## AI Agents World
 
@@ -280,6 +319,41 @@ https://arxiv.org/abs/2504.16736
 
 ## Demo #1 - Standalone Baseline
 
+Goal:
+
+- Show an agent-like flow without any SDK
+- Use raw OpenAI-compatible HTTP and strict JSON output
+- Keep a naive keyword fallback when no key is configured
+
+Files:
+
+- `src/01-standalone/run.js`
+- `src/runtime/openai-compatible.js`
+- `src/runtime/tracer.js`
+
+Run:
+
+```bash
+npm run start:01
+```
+
+Examples:
+
+```bash
+OPENAI_API_KEY=... npm run start:01
+```
+
+```bash
+STANDALONE_EMAIL_JSON='{"from":"boss@company.com","subject":"Please follow up","body":"Can you schedule a call and send me a summary?"}' npm run start:01
+```
+
+What to point out in the demo:
+
+- no SDK, just `fetch`
+- raw prompt + JSON contract
+- local trace output
+- fallback still gives deterministic `task | event | no_action`
+
 ## Agents SDK
 
 |                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)**                                         | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)**                  | **[Google ADK](https://adk.dev/get-started/typescript/)**                                           | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)**                      | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview) / [LangGraph](https://docs.langchain.com/oss/javascript/langgraph/overview)**                        |
@@ -328,6 +402,47 @@ Key features:
 - Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
 ## Demo #2 - SDK-Based Agent
+
+Goal:
+
+- Replace ad-hoc HTTP logic with reusable ADK agents
+- Show three agent roles:
+  - classify email
+  - create task simulation
+  - create agenda item simulation
+
+Files:
+
+- `src/02-sdk/run.js`
+- `src/02-sdk/agents.js`
+- `src/02-sdk/adk-runner.js`
+- `src/02-sdk/model-resolver.js`
+
+Run:
+
+```bash
+npm run start:02
+```
+
+Examples:
+
+```bash
+GOOGLE_API_KEY=... npm run start:02
+```
+
+```bash
+SDK_PROVIDER=openai OPENAI_API_KEY=... npm run start:02
+```
+
+```bash
+npm run start:02
+```
+
+What to point out in the demo:
+
+- same behavior stays runnable without credentials
+- step `02` is now the reusable agent catalog for later steps
+- output is split into `classification` and specialist `result`
 
 ## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
@@ -585,8 +700,8 @@ const movieAgentCard: AgentCard = {
 - Part - Holds one of: text content, a file reference (URL or inline bytes), or structured data in messages and artifacts.
 
 - Service Discovery
-  - Registry
-  - Router
+    - Registry
+    - Router
 
 ![](https://github.com/a2aproject/a2a-samples/blob/main/demo/a2a_demo_arch.png?raw=true)
 
@@ -613,16 +728,44 @@ In short: Use MCP to connect tools or resources, A2A for agent collaboration wit
 
 ## Demo #3 - Orchestration
 
+Goal:
+
+- Reuse the step `02` agents from one orchestration file
+- Show the “monolith” analogy: routing and dispatch are easy to start, but pile up in one place
+
+Files:
+
+- `src/03-orchestrator/run.js`
+- `src/03-orchestrator/email-router.js`
+
+Run:
+
+```bash
+npm run start:03
+```
+
+Example:
+
+```bash
+ORCHESTRATOR_EMAIL_JSON='{"from":"hr@company.com","subject":"Team sync invitation","body":"Calendar invite for tomorrow at 10:00"}' npm run start:03
+```
+
+What to point out in the demo:
+
+- `03` does not invent new agents
+- it composes `classifyEmailAgent`, `createTaskAgent`, and `createAgendaItemAgent`
+- good for understanding orchestration, bad for long-term maintainability
+
 ## Runtime
 
 - [Security Aspects](https://code.claude.com/docs/en/agent-sdk/secure-deployment), [adk](https://adk.dev/safety/)
 
 - Isolation
-  - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
-  - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
+    - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
+    - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
 - Least privilege
-  - Tools have permission settings to allow, block, or prompt the user for approval
-  - Limit file, network, credentials access with proxy
+    - Tools have permission settings to allow, block, or prompt the user for approval
+    - Limit file, network, credentials access with proxy
 
 ```ts
 options: {
@@ -633,9 +776,9 @@ options: {
 ```
 
 - Defense in depth
-  - Security Schemes - Authentication options
-  - Code and Web responses auto-checks
-  - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
+    - Security Schemes - Authentication options
+    - Code and Web responses auto-checks
+    - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
 
 ```sh
 docker run \
@@ -670,7 +813,70 @@ docker run \
 
 ## Demo #4 - n8n Integration
 
+Goal:
+
+- Expose the same agent boundaries as visual workflow nodes
+- Let n8n handle branching instead of hardcoding it in one file
+
+Files:
+
+- `src/04-n8n/README.md`
+- `src/04-n8n/EmailClassification.node.js`
+- `src/04-n8n/TaskSimulation.node.js`
+- `src/04-n8n/AgendaSimulation.node.js`
+- `src/04-n8n/EmailRouter.node.js`
+
+Run:
+
+```bash
+npm run start:04
+npm run start:n8n
+```
+
+Suggested workflow:
+
+1. `Email Classification Agent`
+2. `IF` / `Switch` on `classification.category`
+3. `Task Simulation Agent` for `task`
+4. `Agenda Simulation Agent` for `event`
+5. Optional `Email Router` node as a shortcut for the step `03` monolith behavior
+
+What to point out in the demo:
+
+- step `04` reuses step `02` agents directly
+- n8n becomes the orchestration layer
+- `Agent Reliability Monitor` belongs conceptually to the step `05` story
+
 ## Demo #5 - Security & Observability
+
+Goal:
+
+- Add guardrails and monitoring on top of existing agents
+- Keep those concerns separate from routing/orchestration logic
+
+Files:
+
+- `src/05-security-observability/observability.js`
+- `src/05-security-observability/run.js`
+
+Run:
+
+```bash
+npm run start:05
+```
+
+What the script demonstrates:
+
+- wraps `classifyEmailAgent`, `createTaskAgent`, and `createAgendaItemAgent`
+- blocks simple prompt-injection attempts
+- writes success/failure events into `trace.jsonl`
+- summarizes per-agent reliability from the current run
+
+What to point out in the demo:
+
+- wrappers are composable
+- observability is reduced to success/error rate on purpose
+- the reliability node in n8n only reads this trace, it does not create it
 
 ## Summary
 
