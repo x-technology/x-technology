@@ -184,6 +184,30 @@ Default offline-friendly behavior:
 
 ## AI Agents World
 
+| Aspect            | Gen AI                          | AI Agents                              | Agentic AI                                      |
+|------------------|----------------------------------|----------------------------------------|-------------------------------------------------|
+| Goal             | Generate content / answers       | Complete specific tasks                | Achieve complex goals autonomously              |
+| Autonomy         | Low                              | Medium                                 | High                                            |
+| Planning         | None                             | Limited                                | Advanced                                        |
+| Tool Use         | No                               | Yes                                    | Yes (dynamic, multi-tool)                       |
+| Memory           | Minimal (per session)            | Short / long-term                      | Persistent, contextual                          |
+| Human Input      | High (prompt-driven)             | Medium (task oversight)                | Low (goal-driven)                               |
+| Typical Use      | Q&A, summarization, writing      | Booking, data fetching, workflows      | Research, orchestration, decision-making        |
+| Example Behavior | Responds to prompts              | Executes steps with tools              | Plans, adapts, and executes end-to-end tasks    |
+
+### IDE as a Code Agent
+
+<!--
+1. GenAI where we just prompting and expecting answers
+2. AI Agent to act autonomously on a goal with tools and memory
+-->
+
+You're already using one!
+
+- [Claude Code](https://code.claude.com)
+- [Cursor](https://cursor.com)
+- [GitHub Copilot](https://github.com/features/copilot)
+
 ### [RAG Recap](/rag#about-everything)
 
 ![rag](assets/rag.png)
@@ -202,7 +226,7 @@ A system that autonomously performing tasks on behalf of a user or another syste
 
 **LLM** - Large Language Models trained on tons of sources and materials, having billions of parameters
 
-**Loop**
+**Loop** - Agent's fundamental core operating system
 
 [![code agent work diagram](https://mintcdn.com/claude-code/gvy2DIUELtNA8qD3/images/agent-loop-diagram.svg?fit=max&auto=format&n=gvy2DIUELtNA8qD3&q=85&s=192e1bd6c8a2950a16e5ee0b94e27e26)](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 
@@ -216,7 +240,9 @@ g0, g1, · · · , gn = decompose(E, g; Θ, P);
 pi = (ai0, ai1, · · · aim) = sub-plan(E, gi; Θ, P).
 ```
 
-Prompt Architectures - ReAct, PRACT, RAISE, Reflexion, ...
+Prompt Architectures - **[Chain of Thought (CoT)](https://arxiv.org/abs/2201.11903)**, ReAct, PRACT, RAISE, Reflexion, ...
+
+<!-- the model generates entire, multi-step plan upfront -->
 
 ```ts
 // ReAct
@@ -261,7 +287,7 @@ export async function reflexionLoop(task: string) {
 ```
 
 
-**Memory** - the processes used to gain, store, retain, and later retrieve information. Short-term vs long-term memory.
+**Memory** - the processes used to gain, store, retain, and later retrieve information. **Short-term** (trigger, prompt, session) vs **long-term** (db, rag) memory.
 
 **Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
@@ -446,8 +472,7 @@ What to point out in the demo:
 
 ## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
-**Agentic AI** - systems composed of multiple co-ordinated AI agents that can break
-down tasks, collaborate, and pursue complex objectives autonomously over extended periods.
+**Agentic AI** - systems composed of multiple co-ordinated AI agents that can break down tasks, collaborate, and pursue complex objectives autonomously over extended periods.
 
 [![ai protocols dev timeline](assets/mcp-ai-dev-timeline.png)](https://arxiv.org/abs/2504.16736)
 
@@ -699,9 +724,11 @@ const movieAgentCard: AgentCard = {
 
 - Part - Holds one of: text content, a file reference (URL or inline bytes), or structured data in messages and artifacts.
 
+- **Direct** vs **Decentralized** Orhestration
+  - Router
 - Service Discovery
-    - Registry
-    - Router
+  - Registry
+- [Local A2A example](https://github.com/a2aproject/a2a-js#server-hello-world-agent)
 
 ![](https://github.com/a2aproject/a2a-samples/blob/main/demo/a2a_demo_arch.png?raw=true)
 
@@ -776,9 +803,10 @@ options: {
 ```
 
 - Defense in depth
-    - Security Schemes - Authentication options
-    - Code and Web responses auto-checks
-    - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
+  - Security Schemes - Authentication options
+  - Code and Web responses auto-checks
+  - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
+  - Human-in-the-Loop
 
 ```sh
 docker run \
@@ -802,7 +830,7 @@ docker run \
 
 **Infrastructure Frameworks**
 
-| | n8n | CrewAI | MetaGPT | OpenClaw |
+| | n8n | CrewAI | MetaGPT | [OpenClaw](https://openclaw.ai/) |
 |---|---|---|---|---|
 | **Purpose** | Workflow automation platform | Multi-agent framework | Multi-agent meta-framework | Agent orchestration & deployment |
 | **Orchestration style** | Visual workflow DAG | Role-based agent crews | Role-based SOPs & pipelines | Graph-based agent routing |
