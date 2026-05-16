@@ -184,16 +184,16 @@ Default offline-friendly behavior:
 
 ## AI Agents World
 
-| Aspect            | Gen AI                          | AI Agents                              | Agentic AI                                      |
-|------------------|----------------------------------|----------------------------------------|-------------------------------------------------|
-| Goal             | Generate content / answers       | Complete specific tasks                | Achieve complex goals autonomously              |
-| Autonomy         | Low                              | Medium                                 | High                                            |
-| Planning         | None                             | Limited                                | Advanced                                        |
-| Tool Use         | No                               | Yes                                    | Yes (dynamic, multi-tool)                       |
-| Memory           | Minimal (per session)            | Short / long-term                      | Persistent, contextual                          |
-| Human Input      | High (prompt-driven)             | Medium (task oversight)                | Low (goal-driven)                               |
-| Typical Use      | Q&A, summarization, writing      | Booking, data fetching, workflows      | Research, orchestration, decision-making        |
-| Example Behavior | Responds to prompts              | Executes steps with tools              | Plans, adapts, and executes end-to-end tasks    |
+| Aspect           | Gen AI                      | AI Agents                         | Agentic AI                                   |
+| ---------------- | --------------------------- | --------------------------------- | -------------------------------------------- |
+| Goal             | Generate content / answers  | Complete specific tasks           | Achieve complex goals autonomously           |
+| Autonomy         | Low                         | Medium                            | High                                         |
+| Planning         | None                        | Limited                           | Advanced                                     |
+| Tool Use         | No                          | Yes                               | Yes (dynamic, multi-tool)                    |
+| Memory           | Minimal (per session)       | Short / long-term                 | Persistent, contextual                       |
+| Human Input      | High (prompt-driven)        | Medium (task oversight)           | Low (goal-driven)                            |
+| Typical Use      | Q&A, summarization, writing | Booking, data fetching, workflows | Research, orchestration, decision-making     |
+| Example Behavior | Responds to prompts         | Executes steps with tools         | Plans, adapts, and executes end-to-end tasks |
 
 ### IDE as a Code Agent
 
@@ -285,7 +285,6 @@ export async function reflexionLoop(task: string) {
   return bestAnswer;
 }
 ```
-
 
 **Memory** - the processes used to gain, store, retain, and later retrieve information. **Short-term** (trigger, prompt, session) vs **long-term** (db, rag) memory.
 
@@ -382,39 +381,43 @@ What to point out in the demo:
 
 ## Agents SDK
 
-|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)**                                         | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)**                  | **[Google ADK](https://adk.dev/get-started/typescript/)**                                           | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)**                      | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)**                        |
-| ------------------------------ | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ |
-| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains, agent flows             |
-| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                         | TypeScript / JavaScript                | Python, TypeScript                        |
-| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                            |
-| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | Chains, agent executors                    |
-| **Loop control**               | ⚠️ Hooks into steps, loop is internal                        | ❌ Hidden — tools + instructions only   | ⚠️ Orchestration-based, not loop-level                   | ❌ Loop is internal                     | Partial via chains   |
-| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                         |
-| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                        |
-| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | Partial (via chains, not full orchestration)|
-| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                            |
-| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Flexible agent flows, prototyping          |
+|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
+| ------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP                          | Build multi-step agents on OpenAI APIs                                                      | Build agents on Gemini / Vertex AI                        | Fullstack AI toolkit (not agent-first)                    | Composable chains, agent flows                                                |
+| **Languages**                  | TypeScript, Python ⚠️ _(Python partial)_                                     | TypeScript, Python                                                                          | Python, TypeScript, Go, and Java                          | TypeScript / JavaScript                                   | Python, TypeScript                                                            |
+| **Model support**              | Claude only                                                                  | OpenAI (⚠️ LiteLLM workaround)                                                              | Gemini / Vertex                                           | Model-agnostic                                            | Model-agnostic                                                                |
+| **Agent loop / orchestration** | Subagents, tool loops, hooks                                                 | Agents + handoffs                                                                           | Pipelines (seq/parallel) ⚠️ _(loop flexibility unclear)_  | Tool-based loops (lightweight)                            | Chains, agent executors                                                       |
+| **Loop control**               | ⚠️ Hooks into steps, loop is internal                                        | ❌ Hidden — tools + instructions only                                                       | ⚠️ Orchestration-based, not loop-level                    | ❌ Loop is internal                                       | Partial via chains                                                            |
+| **Tools**                      | MCP, bash, browser, file system                                              | Function calling, tools, MCP                                                                | Google tools + functions ⚠️ _(MCP maturity?)_             | Tool calling, MCP                                         | Tool calling, MCP                                                             |
+| **Memory**                     | CLAUDE.md + runtime context ⚠️ _(not true long-term memory)_                 | Threads + state                                                                             | Vertex memory ⚠️ _(needs validation depth)_               | Per-request (stateless by default)                        | Buffers + vector DB                                                           |
+| **Multi-agent**                | Subagents ⚠️ _(basic vs true orchestration)_                                 | Native handoffs                                                                             | A2A protocol ⚠️ _(early stage)_                           | ❌ Limited                                                | Partial (via chains, not full orchestration)                                  |
+| **Best fit**                   | Tool-heavy automation agents                                                 | Fast production agents                                                                      | Google ecosystem                                          | AI web apps                                               | Flexible agent flows, prototyping                                             |
 
 ```ts
-import {FunctionTool, LlmAgent} from '@google/adk';
-import {z} from 'zod';
+import { FunctionTool, LlmAgent } from "@google/adk";
+import { z } from "zod";
 
 /* Mock tool implementation */
 const getCurrentTime = new FunctionTool({
-  name: 'get_current_time',
-  description: 'Returns the current time in a specified city.',
+  name: "get_current_time",
+  description: "Returns the current time in a specified city.",
   parameters: z.object({
-    city: z.string().describe("The name of the city for which to retrieve the current time."),
+    city: z
+      .string()
+      .describe("The name of the city for which to retrieve the current time."),
   }),
-  execute: ({city}) => {
-    return {status: 'success', report: `The current time in ${city} is 10:30 AM`};
+  execute: ({ city }) => {
+    return {
+      status: "success",
+      report: `The current time in ${city} is 10:30 AM`,
+    };
   },
 });
 
 export const rootAgent = new LlmAgent({
-  name: 'hello_time_agent',
-  model: 'gemini-flash-latest',
-  description: 'Tells the current time in a specified city.',
+  name: "hello_time_agent",
+  model: "gemini-flash-latest",
+  description: "Tells the current time in a specified city.",
   instruction: `You are a helpful assistant that tells the current time in a city.
                 Use the 'getCurrentTime' tool for this purpose.`,
   tools: [getCurrentTime],
@@ -422,6 +425,7 @@ export const rootAgent = new LlmAgent({
 ```
 
 Key features:
+
 - [Agent loop](https://code.claude.com/docs/en/agent-sdk/agent-loop)
 - Model-agnostic
 - Deployment-agnostic
@@ -487,22 +491,23 @@ Anthropic, November 2024, [Specification](https://modelcontextprotocol.io/specif
 ```js
 for (const toolCall of response.output) {
   if (toolCall.type !== "function_call") {
-    continue
+    continue;
   }
 
-  const name = toolCall.name
-  const args = JSON.parse(toolCall.arguments)
+  const name = toolCall.name;
+  const args = JSON.parse(toolCall.arguments);
 
-  const result = callFunction(name, args)
+  const result = callFunction(name, args);
   input.push({
     type: "function_call_output",
     call_id: toolCall.call_id,
     output: result.toString(),
-  })
+  });
 }
 ```
 
 > MCP provides a standardized way for applications to:
+>
 > - Share contextual information with language models
 > - Expose tools and capabilities to AI systems
 > - Build composable integrations and workflows
@@ -510,6 +515,7 @@ for (const toolCall of response.output) {
 <!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
 
 [Features](https://modelcontextprotocol.io/specification/2025-06-18#features):
+
 - Resources: Context and data, for the user or the AI model to use
 - Prompts: Templated messages and workflows for users
 - [Tools](https://platform.openai.com/docs/guides/tools): Functions for the AI model to execute
@@ -624,19 +630,21 @@ https://github.com/alexeygrigorev/rag-agents-workshop
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
 
 Concepts:
+
 - Agent Card - JSON document describing an agent's abilities & requirements. Enables clients to discover agents and understand how to interact with them effectively.
 
 ```ts
 const movieAgentCard: AgentCard = {
-  name: 'Movie Agent',
-  description: 'An agent that can answer questions about movies and actors using TMDB.',
+  name: "Movie Agent",
+  description:
+    "An agent that can answer questions about movies and actors using TMDB.",
   // Adjust the base URL and port as needed. /a2a is the default base in A2AExpressApp
-  url: 'http://localhost:41241/', // Example: if baseUrl in A2AExpressApp
+  url: "http://localhost:41241/", // Example: if baseUrl in A2AExpressApp
   provider: {
-    organization: 'A2A Samples',
-    url: 'https://example.com/a2a-samples' // Added provider URL
+    organization: "A2A Samples",
+    url: "https://example.com/a2a-samples", // Added provider URL
   },
-  version: '0.0.2', // Incremented version
+  version: "0.0.2", // Incremented version
   capabilities: {
     streaming: true, // The new framework supports streaming
     pushNotifications: false, // Assuming not implemented for this agent yet
@@ -644,24 +652,25 @@ const movieAgentCard: AgentCard = {
   },
   securitySchemes: undefined, // Or define actual security schemes if any
   security: undefined,
-  defaultInputModes: ['text'],
-  defaultOutputModes: ['text', 'task-status'], // task-status is a common output mode
+  defaultInputModes: ["text"],
+  defaultOutputModes: ["text", "task-status"], // task-status is a common output mode
   skills: [
     {
-      id: 'general_movie_chat',
-      name: 'General Movie Chat',
-      description: 'Answer general questions or chat about movies, actors, directors.',
-      tags: ['movies', 'actors', 'directors'],
+      id: "general_movie_chat",
+      name: "General Movie Chat",
+      description:
+        "Answer general questions or chat about movies, actors, directors.",
+      tags: ["movies", "actors", "directors"],
       examples: [
-        'Tell me about the plot of Inception.',
-        'Recommend a good sci-fi movie.',
-        'Who directed The Matrix?',
-        'What other movies has Scarlett Johansson been in?',
-        'Find action movies starring Keanu Reeves',
-        'Which came out first, Jurassic Park or Terminator 2?',
+        "Tell me about the plot of Inception.",
+        "Recommend a good sci-fi movie.",
+        "Who directed The Matrix?",
+        "What other movies has Scarlett Johansson been in?",
+        "Find action movies starring Keanu Reeves",
+        "Which came out first, Jurassic Park or Terminator 2?",
       ],
-      inputModes: ['text'], // Explicitly defining for skill
-      outputModes: ['text', 'task-status'] // Explicitly defining for skill
+      inputModes: ["text"], // Explicitly defining for skill
+      outputModes: ["text", "task-status"], // Explicitly defining for skill
     },
   ],
   supportsAuthenticatedExtendedCard: false,
@@ -788,11 +797,11 @@ What to point out in the demo:
 - [Security Aspects](https://code.claude.com/docs/en/agent-sdk/secure-deployment), [adk](https://adk.dev/safety/)
 
 - Isolation
-    - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
-    - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
+  - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
+  - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
 - Least privilege
-    - Tools have permission settings to allow, block, or prompt the user for approval
-    - Limit file, network, credentials access with proxy
+  - Tools have permission settings to allow, block, or prompt the user for approval
+  - Limit file, network, credentials access with proxy
 
 ```ts
 options: {
@@ -830,14 +839,14 @@ docker run \
 
 **Infrastructure Frameworks**
 
-| | n8n | CrewAI | MetaGPT | LangGraph | [OpenClaw](https://openclaw.ai/) |
-|---|---|---|---|---|---|
-| **Purpose** | Workflow automation platform | Multi-agent framework | Multi-agent meta-framework | Stateful agent graphs & DAGs | Agent orchestration & deployment |
-| **Orchestration style** | Visual workflow DAG | Role-based agent crews | Role-based SOPs & pipelines | Full DAG with cycles & state machines | Graph-based agent routing |
-| **Hosting** | Self-hosted / cloud | Self-hosted / cloud | Self-hosted | Self-hosted / cloud | Self-hosted / cloud |
-| **Agent integration** | Custom nodes, webhooks | Python-native | Python-native | Model-agnostic (Python/TypeScript) | API-first |
-| **Use case** | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Complex agent systems with full state control | Production agent deployment |
-| **Language** | JavaScript / TypeScript | Python | Python | Python / TypeScript | Python / API |
+|                         | n8n                                  | CrewAI                    | MetaGPT                            | LangGraph                                     | [OpenClaw](https://openclaw.ai/) |
+| ----------------------- | ------------------------------------ | ------------------------- | ---------------------------------- | --------------------------------------------- | -------------------------------- |
+| **Purpose**             | Workflow automation platform         | Multi-agent framework     | Multi-agent meta-framework         | Stateful agent graphs & DAGs                  | Agent orchestration & deployment |
+| **Orchestration style** | Visual workflow DAG                  | Role-based agent crews    | Role-based SOPs & pipelines        | Full DAG with cycles & state machines         | Graph-based agent routing        |
+| **Hosting**             | Self-hosted / cloud                  | Self-hosted / cloud       | Self-hosted                        | Self-hosted / cloud                           | Self-hosted / cloud              |
+| **Agent integration**   | Custom nodes, webhooks               | Python-native             | Python-native                      | Model-agnostic (Python/TypeScript)            | API-first                        |
+| **Use case**            | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Complex agent systems with full state control | Production agent deployment      |
+| **Language**            | JavaScript / TypeScript              | Python                    | Python                             | Python / TypeScript                           | Python / API                     |
 
 ## Demo #4 - n8n Integration
 
