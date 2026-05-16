@@ -382,18 +382,18 @@ What to point out in the demo:
 
 ## Agents SDK
 
-|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)**                                         | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)**                  | **[Google ADK](https://adk.dev/get-started/typescript/)**                                           | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)**                      | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview) / [LangGraph](https://docs.langchain.com/oss/javascript/langgraph/overview)**                        |
+|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)**                                         | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)**                  | **[Google ADK](https://adk.dev/get-started/typescript/)**                                           | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)**                      | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)**                        |
 | ------------------------------ | ------------------------------------------------------------ | -------------------------------------- | -------------------------------------------------------- | -------------------------------------- | ------------------------------------------------ |
-| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains + stateful agent graphs        |
-| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                         | TypeScript / JavaScript                | Python, TypeScript                               |
-| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                                   |
-| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | **LangGraph DAG + cycles (full state machines)** |
-| **Loop control**               | ⚠️ Hooks into steps, loop is internal                        | ❌ Hidden — tools + instructions only   | ⚠️ Orchestration-based, not loop-level                   | ❌ Loop is internal                     | ✅ Full — define nodes, edges, stop conditions    |
-| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                                |
-| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                              |
-| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | ✅ Advanced (LangGraph multi-node)                |
-| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                                  |
-| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Complex agent systems                            |
+| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP          | Build multi-step agents on OpenAI APIs | Build agents on Gemini / Vertex AI                       | Fullstack AI toolkit (not agent-first) | Composable chains, agent flows             |
+| **Languages**                  | TypeScript, Python ⚠️ *(Python partial)*                     | TypeScript, Python                     | Python, TypeScript, Go, and Java                         | TypeScript / JavaScript                | Python, TypeScript                        |
+| **Model support**              | Claude only                                                  | OpenAI (⚠️ LiteLLM workaround)         | Gemini / Vertex                                          | Model-agnostic                         | Model-agnostic                            |
+| **Agent loop / orchestration** | Subagents, tool loops, hooks                                 | Agents + handoffs                      | Pipelines (seq/parallel) ⚠️ *(loop flexibility unclear)* | Tool-based loops (lightweight)         | Chains, agent executors                    |
+| **Loop control**               | ⚠️ Hooks into steps, loop is internal                        | ❌ Hidden — tools + instructions only   | ⚠️ Orchestration-based, not loop-level                   | ❌ Loop is internal                     | Partial via chains   |
+| **Tools**                      | MCP, bash, browser, file system                              | Function calling, tools, MCP           | Google tools + functions ⚠️ *(MCP maturity?)*            | Tool calling, MCP                      | 500+ integrations                         |
+| **Memory**                     | CLAUDE.md + runtime context ⚠️ *(not true long-term memory)* | Threads + state                        | Vertex memory ⚠️ *(needs validation depth)*              | Per-request (stateless by default)     | Buffers + vector DB                        |
+| **Multi-agent**                | Subagents ⚠️ *(basic vs true orchestration)*                 | Native handoffs                        | A2A protocol ⚠️ *(early stage)*                          | ❌ Limited                              | Partial (via chains, not full orchestration)|
+| **MCP support**                | ✅ First-class                                                | ✅                                      | ⚠️ Emerging                                              | ✅                                      | ⚠️ Via adapters                            |
+| **Best fit**                   | Tool-heavy automation agents                                 | Fast production agents                 | Google ecosystem                                         | AI web apps                            | Flexible agent flows, prototyping          |
 
 ```ts
 import {FunctionTool, LlmAgent} from '@google/adk';
@@ -830,14 +830,14 @@ docker run \
 
 **Infrastructure Frameworks**
 
-| | n8n | CrewAI | MetaGPT | [OpenClaw](https://openclaw.ai/) |
-|---|---|---|---|---|
-| **Purpose** | Workflow automation platform | Multi-agent framework | Multi-agent meta-framework | Agent orchestration & deployment |
-| **Orchestration style** | Visual workflow DAG | Role-based agent crews | Role-based SOPs & pipelines | Graph-based agent routing |
-| **Hosting** | Self-hosted / cloud | Self-hosted / cloud | Self-hosted | Self-hosted / cloud |
-| **Agent integration** | Custom nodes, webhooks | Python-native | Python-native | API-first |
-| **Use case** | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Production agent deployment |
-| **Language** | JavaScript / TypeScript | Python | Python | Python / API |
+| | n8n | CrewAI | MetaGPT | LangGraph | [OpenClaw](https://openclaw.ai/) |
+|---|---|---|---|---|---|
+| **Purpose** | Workflow automation platform | Multi-agent framework | Multi-agent meta-framework | Stateful agent graphs & DAGs | Agent orchestration & deployment |
+| **Orchestration style** | Visual workflow DAG | Role-based agent crews | Role-based SOPs & pipelines | Full DAG with cycles & state machines | Graph-based agent routing |
+| **Hosting** | Self-hosted / cloud | Self-hosted / cloud | Self-hosted | Self-hosted / cloud | Self-hosted / cloud |
+| **Agent integration** | Custom nodes, webhooks | Python-native | Python-native | Model-agnostic (Python/TypeScript) | API-first |
+| **Use case** | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Complex agent systems with full state control | Production agent deployment |
+| **Language** | JavaScript / TypeScript | Python | Python | Python / TypeScript | Python / API |
 
 ## Demo #4 - n8n Integration
 
