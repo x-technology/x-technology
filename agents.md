@@ -222,7 +222,9 @@ You're already using one!
 
 [![autonomous agent 2023](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
-A system that autonomously performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
+A system that **autonomously** performing tasks on behalf of a user or another system by designing its workflow and utilizing available tools
+
+<!-- autonomous - proactive, not reactive -->
 
 **LLM** - Large Language Models trained on tons of sources and materials, having billions of parameters
 
@@ -286,7 +288,9 @@ export async function reflexionLoop(task: string) {
 }
 ```
 
-**Memory** - the processes used to gain, store, retain, and later retrieve information. **Short-term** (trigger, prompt, session) vs **long-term** (db, rag) memory.
+**Memory** - the processes used to gain, store, retain, and later retrieve information. Context engineering, **Short-term** (trigger, prompt, session) vs **long-term** (db, rag) memory.
+
+<!-- Context engineering is preparing and feeding proper context to agents -->
 
 **Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
@@ -381,16 +385,16 @@ What to point out in the demo:
 
 ## Agents SDK
 
-|                                | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
-| ------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| **Primary purpose**            | Runtime for Claude-based agents with tool use + MCP                          | Build multi-step agents on OpenAI APIs                                                      | Build agents on Gemini / Vertex AI                        | Fullstack AI toolkit (not agent-first)                    | Composable chains, agent flows                                                |
-| **Languages**                  | TypeScript, Python ⚠️ _(Python partial)_                                     | TypeScript, Python                                                                          | Python, TypeScript, Go, and Java                          | TypeScript / JavaScript                                   | Python, TypeScript                                                            |
-| **Model support**              | Claude only                                                                  | OpenAI (⚠️ LiteLLM workaround)                                                              | Model-agnostic                                           | Model-agnostic                                            | Model-agnostic                                                                |
-| **Orchestration & Multi-agent** | Subagents, tool loops, hooks; basic multi-agent orchestration | Agents + handoffs; native multi-agent support | Pipelines (seq/parallel); A2A protocol (early stage) | Tool-based loops, limited multi-agent | Chains, agent executors |
-| **Loop control**               | ⚠️ Hooks into steps, loop is internal                                        | ❌ Hidden — tools + instructions only                                                       | ⚠️ Orchestration-based, not loop-level                    | ❌ Loop is internal                                       | Partial via chains                                                            |
-| **Tools**                      | MCP, bash, browser, file system                                              | Function calling, tools, MCP                                                                | Google tools + functions ⚠️ _(MCP maturity?)_             | Tool calling, MCP                                         | Tool calling, MCP                                                             |
-| **Memory**                     | CLAUDE.md + runtime context ⚠️ _(not true long-term memory)_                 | Threads + state                                                                             | Vertex memory ⚠️ _(needs validation depth)_               | Per-request (stateless by default)                        | Buffers + vector DB                                                           |
-| **Best fit**                   | Tool-heavy automation agents                                                 | Fast production agents                                                                      | Google ecosystem                                          | AI web apps                                               | Flexible agent flows, prototyping                                             |
+|                                 | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
+| ------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **Primary purpose**             | Runtime for Claude-based agents with tool use + MCP                          | Build multi-step agents on OpenAI APIs                                                      | Build agents on Gemini / Vertex AI                        | Fullstack AI toolkit (not agent-first)                    | Composable chains, agent flows                                                |
+| **Languages**                   | TypeScript, Python ⚠️ _(Python partial)_                                     | TypeScript, Python                                                                          | Python, TypeScript, Go, and Java                          | TypeScript / JavaScript                                   | Python, TypeScript                                                            |
+| **Model support**               | Claude only                                                                  | OpenAI (⚠️ LiteLLM workaround)                                                              | Model-agnostic                                            | Model-agnostic                                            | Model-agnostic                                                                |
+| **Orchestration & Multi-agent** | Subagents, tool loops, hooks; basic multi-agent orchestration                | Agents + handoffs; native multi-agent support                                               | Pipelines (seq/parallel); A2A protocol (early stage)      | Tool-based loops, limited multi-agent                     | Chains, agent executors                                                       |
+| **Loop control**                | ⚠️ Hooks into steps, loop is internal                                        | ❌ Hidden — tools + instructions only                                                       | ⚠️ Orchestration-based, not loop-level                    | ❌ Loop is internal                                       | Partial via chains                                                            |
+| **Tools**                       | MCP, bash, browser, file system                                              | Function calling, tools, MCP                                                                | Google tools + functions ⚠️ _(MCP maturity?)_             | Tool calling, MCP                                         | Tool calling, MCP                                                             |
+| **Memory**                      | CLAUDE.md + runtime context ⚠️ _(not true long-term memory)_                 | Threads + state                                                                             | Vertex memory ⚠️ _(needs validation depth)_               | Per-request (stateless by default)                        | Buffers + vector DB                                                           |
+| **Best fit**                    | Tool-heavy automation agents                                                 | Fast production agents                                                                      | Google ecosystem                                          | AI web apps                                               | Flexible agent flows, prototyping                                             |
 
 ```ts
 import { FunctionTool, LlmAgent } from "@google/adk";
@@ -812,9 +816,12 @@ options: {
 
 - Defense in depth
   - Security Schemes - Authentication options
+  - Contract-first tools
   - Code and Web responses auto-checks
   - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
   - Human-in-the-Loop
+  - Decrease temperature and context
+  - Define budget
 
 ```sh
 docker run \
@@ -845,7 +852,7 @@ docker run \
 | **Hosting**             | Self-hosted / cloud                  | Self-hosted / cloud       | Self-hosted                        | Self-hosted / cloud                           | Self-hosted / cloud              |
 | **Agent integration**   | Custom nodes, webhooks               | Python-native             | Python-native                      | Model-agnostic (Python/TypeScript)            | API-first                        |
 | **Use case**            | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Complex agent systems with full state control | Production agent deployment      |
-| **Language**            | JavaScript / TypeScript              | Python                    | Python                             | Python / TypeScript                           | JavaScript / TypeScript                     |
+| **Language**            | JavaScript / TypeScript              | Python                    | Python                             | Python / TypeScript                           | JavaScript / TypeScript          |
 
 ## Demo #4 - n8n Integration
 
