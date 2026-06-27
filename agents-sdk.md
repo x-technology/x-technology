@@ -282,21 +282,6 @@ export async function reflexionLoop(task: string) {
 
 ## Agents SDK
 
-### ADK (Google)
-
-> Build production agents, not prototypes.
-ADK is the open-source agent development framework that lets you build, debug, and deploy reliable AI agents at enterprise scale. Available in Python, TypeScript, Go, Java, and Kotlin.
-
-> ADK developer Skills
-
-- [Skills](https://adk.dev/skills/)
-
-```
-npm install @google/adk
-npm install -D @google/adk-devtools
-npx adk web
-```
-
 |                                 | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
 | ------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | **Primary purpose**             | Runtime for Claude-based agents with tool use + MCP                          | Build multi-step agents on OpenAI APIs                                                      | Build agents on Gemini / Vertex AI                        | Fullstack AI toolkit (not agent-first)                    | Composable chains, agent flows                                                |
@@ -307,6 +292,21 @@ npx adk web
 | **Tools**                       | MCP, bash, browser, file system                                              | Function calling, tools, MCP                                                                | Google tools + functions ⚠️ _(MCP maturity?)_             | Tool calling, MCP                                         | Tool calling, MCP                                                             |
 | **Memory**                      | CLAUDE.md + runtime context ⚠️ _(not true long-term memory)_                 | Threads + state                                                                             | Vertex memory ⚠️ _(needs validation depth)_               | Per-request (stateless by default)                        | Buffers + vector DB                                                           |
 | **Best fit**                    | Tool-heavy automation agents                                                 | Fast production agents                                                                      | Google ecosystem                                          | AI web apps                                               | Flexible agent flows, prototyping                                             |
+
+### ADK (Google)
+
+> Build production agents, not prototypes.
+ADK is the open-source agent development framework that lets you build, debug, and deploy reliable AI agents at enterprise scale. Available in Python, TypeScript, Go, Java, and Kotlin.
+
+> ADK developer Skills
+
+- [Skills](https://adk.dev/skills/)
+
+```bash
+npm install @google/adk
+npm install -D @google/adk-devtools
+npx adk web
+```
 
 ```ts
 import { FunctionTool, LlmAgent } from "@google/adk";
@@ -346,7 +346,10 @@ Key features:
 - Deployment-agnostic
 - Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
-## Demo
+## Demo #1 - Build agents
+
+- Claude Agent SDK
+- Google ADK
 
 ## Runtime
 
@@ -403,6 +406,7 @@ docker run \
 | **Local** | Self-hosted runtime, full control over environment, container, and secrets |
 | **Cloud — Claude Managed Agents** | Provider-managed sessions, sandbox, event stream; deploy via `platform.claude.com/.../deployments` |
 | **Cloud — Google ADK on Cloud Run** | Agent as a cloud-native service; Cloud Run provides container runtime, HTTPS, IAM, autoscaling, logs |
+| **Monolith** | Configurable native client |
 
 ### Local
 
@@ -439,6 +443,14 @@ env/secrets integration
 ```
 
 > ADK is built for deploy anywhere flexibility. You can containerize and run ADK on your own infrastructure, or take advantage of our native, one-command deployment to Google Cloud. When deploying to Google Cloud via Agent Runtime (Agent Platform), Cloud Run, or GKE, your agents instantly inherit managed infrastructure, built-in authentication, Cloud Trace observability, and enterprise-grade security—all without requiring you to change a single line of your agent code. Develop locally, scale globally.
+
+### Monolith Agent Deployment
+
+```bash
+claude -p "say hi"
+```
+
+## Demo #2 - Deployment Aspects
 
 ## Optional
 
