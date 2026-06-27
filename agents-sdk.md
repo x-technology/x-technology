@@ -1,5 +1,5 @@
 ---
-title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
+title: XTechnology Workshop - The Agent Runtime Workshop: Node.js, Tools, CI/CD, and Guardrails
 ---
 
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
@@ -73,9 +73,11 @@ title: XTechnology Workshop - Operating Agent-Based Systems - Overview, Configur
   <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
 </div>
 
-# Operating Agent-Based Systems - Overview, Configure, Run, Orchestrate, Monitor
+# The Agent Runtime Workshop: Node.js, Tools, CI/CD, and Guardrails
 
-This workshop explores how standalone agents operate at the runtime level and how they differ from traditional AI pipelines. We examine agent architecture, planning loops, memory models, and tool execution. We also cover multi-agent coordination, including state isolation and resource control. A key focus is security and governance — capability-based access, sandboxing, and injection risks. Finally, we address observability and supervision: tracing reasoning, auditing tool usage, and implementing control mechanisms for production systems. All examples and concepts are grounded in the Node.js stack and we explore why Node.js is particularly well-suited for building production-ready agent runtimes — serving as the control plane for supervision, integration, streaming execution, and distributed coordination.
+The workshop focuses on theory and practice building production-ready AI agents with Node.js and modern Agent SDKs. We will use a real codebase as an execution environment to explain the core concepts behind agents: the agent loop, tool calling, structured outputs, context management, guardrails, tools, and human approval. We will build a Node.js SDK-based engineering agent that receives a development task, inspects a repository, proposes and applies safe code changes, runs validation checks, and exports execution artifacts to a messenger/storage. We will also cover how this agent fits into a broader production architecture: where MCP, orchestration, multi-agent patterns, CI/CD, security boundaries, observability, and workflow tools such as n8n may be useful.
+
+By the end of the workshop, participants will understand not only how to use an Agent SDK, but also what remains their responsibility when designing safe and maintainable agent runtimes.
 
 ## Prerequisites
 
@@ -85,10 +87,10 @@ This workshop explores how standalone agents operate at the runtime level and ho
 
 ## Goals
 
-- Understand AI agent architecture: loop, planning, memory, tools, guardrails
-- Compare agent SDKs and protocols (MCP, A2A, ANP)
-- Build and orchestrate agents with Node.js as the control plane
-- Add security, observability, and n8n integration to production systems
+- Understand AI agent and SDK architecture: loop, planning, memory, tools, guardrails
+- Build a production-oriented engineering agent with an Agent SDK
+- Apply sandboxing, permissions, approval gates, and observability
+- Deploy agents locally and to cloud runtimes
 
 ## Code
 
@@ -99,14 +101,11 @@ This workshop explores how standalone agents operate at the runtime level and ho
 - [Introduction 📢](#introduction)
 - [Setup 🛠️](#setup)
 - [AI Agents World 🌎](#ai-agents-world)
-- [Demo #1 - Standalone Baseline 👋](#demo-1---standalone-baseline)
 - [Agents SDK 🧰](#agents-sdk)
-- [Demo #2 - SDK-Based Agent 🤖](#demo-2---sdk-based-agent)
-- [Agent Protocols 🔗](#agent-protocols)
-- [Demo #3 - Orchestration 🎻](#demo-3---orchestration)
+- [Demo 🤖](#demo)
 - [Runtime 🔒](#runtime)
-- [Demo #4 - n8n Integration 🔄](#demo-4---n8n-integration)
-- [Demo #5 - Security & Observability 🔍](#demo-5---security--observability)
+- [Deployment 🚀](#deployment)
+- [Optional 🔗](#optional)
 - [Summary 📚](#summary)
 - [Feedback 💬](#feedback)
 - [References 🔗](#references)
@@ -126,23 +125,11 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 - [AlexKorzhikov](https://www.linkedin.com/in/alex-korzhikov/)
 - [korzio](https://github.com/korzio)
 
-### Pavlik Kiselev
-
-![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
-
-Software Engineer, Netherlands
-
-JavaScript developer with full-stack experience and frontend passion. He happily works at ING in a Fraud Prevention department, where helps to protect the finances of the ING customers.
-
-- [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
-- [paulcodiny](https://github.com/paulcodiny)
-
 ## Setup
 
 - Node.js 18+
 - OpenAI-compatible API key for live LLM demos is optional
 - Gemini / Google API key for ADK demos is optional
-- n8n is installed from this repo via `npm install`
 
 Project setup:
 
@@ -180,7 +167,6 @@ Default offline-friendly behavior:
 
 - `npm run start:01` falls back to naive keyword routing if `OPENAI_API_KEY` is not set
 - `npm run start:02` stays on the ADK path and falls back to a local keyword-based `BaseLlm`
-- `npm run start:05` writes a local JSONL trace to `src/05-security-observability/trace.jsonl`
 
 ## AI Agents World
 
@@ -294,98 +280,7 @@ export async function reflexionLoop(task: string) {
 
 **Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
-<!-- > Agents are AI systems that can:
->
-> Make decisions about what actions to take
-> Use tools to accomplish tasks
-> Maintain state and context
-> Learn from previous interactions
-> Work towards specific goals
-> Agentic flow is not necessarily a completely independent agent, but it can still make some decisions during the flow execution
->
-> A typical agentic flow consists of:
->
-> Receiving a user request
-> Analyzing the request and available tools
-> Deciding on the next action
-> Executing the action using appropriate tools
-> Evaluating the results
-> Either completing the task or continuing with more actions
-> The key difference from basic RAG is that agents can:
->
-> Make multiple search queries
-> Combine information from different sources
-> Decide when to stop searching
-> Use their own knowledge when appropriate
-> Chain multiple actions together
->
-> So in agentic RAG, the system
-> has access to the history of previous actions
-> makes decisions independently based on the current information and the previous actions
-![alt text](assets/mcp-deep-dive.png)
-
-https://www.anthropic.com/engineering/building-effective-agents
-
-> "Agent" can be defined in several ways. Some customers define agents as fully autonomous systems that operate independently over extended periods, using various tools to accomplish complex tasks. Others use the term to describe more prescriptive implementations that follow predefined workflows. At Anthropic, we categorize all these variations as agentic systems, but draw an important architectural distinction between workflows and agents:
-
-Workflows are systems where LLMs and tools are orchestrated through predefined code paths.
-Agents, on the other hand, are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
-
-> MCP is one way for AI agents to find the information they need and to take actions. It helps connect AI agents to the "outside world," so to speak — the world beyond the LLM's training data. (Other methods include API integrations and headless browsing.)
-
-> an LLM agent typically consists of:
-> - Foundation Model,  typically a large language model or a multimodal large model,
-which provides essential capabilities for reasoning, understanding language, and interpreting multimodal information
-> - Memory Systems: LLM agents implement both short-term and long-term memory components to maintain context across interactions and store relevant information for future use
-> - Planning: Planning is a fundamental aspect of agent research (), enabling agents to break down complex tasks into smaller, manageable subtasks
-> - Tool-Using: Although LLMs inherently face limitations in mathematical reasoning, logical operations, and knowledge beyond their trained corpus, agents overcome these constraints by integrating external tools and APIs
-> - Action Execution: The ability to interact with their environment by executing actions, whether through API calls, database queries, or interaction
-with external systems.
-
-https://arxiv.org/abs/2504.16736
-
--->
-
-## Demo #1 - Standalone Baseline
-
-Goal:
-
-- Show an agent-like flow without any SDK
-- Use raw OpenAI-compatible HTTP and strict JSON output
-- Keep a naive keyword fallback when no key is configured
-
-Files:
-
-- `src/01-standalone/run.js`
-- `src/runtime/openai-compatible.js`
-- `src/runtime/tracer.js`
-
-Run:
-
-```bash
-npm run start:01
-```
-
-Examples:
-
-```bash
-OPENAI_API_KEY=... npm run start:01
-```
-
-```bash
-STANDALONE_EMAIL_JSON='{"from":"boss@company.com","subject":"Please follow up","body":"Can you schedule a call and send me a summary?"}' npm run start:01
-```
-
-What to point out in the demo:
-
-- no SDK, just `fetch`
-- raw prompt + JSON contract
-- local trace output
-- fallback still gives deterministic `task | event | no_action`
-
 ## Agents SDK
-
-### Agent SDK (Anthropic)
 
 ### ADK (Google)
 
@@ -451,50 +346,105 @@ Key features:
 - Deployment-agnostic
 - Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
-## Demo #2 - SDK-Based Agent
+## Demo
 
-Goal:
+## Runtime
 
-- Replace ad-hoc HTTP logic with reusable ADK agents
-- Show three agent roles:
-  - classify email
-  - create task simulation
-  - create agenda item simulation
+- [Security Aspects](https://code.claude.com/docs/en/agent-sdk/secure-deployment), [adk](https://adk.dev/safety/)
 
-Files:
+- Isolation
+  - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
+  - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
+- Least privilege
+  - Tools have permission settings to allow, block, or prompt the user for approval
+  - Limit file, network, credentials access with proxy
 
-- `src/02-sdk/run.js`
-- `src/02-sdk/agents.js`
-- `src/02-sdk/adk-runner.js`
-- `src/02-sdk/model-resolver.js`
-
-Run:
-
-```bash
-npm run start:02
+```ts
+options: {
+  allowedTools: ["Read", "Glob", "Grep"],
+  permissionMode: "acceptEdits",
+  continue: true
+},
 ```
 
-Examples:
+- Defense in depth
+  - Security Schemes - Authentication options
+  - Contract-first tools
+  - Code and Web responses auto-checks
+  - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
+  - Human-in-the-Loop
+  - Decrease temperature and context
+  - Define budget
 
-```bash
-GOOGLE_API_KEY=... npm run start:02
+```sh
+docker run \
+  --cap-drop ALL \
+  --security-opt no-new-privileges \
+  --security-opt seccomp=/path/to/seccomp-profile.json \
+  --read-only \
+  --tmpfs /tmp:rw,noexec,nosuid,size=100m \
+  --tmpfs /home/agent:rw,noexec,nosuid,size=500m \
+  --network none \
+  --memory 2g \
+  --cpus 2 \
+  --pids-limit 100 \
+  --user 1000:1000 \
+  -v /path/to/code:/workspace:ro \
+  -v /var/run/proxy.sock:/var/run/proxy.sock:ro \
+  agent-image
 ```
 
-```bash
-SDK_PROVIDER=openai OPENAI_API_KEY=... npm run start:02
+- [Observability](https://adk.dev/observability/) - [Tracing](https://adk.dev/observability/traces/#gcp-export-setup) and Logging
+
+## Deployment
+
+| Option | Description |
+| ------ | ----------- |
+| **Local** | Self-hosted runtime, full control over environment, container, and secrets |
+| **Cloud — Claude Managed Agents** | Provider-managed sessions, sandbox, event stream; deploy via `platform.claude.com/.../deployments` |
+| **Cloud — Google ADK on Cloud Run** | Agent as a cloud-native service; Cloud Run provides container runtime, HTTPS, IAM, autoscaling, logs |
+
+### Local
+
+Run the agent runtime in a local container or directly in your Node.js environment. Useful for development, testing, and offline execution.
+
+### Claude Managed Agents
+
+> Claude SDK as a coding-native agent runtime.
+> Claude Managed Agents as the native deployment path.
+
+Deploy versioned agent configurations via `platform.claude.com/.../deployments`. Managed sessions, built-in sandbox, event stream, and cloud or self-hosted environments are included.
+
+### Google ADK on Cloud Run
+
+ADK defines:
+
+```txt
+agent
+tools
+workflow
+model behavior
 ```
 
-```bash
-npm run start:02
+Cloud Run provides:
+
+```txt
+container runtime
+HTTPS endpoint
+IAM
+autoscaling
+logs
+revisions
+env/secrets integration
 ```
 
-What to point out in the demo:
+> ADK is built for deploy anywhere flexibility. You can containerize and run ADK on your own infrastructure, or take advantage of our native, one-command deployment to Google Cloud. When deploying to Google Cloud via Agent Runtime (Agent Platform), Cloud Run, or GKE, your agents instantly inherit managed infrastructure, built-in authentication, Cloud Trace observability, and enterprise-grade security—all without requiring you to change a single line of your agent code. Develop locally, scale globally.
 
-- same behavior stays runnable without credentials
-- step `02` is now the reusable agent catalog for later steps
-- output is split into `classification` and specialist `result`
+## Optional
 
-## [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
+> The following sections are covered briefly if time allows.
+
+### [Agent Protocols](https://github.com/zoe-yyx/Awesome-AIAgent-Protocol)
 
 **Agentic AI** - systems composed of multiple co-ordinated AI agents that can break down tasks, collaborate, and pursue complex objectives autonomously over extended periods.
 
@@ -532,8 +482,6 @@ for (const toolCall of response.output) {
 > - Expose tools and capabilities to AI systems
 > - Build composable integrations and workflows
 
-<!-- > MCP is a universal and open context-oriented protocol for connecting LLM agents to resources consisting of external data, tools and services in a simpler and more reliable way -->
-
 [Features](https://modelcontextprotocol.io/specification/2025-06-18#features):
 
 - Resources: Context and data, for the user or the AI model to use
@@ -543,42 +491,6 @@ for (const toolCall of response.output) {
 - [Servers](https://github.com/modelcontextprotocol/servers)
 
 ![mcp message flow normal size](assets/mcp-message-flow.png)
-
-<!-- ![function call flow](https://cdn.openai.com/API/docs/images/function-calling-diagram-steps.png)
-
-Clients on AI Agents (host applications) <-> MCP Servers
-
-Clients mainatin connection with servers
-
-```mermaid
-sequenceDiagram
-participant Server
-participant Client
-
-Note over Server,Client: Discovery
-Server->>Client: roots/list
-Client- ->>Server: Available roots
-
-Note over Server,Client: Changes
-Client--)Server: notifications/roots/list_changed
-Server->>Client: roots/list
-Client- ->>Server: Updated roots
-```
-
-> In the initial phase of a complete MCP invocation cycle, when faced with a user query, the host employs the LLMs’ understanding and reasoning capabilities to infer the context necessary to formulate a response to the query. Concurrently, the multiple clients connected to the host provide natural language descriptions of the available resources. Based on the information available, the host determines which resources to request context from and initiating a strategic context request to the corresponding client. In the request phase of the MCP invocation cycle, the client sends an executive context request to the corresponding server, encompassing operations such as data modifications or tool invocations. Upon receiving the client’s request, the server operates on the resources as specified and subsequently transmits the obtained context to the client, which then passes it on to the host. In the response phase of the MCP cycle, the host combines the context obtained to formulate a reply to the user query, thereby completing the cycle.
-
-> [ ] is it right that tool_use is detected by LLM?
-https://blog.langchain.com/mcp-fad-or-fixture/
-
-> A function or tool refers in the abstract to a piece of functionality that we tell the model it has access to. As a model generates a response to a prompt, it may decide that it needs data or functionality provided by a tool to follow the prompt's instructions.
-> You could give the model access to tools that:
-> Get today's weather for a location
-> Access account details for a given user ID
-> Issue refunds for a lost order
-> Or anything else you'd like the model to be able to know or do as it responds to a prompt.
-> When we make an API request to the model with a prompt, we can include a list of tools the model could consider using. For example, if we wanted the model to be able to answer questions about the current weather somewhere in the world, we might give it access to a get_weather tool that takes location as an argument.
-
--->
 
 ```json
 {
@@ -616,35 +528,6 @@ https://blog.langchain.com/mcp-fad-or-fixture/
 }
 ```
 
-<!-- > Tools let LLMs take actions through your server. Tools can perform computation, fetch data and have side effects. Tools should be designed to be model-controlled - i.e. AI models will decide which tools to call, and the arguments
-
-- [ResourceLink](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#resource-links)
-
-- resources
-- prompts
-- notifications
-
-```json
-{
-  jsonrpc: "2.0";
-  id: string | number;
-  method: string;
-  params?: {
-    [key: string]: unknown;
-  };
-}
-```
-
-  - Streamable HTTP transport
-  - stdio
-  - sse
-- Lifecycle Management: Connection initialization, capability negotiation, and session control
-- Authorization: Authentication and authorization framework for HTTP-based transports
-- Attach to agentic product demo?
-- Artificial layer, why not to introduce default mcp for any potential API?
-https://github.com/alexeygrigorev/rag-agents-workshop
--->
-
 **[Agent-to-Agent (A2A)](https://github.com/a2aproject/A2A)** - Inter-Agent Protocol, April 2025
 
 ![[what is a2a](https://a2a-protocol.org/latest/topics/what-is-a2a/#understanding-the-agent-stack-a2a-mcp-agent-frameworks-and-models)](https://a2a-protocol.org/latest/assets/agentic-stack.png)
@@ -658,22 +541,21 @@ const movieAgentCard: AgentCard = {
   name: "Movie Agent",
   description:
     "An agent that can answer questions about movies and actors using TMDB.",
-  // Adjust the base URL and port as needed. /a2a is the default base in A2AExpressApp
-  url: "http://localhost:41241/", // Example: if baseUrl in A2AExpressApp
+  url: "http://localhost:41241/",
   provider: {
     organization: "A2A Samples",
-    url: "https://example.com/a2a-samples", // Added provider URL
+    url: "https://example.com/a2a-samples",
   },
-  version: "0.0.2", // Incremented version
+  version: "0.0.2",
   capabilities: {
-    streaming: true, // The new framework supports streaming
-    pushNotifications: false, // Assuming not implemented for this agent yet
-    stateTransitionHistory: true, // Agent uses history
+    streaming: true,
+    pushNotifications: false,
+    stateTransitionHistory: true,
   },
-  securitySchemes: undefined, // Or define actual security schemes if any
+  securitySchemes: undefined,
   security: undefined,
   defaultInputModes: ["text"],
-  defaultOutputModes: ["text", "task-status"], // task-status is a common output mode
+  defaultOutputModes: ["text", "task-status"],
   skills: [
     {
       id: "general_movie_chat",
@@ -689,15 +571,15 @@ const movieAgentCard: AgentCard = {
         "Find action movies starring Keanu Reeves",
         "Which came out first, Jurassic Park or Terminator 2?",
       ],
-      inputModes: ["text"], // Explicitly defining for skill
-      outputModes: ["text", "task-status"], // Explicitly defining for skill
+      inputModes: ["text"],
+      outputModes: ["text", "task-status"],
     },
   ],
   supportsAuthenticatedExtendedCard: false,
 };
 ```
 
-- Message - Communication between a client and an agent, containing content and a role ("user" or "agent"). Contains instructions, context, questions, answers, or status updates that are not necessarily formal artifacts.
+- Message - Communication between a client and an agent, containing content and a role ("user" or "agent").
 
 ```json
 {
@@ -753,7 +635,7 @@ const movieAgentCard: AgentCard = {
 
 - Part - Holds one of: text content, a file reference (URL or inline bytes), or structured data in messages and artifacts.
 
-- **Direct** vs **Decentralized** Orhestration
+- **Direct** vs **Decentralized** Orchestration
   - Router
 - Service Discovery
   - Registry
@@ -771,96 +653,7 @@ const movieAgentCard: AgentCard = {
 
 [![agent protocol use cases](assets/agent-protocol-use-cases.png)](https://arxiv.org/abs/2504.16736)
 
-<!--
-https://www.agent-network-protocol.com/guide/
-
-ANP, MCP, and A2A are complementary protocols, each solving agent communication problems in different scenarios:
-
-MCP (Model Context Protocol): A bridge connecting AI models with tools/resources, using a client-server architecture, suitable for a single model accessing multiple tools and resources, such as accessing search engines, calling calculators, etc.
-A2A (Agent2Agent): Designed for complex agent collaboration within enterprises, focusing on task-driven collaborative processes, suitable for completing complex task chains in trusted environments, such as workflow automation within enterprises.
-ANP (Agent Network Protocol): Created for agent interconnection on the open internet, using a peer-to-peer architecture, enabling cross-platform and cross-organization agent discovery and interaction, such as communication between agents from different companies.
-In short: Use MCP to connect tools or resources, A2A for agent collaboration within enterprises, and ANP for agent connections on the open internet.
--->
-
-## Demo #3 - Orchestration
-
-Goal:
-
-- Reuse the step `02` agents from one orchestration file
-- Show the “monolith” analogy: routing and dispatch are easy to start, but pile up in one place
-
-Files:
-
-- `src/03-orchestrator/run.js`
-- `src/03-orchestrator/email-router.js`
-
-Run:
-
-```bash
-npm run start:03
-```
-
-Example:
-
-```bash
-ORCHESTRATOR_EMAIL_JSON='{"from":"hr@company.com","subject":"Team sync invitation","body":"Calendar invite for tomorrow at 10:00"}' npm run start:03
-```
-
-What to point out in the demo:
-
-- `03` does not invent new agents
-- it composes `classifyEmailAgent`, `createTaskAgent`, and `createAgendaItemAgent`
-- good for understanding orchestration, bad for long-term maintainability
-
-## Runtime
-
-- [Security Aspects](https://code.claude.com/docs/en/agent-sdk/secure-deployment), [adk](https://adk.dev/safety/)
-
-- Isolation
-  - [Sandboxing](https://code.claude.com/docs/en/sandboxing)
-  - [Example in docker](https://code.claude.com/docs/en/agent-sdk/secure-deployment#containers)
-- Least privilege
-  - Tools have permission settings to allow, block, or prompt the user for approval
-  - Limit file, network, credentials access with proxy
-
-```ts
-options: {
-  allowedTools: ["Read", "Glob", "Grep"],
-  permissionMode: "acceptEdits",
-  continue: true
-},
-```
-
-- Defense in depth
-  - Security Schemes - Authentication options
-  - Contract-first tools
-  - Code and Web responses auto-checks
-  - Guardrails - Control your model and tool calls [with built-in, custom or external hooks](https://adk.dev/safety/#callbacks-and-plugins-for-security-guardrails)
-  - Human-in-the-Loop
-  - Decrease temperature and context
-  - Define budget
-
-```sh
-docker run \
-  --cap-drop ALL \
-  --security-opt no-new-privileges \
-  --security-opt seccomp=/path/to/seccomp-profile.json \
-  --read-only \
-  --tmpfs /tmp:rw,noexec,nosuid,size=100m \
-  --tmpfs /home/agent:rw,noexec,nosuid,size=500m \
-  --network none \
-  --memory 2g \
-  --cpus 2 \
-  --pids-limit 100 \
-  --user 1000:1000 \
-  -v /path/to/code:/workspace:ro \
-  -v /var/run/proxy.sock:/var/run/proxy.sock:ro \
-  agent-image
-```
-
-- [Observability](https://adk.dev/observability/) - [Tracing](https://adk.dev/observability/traces/#gcp-export-setup) and Logging
-
-**Infrastructure Frameworks**
+### Infrastructure Frameworks
 
 |                         | n8n                                  | CrewAI                    | MetaGPT                            | LangGraph                                     | [OpenClaw](https://openclaw.ai/) |
 | ----------------------- | ------------------------------------ | ------------------------- | ---------------------------------- | --------------------------------------------- | -------------------------------- |
@@ -871,91 +664,15 @@ docker run \
 | **Use case**            | Connect agents to business workflows | Collaborative task agents | Complex software development tasks | Complex agent systems with full state control | Production agent deployment      |
 | **Language**            | JavaScript / TypeScript              | Python                    | Python                             | Python / TypeScript                           | JavaScript / TypeScript          |
 
-### Deployment Aspects
-
-> How does ADK deploy to production?
-> ADK is built for deploy anywhere flexibility. You can containerize and run ADK on your own infrastructure, or take advantage of our native, one-command deployment to Google Cloud. When deploying to Google Cloud via Agent Runtime (Agent Platform), Cloud Run, or GKE, your agents instantly inherit managed infrastructure, built-in authentication, Cloud Trace observability, and enterprise-grade security—all without requiring you to change a single line of your agent code. Develop locally, scale globally.
-
-
-
-## Demo #4 - n8n Integration
-
-Goal:
-
-- Expose the same agent boundaries as visual workflow nodes
-- Let n8n handle branching instead of hardcoding it in one file
-
-Files:
-
-- `src/04-n8n/README.md`
-- `src/04-n8n/EmailClassification.node.js`
-- `src/04-n8n/TaskSimulation.node.js`
-- `src/04-n8n/AgendaSimulation.node.js`
-- `src/04-n8n/EmailRouter.node.js`
-
-Run:
-
-```bash
-npm run start:04
-npm run start:n8n
-```
-
-Suggested workflow:
-
-1. `Email Classification Agent`
-2. `IF` / `Switch` on `classification.category`
-3. `Task Simulation Agent` for `task`
-4. `Agenda Simulation Agent` for `event`
-5. Optional `Email Router` node as a shortcut for the step `03` monolith behavior
-
-What to point out in the demo:
-
-- step `04` reuses step `02` agents directly
-- n8n becomes the orchestration layer
-- `Agent Reliability Monitor` belongs conceptually to the step `05` story
-
-## Demo #5 - Security & Observability
-
-Goal:
-
-- Add guardrails and monitoring on top of existing agents
-- Keep those concerns separate from routing/orchestration logic
-
-Files:
-
-- `src/05-security-observability/observability.js`
-- `src/05-security-observability/run.js`
-
-Run:
-
-```bash
-npm run start:05
-```
-
-What the script demonstrates:
-
-- wraps `classifyEmailAgent`, `createTaskAgent`, and `createAgendaItemAgent`
-- blocks simple prompt-injection attempts
-- writes success/failure events into `trace.jsonl`
-- summarizes per-agent reliability from the current run
-
-What to point out in the demo:
-
-- wrappers are composable
-- observability is reduced to success/error rate on purpose
-- the reliability node in n8n only reads this trace, it does not create it
-
 ## Summary
 
-An agent runtime is a control plane — coordination, policy, memory, and tooling around an LLM. Node.js fits well as that plane, and SDKs plus protocols (MCP, A2A) give you the building blocks. Production readiness comes from structured outputs, guardrails, tracing, and connecting it all to automation tools like n8n.
-
-What's coming in next years?
+An agent runtime is a control plane — coordination, policy, memory, and tooling around an LLM. Node.js fits well as that plane, and Agent SDKs give you the building blocks: tool calling, structured outputs, sessions, guardrails, and tracing. Production readiness comes from sandboxing, approval gates, observability, and connecting the agent to real CI/CD and deployment targets.
 
 ## Feedback
 
-Please [share your feedback](https://app.sli.do/event/tYQYSSUHF8UumnBvof18Dy) on the workshop. Thank you and have a great coding!
+Please share your feedback on the workshop. Thank you and have a great coding!
 
-<iframe src="https://wall.sli.do/event/tYQYSSUHF8UumnBvof18Dy/?section=109753af-cb80-40ff-ab8b-9ec0c598e43d" width="50%" height="500px"></iframe>
+<!-- Feedback link TBD -->
 
 If you like the workshop, you can become our [patron](https://www.patreon.com/xtechnology), yay! 🙏
 
@@ -974,12 +691,11 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 ### Technologies
 
 - LLM
-- Langchain
-- RAG
 - AI Agents
 - MCP
-- OpenClaw
-- n8n
+- Agent SDKs
+- ADK
+- Claude
 
 <!--
 
@@ -995,30 +711,5 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 7. Теория общих правил оркестрации. Безопасность, мониторинг и т.д.
 8. Практика
 9. Конец
-
-## 2026-04-29
-
-- [ ] @pavlik to make use case diagram
-- [ ] @pavlik @alex session inMemoryRunner alternatives
-  await runner.sessionService.createSession({ appName: APP_NAME, userId: USER_ID, sessionId: SESSION_ID });
-- [ ] @pavlik from 03 example remove llm from agents
-
-## 2026-04-28
-
-- [ ] what are stop execute evaluation practices?
-- [x] does n8n use a2a?
-- [x] Why Node.js for agent runtimes?
-
-## 2026-04-22
-
-- [ ] need to try play with skills in artificial project
-
-## 2026-04-21
-
-- [x] need to try out next time with docker image
-
-## 2026-04-20
-
-- [x] read about [claude sdk](https://code.claude.com/docs/en/agent-sdk/claude-code-features)
 
 -->
