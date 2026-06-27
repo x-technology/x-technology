@@ -102,9 +102,10 @@ By the end of the workshop, participants will understand not only how to use an 
 - [Setup 🛠️](#setup)
 - [AI Agents World 🌎](#ai-agents-world)
 - [Agents SDK 🧰](#agents-sdk)
-- [Demo 🤖](#demo)
+- [Demo #1 - Build agents 🤖](#demo-1---build-agents)
 - [Runtime 🔒](#runtime)
 - [Deployment 🚀](#deployment)
+- [Demo #2 - Deployment Aspects 🚢](#demo-2---deployment-aspects)
 - [Optional 🔗](#optional)
 - [Summary 📚](#summary)
 - [Feedback 💬](#feedback)
@@ -708,20 +709,3 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - Agent SDKs
 - ADK
 - Claude
-
-<!--
-
-# Drafts
-
-Пока что такой план обсудили на воркшоп
-1. Теория про агентов. Что такое вообще
-2. Разработка агента "на коленке"
-3. Теория про SDK для агентов (посмотрю варианты)
-4. Разработка агента на SDK.
-5. Теория про оркестрацию. Что делать, когда агентов несколько
-6. Разработка ещё одного-двух агентов и встраивание его в n8n
-7. Теория общих правил оркестрации. Безопасность, мониторинг и т.д.
-8. Практика
-9. Конец
-
--->
