@@ -389,6 +389,8 @@ docker run \
 
 ## Deployment
 
+[![agent architecture](https://codelabs.developers.google.com/static/codelabs/christmas-card/img/diagram_memory_2880.png)](https://codelabs.developers.google.com/codelabs/christmas-card/instructions?utm_source=chatgpt.com#0)
+
 | Option                              | Description                                                                                          |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Local**                           | Self-hosted runtime, full control over environment, container, and secrets                           |
@@ -465,6 +467,7 @@ If you like the workshop, you can become our [patron](https://www.patreon.com/xt
 - [A2A: The Agent2Agent Protocol - DeepLearning.ai](https://learn.deeplearning.ai/courses/a2a-the-agent2agent-protocol)
 - [A2A and MCP: Detailed Comparison](https://a2a-protocol.org/latest/topics/a2a-and-mcp/)
 - [Agent Skills Overview](https://agentskills.io/home)
+- [Building Personalized Agents with ADK, MCP, and Memory Bank](https://codelabs.developers.google.com/codelabs/christmas-card/instructions)
 
 ### Technologies
 
