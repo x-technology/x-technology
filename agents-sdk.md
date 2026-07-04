@@ -413,28 +413,34 @@ Deploy versioned agent configurations via `platform.claude.com/.../deployments`.
 
 ### Google ADK on Cloud Run
 
-ADK defines:
+You built an agent with ADK — now you ship it as a real cloud service. Two paths:
 
-```txt
-agent
-tools
-workflow
-model behavior
+**ADK native deploy:**
+
+```bash
+adk deploy cloud_run \
+  --project=my-gcp-project \
+  --region=us-central1 \
+  --service-name=engineering-agent \
+  --app-name=my_adk_app
 ```
 
-Cloud Run provides:
+**Container path (full control):**
 
-```txt
-container runtime
-HTTPS endpoint
-IAM
-autoscaling
-logs
-revisions
-env/secrets integration
+```bash
+docker build -t gcr.io/my-project/engineering-agent .
+gcloud run deploy engineering-agent \
+  --image gcr.io/my-project/engineering-agent \
+  --region us-central1 \
+  --set-env-vars GOOGLE_API_KEY=...
 ```
 
-> ADK is built for deploy anywhere flexibility. You can containerize and run ADK on your own infrastructure, or take advantage of our native, one-command deployment to Google Cloud. When deploying to Google Cloud via Agent Runtime (Agent Platform), Cloud Run, or GKE, your agents instantly inherit managed infrastructure, built-in authentication, Cloud Trace observability, and enterprise-grade security—all without requiring you to change a single line of your agent code. Develop locally, scale globally.
+| | Claude Managed Agents | ADK on Cloud Run |
+|---|---|---|
+| Runtime managed by | Anthropic | You (GCP) |
+| Deploy unit | Agent config | Container image |
+| Scaling | Managed | Cloud Run auto |
+| Best for | Claude-native, fast to ship | GCP ecosystem, full control |
 
 ### Monolith Agent Deployment
 
