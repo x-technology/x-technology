@@ -331,9 +331,11 @@ Key features:
 # ANTR_KEY=
 # source .env
 docker build -t agent-sdk .
-docker run -it -e ANTHROPIC_API_KEY=$ANTR_KEY -v $(pwd)/agent.ts:/app/agent.ts agent-sdk /bin/bash
+docker run -it -e ANTHROPIC_API_KEY=$ANTR_KEY -v $(pwd):/app agent-sdk /bin/bash
 # inside the container - ls, pwd
+npm run start -- "say hi"
 npm run start -- "add a simple test and test environment, dir and runner command - i want to use node.js native test framework"
+npm test
 ```
 
 - Claude Agent SDK
@@ -441,6 +443,8 @@ claude -p "say hi"
 ```
 
 ## Demo #2 - Deployment Aspects
+
+![process diagram](assets/github-issue-pipeline.png)
 
 - [Github Issue Pipeline](https://github.com/XXX/Test/issues)
 
