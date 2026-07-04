@@ -446,6 +446,8 @@ claude -p "say hi"
 
 ![process diagram](assets/github-issue-pipeline.png)
 
+- Github Co-pilot
+- Set up Claude GitHub Actions for a repository `claude`, `/install-github-app`
 - [Github Issue Pipeline](https://github.com/XXX/Test/issues)
 
 ## Summary
