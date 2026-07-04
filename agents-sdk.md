@@ -83,7 +83,7 @@ By the end of the workshop, participants will understand not only how to use an 
 
 - Good understanding of JavaScript or TypeScript
 - Experience with Node.js and API development
-- Basic knowledge of databases and LLMs is helpful but not required
+- Basic knowledge of LLMs is helpful
 
 ## Goals
 
@@ -127,7 +127,7 @@ My primary interest is self development and craftsmanship. I enjoy exploring tec
 
 ## Setup
 
-- Node.js 18+
+- Node.js 22+
 - OpenAI-compatible API key for live LLM demos is optional
 - Gemini / Google API key for ADK demos is optional
 
@@ -135,7 +135,7 @@ Project setup:
 
 ```bash
 git clone https://github.com/x-technology/workshop-agents.git
-cd workshop-agents
+cd workshop-agents/src/agent-sdk
 npm install
 ```
 
@@ -143,30 +143,9 @@ Optional environment examples:
 
 ```bash
 # Step 01 raw HTTP demo
-export OPENAI_API_KEY=...
-# optional:
-export OPENAI_MODEL=gpt-4.1-mini
-export OPENAI_BASE_URL=https://api.openai.com/v1
+export ANTR_KEY==...
+npm run start -- ...
 ```
-
-```bash
-# Step 02 ADK demo with Gemini
-export GOOGLE_API_KEY=...
-# optional:
-export GEMINI_MODEL=gemini-2.5-flash
-```
-
-```bash
-# Step 02 ADK demo with OpenAI-compatible provider instead of Gemini
-export SDK_PROVIDER=openai
-export OPENAI_API_KEY=...
-export OPENAI_MODEL=gpt-4o-mini
-```
-
-Default offline-friendly behavior:
-
-- `npm run start:01` falls back to naive keyword routing if `OPENAI_API_KEY` is not set
-- `npm run start:02` stays on the ADK path and falls back to a local keyword-based `BaseLlm`
 
 ## AI Agents World
 
@@ -347,6 +326,15 @@ Key features:
 - Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
 
 ## Demo #1 - Build agents
+
+```sh
+# ANTR_KEY=
+# source .env
+docker build -t agent-sdk .
+docker run -it -e ANTHROPIC_API_KEY=$ANTR_KEY -v $(pwd)/agent.ts:/app/agent.ts agent-sdk /bin/bash
+# inside the container - ls, pwd
+npm run start -- "add a simple test and test environment, dir and runner command - i want to use node.js native test framework"
+```
 
 - Claude Agent SDK
 - Google ADK
