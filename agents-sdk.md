@@ -452,6 +452,8 @@ claude -p "say hi"
 
 ## Demo #2 - Deployment Aspects
 
+- [Github Issue Pipeline](https://github.com/XXX/Test/issues)
+
 ## Summary
 
 An agent runtime is a control plane — coordination, policy, memory, and tooling around an LLM. Node.js fits well as that plane, and Agent SDKs give you the building blocks: tool calling, structured outputs, sessions, guardrails, and tracing. Production readiness comes from sandboxing, approval gates, observability, and connecting the agent to real CI/CD and deployment targets.
