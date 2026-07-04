@@ -1,5 +1,5 @@
 ---
-title: XTechnology Workshop - The Agent Runtime Workshop: Node.js, Tools, CI/CD, and Guardrails
+title: XTechnology Workshop - The Agent Runtime Workshop: Node.js, Tools, CI/CD
 ---
 
 [![XTechnology - Technology is beautiful, let's discover it together!](https://user-images.githubusercontent.com/1259644/139526072-c2df5b3f-86b3-40eb-a91a-e51a307269ec.png)](https://xtechnology.dev/)
@@ -296,7 +296,7 @@ export async function reflexionLoop(task: string) {
 ### ADK (Google)
 
 > Build production agents, not prototypes.
-ADK is the open-source agent development framework that lets you build, debug, and deploy reliable AI agents at enterprise scale. Available in Python, TypeScript, Go, Java, and Kotlin.
+> ADK is the open-source agent development framework that lets you build, debug, and deploy reliable AI agents at enterprise scale. Available in Python, TypeScript, Go, Java, and Kotlin.
 
 > ADK developer Skills
 
@@ -401,12 +401,12 @@ docker run \
 
 ## Deployment
 
-| Option | Description |
-| ------ | ----------- |
-| **Local** | Self-hosted runtime, full control over environment, container, and secrets |
-| **Cloud — Claude Managed Agents** | Provider-managed sessions, sandbox, event stream; deploy via `platform.claude.com/.../deployments` |
+| Option                              | Description                                                                                          |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Local**                           | Self-hosted runtime, full control over environment, container, and secrets                           |
+| **Cloud — Claude Managed Agents**   | Provider-managed sessions, sandbox, event stream; deploy via `platform.claude.com/.../deployments`   |
 | **Cloud — Google ADK on Cloud Run** | Agent as a cloud-native service; Cloud Run provides container runtime, HTTPS, IAM, autoscaling, logs |
-| **Monolith** | Configurable native client |
+| **Monolith**                        | Configurable native client                                                                           |
 
 ### Local
 
