@@ -396,13 +396,19 @@ docker run \
 | Option                              | Description                                                                                          |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Local**                           | Self-hosted runtime, full control over environment, container, and secrets                           |
+| **Monolith**                        | Configurable native client                                                                           |
 | **Cloud — Claude Managed Agents**   | Provider-managed sessions, sandbox, event stream; deploy via `platform.claude.com/.../deployments`   |
 | **Cloud — Google ADK on Cloud Run** | Agent as a cloud-native service; Cloud Run provides container runtime, HTTPS, IAM, autoscaling, logs |
-| **Monolith**                        | Configurable native client                                                                           |
 
 ### Local
 
 Run the agent runtime in a local container or directly in your Node.js environment. Useful for development, testing, and offline execution.
+
+### Monolith Agent Deployment
+
+```bash
+claude -p "say hi"
+```
 
 ### Claude Managed Agents
 
@@ -412,8 +418,6 @@ Run the agent runtime in a local container or directly in your Node.js environme
 Deploy versioned agent configurations via `platform.claude.com/.../deployments`. Managed sessions, built-in sandbox, event stream, and cloud or self-hosted environments are included.
 
 ### Google ADK on Cloud Run
-
-You built an agent with ADK — now you ship it as a real cloud service. Two paths:
 
 **ADK native deploy:**
 
@@ -442,12 +446,6 @@ gcloud run deploy engineering-agent \
 | Scaling | Managed | Cloud Run auto |
 | Best for | Claude-native, fast to ship | GCP ecosystem, full control |
 
-### Monolith Agent Deployment
-
-```bash
-claude -p "say hi"
-```
-
 ## Demo #2 - Deployment Aspects
 
 ![process diagram](assets/github-issue-pipeline.png)
@@ -455,6 +453,17 @@ claude -p "say hi"
 - Github Co-pilot
 - Set up Claude GitHub Actions for a repository `claude`, `/install-github-app`
 - [Github Issue Pipeline](https://github.com/XXX/Test/issues)
+
+```sh
+cd managed-agent-ts
+npm install
+cp .env.example .env   # fill in ANTHROPIC_API_KEY, GITHUB_TOKEN, GITHUB_REPO_URL
+npm run setup-vault
+npm run setup
+# Copy the printed `AGENT_ID` and `ENVIRONMENT_ID` into `.env`
+npm run task -- "Add text to README file in the main, commit it to a new branch, push it. Use the github MCP server to create a pull request in OWNER/REPO into main brach"
+npm run task -- "which branch u r at?"
+```
 
 ## Summary
 
