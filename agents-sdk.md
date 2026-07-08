@@ -259,8 +259,6 @@ export async function reflexionLoop(task: string) {
 
 **Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
-[![trace user query that involves an LLM agent calling a tool](https://adk.dev/assets/invocation-flow.png)](https://adk.dev/runtime/event-loop/)
-
 ## Agents SDK
 
 |                                 | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
@@ -326,6 +324,8 @@ Key features:
 - Model-agnostic
 - Deployment-agnostic
 - Built-in tools - file operations, web Search, execution. Compare [claude](https://code.claude.com/docs/en/agent-sdk/agent-loop#built-in-tools) VS [openai](https://openai.github.io/openai-agents-js/guides/tools/?utm_source=chatgpt.com#1-hosted-tools-openai-responses-api)
+
+[![trace user query that involves an LLM agent calling a tool](https://adk.dev/assets/invocation-flow.png)](https://adk.dev/runtime/event-loop/)
 
 ## Demo #1 - Build agents
 
