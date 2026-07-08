@@ -73,7 +73,7 @@ title: XTechnology Workshop - The Agent Runtime Workshop: Node.js, Tools, CI/CD
   <a href="https://twitter.com/XTechnology5/status/1662440871936114688"><i></i></a>
 </div>
 
-# The Agent Runtime Workshop: Node.js, Tools, CI/CD, and Guardrails
+# The Agent Runtime Workshop: Node.js, Tools, CI/CD
 
 The workshop focuses on theory and practice building production-ready AI agents with Node.js and modern Agent SDKs. We will use a real codebase as an execution environment to explain the core concepts behind agents: the agent loop, tool calling, structured outputs, context management, guardrails, tools, and human approval. We will build a Node.js SDK-based engineering agent that receives a development task, inspects a repository, proposes and applies safe code changes, runs validation checks, and exports execution artifacts to a messenger/storage. We will also cover how this agent fits into a broader production architecture: where MCP, orchestration, multi-agent patterns, CI/CD, security boundaries, observability, and workflow tools such as n8n may be useful.
 
@@ -259,6 +259,8 @@ export async function reflexionLoop(task: string) {
 
 **Tools** - extend LLM with ability to act outside its context - read data (files, APIs, web), compute (code execution), act (send email, write DB, click UI)
 
+[![trace user query that involves an LLM agent calling a tool](https://adk.dev/assets/invocation-flow.png)](https://adk.dev/runtime/event-loop/)
+
 ## Agents SDK
 
 |                                 | **[Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/typescript)** | **[OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents/define-agents)** | **[Google ADK](https://adk.dev/get-started/typescript/)** | **[AI SDK Vercel](https://ai-sdk.dev/docs/introduction)** | **[LangChain](https://docs.langchain.com/oss/javascript/langchain/overview)** |
@@ -439,12 +441,12 @@ gcloud run deploy engineering-agent \
   --set-env-vars GOOGLE_API_KEY=...
 ```
 
-| | Claude Managed Agents | ADK on Cloud Run |
-|---|---|---|
-| Runtime managed by | Anthropic | You (GCP) |
-| Deploy unit | Agent config | Container image |
-| Scaling | Managed | Cloud Run auto |
-| Best for | Claude-native, fast to ship | GCP ecosystem, full control |
+|                    | Claude Managed Agents       | ADK on Cloud Run            |
+| ------------------ | --------------------------- | --------------------------- |
+| Runtime managed by | Anthropic                   | You (GCP)                   |
+| Deploy unit        | Agent config                | Container image             |
+| Scaling            | Managed                     | Cloud Run auto              |
+| Best for           | Claude-native, fast to ship | GCP ecosystem, full control |
 
 ## Demo #2 - Deployment Aspects
 
