@@ -37,6 +37,8 @@ We experiment with projects to explore technologies.
 
 We conduct workshops that are available for everyone live. We keep recordings and extended materials for our patrons.
 
+- [The Agent SDK Runtime: Node.js, Tools, CI/CD](./agents-sdk.md) by [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2026
+
 - [Operating Agent-Based Systems](./agents.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2026
 
 - [Building RAG System in Node.js](./rag.md) by [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/) & [Alex Korzhikov](https://www.linkedin.com/in/alex-korzhikov/), 2025
